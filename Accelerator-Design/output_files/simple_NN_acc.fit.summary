@@ -1,0 +1,16 @@
+Fitter Status : Successful - Tue Oct 22 19:27:08 2019
+Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Standard Edition
+Revision Name : simple_NN_acc
+Top-level Entity Name : simple_NN_acc
+Family : Cyclone IV E
+Device : EP4CE115F29C7
+Timing Models : Final
+Total logic elements : 4,534 / 114,480 ( 4 % )
+    Total combinational functions : 3,992 / 114,480 ( 3 % )
+    Dedicated logic registers : 2,826 / 114,480 ( 2 % )
+Total registers : 2945
+Total pins : 169 / 529 ( 32 % )
+Total virtual pins : 0
+Total memory bits : 123,520 / 3,981,312 ( 3 % )
+Embedded Multiplier 9-bit elements : 4 / 532 ( < 1 % )
+Total PLLs : 1 / 4 ( 25 % )

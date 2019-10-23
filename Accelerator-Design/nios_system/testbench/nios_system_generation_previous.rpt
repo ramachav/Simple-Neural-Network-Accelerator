@@ -1,0 +1,365 @@
+Info: Starting: Create testbench Qsys system
+Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system.ipx
+Info: qsys-generate /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system.qsys --testbench=SIMPLE --output-directory=/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading Accelerator-Design/nios_system.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 17.0]
+Progress: Parameterizing module clk_0
+Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 17.0]
+Progress: Parameterizing module jtag_uart_0
+Progress: Adding new_sdram_controller_0 [altera_avalon_new_sdram_controller 17.0]
+Progress: Parameterizing module new_sdram_controller_0
+Progress: Adding nios2_qsys_0 [altera_nios2_qsys 16.1]
+Progress: Parameterizing module nios2_qsys_0
+Progress: Adding sram_0 [altera_up_avalon_sram 17.0]
+Progress: Parameterizing module sram_0
+Progress: Adding vga_clk [clock_source 17.0]
+Progress: Parameterizing module vga_clk
+Progress: Adding video_dual_clock_buffer_0 [altera_up_avalon_video_dual_clock_buffer 17.0]
+Progress: Parameterizing module video_dual_clock_buffer_0
+Progress: Adding video_pixel_buffer_dma_0 [altera_up_avalon_video_pixel_buffer_dma 17.0]
+Progress: Parameterizing module video_pixel_buffer_dma_0
+Progress: Adding video_rgb_resampler_0 [altera_up_avalon_video_rgb_resampler 17.0]
+Progress: Parameterizing module video_rgb_resampler_0
+Progress: Adding video_vga_controller_0 [altera_up_avalon_video_vga_controller 17.0]
+Progress: Parameterizing module video_vga_controller_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: nios_system.jtag_uart_0: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: nios_system.new_sdram_controller_0: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Warning: nios_system.nios2_qsys_0: Nios II Classic cores are no longer recommended for new projects
+Info: nios_system.nios2_qsys_0: CPUID control register value is 0. Please manually assign CPUID if creating multiple Nios II system
+Info: nios_system.video_rgb_resampler_0: RGB Resampling: 16 (bits) x 1 (planes) -> 10 (bits) x 3 (planes)
+Info: nios_system.video_vga_controller_0: Video Output Stream: Format: 640 x 480 with Color: 10 (bits) x 3 (planes) converted to 8 (bits) per color plane
+Info: qsys-generate succeeded.
+Info: Loading IP catalog for testbench.
+Progress: 
+Progress: 
+Progress: 
+Progress: (2) searching /package/eda/altera/altera17.0/quartus/sopc_builder/bin/root_components.ipx (ipx file)
+Info: Reading index /package/eda/altera/altera17.0/quartus/sopc_builder/bin/root_components.ipx
+Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/root_components.ipx: Loading now from components.ipx
+Info: Reading index /package/eda/altera/altera17.0/quartus/sopc_builder/bin/ip_component_categories.ipx
+Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/ip_component_categories.ipx described 0 plugins, 0 paths, in 0.00 seconds
+Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/ip_component_categories.ipx matched 1 files in 0.00 seconds
+Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/ip/**/* matched 0 files in 0.00 seconds
+Info: Reading index /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system.ipx
+Progress: Loading Accelerator-Design/nios_system.qsys
+Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/* matched 7 files in 0.00 seconds
+Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/ip/**/* matched 0 files in 0.00 seconds
+Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/*/* matched 17 files in 0.01 seconds
+Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system.ipx described 0 plugins, 3 paths, in 0.01 seconds
+Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/* matched 4 files in 0.02 seconds
+Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/*/* matched 0 files in 0.02 seconds
+Info: /home/ecegrid/a/695r15/.altera.quartus/ip/17.0/**/* matched 0 files in 0.00 seconds
+Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/$$QUARTUS_IP_PROJECTDIR/* matched 0 files in 0.00 seconds
+Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/$$QUARTUS_IP_USERDIR/* matched 0 files in 0.00 seconds
+Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/$$QUARTUS_IP_GLOBALDIR/* matched 0 files in 0.00 seconds
+Info: Reading index /package/eda/altera/altera17.0/ip/altera/altera_components.ipx
+Info: /package/eda/altera/altera17.0/ip/altera/altera_components.ipx described 1996 plugins, 0 paths, in 0.06 seconds
+Info: /package/eda/altera/altera17.0/ip/**/* matched 138 files in 0.13 seconds
+Info: /package/eda/altera/ip/**/* matched 0 files in 0.00 seconds
+Info: Reading index /package/eda/altera/altera17.0/quartus/sopc_builder/builtin.ipx
+Info: /package/eda/altera/altera17.0/quartus/sopc_builder/builtin.ipx described 83 plugins, 0 paths, in 0.00 seconds
+Info: /package/eda/altera/altera17.0/quartus/sopc_builder/**/* matched 9 files in 0.01 seconds
+Info: Reading index /package/eda/altera/altera17.0/quartus/common/librarian/factories/index.ipx
+Info: /package/eda/altera/altera17.0/quartus/common/librarian/factories/index.ipx described 151 plugins, 0 paths, in 0.02 seconds
+Info: /package/eda/altera/altera17.0/quartus/common/librarian/factories/**/* matched 4 files in 0.02 seconds
+Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0.00 seconds
+Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/root_components.ipx described 0 plugins, 13 paths, in 0.20 seconds
+Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0.20 seconds
+Progress: 
+Progress: 
+Progress: 
+Info: Running script /package/eda/altera/altera17.0/quartus/sopc_builder/bin/tbgen.tcl
+Info: send_message Info TB_Gen: QSYS Testbench Generator Rev: $Revision: #1 $
+Info: TB_Gen: QSYS Testbench Generator Rev: $Revision: #1 $
+Info: get_module_property NAME
+Info: send_message Info TB_Gen: System design is: nios_system
+Info: TB_Gen: System design is: nios_system
+Info: get_interfaces 
+Info: get_connections 
+Info: get_interface_property clk EXPORT_OF
+Info: get_instance_property clk_0 CLASS_NAME
+Info: get_instance_assignment clk_0 testbench.partner.map.clk_in
+Info: get_interface_property clk_0 EXPORT_OF
+Info: get_instance_property vga_clk CLASS_NAME
+Info: get_instance_assignment vga_clk testbench.partner.map.clk_in
+Info: get_interface_property new_sdram_controller_0_wire EXPORT_OF
+Info: get_instance_property new_sdram_controller_0 CLASS_NAME
+Info: get_instance_assignment new_sdram_controller_0 testbench.partner.map.wire
+Info: get_interface_property reset EXPORT_OF
+Info: get_instance_property clk_0 CLASS_NAME
+Info: get_instance_assignment clk_0 testbench.partner.map.clk_in_reset
+Info: get_interface_property reset_0 EXPORT_OF
+Info: get_instance_property vga_clk CLASS_NAME
+Info: get_instance_assignment vga_clk testbench.partner.map.clk_in_reset
+Info: get_interface_property sram_0_external_interface EXPORT_OF
+Info: get_instance_property sram_0 CLASS_NAME
+Info: get_instance_assignment sram_0 testbench.partner.map.external_interface
+Info: get_interface_property video_vga_controller_0_external_interface EXPORT_OF
+Info: get_instance_property video_vga_controller_0 CLASS_NAME
+Info: get_instance_assignment video_vga_controller_0 testbench.partner.map.external_interface
+Info: send_message Info TB_Gen: Creating testbench system : nios_system_tb with clock and reset BFMs
+Info: TB_Gen: Creating testbench system : nios_system_tb with clock and reset BFMs
+Info: create_system nios_system_tb
+Info: add_instance nios_system_inst nios_system 
+Info: set_use_testbench_naming_pattern true nios_system
+Info: get_instance_interfaces nios_system_inst
+Info: get_instance_interface_property nios_system_inst clk CLASS_NAME
+Info: get_instance_interface_property nios_system_inst clk_0 CLASS_NAME
+Info: get_instance_interface_property nios_system_inst new_sdram_controller_0_wire CLASS_NAME
+Info: get_instance_interface_property nios_system_inst reset CLASS_NAME
+Info: get_instance_interface_property nios_system_inst reset_0 CLASS_NAME
+Info: get_instance_interface_property nios_system_inst sram_0_external_interface CLASS_NAME
+Info: get_instance_interface_property nios_system_inst video_vga_controller_0_external_interface CLASS_NAME
+Info: get_instance_interface_property nios_system_inst clk CLASS_NAME
+Info: send_message Info TB_Gen: clock_sink found: clk
+Info: TB_Gen: clock_sink found: clk
+Info: get_instance_interface_property nios_system_inst clk CLASS_NAME
+Info: add_instance nios_system_inst_clk_bfm altera_avalon_clock_source 
+Info: get_instance_property nios_system_inst_clk_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value nios_system_inst clk clockRate
+Info: set_instance_parameter_value nios_system_inst_clk_bfm CLOCK_RATE 50000000.0
+Info: set_instance_parameter_value nios_system_inst_clk_bfm CLOCK_UNIT 1
+Info: get_instance_property nios_system_inst_clk_bfm CLASS_NAME
+Info: get_instance_interface_property nios_system_inst clk CLASS_NAME
+Info: get_instance_interfaces nios_system_inst_clk_bfm
+Info: get_instance_interface_property nios_system_inst_clk_bfm clk CLASS_NAME
+Info: add_connection nios_system_inst_clk_bfm.clk nios_system_inst.clk
+Info: get_instance_interface_property nios_system_inst clk_0 CLASS_NAME
+Info: send_message Info TB_Gen: clock_sink found: clk_0
+Info: TB_Gen: clock_sink found: clk_0
+Info: get_instance_interface_property nios_system_inst clk_0 CLASS_NAME
+Info: add_instance nios_system_inst_clk_0_bfm altera_avalon_clock_source 
+Info: get_instance_property nios_system_inst_clk_0_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value nios_system_inst clk_0 clockRate
+Info: set_instance_parameter_value nios_system_inst_clk_0_bfm CLOCK_RATE 25000000.0
+Info: set_instance_parameter_value nios_system_inst_clk_0_bfm CLOCK_UNIT 1
+Info: get_instance_property nios_system_inst_clk_0_bfm CLASS_NAME
+Info: get_instance_interface_property nios_system_inst clk_0 CLASS_NAME
+Info: get_instance_interfaces nios_system_inst_clk_0_bfm
+Info: get_instance_interface_property nios_system_inst_clk_0_bfm clk CLASS_NAME
+Info: add_connection nios_system_inst_clk_0_bfm.clk nios_system_inst.clk_0
+Info: get_instance_interface_property nios_system_inst reset CLASS_NAME
+Info: send_message Info TB_Gen: reset_sink found: reset
+Info: TB_Gen: reset_sink found: reset
+Info: get_instance_interface_property nios_system_inst reset CLASS_NAME
+Info: add_instance nios_system_inst_reset_bfm altera_avalon_reset_source 
+Info: get_instance_property nios_system_inst_reset_bfm CLASS_NAME
+Info: get_instance_interface_ports nios_system_inst reset
+Info: get_instance_interface_port_property nios_system_inst reset reset_reset_n ROLE
+Info: get_instance_interface_port_property nios_system_inst reset reset_reset_n ROLE
+Info: set_instance_parameter_value nios_system_inst_reset_bfm ASSERT_HIGH_RESET 0
+Info: set_instance_parameter_value nios_system_inst_reset_bfm INITIAL_RESET_CYCLES 50
+Info: get_instance_property nios_system_inst_reset_bfm CLASS_NAME
+Info: get_instance_interfaces nios_system_inst_reset_bfm
+Info: get_instance_interface_property nios_system_inst_reset_bfm clk CLASS_NAME
+Info: get_instance_interface_property nios_system_inst_reset_bfm reset CLASS_NAME
+Info: get_instance_property nios_system_inst_reset_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value nios_system_inst reset associatedClock
+Info: get_instance_interfaces nios_system_inst_clk_bfm
+Info: get_instance_interface_property nios_system_inst_clk_bfm clk CLASS_NAME
+Info: send_message Warning TB_Gen: nios_system_inst_reset_bfm is not associated to any clock; connecting nios_system_inst_reset_bfm to 'nios_system_inst_clk_bfm.clk'
+Warning: TB_Gen: nios_system_inst_reset_bfm is not associated to any clock; connecting nios_system_inst_reset_bfm to 'nios_system_inst_clk_bfm.clk'
+Info: add_connection nios_system_inst_clk_bfm.clk nios_system_inst_reset_bfm.clk
+Info: get_instance_interface_property nios_system_inst reset CLASS_NAME
+Info: get_instance_interfaces nios_system_inst_reset_bfm
+Info: get_instance_interface_property nios_system_inst_reset_bfm clk CLASS_NAME
+Info: get_instance_interface_property nios_system_inst_reset_bfm reset CLASS_NAME
+Info: add_connection nios_system_inst_reset_bfm.reset nios_system_inst.reset
+Info: get_instance_interface_property nios_system_inst reset_0 CLASS_NAME
+Info: send_message Info TB_Gen: reset_sink found: reset_0
+Info: TB_Gen: reset_sink found: reset_0
+Info: get_instance_interface_property nios_system_inst reset_0 CLASS_NAME
+Info: add_instance nios_system_inst_reset_0_bfm altera_avalon_reset_source 
+Info: get_instance_property nios_system_inst_reset_0_bfm CLASS_NAME
+Info: get_instance_interface_ports nios_system_inst reset_0
+Info: get_instance_interface_port_property nios_system_inst reset_0 reset_0_reset_n ROLE
+Info: get_instance_interface_port_property nios_system_inst reset_0 reset_0_reset_n ROLE
+Info: set_instance_parameter_value nios_system_inst_reset_0_bfm ASSERT_HIGH_RESET 0
+Info: set_instance_parameter_value nios_system_inst_reset_0_bfm INITIAL_RESET_CYCLES 50
+Info: get_instance_property nios_system_inst_reset_0_bfm CLASS_NAME
+Info: get_instance_interfaces nios_system_inst_reset_0_bfm
+Info: get_instance_interface_property nios_system_inst_reset_0_bfm clk CLASS_NAME
+Info: get_instance_interface_property nios_system_inst_reset_0_bfm reset CLASS_NAME
+Info: get_instance_property nios_system_inst_reset_0_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value nios_system_inst reset_0 associatedClock
+Info: get_instance_interfaces nios_system_inst_clk_bfm
+Info: get_instance_interface_property nios_system_inst_clk_bfm clk CLASS_NAME
+Info: send_message Warning TB_Gen: nios_system_inst_reset_0_bfm is not associated to any clock; connecting nios_system_inst_reset_0_bfm to 'nios_system_inst_clk_bfm.clk'
+Warning: TB_Gen: nios_system_inst_reset_0_bfm is not associated to any clock; connecting nios_system_inst_reset_0_bfm to 'nios_system_inst_clk_bfm.clk'
+Info: add_connection nios_system_inst_clk_bfm.clk nios_system_inst_reset_0_bfm.clk
+Info: get_instance_interface_property nios_system_inst reset_0 CLASS_NAME
+Info: get_instance_interfaces nios_system_inst_reset_0_bfm
+Info: get_instance_interface_property nios_system_inst_reset_0_bfm clk CLASS_NAME
+Info: get_instance_interface_property nios_system_inst_reset_0_bfm reset CLASS_NAME
+Info: add_connection nios_system_inst_reset_0_bfm.reset nios_system_inst.reset_0
+Info: send_message Info TB_Gen: Saving testbench system: nios_system_tb.qsys
+Info: TB_Gen: Saving testbench system: nios_system_tb.qsys
+Info: save_system nios_system_tb.qsys
+Info: send_message Info TB_Gen: TBGEN SUCCESSFUL
+Info: TB_Gen: TBGEN SUCCESSFUL
+Info: Testbench system: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb.qsys
+Info: Done
+Info: qsys-generate /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system.qsys --simulation=VERILOG --allow-mixed-language-simulation --testbench=SIMPLE --testbench-simulation=VERILOG --allow-mixed-language-testbench-simulation --output-directory=/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading testbench/nios_system_tb.qsys
+Progress: Reading input file
+Progress: Adding nios_system_inst [nios_system 1.0]
+Progress: Parameterizing module nios_system_inst
+Progress: Adding nios_system_inst_clk_0_bfm [altera_avalon_clock_source 17.0]
+Progress: Parameterizing module nios_system_inst_clk_0_bfm
+Progress: Adding nios_system_inst_clk_bfm [altera_avalon_clock_source 17.0]
+Progress: Parameterizing module nios_system_inst_clk_bfm
+Progress: Adding nios_system_inst_reset_0_bfm [altera_avalon_reset_source 17.0]
+Progress: Parameterizing module nios_system_inst_reset_0_bfm
+Progress: Adding nios_system_inst_reset_bfm [altera_avalon_reset_source 17.0]
+Progress: Parameterizing module nios_system_inst_reset_bfm
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: nios_system_tb.nios_system_inst.jtag_uart_0: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: nios_system_tb.nios_system_inst.new_sdram_controller_0: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Warning: nios_system_tb.nios_system_inst.nios2_qsys_0: Nios II Classic cores are no longer recommended for new projects
+Info: nios_system_tb.nios_system_inst.nios2_qsys_0: CPUID control register value is 0. Please manually assign CPUID if creating multiple Nios II system
+Info: nios_system_tb.nios_system_inst.video_rgb_resampler_0: RGB Resampling: 16 (bits) x 1 (planes) -> 10 (bits) x 3 (planes)
+Info: nios_system_tb.nios_system_inst.video_vga_controller_0: Video Output Stream: Format: 640 x 480 with Color: 10 (bits) x 3 (planes) converted to 8 (bits) per color plane
+Info: nios_system_tb.nios_system_inst_clk_0_bfm: Elaborate: altera_clock_source
+Info: nios_system_tb.nios_system_inst_clk_0_bfm:            $Revision: #1 $
+Info: nios_system_tb.nios_system_inst_clk_0_bfm:            $Date: 2017/01/22 $
+Info: nios_system_tb.nios_system_inst_clk_bfm: Elaborate: altera_clock_source
+Info: nios_system_tb.nios_system_inst_clk_bfm:            $Revision: #1 $
+Info: nios_system_tb.nios_system_inst_clk_bfm:            $Date: 2017/01/22 $
+Info: nios_system_tb.nios_system_inst_reset_0_bfm: Elaborate: altera_reset_source
+Info: nios_system_tb.nios_system_inst_reset_0_bfm:            $Revision: #1 $
+Info: nios_system_tb.nios_system_inst_reset_0_bfm:            $Date: 2017/01/22 $
+Info: nios_system_tb.nios_system_inst_reset_0_bfm: Reset is negatively asserted.
+Info: nios_system_tb.nios_system_inst_reset_bfm: Elaborate: altera_reset_source
+Info: nios_system_tb.nios_system_inst_reset_bfm:            $Revision: #1 $
+Info: nios_system_tb.nios_system_inst_reset_bfm:            $Date: 2017/01/22 $
+Info: nios_system_tb.nios_system_inst_reset_bfm: Reset is negatively asserted.
+Warning: nios_system_tb.nios_system_inst: nios_system_inst.new_sdram_controller_0_wire must be exported, or connected to a matching conduit.
+Warning: nios_system_tb.nios_system_inst: nios_system_inst.sram_0_external_interface must be exported, or connected to a matching conduit.
+Warning: nios_system_tb.nios_system_inst: nios_system_inst.video_vga_controller_0_external_interface must be exported, or connected to a matching conduit.
+Info: nios_system_tb: Generating nios_system_tb "nios_system_tb" for SIM_VERILOG
+Info: nios_system_inst: "nios_system_tb" instantiated nios_system "nios_system_inst"
+Info: nios_system_inst_clk_0_bfm: "nios_system_tb" instantiated altera_avalon_clock_source "nios_system_inst_clk_0_bfm"
+Info: nios_system_inst_reset_0_bfm: "nios_system_tb" instantiated altera_avalon_reset_source "nios_system_inst_reset_0_bfm"
+Info: Reusing file /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/verbosity_pkg.sv
+Info: jtag_uart_0: Starting RTL generation for module 'nios_system_jtag_uart_0'
+Info: jtag_uart_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64/perl/bin/perl -I /package/eda/altera/altera17.0/quartus/linux64/perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/common -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=nios_system_jtag_uart_0 --dir=/tmp/alt8191_2707233678379907814.dir/0079_jtag_uart_0_gen/ --quartus_dir=/package/eda/altera/altera17.0/quartus --verilog --config=/tmp/alt8191_2707233678379907814.dir/0079_jtag_uart_0_gen//nios_system_jtag_uart_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8191_2707233678379907814.dir/0079_jtag_uart_0_gen/  ]
+Info: jtag_uart_0: Done RTL generation for module 'nios_system_jtag_uart_0'
+Info: jtag_uart_0: "nios_system_inst" instantiated altera_avalon_jtag_uart "jtag_uart_0"
+Info: new_sdram_controller_0: Starting RTL generation for module 'nios_system_new_sdram_controller_0'
+Info: new_sdram_controller_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64/perl/bin/perl -I /package/eda/altera/altera17.0/quartus/linux64/perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/common -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=nios_system_new_sdram_controller_0 --dir=/tmp/alt8191_2707233678379907814.dir/0080_new_sdram_controller_0_gen/ --quartus_dir=/package/eda/altera/altera17.0/quartus --verilog --config=/tmp/alt8191_2707233678379907814.dir/0080_new_sdram_controller_0_gen//nios_system_new_sdram_controller_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8191_2707233678379907814.dir/0080_new_sdram_controller_0_gen/  ]
+Info: new_sdram_controller_0: Done RTL generation for module 'nios_system_new_sdram_controller_0'
+Info: new_sdram_controller_0: "nios_system_inst" instantiated altera_avalon_new_sdram_controller "new_sdram_controller_0"
+Info: nios2_qsys_0: Starting RTL generation for module 'nios_system_nios2_qsys_0'
+Info: nios2_qsys_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64/eperlcmd -I /package/eda/altera/altera17.0/quartus/linux64/perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2 -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2 -- /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=nios_system_nios2_qsys_0 --dir=/tmp/alt8191_2707233678379907814.dir/0081_nios2_qsys_0_gen/ --quartus_bindir=/package/eda/altera/altera17.0/quartus/linux64 --verilog --config=/tmp/alt8191_2707233678379907814.dir/0081_nios2_qsys_0_gen//nios_system_nios2_qsys_0_processor_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8191_2707233678379907814.dir/0081_nios2_qsys_0_gen/  ]
+Info: nios2_qsys_0: # 2019.10.22 18:52:46 (*) Starting Nios II generation
+Info: nios2_qsys_0: # 2019.10.22 18:52:46 (*)   Checking for plaintext license.
+Info: nios2_qsys_0: # 2019.10.22 18:52:47 (*)   Couldn't query license setup in Quartus directory /package/eda/altera/altera17.0/quartus/linux64
+Info: nios2_qsys_0: # 2019.10.22 18:52:47 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: nios2_qsys_0: # 2019.10.22 18:52:47 (*)   Plaintext license not found.
+Info: nios2_qsys_0: # 2019.10.22 18:52:47 (*)   Checking for encrypted license (non-evaluation).
+Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)   Couldn't query license setup in Quartus directory /package/eda/altera/altera17.0/quartus/linux64
+Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)   Encrypted license found.  SOF will not be time-limited.
+Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)   Elaborating CPU configuration settings
+Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)   Creating all objects for CPU
+Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)     Testbench
+Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)     Instruction decoding
+Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)       Instruction fields
+Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)       Instruction decodes
+Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)       Signals for RTL simulation waveforms
+Info: nios2_qsys_0: # 2019.10.22 18:52:49 (*)       Instruction controls
+Info: nios2_qsys_0: # 2019.10.22 18:52:49 (*)     Pipeline frontend
+Info: nios2_qsys_0: # 2019.10.22 18:52:49 (*)     Pipeline backend
+Info: nios2_qsys_0: # 2019.10.22 18:52:50 (*)   Creating '/tmp/alt8191_2707233678379907814.dir/0081_nios2_qsys_0_gen//nios_system_nios2_qsys_0_nios2_waves.do'
+Info: nios2_qsys_0: # 2019.10.22 18:52:50 (*)   Generating RTL from CPU objects
+Info: nios2_qsys_0: # 2019.10.22 18:52:51 (*)   Creating encrypted RTL
+Info: nios2_qsys_0: # 2019.10.22 18:52:51 (*)   Creating IP functional simulation model
+Info: nios2_qsys_0: # 2019.10.22 18:53:09 (*) Done Nios II generation
+Info: nios2_qsys_0: Done RTL generation for module 'nios_system_nios2_qsys_0'
+Info: nios2_qsys_0: "nios_system_inst" instantiated altera_nios2_qsys "nios2_qsys_0"
+Info: sram_0: Starting Generation of the SRAM Controller
+Info: sram_0: "nios_system_inst" instantiated altera_up_avalon_sram "sram_0"
+Info: video_dual_clock_buffer_0: Starting Generation of the Dual Clock Buffer
+Info: video_dual_clock_buffer_0: "nios_system_inst" instantiated altera_up_avalon_video_dual_clock_buffer "video_dual_clock_buffer_0"
+Info: video_pixel_buffer_dma_0: Starting Generation of VGA Pixel Buffer
+Info: video_pixel_buffer_dma_0: "nios_system_inst" instantiated altera_up_avalon_video_pixel_buffer_dma "video_pixel_buffer_dma_0"
+Info: video_rgb_resampler_0: Starting Generation of Video RGB Resampler
+Info: video_rgb_resampler_0: "nios_system_inst" instantiated altera_up_avalon_video_rgb_resampler "video_rgb_resampler_0"
+Info: video_vga_controller_0: Starting Generation of VGA Controller
+Info: video_vga_controller_0: "nios_system_inst" instantiated altera_up_avalon_video_vga_controller "video_vga_controller_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "nios_system_inst" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: irq_mapper: "nios_system_inst" instantiated altera_irq_mapper "irq_mapper"
+Info: rst_controller: "nios_system_inst" instantiated altera_reset_controller "rst_controller"
+Info: video_pixel_buffer_dma_0_avalon_pixel_dma_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "video_pixel_buffer_dma_0_avalon_pixel_dma_master_translator"
+Info: sram_0_avalon_sram_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "sram_0_avalon_sram_slave_translator"
+Info: video_pixel_buffer_dma_0_avalon_pixel_dma_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "video_pixel_buffer_dma_0_avalon_pixel_dma_master_agent"
+Info: sram_0_avalon_sram_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "sram_0_avalon_sram_slave_agent"
+Info: sram_0_avalon_sram_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "sram_0_avalon_sram_slave_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
+Info: router_006: "mm_interconnect_0" instantiated altera_merlin_router "router_006"
+Info: nios2_qsys_0_data_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "nios2_qsys_0_data_master_limiter"
+Info: Reusing file /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_avalon_sc_fifo.v
+Info: sram_0_avalon_sram_slave_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "sram_0_avalon_sram_slave_burst_adapter"
+Info: Reusing file /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_002"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
+Info: Reusing file /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: cmd_mux_003: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_003"
+Info: Reusing file /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
+Info: rsp_demux_003: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_003"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: Reusing file /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_002"
+Info: Reusing file /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: nios2_qsys_0_data_master_to_sram_0_avalon_sram_slave_cmd_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "nios2_qsys_0_data_master_to_sram_0_avalon_sram_slave_cmd_width_adapter"
+Info: Reusing file /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: avalon_st_adapter_001: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_001"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: error_adapter_0: "avalon_st_adapter_001" instantiated error_adapter "error_adapter_0"
+Info: nios_system_tb: Done "nios_system_tb" with 45 modules, 87 files
+Info: qsys-generate succeeded.
+Info: sim-script-gen --spd=/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system_tb.spd --output-directory=/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system_tb.spd --output-directory=/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	44 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create testbench Qsys system
