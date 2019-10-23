@@ -196,6 +196,110 @@
 					"strict" : false
 				},
 				{
+					"name" : "FL_ADDR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[8]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[9]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[10]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[11]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[12]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[13]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[14]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[15]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[16]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[17]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[18]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[19]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[20]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[21]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_ADDR[22]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_CE_N",
+					"strict" : false
+				},
+				{
+					"name" : "FL_OE_N",
+					"strict" : false
+				},
+				{
+					"name" : "FL_WE_N",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_R[0]",
 					"strict" : false
 				},
@@ -493,6 +597,38 @@
 				},
 				{
 					"name" : "SRAM_DQ[15]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_DQ[0]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_DQ[1]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_DQ[2]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_DQ[3]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_DQ[4]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_DQ[5]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_DQ[6]",
+					"strict" : false
+				},
+				{
+					"name" : "FL_DQ[7]",
 					"strict" : false
 				},
 				{

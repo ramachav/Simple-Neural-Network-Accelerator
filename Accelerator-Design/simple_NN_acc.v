@@ -5,7 +5,7 @@ module simple_NN_acc (
 	SRAM_ADDR, SRAM_DQ, SRAM_WE_N, 
 	SRAM_OE_N, SRAM_UB_N, SRAM_LB_N, SRAM_CE_N,
 	FL_ADDR, FL_DQ, FL_CE_N, FL_OE_N, FL_RST_N, FL_WE_N, FL_WP_N, FL_RY, 
-	VGA_R, VGA_G, VGA_B, VGA_BLANK_N, VGA_HS, VGA_VS, VGA_SYNC_N, VGA_CLK 
+	VGA_R, VGA_G, VGA_B, VGA_BLANK_N, VGA_HS, VGA_VS, VGA_SYNC_N, VGA_CLK
 	);		
 	
 	// Base clock
@@ -16,7 +16,7 @@ module simple_NN_acc (
 	input [3:0] KEY ;
 	//output [8:0] LEDG ; 
 	//output [17:0] LEDR ;
-
+  
 	// Off-chip SDRAM
 	output 	[12:0] DRAM_ADDR;
 	output	[1:0] DRAM_BA;
@@ -101,7 +101,12 @@ module simple_NN_acc (
 		.sram_0_external_interface_CE_N(SRAM_CE_N),                  //                                          .CE_N
 		.sram_0_external_interface_OE_N(SRAM_OE_N),                  //                                          .OE_N
 		.sram_0_external_interface_WE_N(SRAM_WE_N),                  //                                          .WE_N
-		.reset_0_reset_n(KEY[0])
+		.reset_0_reset_n(KEY[0]),
+		.tristate_conduit_bridge_0_out_tcm_address_out(FL_ADDR),           //             tristate_conduit_bridge_0_out.tcm_address_out
+		.tristate_conduit_bridge_0_out_tcm_read_n_out(FL_OE_N),             //                                          .tcm_read_n_out
+		.tristate_conduit_bridge_0_out_tcm_write_n_out(FL_WE_N),           //                                          .tcm_write_n_out
+       	        .tristate_conduit_bridge_0_out_tcm_data_out(FL_DQ),                 //                                          .tcm_data_out
+		.tristate_conduit_bridge_0_out_tcm_chipselect_n_out(FL_CE_N)  //                                          .tcm_chipselect_n_out
 		);
 
 endmodule 

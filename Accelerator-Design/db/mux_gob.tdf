@@ -1,0 +1,102 @@
+--lpm_mux CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone IV E" LPM_SIZE=2 LPM_WIDTH=32 LPM_WIDTHS=1 data result sel
+--VERSION_BEGIN 17.0 cbx_lpm_mux 2017:04:19:09:17:27:SJ cbx_mgl 2017:04:19:10:26:36:SJ  VERSION_END
+
+
+-- Copyright (C) 2017  Intel Corporation. All rights reserved.
+--  Your use of Intel Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Intel Program License 
+--  Subscription Agreement, the Intel Quartus Prime License Agreement,
+--  the Intel MegaCore Function License Agreement, or other 
+--  applicable license agreement, including, without limitation, 
+--  that your use is for the sole purpose of programming logic 
+--  devices manufactured by Intel and sold by Intel or its 
+--  authorized distributors.  Please refer to the applicable 
+--  agreement for further details.
+
+
+
+--synthesis_resources = lut 32 
+SUBDESIGN mux_gob
+( 
+	data[63..0]	:	input;
+	result[31..0]	:	output;
+	sel[0..0]	:	input;
+) 
+VARIABLE 
+	result_node[31..0]	: WIRE;
+	sel_node[0..0]	: WIRE;
+	w_data576w[1..0]	: WIRE;
+	w_data590w[1..0]	: WIRE;
+	w_data602w[1..0]	: WIRE;
+	w_data614w[1..0]	: WIRE;
+	w_data626w[1..0]	: WIRE;
+	w_data638w[1..0]	: WIRE;
+	w_data650w[1..0]	: WIRE;
+	w_data662w[1..0]	: WIRE;
+	w_data674w[1..0]	: WIRE;
+	w_data686w[1..0]	: WIRE;
+	w_data698w[1..0]	: WIRE;
+	w_data710w[1..0]	: WIRE;
+	w_data722w[1..0]	: WIRE;
+	w_data734w[1..0]	: WIRE;
+	w_data746w[1..0]	: WIRE;
+	w_data758w[1..0]	: WIRE;
+	w_data770w[1..0]	: WIRE;
+	w_data782w[1..0]	: WIRE;
+	w_data794w[1..0]	: WIRE;
+	w_data806w[1..0]	: WIRE;
+	w_data818w[1..0]	: WIRE;
+	w_data830w[1..0]	: WIRE;
+	w_data842w[1..0]	: WIRE;
+	w_data854w[1..0]	: WIRE;
+	w_data866w[1..0]	: WIRE;
+	w_data878w[1..0]	: WIRE;
+	w_data890w[1..0]	: WIRE;
+	w_data902w[1..0]	: WIRE;
+	w_data914w[1..0]	: WIRE;
+	w_data926w[1..0]	: WIRE;
+	w_data938w[1..0]	: WIRE;
+	w_data950w[1..0]	: WIRE;
+
+BEGIN 
+	result[] = result_node[];
+	result_node[] = ( ((sel_node[] & w_data950w[1..1]) # ((! sel_node[]) & w_data950w[0..0])), ((sel_node[] & w_data938w[1..1]) # ((! sel_node[]) & w_data938w[0..0])), ((sel_node[] & w_data926w[1..1]) # ((! sel_node[]) & w_data926w[0..0])), ((sel_node[] & w_data914w[1..1]) # ((! sel_node[]) & w_data914w[0..0])), ((sel_node[] & w_data902w[1..1]) # ((! sel_node[]) & w_data902w[0..0])), ((sel_node[] & w_data890w[1..1]) # ((! sel_node[]) & w_data890w[0..0])), ((sel_node[] & w_data878w[1..1]) # ((! sel_node[]) & w_data878w[0..0])), ((sel_node[] & w_data866w[1..1]) # ((! sel_node[]) & w_data866w[0..0])), ((sel_node[] & w_data854w[1..1]) # ((! sel_node[]) & w_data854w[0..0])), ((sel_node[] & w_data842w[1..1]) # ((! sel_node[]) & w_data842w[0..0])), ((sel_node[] & w_data830w[1..1]) # ((! sel_node[]) & w_data830w[0..0])), ((sel_node[] & w_data818w[1..1]) # ((! sel_node[]) & w_data818w[0..0])), ((sel_node[] & w_data806w[1..1]) # ((! sel_node[]) & w_data806w[0..0])), ((sel_node[] & w_data794w[1..1]) # ((! sel_node[]) & w_data794w[0..0])), ((sel_node[] & w_data782w[1..1]) # ((! sel_node[]) & w_data782w[0..0])), ((sel_node[] & w_data770w[1..1]) # ((! sel_node[]) & w_data770w[0..0])), ((sel_node[] & w_data758w[1..1]) # ((! sel_node[]) & w_data758w[0..0])), ((sel_node[] & w_data746w[1..1]) # ((! sel_node[]) & w_data746w[0..0])), ((sel_node[] & w_data734w[1..1]) # ((! sel_node[]) & w_data734w[0..0])), ((sel_node[] & w_data722w[1..1]) # ((! sel_node[]) & w_data722w[0..0])), ((sel_node[] & w_data710w[1..1]) # ((! sel_node[]) & w_data710w[0..0])), ((sel_node[] & w_data698w[1..1]) # ((! sel_node[]) & w_data698w[0..0])), ((sel_node[] & w_data686w[1..1]) # ((! sel_node[]) & w_data686w[0..0])), ((sel_node[] & w_data674w[1..1]) # ((! sel_node[]) & w_data674w[0..0])), ((sel_node[] & w_data662w[1..1]) # ((! sel_node[]) & w_data662w[0..0])), ((sel_node[] & w_data650w[1..1]) # ((! sel_node[]) & w_data650w[0..0])), ((sel_node[] & w_data638w[1..1]) # ((! sel_node[]) & w_data638w[0..0])), ((sel_node[] & w_data626w[1..1]) # ((! sel_node[]) & w_data626w[0..0])), ((sel_node[] & w_data614w[1..1]) # ((! sel_node[]) & w_data614w[0..0])), ((sel_node[] & w_data602w[1..1]) # ((! sel_node[]) & w_data602w[0..0])), ((sel_node[] & w_data590w[1..1]) # ((! sel_node[]) & w_data590w[0..0])), ((sel_node[] & w_data576w[1..1]) # ((! sel_node[]) & w_data576w[0..0])));
+	sel_node[] = ( sel[0..0]);
+	w_data576w[] = ( data[32..32], data[0..0]);
+	w_data590w[] = ( data[33..33], data[1..1]);
+	w_data602w[] = ( data[34..34], data[2..2]);
+	w_data614w[] = ( data[35..35], data[3..3]);
+	w_data626w[] = ( data[36..36], data[4..4]);
+	w_data638w[] = ( data[37..37], data[5..5]);
+	w_data650w[] = ( data[38..38], data[6..6]);
+	w_data662w[] = ( data[39..39], data[7..7]);
+	w_data674w[] = ( data[40..40], data[8..8]);
+	w_data686w[] = ( data[41..41], data[9..9]);
+	w_data698w[] = ( data[42..42], data[10..10]);
+	w_data710w[] = ( data[43..43], data[11..11]);
+	w_data722w[] = ( data[44..44], data[12..12]);
+	w_data734w[] = ( data[45..45], data[13..13]);
+	w_data746w[] = ( data[46..46], data[14..14]);
+	w_data758w[] = ( data[47..47], data[15..15]);
+	w_data770w[] = ( data[48..48], data[16..16]);
+	w_data782w[] = ( data[49..49], data[17..17]);
+	w_data794w[] = ( data[50..50], data[18..18]);
+	w_data806w[] = ( data[51..51], data[19..19]);
+	w_data818w[] = ( data[52..52], data[20..20]);
+	w_data830w[] = ( data[53..53], data[21..21]);
+	w_data842w[] = ( data[54..54], data[22..22]);
+	w_data854w[] = ( data[55..55], data[23..23]);
+	w_data866w[] = ( data[56..56], data[24..24]);
+	w_data878w[] = ( data[57..57], data[25..25]);
+	w_data890w[] = ( data[58..58], data[26..26]);
+	w_data902w[] = ( data[59..59], data[27..27]);
+	w_data914w[] = ( data[60..60], data[28..28]);
+	w_data926w[] = ( data[61..61], data[29..29]);
+	w_data938w[] = ( data[62..62], data[30..30]);
+	w_data950w[] = ( data[63..63], data[31..31]);
+END;
+--VALID FILE

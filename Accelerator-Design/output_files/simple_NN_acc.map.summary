@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Tue Oct 22 19:26:40 2019
+Analysis & Synthesis Status : Successful - Wed Oct 23 14:07:53 2019
 Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Standard Edition
 Revision Name : simple_NN_acc
 Top-level Entity Name : simple_NN_acc
 Family : Cyclone IV E
-Total logic elements : 4,867
-    Total combinational functions : 3,985
-    Dedicated logic registers : 2,969
-Total registers : 2969
+Total logic elements : 6,964
+    Total combinational functions : 6,024
+    Dedicated logic registers : 4,188
+Total registers : 4188
 Total pins : 169
 Total virtual pins : 0
-Total memory bits : 123,520
+Total memory bits : 1,205,376
 Embedded Multiplier 9-bit elements : 4
 Total PLLs : 1
