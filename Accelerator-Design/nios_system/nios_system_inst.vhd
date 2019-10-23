@@ -20,6 +20,11 @@
 			sram_0_external_interface_CE_N                     : out   std_logic;                                        -- CE_N
 			sram_0_external_interface_OE_N                     : out   std_logic;                                        -- OE_N
 			sram_0_external_interface_WE_N                     : out   std_logic;                                        -- WE_N
+			tristate_conduit_bridge_0_out_tcm_address_out      : out   std_logic_vector(22 downto 0);                    -- tcm_address_out
+			tristate_conduit_bridge_0_out_tcm_read_n_out       : out   std_logic_vector(0 downto 0);                     -- tcm_read_n_out
+			tristate_conduit_bridge_0_out_tcm_write_n_out      : out   std_logic_vector(0 downto 0);                     -- tcm_write_n_out
+			tristate_conduit_bridge_0_out_tcm_data_out         : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- tcm_data_out
+			tristate_conduit_bridge_0_out_tcm_chipselect_n_out : out   std_logic_vector(0 downto 0);                     -- tcm_chipselect_n_out
 			video_vga_controller_0_external_interface_CLK      : out   std_logic;                                        -- CLK
 			video_vga_controller_0_external_interface_HS       : out   std_logic;                                        -- HS
 			video_vga_controller_0_external_interface_VS       : out   std_logic;                                        -- VS
@@ -27,12 +32,7 @@
 			video_vga_controller_0_external_interface_SYNC     : out   std_logic;                                        -- SYNC
 			video_vga_controller_0_external_interface_R        : out   std_logic_vector(7 downto 0);                     -- R
 			video_vga_controller_0_external_interface_G        : out   std_logic_vector(7 downto 0);                     -- G
-			video_vga_controller_0_external_interface_B        : out   std_logic_vector(7 downto 0);                     -- B
-			tristate_conduit_bridge_0_out_tcm_address_out      : out   std_logic_vector(22 downto 0);                    -- tcm_address_out
-			tristate_conduit_bridge_0_out_tcm_read_n_out       : out   std_logic_vector(0 downto 0);                     -- tcm_read_n_out
-			tristate_conduit_bridge_0_out_tcm_write_n_out      : out   std_logic_vector(0 downto 0);                     -- tcm_write_n_out
-			tristate_conduit_bridge_0_out_tcm_data_out         : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- tcm_data_out
-			tristate_conduit_bridge_0_out_tcm_chipselect_n_out : out   std_logic_vector(0 downto 0)                      -- tcm_chipselect_n_out
+			video_vga_controller_0_external_interface_B        : out   std_logic_vector(7 downto 0)                      -- B
 		);
 	end component nios_system;
 
@@ -58,6 +58,11 @@
 			sram_0_external_interface_CE_N                     => CONNECTED_TO_sram_0_external_interface_CE_N,                     --                                          .CE_N
 			sram_0_external_interface_OE_N                     => CONNECTED_TO_sram_0_external_interface_OE_N,                     --                                          .OE_N
 			sram_0_external_interface_WE_N                     => CONNECTED_TO_sram_0_external_interface_WE_N,                     --                                          .WE_N
+			tristate_conduit_bridge_0_out_tcm_address_out      => CONNECTED_TO_tristate_conduit_bridge_0_out_tcm_address_out,      --             tristate_conduit_bridge_0_out.tcm_address_out
+			tristate_conduit_bridge_0_out_tcm_read_n_out       => CONNECTED_TO_tristate_conduit_bridge_0_out_tcm_read_n_out,       --                                          .tcm_read_n_out
+			tristate_conduit_bridge_0_out_tcm_write_n_out      => CONNECTED_TO_tristate_conduit_bridge_0_out_tcm_write_n_out,      --                                          .tcm_write_n_out
+			tristate_conduit_bridge_0_out_tcm_data_out         => CONNECTED_TO_tristate_conduit_bridge_0_out_tcm_data_out,         --                                          .tcm_data_out
+			tristate_conduit_bridge_0_out_tcm_chipselect_n_out => CONNECTED_TO_tristate_conduit_bridge_0_out_tcm_chipselect_n_out, --                                          .tcm_chipselect_n_out
 			video_vga_controller_0_external_interface_CLK      => CONNECTED_TO_video_vga_controller_0_external_interface_CLK,      -- video_vga_controller_0_external_interface.CLK
 			video_vga_controller_0_external_interface_HS       => CONNECTED_TO_video_vga_controller_0_external_interface_HS,       --                                          .HS
 			video_vga_controller_0_external_interface_VS       => CONNECTED_TO_video_vga_controller_0_external_interface_VS,       --                                          .VS
@@ -65,11 +70,6 @@
 			video_vga_controller_0_external_interface_SYNC     => CONNECTED_TO_video_vga_controller_0_external_interface_SYNC,     --                                          .SYNC
 			video_vga_controller_0_external_interface_R        => CONNECTED_TO_video_vga_controller_0_external_interface_R,        --                                          .R
 			video_vga_controller_0_external_interface_G        => CONNECTED_TO_video_vga_controller_0_external_interface_G,        --                                          .G
-			video_vga_controller_0_external_interface_B        => CONNECTED_TO_video_vga_controller_0_external_interface_B,        --                                          .B
-			tristate_conduit_bridge_0_out_tcm_address_out      => CONNECTED_TO_tristate_conduit_bridge_0_out_tcm_address_out,      --             tristate_conduit_bridge_0_out.tcm_address_out
-			tristate_conduit_bridge_0_out_tcm_read_n_out       => CONNECTED_TO_tristate_conduit_bridge_0_out_tcm_read_n_out,       --                                          .tcm_read_n_out
-			tristate_conduit_bridge_0_out_tcm_write_n_out      => CONNECTED_TO_tristate_conduit_bridge_0_out_tcm_write_n_out,      --                                          .tcm_write_n_out
-			tristate_conduit_bridge_0_out_tcm_data_out         => CONNECTED_TO_tristate_conduit_bridge_0_out_tcm_data_out,         --                                          .tcm_data_out
-			tristate_conduit_bridge_0_out_tcm_chipselect_n_out => CONNECTED_TO_tristate_conduit_bridge_0_out_tcm_chipselect_n_out  --                                          .tcm_chipselect_n_out
+			video_vga_controller_0_external_interface_B        => CONNECTED_TO_video_vga_controller_0_external_interface_B         --                                          .B
 		);
 

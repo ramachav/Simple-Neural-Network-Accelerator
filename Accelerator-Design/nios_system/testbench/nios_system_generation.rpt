@@ -17,6 +17,8 @@ Progress: Adding performance_counter_0 [altera_avalon_performance_counter 17.0]
 Progress: Parameterizing module performance_counter_0
 Progress: Adding sram_0 [altera_up_avalon_sram 17.0]
 Progress: Parameterizing module sram_0
+Progress: Adding timer_0 [altera_avalon_timer 17.0]
+Progress: Parameterizing module timer_0
 Progress: Adding tristate_conduit_bridge_0 [altera_tristate_conduit_bridge 17.0]
 Progress: Parameterizing module tristate_conduit_bridge_0
 Progress: Adding vga_clk [clock_source 17.0]
@@ -59,30 +61,30 @@ Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/ip_component_categ
 Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/ip/**/* matched 0 files in 0.00 seconds
 Info: Reading index /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system.ipx
 Progress: Loading Accelerator-Design/nios_system.qsys
-Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/* matched 18 files in 0.00 seconds
+Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/* matched 19 files in 0.00 seconds
 Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/ip/**/* matched 0 files in 0.00 seconds
-Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/*/* matched 542 files in 0.06 seconds
-Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system.ipx described 0 plugins, 3 paths, in 0.06 seconds
+Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/*/* matched 633 files in 0.09 seconds
+Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system.ipx described 0 plugins, 3 paths, in 0.09 seconds
 Progress: Loading testbench/nios_system_tb.qsys
-Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/* matched 12 files in 0.07 seconds
+Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/* matched 12 files in 0.11 seconds
 Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/*/* matched 9 files in 0.02 seconds
 Info: /home/ecegrid/a/695r15/.altera.quartus/ip/17.0/**/* matched 0 files in 0.00 seconds
 Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/$$QUARTUS_IP_PROJECTDIR/* matched 0 files in 0.00 seconds
 Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/$$QUARTUS_IP_USERDIR/* matched 0 files in 0.00 seconds
 Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/$$QUARTUS_IP_GLOBALDIR/* matched 0 files in 0.00 seconds
 Info: Reading index /package/eda/altera/altera17.0/ip/altera/altera_components.ipx
-Info: /package/eda/altera/altera17.0/ip/altera/altera_components.ipx described 1996 plugins, 0 paths, in 0.08 seconds
-Info: /package/eda/altera/altera17.0/ip/**/* matched 138 files in 0.08 seconds
+Info: /package/eda/altera/altera17.0/ip/altera/altera_components.ipx described 1996 plugins, 0 paths, in 0.15 seconds
+Info: /package/eda/altera/altera17.0/ip/**/* matched 138 files in 0.16 seconds
 Info: /package/eda/altera/ip/**/* matched 0 files in 0.00 seconds
 Info: Reading index /package/eda/altera/altera17.0/quartus/sopc_builder/builtin.ipx
-Info: /package/eda/altera/altera17.0/quartus/sopc_builder/builtin.ipx described 83 plugins, 0 paths, in 0.00 seconds
-Info: /package/eda/altera/altera17.0/quartus/sopc_builder/**/* matched 9 files in 0.00 seconds
+Info: /package/eda/altera/altera17.0/quartus/sopc_builder/builtin.ipx described 83 plugins, 0 paths, in 0.01 seconds
+Info: /package/eda/altera/altera17.0/quartus/sopc_builder/**/* matched 9 files in 0.01 seconds
 Info: Reading index /package/eda/altera/altera17.0/quartus/common/librarian/factories/index.ipx
 Info: /package/eda/altera/altera17.0/quartus/common/librarian/factories/index.ipx described 151 plugins, 0 paths, in 0.01 seconds
 Info: /package/eda/altera/altera17.0/quartus/common/librarian/factories/**/* matched 4 files in 0.01 seconds
 Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0.00 seconds
-Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/root_components.ipx described 0 plugins, 13 paths, in 0.18 seconds
-Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0.18 seconds
+Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/root_components.ipx described 0 plugins, 13 paths, in 0.31 seconds
+Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0.31 seconds
 Progress: 
 Progress: 
 Progress: 
@@ -514,47 +516,51 @@ Warning: tristate_conduit_bridge_0_tcb_translator: get_parameter_value: Getting 
 Info: tristate_conduit_bridge_0_tcb_translator: "nios_system_tb" instantiated altera_tristate_conduit_bridge_translator "tristate_conduit_bridge_0_tcb_translator"
 Info: generic_tristate_controller_0: "nios_system_inst" instantiated altera_generic_tristate_controller "generic_tristate_controller_0"
 Info: jtag_uart_0: Starting RTL generation for module 'nios_system_jtag_uart_0'
-Info: jtag_uart_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64/perl/bin/perl -I /package/eda/altera/altera17.0/quartus/linux64/perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/common -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=nios_system_jtag_uart_0 --dir=/tmp/alt8192_3800223165791370266.dir/0053_jtag_uart_0_gen/ --quartus_dir=/package/eda/altera/altera17.0/quartus --verilog --config=/tmp/alt8192_3800223165791370266.dir/0053_jtag_uart_0_gen//nios_system_jtag_uart_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8192_3800223165791370266.dir/0053_jtag_uart_0_gen/  ]
+Info: jtag_uart_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64/perl/bin/perl -I /package/eda/altera/altera17.0/quartus/linux64/perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/common -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=nios_system_jtag_uart_0 --dir=/tmp/alt8192_7024942591072755318.dir/0054_jtag_uart_0_gen/ --quartus_dir=/package/eda/altera/altera17.0/quartus --verilog --config=/tmp/alt8192_7024942591072755318.dir/0054_jtag_uart_0_gen//nios_system_jtag_uart_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8192_7024942591072755318.dir/0054_jtag_uart_0_gen/  ]
 Info: jtag_uart_0: Done RTL generation for module 'nios_system_jtag_uart_0'
 Info: jtag_uart_0: "nios_system_inst" instantiated altera_avalon_jtag_uart "jtag_uart_0"
 Info: new_sdram_controller_0: Starting RTL generation for module 'nios_system_new_sdram_controller_0'
-Info: new_sdram_controller_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64/perl/bin/perl -I /package/eda/altera/altera17.0/quartus/linux64/perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/common -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=nios_system_new_sdram_controller_0 --dir=/tmp/alt8192_3800223165791370266.dir/0054_new_sdram_controller_0_gen/ --quartus_dir=/package/eda/altera/altera17.0/quartus --verilog --config=/tmp/alt8192_3800223165791370266.dir/0054_new_sdram_controller_0_gen//nios_system_new_sdram_controller_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8192_3800223165791370266.dir/0054_new_sdram_controller_0_gen/  ]
+Info: new_sdram_controller_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64/perl/bin/perl -I /package/eda/altera/altera17.0/quartus/linux64/perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/common -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=nios_system_new_sdram_controller_0 --dir=/tmp/alt8192_7024942591072755318.dir/0055_new_sdram_controller_0_gen/ --quartus_dir=/package/eda/altera/altera17.0/quartus --verilog --config=/tmp/alt8192_7024942591072755318.dir/0055_new_sdram_controller_0_gen//nios_system_new_sdram_controller_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8192_7024942591072755318.dir/0055_new_sdram_controller_0_gen/  ]
 Info: new_sdram_controller_0: Done RTL generation for module 'nios_system_new_sdram_controller_0'
 Info: new_sdram_controller_0: "nios_system_inst" instantiated altera_avalon_new_sdram_controller "new_sdram_controller_0"
 Info: nios2_qsys_0: Starting RTL generation for module 'nios_system_nios2_qsys_0'
-Info: nios2_qsys_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64/eperlcmd -I /package/eda/altera/altera17.0/quartus/linux64/perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2 -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2 -- /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=nios_system_nios2_qsys_0 --dir=/tmp/alt8192_3800223165791370266.dir/0055_nios2_qsys_0_gen/ --quartus_bindir=/package/eda/altera/altera17.0/quartus/linux64 --verilog --config=/tmp/alt8192_3800223165791370266.dir/0055_nios2_qsys_0_gen//nios_system_nios2_qsys_0_processor_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8192_3800223165791370266.dir/0055_nios2_qsys_0_gen/  ]
-Info: nios2_qsys_0: # 2019.10.22 20:17:32 (*) Starting Nios II generation
-Info: nios2_qsys_0: # 2019.10.22 20:17:32 (*)   Checking for plaintext license.
-Info: nios2_qsys_0: # 2019.10.22 20:17:33 (*)   Couldn't query license setup in Quartus directory /package/eda/altera/altera17.0/quartus/linux64
-Info: nios2_qsys_0: # 2019.10.22 20:17:33 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: nios2_qsys_0: # 2019.10.22 20:17:33 (*)   Plaintext license not found.
-Info: nios2_qsys_0: # 2019.10.22 20:17:33 (*)   Checking for encrypted license (non-evaluation).
-Info: nios2_qsys_0: # 2019.10.22 20:17:34 (*)   Couldn't query license setup in Quartus directory /package/eda/altera/altera17.0/quartus/linux64
-Info: nios2_qsys_0: # 2019.10.22 20:17:34 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: nios2_qsys_0: # 2019.10.22 20:17:34 (*)   Encrypted license found.  SOF will not be time-limited.
-Info: nios2_qsys_0: # 2019.10.22 20:17:34 (*)   Elaborating CPU configuration settings
-Info: nios2_qsys_0: # 2019.10.22 20:17:34 (*)   Creating all objects for CPU
-Info: nios2_qsys_0: # 2019.10.22 20:17:34 (*)     Testbench
-Info: nios2_qsys_0: # 2019.10.22 20:17:34 (*)     Instruction decoding
-Info: nios2_qsys_0: # 2019.10.22 20:17:34 (*)       Instruction fields
-Info: nios2_qsys_0: # 2019.10.22 20:17:34 (*)       Instruction decodes
-Info: nios2_qsys_0: # 2019.10.22 20:17:34 (*)       Signals for RTL simulation waveforms
-Info: nios2_qsys_0: # 2019.10.22 20:17:34 (*)       Instruction controls
-Info: nios2_qsys_0: # 2019.10.22 20:17:34 (*)     Pipeline frontend
-Info: nios2_qsys_0: # 2019.10.22 20:17:34 (*)     Pipeline backend
-Info: nios2_qsys_0: # 2019.10.22 20:17:36 (*)   Creating '/tmp/alt8192_3800223165791370266.dir/0055_nios2_qsys_0_gen//nios_system_nios2_qsys_0_nios2_waves.do'
-Info: nios2_qsys_0: # 2019.10.22 20:17:36 (*)   Generating RTL from CPU objects
-Info: nios2_qsys_0: # 2019.10.22 20:17:37 (*)   Creating encrypted RTL
-Info: nios2_qsys_0: # 2019.10.22 20:17:37 (*)   Creating IP functional simulation model
-Info: nios2_qsys_0: # 2019.10.22 20:17:54 (*) Done Nios II generation
+Info: nios2_qsys_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64/eperlcmd -I /package/eda/altera/altera17.0/quartus/linux64/perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2 -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2 -- /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=nios_system_nios2_qsys_0 --dir=/tmp/alt8192_7024942591072755318.dir/0056_nios2_qsys_0_gen/ --quartus_bindir=/package/eda/altera/altera17.0/quartus/linux64 --verilog --config=/tmp/alt8192_7024942591072755318.dir/0056_nios2_qsys_0_gen//nios_system_nios2_qsys_0_processor_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8192_7024942591072755318.dir/0056_nios2_qsys_0_gen/  ]
+Info: nios2_qsys_0: # 2019.10.23 18:07:05 (*) Starting Nios II generation
+Info: nios2_qsys_0: # 2019.10.23 18:07:05 (*)   Checking for plaintext license.
+Info: nios2_qsys_0: # 2019.10.23 18:07:06 (*)   Couldn't query license setup in Quartus directory /package/eda/altera/altera17.0/quartus/linux64
+Info: nios2_qsys_0: # 2019.10.23 18:07:06 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: nios2_qsys_0: # 2019.10.23 18:07:06 (*)   Plaintext license not found.
+Info: nios2_qsys_0: # 2019.10.23 18:07:06 (*)   Checking for encrypted license (non-evaluation).
+Info: nios2_qsys_0: # 2019.10.23 18:07:08 (*)   Couldn't query license setup in Quartus directory /package/eda/altera/altera17.0/quartus/linux64
+Info: nios2_qsys_0: # 2019.10.23 18:07:08 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: nios2_qsys_0: # 2019.10.23 18:07:08 (*)   Encrypted license found.  SOF will not be time-limited.
+Info: nios2_qsys_0: # 2019.10.23 18:07:08 (*)   Elaborating CPU configuration settings
+Info: nios2_qsys_0: # 2019.10.23 18:07:08 (*)   Creating all objects for CPU
+Info: nios2_qsys_0: # 2019.10.23 18:07:08 (*)     Testbench
+Info: nios2_qsys_0: # 2019.10.23 18:07:08 (*)     Instruction decoding
+Info: nios2_qsys_0: # 2019.10.23 18:07:08 (*)       Instruction fields
+Info: nios2_qsys_0: # 2019.10.23 18:07:08 (*)       Instruction decodes
+Info: nios2_qsys_0: # 2019.10.23 18:07:09 (*)       Signals for RTL simulation waveforms
+Info: nios2_qsys_0: # 2019.10.23 18:07:09 (*)       Instruction controls
+Info: nios2_qsys_0: # 2019.10.23 18:07:09 (*)     Pipeline frontend
+Info: nios2_qsys_0: # 2019.10.23 18:07:09 (*)     Pipeline backend
+Info: nios2_qsys_0: # 2019.10.23 18:07:12 (*)   Creating '/tmp/alt8192_7024942591072755318.dir/0056_nios2_qsys_0_gen//nios_system_nios2_qsys_0_nios2_waves.do'
+Info: nios2_qsys_0: # 2019.10.23 18:07:12 (*)   Generating RTL from CPU objects
+Info: nios2_qsys_0: # 2019.10.23 18:07:15 (*)   Creating encrypted RTL
+Info: nios2_qsys_0: # 2019.10.23 18:07:15 (*)   Creating IP functional simulation model
+Info: nios2_qsys_0: # 2019.10.23 18:07:42 (*) Done Nios II generation
 Info: nios2_qsys_0: Done RTL generation for module 'nios_system_nios2_qsys_0'
 Info: nios2_qsys_0: "nios_system_inst" instantiated altera_nios2_qsys "nios2_qsys_0"
 Info: performance_counter_0: Starting RTL generation for module 'nios_system_performance_counter_0'
-Info: performance_counter_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64/perl/bin/perl -I /package/eda/altera/altera17.0/quartus/linux64/perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/common -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_performance_counter -- /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_performance_counter/generate_rtl.pl --name=nios_system_performance_counter_0 --dir=/tmp/alt8192_3800223165791370266.dir/0056_performance_counter_0_gen/ --quartus_dir=/package/eda/altera/altera17.0/quartus --verilog --config=/tmp/alt8192_3800223165791370266.dir/0056_performance_counter_0_gen//nios_system_performance_counter_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8192_3800223165791370266.dir/0056_performance_counter_0_gen/  ]
+Info: performance_counter_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64/perl/bin/perl -I /package/eda/altera/altera17.0/quartus/linux64/perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/common -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_performance_counter -- /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_performance_counter/generate_rtl.pl --name=nios_system_performance_counter_0 --dir=/tmp/alt8192_7024942591072755318.dir/0057_performance_counter_0_gen/ --quartus_dir=/package/eda/altera/altera17.0/quartus --verilog --config=/tmp/alt8192_7024942591072755318.dir/0057_performance_counter_0_gen//nios_system_performance_counter_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8192_7024942591072755318.dir/0057_performance_counter_0_gen/  ]
 Info: performance_counter_0: Done RTL generation for module 'nios_system_performance_counter_0'
 Info: performance_counter_0: "nios_system_inst" instantiated altera_avalon_performance_counter "performance_counter_0"
 Info: sram_0: Starting Generation of the SRAM Controller
 Info: sram_0: "nios_system_inst" instantiated altera_up_avalon_sram "sram_0"
+Info: timer_0: Starting RTL generation for module 'nios_system_timer_0'
+Info: timer_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64//perl/bin/perl -I /package/eda/altera/altera17.0/quartus/linux64//perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/common -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=nios_system_timer_0 --dir=/tmp/alt8192_7024942591072755318.dir/0059_timer_0_gen/ --quartus_dir=/package/eda/altera/altera17.0/quartus --verilog --config=/tmp/alt8192_7024942591072755318.dir/0059_timer_0_gen//nios_system_timer_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8192_7024942591072755318.dir/0059_timer_0_gen/  ]
+Info: timer_0: Done RTL generation for module 'nios_system_timer_0'
+Info: timer_0: "nios_system_inst" instantiated altera_avalon_timer "timer_0"
 Info: tristate_conduit_bridge_0: "nios_system_inst" instantiated altera_tristate_conduit_bridge "tristate_conduit_bridge_0"
 Info: video_alpha_blender_0: Starting Generation of the Alpha Blender
 Info: video_alpha_blender_0: "nios_system_inst" instantiated altera_up_avalon_video_alpha_blender "video_alpha_blender_0"
@@ -577,6 +583,7 @@ Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_007: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_008: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_009: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "nios_system_inst" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: irq_mapper: "nios_system_inst" instantiated altera_irq_mapper "irq_mapper"
 Info: rst_controller: "nios_system_inst" instantiated altera_reset_controller "rst_controller"
@@ -627,7 +634,7 @@ Info: avalon_st_adapter_002: "mm_interconnect_0" instantiated altera_avalon_st_a
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: error_adapter_0: "avalon_st_adapter_001" instantiated error_adapter "error_adapter_0"
 Info: error_adapter_0: "avalon_st_adapter_002" instantiated error_adapter "error_adapter_0"
-Info: nios_system_tb: Done "nios_system_tb" with 59 modules, 109 files
+Info: nios_system_tb: Done "nios_system_tb" with 60 modules, 110 files
 Info: qsys-generate succeeded.
 Info: sim-script-gen --spd=/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system_tb.spd --output-directory=/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/ --use-relative-paths=true
 Info: Doing: ip-make-simscript --spd=/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system_tb.spd --output-directory=/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/ --use-relative-paths=true
@@ -642,7 +649,7 @@ Info: Generating the following file(s) for NCSIM simulator in /home/ecegrid/a/69
 Info: 	cadence/cds.lib
 Info: 	cadence/hdl.var
 Info: 	cadence/ncsim_setup.sh
-Info: 	57 .cds.lib files in cadence/cds_libs/ directory
+Info: 	58 .cds.lib files in cadence/cds_libs/ directory
 Info: Generating the following file(s) for RIVIERA simulator in /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/ directory:
 Info: 	aldec/rivierapro_setup.tcl
 Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/.

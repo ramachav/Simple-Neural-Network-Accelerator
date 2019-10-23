@@ -45,7 +45,7 @@
    {
       datum baseAddress
       {
-         value = "278933656";
+         value = "278933712";
          type = "String";
       }
    }
@@ -113,6 +113,22 @@
          type = "String";
       }
    }
+   element timer_0
+   {
+      datum _sortIndex
+      {
+         value = "15";
+         type = "int";
+      }
+   }
+   element timer_0.s1
+   {
+      datum baseAddress
+      {
+         value = "278933664";
+         type = "String";
+      }
+   }
    element tristate_conduit_bridge_0
    {
       datum _sortIndex
@@ -157,7 +173,7 @@
    {
       datum baseAddress
       {
-         value = "278933648";
+         value = "278933720";
          type = "String";
       }
    }
@@ -181,7 +197,7 @@
    {
       datum baseAddress
       {
-         value = "278933632";
+         value = "278933696";
          type = "String";
       }
    }
@@ -370,7 +386,7 @@
   <parameter name="cpuReset" value="false" />
   <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
   <parameter name="dataAddrWidth" value="29" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='new_sdram_controller_0.s1' start='0x8000000' end='0x10000000' /><slave name='generic_tristate_controller_0.uas' start='0x10000000' end='0x10800000' /><slave name='sram_0.avalon_sram_slave' start='0x10800000' end='0x10A00000' /><slave name='video_character_buffer_with_dma_0.avalon_char_buffer_slave' start='0x10A00000' end='0x10A02000' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x10A02800' end='0x10A03000' /><slave name='performance_counter_0.control_slave' start='0x10A03000' end='0x10A03080' /><slave name='video_pixel_buffer_dma_0.avalon_control_slave' start='0x10A03080' end='0x10A03090' /><slave name='video_character_buffer_with_dma_0.avalon_char_control_slave' start='0x10A03090' end='0x10A03098' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x10A03098' end='0x10A030A0' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='new_sdram_controller_0.s1' start='0x8000000' end='0x10000000' /><slave name='generic_tristate_controller_0.uas' start='0x10000000' end='0x10800000' /><slave name='sram_0.avalon_sram_slave' start='0x10800000' end='0x10A00000' /><slave name='video_character_buffer_with_dma_0.avalon_char_buffer_slave' start='0x10A00000' end='0x10A02000' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x10A02800' end='0x10A03000' /><slave name='performance_counter_0.control_slave' start='0x10A03000' end='0x10A03080' /><slave name='timer_0.s1' start='0x10A030A0' end='0x10A030C0' /><slave name='video_pixel_buffer_dma_0.avalon_control_slave' start='0x10A030C0' end='0x10A030D0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x10A030D0' end='0x10A030D8' /><slave name='video_character_buffer_with_dma_0.avalon_char_control_slave' start='0x10A030D8' end='0x10A030E0' /></address-map>]]></parameter>
   <parameter name="dcache_bursts" value="false" />
   <parameter name="dcache_lineSize" value="32" />
   <parameter name="dcache_numTCDM" value="0" />
@@ -397,8 +413,8 @@
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Fast" />
   <parameter name="instAddrWidth" value="29" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='new_sdram_controller_0.s1' start='0x8000000' end='0x10000000' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x10A02800' end='0x10A03000' /></address-map>]]></parameter>
-  <parameter name="internalIrqMaskSystemInfo" value="1" />
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='new_sdram_controller_0.s1' start='0x8000000' end='0x10000000' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x10A02800' end='0x10A03000' /><slave name='timer_0.s1' start='0x10A030A0' end='0x10A030C0' /></address-map>]]></parameter>
+  <parameter name="internalIrqMaskSystemInfo" value="3" />
   <parameter name="manuallyAssignCpuID" value="false" />
   <parameter name="mmu_TLBMissExcOffset" value="0" />
   <parameter name="mmu_TLBMissExcSlave" value="None" />
@@ -499,6 +515,18 @@
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="board" value="DE2-115" />
   <parameter name="pixel_buffer" value="true" />
+ </module>
+ <module name="timer_0" kind="altera_avalon_timer" version="17.0" enabled="1">
+  <parameter name="alwaysRun" value="false" />
+  <parameter name="counterSize" value="32" />
+  <parameter name="fixedPeriod" value="false" />
+  <parameter name="period" value="10" />
+  <parameter name="periodUnits" value="SEC" />
+  <parameter name="resetOutput" value="false" />
+  <parameter name="snapshot" value="true" />
+  <parameter name="systemFrequency" value="50000000" />
+  <parameter name="timeoutPulseOutput" value="false" />
+  <parameter name="watchdogPulse" value="2" />
  </module>
  <module
    name="tristate_conduit_bridge_0"
@@ -606,7 +634,7 @@
    start="nios2_qsys_0.data_master"
    end="video_character_buffer_with_dma_0.avalon_char_control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x10a03090" />
+  <parameter name="baseAddress" value="0x10a030d8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -615,7 +643,7 @@
    start="nios2_qsys_0.data_master"
    end="video_pixel_buffer_dma_0.avalon_control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x10a03080" />
+  <parameter name="baseAddress" value="0x10a030c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -624,7 +652,7 @@
    start="nios2_qsys_0.data_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x10a03098" />
+  <parameter name="baseAddress" value="0x10a030d0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -667,6 +695,15 @@
    kind="avalon"
    version="17.0"
    start="nios2_qsys_0.data_master"
+   end="timer_0.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x10a030a0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.0"
+   start="nios2_qsys_0.data_master"
    end="generic_tristate_controller_0.uas">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x10000000" />
@@ -688,6 +725,15 @@
    end="new_sdram_controller_0.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x08000000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.0"
+   start="nios2_qsys_0.instruction_master"
+   end="timer_0.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x10a030a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -763,6 +809,7 @@
    version="17.0"
    start="clk_0.clk"
    end="performance_counter_0.clk" />
+ <connection kind="clock" version="17.0" start="clk_0.clk" end="timer_0.clk" />
  <connection
    kind="clock"
    version="17.0"
@@ -779,6 +826,13 @@
    start="nios2_qsys_0.d_irq"
    end="jtag_uart_0.irq">
   <parameter name="irqNumber" value="0" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="17.0"
+   start="nios2_qsys_0.d_irq"
+   end="timer_0.irq">
+  <parameter name="irqNumber" value="1" />
  </connection>
  <connection
    kind="reset"
@@ -894,6 +948,16 @@
    kind="reset"
    version="17.0"
    start="clk_0.clk_reset"
+   end="timer_0.reset" />
+ <connection
+   kind="reset"
+   version="17.0"
+   start="vga_clk.clk_reset"
+   end="timer_0.reset" />
+ <connection
+   kind="reset"
+   version="17.0"
+   start="clk_0.clk_reset"
    end="nios2_qsys_0.reset_n" />
  <connection
    kind="reset"
@@ -975,6 +1039,11 @@
    version="17.0"
    start="nios2_qsys_0.jtag_debug_module_reset"
    end="performance_counter_0.reset" />
+ <connection
+   kind="reset"
+   version="17.0"
+   start="nios2_qsys_0.jtag_debug_module_reset"
+   end="timer_0.reset" />
  <connection
    kind="reset"
    version="17.0"

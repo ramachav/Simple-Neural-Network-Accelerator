@@ -5,16 +5,28 @@ Progress: Loading Accelerator-Design/nios_system.qsys
 Progress: Reading input file
 Progress: Adding clk_0 [clock_source 17.0]
 Progress: Parameterizing module clk_0
+Progress: Adding generic_tristate_controller_0 [altera_generic_tristate_controller 17.0]
+Progress: Parameterizing module generic_tristate_controller_0
 Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 17.0]
 Progress: Parameterizing module jtag_uart_0
 Progress: Adding new_sdram_controller_0 [altera_avalon_new_sdram_controller 17.0]
 Progress: Parameterizing module new_sdram_controller_0
 Progress: Adding nios2_qsys_0 [altera_nios2_qsys 16.1]
 Progress: Parameterizing module nios2_qsys_0
+Progress: Adding performance_counter_0 [altera_avalon_performance_counter 17.0]
+Progress: Parameterizing module performance_counter_0
 Progress: Adding sram_0 [altera_up_avalon_sram 17.0]
 Progress: Parameterizing module sram_0
+Progress: Adding timer_0 [altera_avalon_timer 17.0]
+Progress: Parameterizing module timer_0
+Progress: Adding tristate_conduit_bridge_0 [altera_tristate_conduit_bridge 17.0]
+Progress: Parameterizing module tristate_conduit_bridge_0
 Progress: Adding vga_clk [clock_source 17.0]
 Progress: Parameterizing module vga_clk
+Progress: Adding video_alpha_blender_0 [altera_up_avalon_video_alpha_blender 17.0]
+Progress: Parameterizing module video_alpha_blender_0
+Progress: Adding video_character_buffer_with_dma_0 [altera_up_avalon_video_character_buffer_with_dma 17.0]
+Progress: Parameterizing module video_character_buffer_with_dma_0
 Progress: Adding video_dual_clock_buffer_0 [altera_up_avalon_video_dual_clock_buffer 17.0]
 Progress: Parameterizing module video_dual_clock_buffer_0
 Progress: Adding video_pixel_buffer_dma_0 [altera_up_avalon_video_pixel_buffer_dma 17.0]
@@ -27,10 +39,12 @@ Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
+Warning: nios_system.generic_tristate_controller_0: Properties (isFlash,isMemoryDevice,isNonVolatileStorage) have been set on interface uas - in composed mode these are ignored
 Info: nios_system.jtag_uart_0: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
 Info: nios_system.new_sdram_controller_0: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
 Warning: nios_system.nios2_qsys_0: Nios II Classic cores are no longer recommended for new projects
 Info: nios_system.nios2_qsys_0: CPUID control register value is 0. Please manually assign CPUID if creating multiple Nios II system
+Info: nios_system.video_character_buffer_with_dma_0: Character Resolution: 80 x 60
 Info: nios_system.video_rgb_resampler_0: RGB Resampling: 16 (bits) x 1 (planes) -> 10 (bits) x 3 (planes)
 Info: nios_system.video_vga_controller_0: Video Output Stream: Format: 640 x 480 with Color: 10 (bits) x 3 (planes) converted to 8 (bits) per color plane
 Info: qsys-generate succeeded.
@@ -47,29 +61,30 @@ Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/ip_component_categ
 Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/ip/**/* matched 0 files in 0.00 seconds
 Info: Reading index /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system.ipx
 Progress: Loading Accelerator-Design/nios_system.qsys
-Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/* matched 7 files in 0.00 seconds
+Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/* matched 19 files in 0.00 seconds
 Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/ip/**/* matched 0 files in 0.00 seconds
-Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/*/* matched 17 files in 0.01 seconds
-Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system.ipx described 0 plugins, 3 paths, in 0.01 seconds
-Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/* matched 4 files in 0.02 seconds
-Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/*/* matched 0 files in 0.02 seconds
+Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/*/* matched 633 files in 0.15 seconds
+Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system.ipx described 0 plugins, 3 paths, in 0.15 seconds
+Progress: Loading testbench/nios_system_tb.qsys
+Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/* matched 12 files in 0.17 seconds
+Info: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/*/* matched 9 files in 0.02 seconds
 Info: /home/ecegrid/a/695r15/.altera.quartus/ip/17.0/**/* matched 0 files in 0.00 seconds
 Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/$$QUARTUS_IP_PROJECTDIR/* matched 0 files in 0.00 seconds
 Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/$$QUARTUS_IP_USERDIR/* matched 0 files in 0.00 seconds
 Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/$$QUARTUS_IP_GLOBALDIR/* matched 0 files in 0.00 seconds
 Info: Reading index /package/eda/altera/altera17.0/ip/altera/altera_components.ipx
-Info: /package/eda/altera/altera17.0/ip/altera/altera_components.ipx described 1996 plugins, 0 paths, in 0.06 seconds
-Info: /package/eda/altera/altera17.0/ip/**/* matched 138 files in 0.13 seconds
+Info: /package/eda/altera/altera17.0/ip/altera/altera_components.ipx described 1996 plugins, 0 paths, in 0.07 seconds
+Info: /package/eda/altera/altera17.0/ip/**/* matched 138 files in 0.09 seconds
 Info: /package/eda/altera/ip/**/* matched 0 files in 0.00 seconds
 Info: Reading index /package/eda/altera/altera17.0/quartus/sopc_builder/builtin.ipx
-Info: /package/eda/altera/altera17.0/quartus/sopc_builder/builtin.ipx described 83 plugins, 0 paths, in 0.00 seconds
-Info: /package/eda/altera/altera17.0/quartus/sopc_builder/**/* matched 9 files in 0.01 seconds
+Info: /package/eda/altera/altera17.0/quartus/sopc_builder/builtin.ipx described 83 plugins, 0 paths, in 0.02 seconds
+Info: /package/eda/altera/altera17.0/quartus/sopc_builder/**/* matched 9 files in 0.02 seconds
 Info: Reading index /package/eda/altera/altera17.0/quartus/common/librarian/factories/index.ipx
-Info: /package/eda/altera/altera17.0/quartus/common/librarian/factories/index.ipx described 151 plugins, 0 paths, in 0.02 seconds
-Info: /package/eda/altera/altera17.0/quartus/common/librarian/factories/**/* matched 4 files in 0.02 seconds
+Info: /package/eda/altera/altera17.0/quartus/common/librarian/factories/index.ipx described 151 plugins, 0 paths, in 0.01 seconds
+Info: /package/eda/altera/altera17.0/quartus/common/librarian/factories/**/* matched 4 files in 0.01 seconds
 Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0.00 seconds
-Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/root_components.ipx described 0 plugins, 13 paths, in 0.20 seconds
-Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0.20 seconds
+Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/root_components.ipx described 0 plugins, 13 paths, in 0.31 seconds
+Info: /package/eda/altera/altera17.0/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0.31 seconds
 Progress: 
 Progress: 
 Progress: 
@@ -99,6 +114,188 @@ Info: get_instance_assignment vga_clk testbench.partner.map.clk_in_reset
 Info: get_interface_property sram_0_external_interface EXPORT_OF
 Info: get_instance_property sram_0 CLASS_NAME
 Info: get_instance_assignment sram_0 testbench.partner.map.external_interface
+Info: get_interface_property tristate_conduit_bridge_0_out EXPORT_OF
+Info: get_instance_property tristate_conduit_bridge_0 CLASS_NAME
+Info: get_instance_assignment tristate_conduit_bridge_0 testbench.partner.map.out
+Info: get_instance_assignment tristate_conduit_bridge_0 testbench.partner.map.out
+Info: get_instance_assignment tristate_conduit_bridge_0 testbench.partner.map.out
+Info: get_instance_assignment tristate_conduit_bridge_0 testbench.partner.tcb_translator.class
+Info: get_instance_assignment tristate_conduit_bridge_0 testbench.partner.tcb_translator.version
+Info: get_instance_assignments tristate_conduit_bridge_0
+Info: get_instance_assignment tristate_conduit_bridge_0 testbench.partner.tcb_translator.parameter.MODULE_ORIGIN_LIST
+Info: get_instance_assignment tristate_conduit_bridge_0 testbench.partner.tcb_translator.parameter.SIGNAL_ORIGIN_LIST
+Info: get_instance_assignment tristate_conduit_bridge_0 testbench.partner.tcb_translator.parameter.SIGNAL_ORIGIN_TYPE
+Info: get_instance_assignment tristate_conduit_bridge_0 testbench.partner.tcb_translator.parameter.SIGNAL_ORIGIN_WIDTH
+Info: send_message Info TB_Gen: Interface 'tristate_conduit_bridge_0_out' partner_name: 'tristate_conduit_bridge_0_tcb_translator'
+Info: TB_Gen: Interface 'tristate_conduit_bridge_0_out' partner_name: 'tristate_conduit_bridge_0_tcb_translator'
+Info: send_message Info TB_Gen: Interface 'tristate_conduit_bridge_0_tcb_translator' tristate_conduit_bridge_0_out.partner_intf: 'in'
+Info: TB_Gen: Interface 'tristate_conduit_bridge_0_tcb_translator' tristate_conduit_bridge_0_out.partner_intf: 'in'
+Info: send_message Info TB_Gen: Interface 'tristate_conduit_bridge_0_tcb_translator' partner_class: 'altera_tristate_conduit_bridge_translator'
+Info: TB_Gen: Interface 'tristate_conduit_bridge_0_tcb_translator' partner_class: 'altera_tristate_conduit_bridge_translator'
+Info: send_message Info TB_Gen: Interface 'tristate_conduit_bridge_0_tcb_translator' partner_version: ''
+Info: TB_Gen: Interface 'tristate_conduit_bridge_0_tcb_translator' partner_version: ''
+Info: send_message Info TB_Gen: Interface 'tristate_conduit_bridge_0_tcb_translator' partner_param.MODULE_ORIGIN_LIST: 'generic_tristate_controller_0.tcm generic_tristate_controller_0.tcm generic_tristate_controller_0.tcm generic_tristate_controller_0.tcm generic_tristate_controller_0.tcm'
+Info: TB_Gen: Interface 'tristate_conduit_bridge_0_tcb_translator' partner_param.MODULE_ORIGIN_LIST: 'generic_tristate_controller_0.tcm generic_tristate_controller_0.tcm generic_tristate_controller_0.tcm generic_tristate_controller_0.tcm generic_tristate_controller_0.tcm'
+Info: send_message Info TB_Gen: Interface 'tristate_conduit_bridge_0_tcb_translator' partner_param.SIGNAL_ORIGIN_LIST: 'tcm_address_out tcm_read_n_out tcm_write_n_out tcm_data_out tcm_chipselect_n_out'
+Info: TB_Gen: Interface 'tristate_conduit_bridge_0_tcb_translator' partner_param.SIGNAL_ORIGIN_LIST: 'tcm_address_out tcm_read_n_out tcm_write_n_out tcm_data_out tcm_chipselect_n_out'
+Info: send_message Info TB_Gen: Interface 'tristate_conduit_bridge_0_tcb_translator' partner_param.SIGNAL_ORIGIN_TYPE: 'Output Output Output Bidirectional Output'
+Info: TB_Gen: Interface 'tristate_conduit_bridge_0_tcb_translator' partner_param.SIGNAL_ORIGIN_TYPE: 'Output Output Output Bidirectional Output'
+Info: send_message Info TB_Gen: Interface 'tristate_conduit_bridge_0_tcb_translator' partner_param.SIGNAL_ORIGIN_WIDTH: '23 1 1 8 1'
+Info: TB_Gen: Interface 'tristate_conduit_bridge_0_tcb_translator' partner_param.SIGNAL_ORIGIN_WIDTH: '23 1 1 8 1'
+Info: send_message Info TB_Gen: Interface 'tristate_conduit_bridge_0_tcb_translator' partner_params: 'MODULE_ORIGIN_LIST SIGNAL_ORIGIN_LIST SIGNAL_ORIGIN_TYPE SIGNAL_ORIGIN_WIDTH'
+Info: TB_Gen: Interface 'tristate_conduit_bridge_0_tcb_translator' partner_params: 'MODULE_ORIGIN_LIST SIGNAL_ORIGIN_LIST SIGNAL_ORIGIN_TYPE SIGNAL_ORIGIN_WIDTH'
+Info: get_instance_assignments tristate_conduit_bridge_0
+Info: get_instance_interfaces tristate_conduit_bridge_0
+Info: get_instance_property tristate_conduit_bridge_0 CLASS_NAME
+Info: get_instance_interfaces tristate_conduit_bridge_0
+Info: get_instance_interface_property tristate_conduit_bridge_0 clk CLASS_NAME
+Info: get_instance_interface_property tristate_conduit_bridge_0 out CLASS_NAME
+Info: get_instance_interface_property tristate_conduit_bridge_0 reset CLASS_NAME
+Info: get_instance_interface_property tristate_conduit_bridge_0 tcs CLASS_NAME
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.map.tcm
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.map.tcm
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.map.tcm
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.class
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.version
+Info: get_instance_assignments generic_tristate_controller_0
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.ACTIVE_LOW_BEGINTRANSFER
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.ACTIVE_LOW_BYTEENABLE
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.ACTIVE_LOW_CHIPSELECT
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.ACTIVE_LOW_OUTPUTENABLE
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.ACTIVE_LOW_READ
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.ACTIVE_LOW_RESET
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.ACTIVE_LOW_WRITE
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.CDT_ADDRESS_W
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.CDT_NUMSYMBOLS
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.CDT_READ_LATENCY
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.CDT_SYMBOL_W
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.SIGNAL_ADDRESS_ROLES
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.SIGNAL_BEGINTRANSFER_ROLES
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.SIGNAL_BYTEENABLE_ROLES
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.SIGNAL_CHIPSELECT_ROLES
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.SIGNAL_DATA_ROLES
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.SIGNAL_OUTPUTENABLE_ROLES
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.SIGNAL_READ_ROLES
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.SIGNAL_RESET_ROLES
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.SIGNAL_WRITE_ROLES
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.USE_BEGINTRANSFER
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.USE_BYTEENABLE
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.USE_CHIPSELECT
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.USE_OUTPUTENABLE
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.USE_READ
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.USE_RESET
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.external_mem_bfm.parameter.USE_WRITE
+Info: send_message Info TB_Gen: Interface 'tristate_conduit_bridge_0_out:tristate_conduit_bridge_0_tcb_translator:out' partner_name: 'generic_tristate_controller_0_external_mem_bfm'
+Info: TB_Gen: Interface 'tristate_conduit_bridge_0_out:tristate_conduit_bridge_0_tcb_translator:out' partner_name: 'generic_tristate_controller_0_external_mem_bfm'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' tristate_conduit_bridge_0_out:tristate_conduit_bridge_0_tcb_translator:out.partner_intf: 'conduit'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' tristate_conduit_bridge_0_out:tristate_conduit_bridge_0_tcb_translator:out.partner_intf: 'conduit'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_class: 'altera_external_memory_bfm'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_class: 'altera_external_memory_bfm'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_version: ''
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_version: ''
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.ACTIVE_LOW_BEGINTRANSFER: '0'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.ACTIVE_LOW_BEGINTRANSFER: '0'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.ACTIVE_LOW_BYTEENABLE: '0'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.ACTIVE_LOW_BYTEENABLE: '0'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.ACTIVE_LOW_CHIPSELECT: '1'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.ACTIVE_LOW_CHIPSELECT: '1'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.ACTIVE_LOW_OUTPUTENABLE: '0'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.ACTIVE_LOW_OUTPUTENABLE: '0'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.ACTIVE_LOW_READ: '1'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.ACTIVE_LOW_READ: '1'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.ACTIVE_LOW_RESET: '0'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.ACTIVE_LOW_RESET: '0'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.ACTIVE_LOW_WRITE: '1'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.ACTIVE_LOW_WRITE: '1'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.CDT_ADDRESS_W: '23'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.CDT_ADDRESS_W: '23'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.CDT_NUMSYMBOLS: '1'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.CDT_NUMSYMBOLS: '1'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.CDT_READ_LATENCY: '0'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.CDT_READ_LATENCY: '0'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.CDT_SYMBOL_W: '8'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.CDT_SYMBOL_W: '8'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.SIGNAL_ADDRESS_ROLES: 'tcm_address_out'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.SIGNAL_ADDRESS_ROLES: 'tcm_address_out'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.SIGNAL_BEGINTRANSFER_ROLES: 'tcm_begintransfer_out'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.SIGNAL_BEGINTRANSFER_ROLES: 'tcm_begintransfer_out'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.SIGNAL_BYTEENABLE_ROLES: 'tcm_byteenable_out'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.SIGNAL_BYTEENABLE_ROLES: 'tcm_byteenable_out'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.SIGNAL_CHIPSELECT_ROLES: 'tcm_chipselect_n_out'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.SIGNAL_CHIPSELECT_ROLES: 'tcm_chipselect_n_out'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.SIGNAL_DATA_ROLES: 'tcm_data_out'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.SIGNAL_DATA_ROLES: 'tcm_data_out'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.SIGNAL_OUTPUTENABLE_ROLES: 'tcm_outputenable_out'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.SIGNAL_OUTPUTENABLE_ROLES: 'tcm_outputenable_out'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.SIGNAL_READ_ROLES: 'tcm_read_n_out'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.SIGNAL_READ_ROLES: 'tcm_read_n_out'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.SIGNAL_RESET_ROLES: 'tcm_reset_out'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.SIGNAL_RESET_ROLES: 'tcm_reset_out'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.SIGNAL_WRITE_ROLES: 'tcm_write_n_out'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.SIGNAL_WRITE_ROLES: 'tcm_write_n_out'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.USE_BEGINTRANSFER: '0'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.USE_BEGINTRANSFER: '0'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.USE_BYTEENABLE: '0'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.USE_BYTEENABLE: '0'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.USE_CHIPSELECT: '1'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.USE_CHIPSELECT: '1'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.USE_OUTPUTENABLE: '0'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.USE_OUTPUTENABLE: '0'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.USE_READ: '1'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.USE_READ: '1'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.USE_RESET: '0'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.USE_RESET: '0'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.USE_WRITE: '1'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_param.USE_WRITE: '1'
+Info: send_message Info TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_params: 'ACTIVE_LOW_BEGINTRANSFER ACTIVE_LOW_BYTEENABLE ACTIVE_LOW_CHIPSELECT ACTIVE_LOW_OUTPUTENABLE ACTIVE_LOW_READ ACTIVE_LOW_RESET ACTIVE_LOW_WRITE CDT_ADDRESS_W CDT_NUMSYMBOLS CDT_READ_LATENCY CDT_SYMBOL_W SIGNAL_ADDRESS_ROLES SIGNAL_BEGINTRANSFER_ROLES SIGNAL_BYTEENABLE_ROLES SIGNAL_CHIPSELECT_ROLES SIGNAL_DATA_ROLES SIGNAL_OUTPUTENABLE_ROLES SIGNAL_READ_ROLES SIGNAL_RESET_ROLES SIGNAL_WRITE_ROLES USE_BEGINTRANSFER USE_BYTEENABLE USE_CHIPSELECT USE_OUTPUTENABLE USE_READ USE_RESET USE_WRITE'
+Info: TB_Gen: Interface 'generic_tristate_controller_0_external_mem_bfm' partner_params: 'ACTIVE_LOW_BEGINTRANSFER ACTIVE_LOW_BYTEENABLE ACTIVE_LOW_CHIPSELECT ACTIVE_LOW_OUTPUTENABLE ACTIVE_LOW_READ ACTIVE_LOW_RESET ACTIVE_LOW_WRITE CDT_ADDRESS_W CDT_NUMSYMBOLS CDT_READ_LATENCY CDT_SYMBOL_W SIGNAL_ADDRESS_ROLES SIGNAL_BEGINTRANSFER_ROLES SIGNAL_BYTEENABLE_ROLES SIGNAL_CHIPSELECT_ROLES SIGNAL_DATA_ROLES SIGNAL_OUTPUTENABLE_ROLES SIGNAL_READ_ROLES SIGNAL_RESET_ROLES SIGNAL_WRITE_ROLES USE_BEGINTRANSFER USE_BYTEENABLE USE_CHIPSELECT USE_OUTPUTENABLE USE_READ USE_RESET USE_WRITE'
+Info: get_instance_assignments generic_tristate_controller_0
+Info: get_instance_interfaces generic_tristate_controller_0
+Info: get_instance_interfaces generic_tristate_controller_0
+Info: get_interface_property clk EXPORT_OF
+Info: get_interface_property clk_0 EXPORT_OF
+Info: get_interface_property new_sdram_controller_0_wire EXPORT_OF
+Info: get_interface_property reset EXPORT_OF
+Info: get_interface_property reset_0 EXPORT_OF
+Info: get_interface_property sram_0_external_interface EXPORT_OF
+Info: get_interface_property tristate_conduit_bridge_0_out EXPORT_OF
+Info: get_interface_property video_vga_controller_0_external_interface EXPORT_OF
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.map.clk
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.map.clk
+Info: get_instance_assignment generic_tristate_controller_0 testbench.partner.map.clk
+Info: get_instance_interface_property generic_tristate_controller_0 clk CLASS_NAME
+Info: get_instance_interface_parameter_value generic_tristate_controller_0 clk clockRate
+Info: get_instance_interface_property generic_tristate_controller_0 clk CLASS_NAME
+Info: get_interface_property clk EXPORT_OF
+Info: get_interface_property clk_0 EXPORT_OF
+Info: get_interface_property new_sdram_controller_0_wire EXPORT_OF
+Info: get_interface_property reset EXPORT_OF
+Info: get_interface_property reset_0 EXPORT_OF
+Info: get_interface_property sram_0_external_interface EXPORT_OF
+Info: get_interface_property tristate_conduit_bridge_0_out EXPORT_OF
+Info: get_interface_property video_vga_controller_0_external_interface EXPORT_OF
+Info: get_instance_property clk_0 CLASS_NAME
+Info: get_instance_interfaces clk_0
+Info: get_instance_interface_property clk_0 clk CLASS_NAME
+Info: get_instance_interface_property clk_0 clk_in CLASS_NAME
+Info: get_instance_interface_property clk_0 clk_in_reset CLASS_NAME
+Info: get_instance_interface_property clk_0 clk_reset CLASS_NAME
+Info: get_interface_property clk EXPORT_OF
+Info: get_instance_interfaces clk_0
+Info: get_instance_interface_property clk_0 clk CLASS_NAME
+Info: get_instance_interface_property clk_0 clk_in CLASS_NAME
+Info: get_instance_interface_property clk_0 clk_in_reset CLASS_NAME
+Info: get_instance_interface_property clk_0 clk_reset CLASS_NAME
+Info: get_instance_interface_parameter_value clk_0 clk clockRate
+Info: send_message Info TB_Gen: Implicit assignment 'generic_tristate_controller_0_external_mem_bfm' partner_implicit_name: 'generic_tristate_controller_0_external_mem_bfm'
+Info: TB_Gen: Implicit assignment 'generic_tristate_controller_0_external_mem_bfm' partner_implicit_name: 'generic_tristate_controller_0_external_mem_bfm'
+Info: send_message Info TB_Gen: Implicit assignment 'generic_tristate_controller_0_external_mem_bfm' partner_implicit_clks: 'clk'
+Info: TB_Gen: Implicit assignment 'generic_tristate_controller_0_external_mem_bfm' partner_implicit_clks: 'clk'
+Info: send_message Info TB_Gen: Implicit assignment 'generic_tristate_controller_0_external_mem_bfm' clk.partner_implicit_clk_rate: '50000000.0'
+Info: TB_Gen: Implicit assignment 'generic_tristate_controller_0_external_mem_bfm' clk.partner_implicit_clk_rate: '50000000.0'
+Info: send_message Info TB_Gen: Implicit assignment 'generic_tristate_controller_0_external_mem_bfm' clk.partner_implicit_clk_export: 'clk'
+Info: TB_Gen: Implicit assignment 'generic_tristate_controller_0_external_mem_bfm' clk.partner_implicit_clk_export: 'clk'
+Info: get_instance_property generic_tristate_controller_0 CLASS_NAME
 Info: get_interface_property video_vga_controller_0_external_interface EXPORT_OF
 Info: get_instance_property video_vga_controller_0 CLASS_NAME
 Info: get_instance_assignment video_vga_controller_0 testbench.partner.map.external_interface
@@ -114,6 +311,7 @@ Info: get_instance_interface_property nios_system_inst new_sdram_controller_0_wi
 Info: get_instance_interface_property nios_system_inst reset CLASS_NAME
 Info: get_instance_interface_property nios_system_inst reset_0 CLASS_NAME
 Info: get_instance_interface_property nios_system_inst sram_0_external_interface CLASS_NAME
+Info: get_instance_interface_property nios_system_inst tristate_conduit_bridge_0_out CLASS_NAME
 Info: get_instance_interface_property nios_system_inst video_vga_controller_0_external_interface CLASS_NAME
 Info: get_instance_interface_property nios_system_inst clk CLASS_NAME
 Info: send_message Info TB_Gen: clock_sink found: clk
@@ -197,6 +395,59 @@ Info: get_instance_interfaces nios_system_inst_reset_0_bfm
 Info: get_instance_interface_property nios_system_inst_reset_0_bfm clk CLASS_NAME
 Info: get_instance_interface_property nios_system_inst_reset_0_bfm reset CLASS_NAME
 Info: add_connection nios_system_inst_reset_0_bfm.reset nios_system_inst.reset_0
+Info: get_instance_interface_property nios_system_inst tristate_conduit_bridge_0_out CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end (for partner module) found: tristate_conduit_bridge_0_out
+Info: TB_Gen: conduit_end (for partner module) found: tristate_conduit_bridge_0_out
+Info: add_instance tristate_conduit_bridge_0_tcb_translator altera_tristate_conduit_bridge_translator 
+Info: set_instance_parameter_value tristate_conduit_bridge_0_tcb_translator MODULE_ORIGIN_LIST generic_tristate_controller_0.tcm generic_tristate_controller_0.tcm generic_tristate_controller_0.tcm generic_tristate_controller_0.tcm generic_tristate_controller_0.tcm
+Info: set_instance_parameter_value tristate_conduit_bridge_0_tcb_translator SIGNAL_ORIGIN_LIST tcm_address_out tcm_read_n_out tcm_write_n_out tcm_data_out tcm_chipselect_n_out
+Info: set_instance_parameter_value tristate_conduit_bridge_0_tcb_translator SIGNAL_ORIGIN_TYPE Output Output Output Bidirectional Output
+Info: set_instance_parameter_value tristate_conduit_bridge_0_tcb_translator SIGNAL_ORIGIN_WIDTH 23 1 1 8 1
+Info: get_instance_interface_property nios_system_inst tristate_conduit_bridge_0_out CLASS_NAME
+Info: get_instance_interface_property tristate_conduit_bridge_0_tcb_translator in CLASS_NAME
+Info: get_instance_interface_property nios_system_inst tristate_conduit_bridge_0_out CLASS_NAME
+Info: get_instance_interface_property tristate_conduit_bridge_0_tcb_translator in CLASS_NAME
+Info: add_connection tristate_conduit_bridge_0_tcb_translator.in nios_system_inst.tristate_conduit_bridge_0_out
+Info: add_instance generic_tristate_controller_0_external_mem_bfm altera_external_memory_bfm 
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm ACTIVE_LOW_BEGINTRANSFER 0
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm ACTIVE_LOW_BYTEENABLE 0
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm ACTIVE_LOW_CHIPSELECT 1
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm ACTIVE_LOW_OUTPUTENABLE 0
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm ACTIVE_LOW_READ 1
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm ACTIVE_LOW_RESET 0
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm ACTIVE_LOW_WRITE 1
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm CDT_ADDRESS_W 23
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm CDT_NUMSYMBOLS 1
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm CDT_READ_LATENCY 0
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm CDT_SYMBOL_W 8
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm SIGNAL_ADDRESS_ROLES tcm_address_out
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm SIGNAL_BEGINTRANSFER_ROLES tcm_begintransfer_out
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm SIGNAL_BYTEENABLE_ROLES tcm_byteenable_out
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm SIGNAL_CHIPSELECT_ROLES tcm_chipselect_n_out
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm SIGNAL_DATA_ROLES tcm_data_out
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm SIGNAL_OUTPUTENABLE_ROLES tcm_outputenable_out
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm SIGNAL_READ_ROLES tcm_read_n_out
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm SIGNAL_RESET_ROLES tcm_reset_out
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm SIGNAL_WRITE_ROLES tcm_write_n_out
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm USE_BEGINTRANSFER 0
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm USE_BYTEENABLE 0
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm USE_CHIPSELECT 1
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm USE_OUTPUTENABLE 0
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm USE_READ 1
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm USE_RESET 0
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm USE_WRITE 1
+Info: set_instance_parameter_value generic_tristate_controller_0_external_mem_bfm VHDL_ID 0
+Info: get_instance_interface_property tristate_conduit_bridge_0_tcb_translator out CLASS_NAME
+Info: get_instance_interface_property generic_tristate_controller_0_external_mem_bfm conduit CLASS_NAME
+Info: get_instance_interface_property tristate_conduit_bridge_0_tcb_translator out CLASS_NAME
+Info: get_instance_interface_property generic_tristate_controller_0_external_mem_bfm conduit CLASS_NAME
+Info: add_connection generic_tristate_controller_0_external_mem_bfm.conduit tristate_conduit_bridge_0_tcb_translator.out
+Info: get_instance_interface_property generic_tristate_controller_0_external_mem_bfm clk CLASS_NAME
+Info: get_instance_interface_property nios_system_inst clk CLASS_NAME
+Info: get_instance_interface_property generic_tristate_controller_0_external_mem_bfm clk CLASS_NAME
+Info: get_instance_interfaces nios_system_inst_clk_bfm
+Info: get_instance_interface_property nios_system_inst_clk_bfm clk CLASS_NAME
+Info: add_connection nios_system_inst_clk_bfm.clk generic_tristate_controller_0_external_mem_bfm.clk
 Info: send_message Info TB_Gen: Saving testbench system: nios_system_tb.qsys
 Info: TB_Gen: Saving testbench system: nios_system_tb.qsys
 Info: save_system nios_system_tb.qsys
@@ -207,6 +458,8 @@ Info: Done
 Info: qsys-generate /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system.qsys --simulation=VERILOG --allow-mixed-language-simulation --testbench=SIMPLE --testbench-simulation=VERILOG --allow-mixed-language-testbench-simulation --output-directory=/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading testbench/nios_system_tb.qsys
 Progress: Reading input file
+Progress: Adding generic_tristate_controller_0_external_mem_bfm [altera_external_memory_bfm 17.0]
+Progress: Parameterizing module generic_tristate_controller_0_external_mem_bfm
 Progress: Adding nios_system_inst [nios_system 1.0]
 Progress: Parameterizing module nios_system_inst
 Progress: Adding nios_system_inst_clk_0_bfm [altera_avalon_clock_source 17.0]
@@ -217,14 +470,18 @@ Progress: Adding nios_system_inst_reset_0_bfm [altera_avalon_reset_source 17.0]
 Progress: Parameterizing module nios_system_inst_reset_0_bfm
 Progress: Adding nios_system_inst_reset_bfm [altera_avalon_reset_source 17.0]
 Progress: Parameterizing module nios_system_inst_reset_bfm
+Progress: Adding tristate_conduit_bridge_0_tcb_translator [altera_tristate_conduit_bridge_translator 17.0]
+Progress: Parameterizing module tristate_conduit_bridge_0_tcb_translator
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
+Warning: nios_system_tb.nios_system_inst.generic_tristate_controller_0: Properties (isFlash,isMemoryDevice,isNonVolatileStorage) have been set on interface uas - in composed mode these are ignored
 Info: nios_system_tb.nios_system_inst.jtag_uart_0: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
 Info: nios_system_tb.nios_system_inst.new_sdram_controller_0: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
 Warning: nios_system_tb.nios_system_inst.nios2_qsys_0: Nios II Classic cores are no longer recommended for new projects
 Info: nios_system_tb.nios_system_inst.nios2_qsys_0: CPUID control register value is 0. Please manually assign CPUID if creating multiple Nios II system
+Info: nios_system_tb.nios_system_inst.video_character_buffer_with_dma_0: Character Resolution: 80 x 60
 Info: nios_system_tb.nios_system_inst.video_rgb_resampler_0: RGB Resampling: 16 (bits) x 1 (planes) -> 10 (bits) x 3 (planes)
 Info: nios_system_tb.nios_system_inst.video_vga_controller_0: Video Output Stream: Format: 640 x 480 with Color: 10 (bits) x 3 (planes) converted to 8 (bits) per color plane
 Info: nios_system_tb.nios_system_inst_clk_0_bfm: Elaborate: altera_clock_source
@@ -245,48 +502,70 @@ Warning: nios_system_tb.nios_system_inst: nios_system_inst.new_sdram_controller_
 Warning: nios_system_tb.nios_system_inst: nios_system_inst.sram_0_external_interface must be exported, or connected to a matching conduit.
 Warning: nios_system_tb.nios_system_inst: nios_system_inst.video_vga_controller_0_external_interface must be exported, or connected to a matching conduit.
 Info: nios_system_tb: Generating nios_system_tb "nios_system_tb" for SIM_VERILOG
+Warning: generic_tristate_controller_0_external_mem_bfm: get_parameter_value: Getting the value of INIT_FILE from generate2 callback may cause errors (as AFFECTS_GENERATION is false for this parameter)
+Info: generic_tristate_controller_0_external_mem_bfm: "nios_system_tb" instantiated altera_external_memory_bfm "generic_tristate_controller_0_external_mem_bfm"
 Info: nios_system_inst: "nios_system_tb" instantiated nios_system "nios_system_inst"
 Info: nios_system_inst_clk_0_bfm: "nios_system_tb" instantiated altera_avalon_clock_source "nios_system_inst_clk_0_bfm"
 Info: nios_system_inst_reset_0_bfm: "nios_system_tb" instantiated altera_avalon_reset_source "nios_system_inst_reset_0_bfm"
 Info: Reusing file /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/verbosity_pkg.sv
+Warning: tristate_conduit_bridge_0_tcb_translator: get_parameter_value: Getting the value of CHAIN_LENGTH from generate2 callback may cause errors (as AFFECTS_GENERATION is false for this parameter)
+Warning: tristate_conduit_bridge_0_tcb_translator: get_parameter_value: Getting the value of MODULE_ORIGIN_LIST from generate2 callback may cause errors (as AFFECTS_GENERATION is false for this parameter)
+Warning: tristate_conduit_bridge_0_tcb_translator: get_parameter_value: Getting the value of SIGNAL_ORIGIN_LIST from generate2 callback may cause errors (as AFFECTS_GENERATION is false for this parameter)
+Warning: tristate_conduit_bridge_0_tcb_translator: get_parameter_value: Getting the value of SIGNAL_ORIGIN_TYPE from generate2 callback may cause errors (as AFFECTS_GENERATION is false for this parameter)
+Warning: tristate_conduit_bridge_0_tcb_translator: get_parameter_value: Getting the value of SIGNAL_ORIGIN_WIDTH from generate2 callback may cause errors (as AFFECTS_GENERATION is false for this parameter)
+Info: tristate_conduit_bridge_0_tcb_translator: "nios_system_tb" instantiated altera_tristate_conduit_bridge_translator "tristate_conduit_bridge_0_tcb_translator"
+Info: generic_tristate_controller_0: "nios_system_inst" instantiated altera_generic_tristate_controller "generic_tristate_controller_0"
 Info: jtag_uart_0: Starting RTL generation for module 'nios_system_jtag_uart_0'
-Info: jtag_uart_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64/perl/bin/perl -I /package/eda/altera/altera17.0/quartus/linux64/perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/common -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=nios_system_jtag_uart_0 --dir=/tmp/alt8191_2707233678379907814.dir/0079_jtag_uart_0_gen/ --quartus_dir=/package/eda/altera/altera17.0/quartus --verilog --config=/tmp/alt8191_2707233678379907814.dir/0079_jtag_uart_0_gen//nios_system_jtag_uart_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8191_2707233678379907814.dir/0079_jtag_uart_0_gen/  ]
+Info: jtag_uart_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64/perl/bin/perl -I /package/eda/altera/altera17.0/quartus/linux64/perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/common -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=nios_system_jtag_uart_0 --dir=/tmp/alt8192_7786874049002831238.dir/0260_jtag_uart_0_gen/ --quartus_dir=/package/eda/altera/altera17.0/quartus --verilog --config=/tmp/alt8192_7786874049002831238.dir/0260_jtag_uart_0_gen//nios_system_jtag_uart_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8192_7786874049002831238.dir/0260_jtag_uart_0_gen/  ]
 Info: jtag_uart_0: Done RTL generation for module 'nios_system_jtag_uart_0'
 Info: jtag_uart_0: "nios_system_inst" instantiated altera_avalon_jtag_uart "jtag_uart_0"
 Info: new_sdram_controller_0: Starting RTL generation for module 'nios_system_new_sdram_controller_0'
-Info: new_sdram_controller_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64/perl/bin/perl -I /package/eda/altera/altera17.0/quartus/linux64/perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/common -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=nios_system_new_sdram_controller_0 --dir=/tmp/alt8191_2707233678379907814.dir/0080_new_sdram_controller_0_gen/ --quartus_dir=/package/eda/altera/altera17.0/quartus --verilog --config=/tmp/alt8191_2707233678379907814.dir/0080_new_sdram_controller_0_gen//nios_system_new_sdram_controller_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8191_2707233678379907814.dir/0080_new_sdram_controller_0_gen/  ]
+Info: new_sdram_controller_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64/perl/bin/perl -I /package/eda/altera/altera17.0/quartus/linux64/perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/common -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=nios_system_new_sdram_controller_0 --dir=/tmp/alt8192_7786874049002831238.dir/0261_new_sdram_controller_0_gen/ --quartus_dir=/package/eda/altera/altera17.0/quartus --verilog --config=/tmp/alt8192_7786874049002831238.dir/0261_new_sdram_controller_0_gen//nios_system_new_sdram_controller_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8192_7786874049002831238.dir/0261_new_sdram_controller_0_gen/  ]
 Info: new_sdram_controller_0: Done RTL generation for module 'nios_system_new_sdram_controller_0'
 Info: new_sdram_controller_0: "nios_system_inst" instantiated altera_avalon_new_sdram_controller "new_sdram_controller_0"
 Info: nios2_qsys_0: Starting RTL generation for module 'nios_system_nios2_qsys_0'
-Info: nios2_qsys_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64/eperlcmd -I /package/eda/altera/altera17.0/quartus/linux64/perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2 -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2 -- /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=nios_system_nios2_qsys_0 --dir=/tmp/alt8191_2707233678379907814.dir/0081_nios2_qsys_0_gen/ --quartus_bindir=/package/eda/altera/altera17.0/quartus/linux64 --verilog --config=/tmp/alt8191_2707233678379907814.dir/0081_nios2_qsys_0_gen//nios_system_nios2_qsys_0_processor_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8191_2707233678379907814.dir/0081_nios2_qsys_0_gen/  ]
-Info: nios2_qsys_0: # 2019.10.22 18:52:46 (*) Starting Nios II generation
-Info: nios2_qsys_0: # 2019.10.22 18:52:46 (*)   Checking for plaintext license.
-Info: nios2_qsys_0: # 2019.10.22 18:52:47 (*)   Couldn't query license setup in Quartus directory /package/eda/altera/altera17.0/quartus/linux64
-Info: nios2_qsys_0: # 2019.10.22 18:52:47 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: nios2_qsys_0: # 2019.10.22 18:52:47 (*)   Plaintext license not found.
-Info: nios2_qsys_0: # 2019.10.22 18:52:47 (*)   Checking for encrypted license (non-evaluation).
-Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)   Couldn't query license setup in Quartus directory /package/eda/altera/altera17.0/quartus/linux64
-Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)   Encrypted license found.  SOF will not be time-limited.
-Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)   Elaborating CPU configuration settings
-Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)   Creating all objects for CPU
-Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)     Testbench
-Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)     Instruction decoding
-Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)       Instruction fields
-Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)       Instruction decodes
-Info: nios2_qsys_0: # 2019.10.22 18:52:48 (*)       Signals for RTL simulation waveforms
-Info: nios2_qsys_0: # 2019.10.22 18:52:49 (*)       Instruction controls
-Info: nios2_qsys_0: # 2019.10.22 18:52:49 (*)     Pipeline frontend
-Info: nios2_qsys_0: # 2019.10.22 18:52:49 (*)     Pipeline backend
-Info: nios2_qsys_0: # 2019.10.22 18:52:50 (*)   Creating '/tmp/alt8191_2707233678379907814.dir/0081_nios2_qsys_0_gen//nios_system_nios2_qsys_0_nios2_waves.do'
-Info: nios2_qsys_0: # 2019.10.22 18:52:50 (*)   Generating RTL from CPU objects
-Info: nios2_qsys_0: # 2019.10.22 18:52:51 (*)   Creating encrypted RTL
-Info: nios2_qsys_0: # 2019.10.22 18:52:51 (*)   Creating IP functional simulation model
-Info: nios2_qsys_0: # 2019.10.22 18:53:09 (*) Done Nios II generation
+Info: nios2_qsys_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64/eperlcmd -I /package/eda/altera/altera17.0/quartus/linux64/perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2 -I /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2 -- /package/eda/altera/altera17.0/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=nios_system_nios2_qsys_0 --dir=/tmp/alt8192_7786874049002831238.dir/0262_nios2_qsys_0_gen/ --quartus_bindir=/package/eda/altera/altera17.0/quartus/linux64 --verilog --config=/tmp/alt8192_7786874049002831238.dir/0262_nios2_qsys_0_gen//nios_system_nios2_qsys_0_processor_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8192_7786874049002831238.dir/0262_nios2_qsys_0_gen/  ]
+Info: nios2_qsys_0: # 2019.10.23 17:25:58 (*) Starting Nios II generation
+Info: nios2_qsys_0: # 2019.10.23 17:25:58 (*)   Checking for plaintext license.
+Info: nios2_qsys_0: # 2019.10.23 17:25:59 (*)   Couldn't query license setup in Quartus directory /package/eda/altera/altera17.0/quartus/linux64
+Info: nios2_qsys_0: # 2019.10.23 17:25:59 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: nios2_qsys_0: # 2019.10.23 17:25:59 (*)   Plaintext license not found.
+Info: nios2_qsys_0: # 2019.10.23 17:25:59 (*)   Checking for encrypted license (non-evaluation).
+Info: nios2_qsys_0: # 2019.10.23 17:26:00 (*)   Couldn't query license setup in Quartus directory /package/eda/altera/altera17.0/quartus/linux64
+Info: nios2_qsys_0: # 2019.10.23 17:26:00 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: nios2_qsys_0: # 2019.10.23 17:26:00 (*)   Encrypted license found.  SOF will not be time-limited.
+Info: nios2_qsys_0: # 2019.10.23 17:26:00 (*)   Elaborating CPU configuration settings
+Info: nios2_qsys_0: # 2019.10.23 17:26:00 (*)   Creating all objects for CPU
+Info: nios2_qsys_0: # 2019.10.23 17:26:00 (*)     Testbench
+Info: nios2_qsys_0: # 2019.10.23 17:26:00 (*)     Instruction decoding
+Info: nios2_qsys_0: # 2019.10.23 17:26:00 (*)       Instruction fields
+Info: nios2_qsys_0: # 2019.10.23 17:26:00 (*)       Instruction decodes
+Info: nios2_qsys_0: # 2019.10.23 17:26:00 (*)       Signals for RTL simulation waveforms
+Info: nios2_qsys_0: # 2019.10.23 17:26:00 (*)       Instruction controls
+Info: nios2_qsys_0: # 2019.10.23 17:26:00 (*)     Pipeline frontend
+Info: nios2_qsys_0: # 2019.10.23 17:26:01 (*)     Pipeline backend
+Info: nios2_qsys_0: # 2019.10.23 17:26:02 (*)   Creating '/tmp/alt8192_7786874049002831238.dir/0262_nios2_qsys_0_gen//nios_system_nios2_qsys_0_nios2_waves.do'
+Info: nios2_qsys_0: # 2019.10.23 17:26:02 (*)   Generating RTL from CPU objects
+Info: nios2_qsys_0: # 2019.10.23 17:26:04 (*)   Creating encrypted RTL
+Info: nios2_qsys_0: # 2019.10.23 17:26:04 (*)   Creating IP functional simulation model
+Info: nios2_qsys_0: # 2019.10.23 17:26:18 (*) Done Nios II generation
 Info: nios2_qsys_0: Done RTL generation for module 'nios_system_nios2_qsys_0'
 Info: nios2_qsys_0: "nios_system_inst" instantiated altera_nios2_qsys "nios2_qsys_0"
+Info: performance_counter_0: Starting RTL generation for module 'nios_system_performance_counter_0'
+Info: performance_counter_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64/perl/bin/perl -I /package/eda/altera/altera17.0/quartus/linux64/perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/common -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_performance_counter -- /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_performance_counter/generate_rtl.pl --name=nios_system_performance_counter_0 --dir=/tmp/alt8192_7786874049002831238.dir/0263_performance_counter_0_gen/ --quartus_dir=/package/eda/altera/altera17.0/quartus --verilog --config=/tmp/alt8192_7786874049002831238.dir/0263_performance_counter_0_gen//nios_system_performance_counter_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8192_7786874049002831238.dir/0263_performance_counter_0_gen/  ]
+Info: performance_counter_0: Done RTL generation for module 'nios_system_performance_counter_0'
+Info: performance_counter_0: "nios_system_inst" instantiated altera_avalon_performance_counter "performance_counter_0"
 Info: sram_0: Starting Generation of the SRAM Controller
 Info: sram_0: "nios_system_inst" instantiated altera_up_avalon_sram "sram_0"
+Info: timer_0: Starting RTL generation for module 'nios_system_timer_0'
+Info: timer_0:   Generation command is [exec /package/eda/altera/altera17.0/quartus/linux64//perl/bin/perl -I /package/eda/altera/altera17.0/quartus/linux64//perl/lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera17.0/quartus/sopc_builder/bin -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/common -I /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- /package/eda/altera/altera17.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=nios_system_timer_0 --dir=/tmp/alt8192_7786874049002831238.dir/0265_timer_0_gen/ --quartus_dir=/package/eda/altera/altera17.0/quartus --verilog --config=/tmp/alt8192_7786874049002831238.dir/0265_timer_0_gen//nios_system_timer_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8192_7786874049002831238.dir/0265_timer_0_gen/  ]
+Info: timer_0: Done RTL generation for module 'nios_system_timer_0'
+Info: timer_0: "nios_system_inst" instantiated altera_avalon_timer "timer_0"
+Info: tristate_conduit_bridge_0: "nios_system_inst" instantiated altera_tristate_conduit_bridge "tristate_conduit_bridge_0"
+Info: video_alpha_blender_0: Starting Generation of the Alpha Blender
+Info: video_alpha_blender_0: "nios_system_inst" instantiated altera_up_avalon_video_alpha_blender "video_alpha_blender_0"
+Info: video_character_buffer_with_dma_0: Starting Generation of Character Buffer
+Info: video_character_buffer_with_dma_0: "nios_system_inst" instantiated altera_up_avalon_video_character_buffer_with_dma "video_character_buffer_with_dma_0"
 Info: video_dual_clock_buffer_0: Starting Generation of the Dual Clock Buffer
 Info: video_dual_clock_buffer_0: "nios_system_inst" instantiated altera_up_avalon_video_dual_clock_buffer "video_dual_clock_buffer_0"
 Info: video_pixel_buffer_dma_0: Starting Generation of VGA Pixel Buffer
@@ -300,11 +579,18 @@ Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_007: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_008: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_009: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "nios_system_inst" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: irq_mapper: "nios_system_inst" instantiated altera_irq_mapper "irq_mapper"
 Info: rst_controller: "nios_system_inst" instantiated altera_reset_controller "rst_controller"
+Info: tdt: "generic_tristate_controller_0" instantiated altera_tristate_controller_translator "tdt"
+Info: slave_translator: "generic_tristate_controller_0" instantiated altera_merlin_slave_translator "slave_translator"
+Info: tda: "generic_tristate_controller_0" instantiated altera_tristate_controller_aggregator "tda"
 Info: video_pixel_buffer_dma_0_avalon_pixel_dma_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "video_pixel_buffer_dma_0_avalon_pixel_dma_master_translator"
-Info: sram_0_avalon_sram_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "sram_0_avalon_sram_slave_translator"
 Info: video_pixel_buffer_dma_0_avalon_pixel_dma_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "video_pixel_buffer_dma_0_avalon_pixel_dma_master_agent"
 Info: sram_0_avalon_sram_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "sram_0_avalon_sram_slave_agent"
 Info: sram_0_avalon_sram_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "sram_0_avalon_sram_slave_agent_rsp_fifo"
@@ -313,7 +599,8 @@ Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_
 Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
 Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
 Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
-Info: router_006: "mm_interconnect_0" instantiated altera_merlin_router "router_006"
+Info: router_005: "mm_interconnect_0" instantiated altera_merlin_router "router_005"
+Info: router_009: "mm_interconnect_0" instantiated altera_merlin_router "router_009"
 Info: nios2_qsys_0_data_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "nios2_qsys_0_data_master_limiter"
 Info: Reusing file /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_avalon_sc_fifo.v
 Info: sram_0_avalon_sram_slave_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "sram_0_avalon_sram_slave_burst_adapter"
@@ -324,11 +611,14 @@ Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexe
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
 Info: Reusing file /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_arbitrator.sv
-Info: cmd_mux_003: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_003"
+Info: cmd_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_002"
+Info: Reusing file /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_arbitrator.sv
+Info: cmd_mux_006: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_006"
 Info: Reusing file /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
-Info: rsp_demux_003: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_003"
+Info: rsp_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_002"
+Info: rsp_demux_006: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_006"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
 Info: Reusing file /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
@@ -340,9 +630,11 @@ Info: Reusing file /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural
 Info: Reusing file /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: avalon_st_adapter_001: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_001"
+Info: avalon_st_adapter_002: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_002"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: error_adapter_0: "avalon_st_adapter_001" instantiated error_adapter "error_adapter_0"
-Info: nios_system_tb: Done "nios_system_tb" with 45 modules, 87 files
+Info: error_adapter_0: "avalon_st_adapter_002" instantiated error_adapter "error_adapter_0"
+Info: nios_system_tb: Done "nios_system_tb" with 60 modules, 110 files
 Info: qsys-generate succeeded.
 Info: sim-script-gen --spd=/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system_tb.spd --output-directory=/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/ --use-relative-paths=true
 Info: Doing: ip-make-simscript --spd=/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system_tb.spd --output-directory=/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/ --use-relative-paths=true
@@ -357,7 +649,7 @@ Info: Generating the following file(s) for NCSIM simulator in /home/ecegrid/a/69
 Info: 	cadence/cds.lib
 Info: 	cadence/hdl.var
 Info: 	cadence/ncsim_setup.sh
-Info: 	44 .cds.lib files in cadence/cds_libs/ directory
+Info: 	58 .cds.lib files in cadence/cds_libs/ directory
 Info: Generating the following file(s) for RIVIERA simulator in /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/ directory:
 Info: 	aldec/rivierapro_setup.tcl
 Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/.

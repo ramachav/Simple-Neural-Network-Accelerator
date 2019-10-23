@@ -19,6 +19,11 @@
 		.sram_0_external_interface_CE_N                     (<connected-to-sram_0_external_interface_CE_N>),                     //                                          .CE_N
 		.sram_0_external_interface_OE_N                     (<connected-to-sram_0_external_interface_OE_N>),                     //                                          .OE_N
 		.sram_0_external_interface_WE_N                     (<connected-to-sram_0_external_interface_WE_N>),                     //                                          .WE_N
+		.tristate_conduit_bridge_0_out_tcm_address_out      (<connected-to-tristate_conduit_bridge_0_out_tcm_address_out>),      //             tristate_conduit_bridge_0_out.tcm_address_out
+		.tristate_conduit_bridge_0_out_tcm_read_n_out       (<connected-to-tristate_conduit_bridge_0_out_tcm_read_n_out>),       //                                          .tcm_read_n_out
+		.tristate_conduit_bridge_0_out_tcm_write_n_out      (<connected-to-tristate_conduit_bridge_0_out_tcm_write_n_out>),      //                                          .tcm_write_n_out
+		.tristate_conduit_bridge_0_out_tcm_data_out         (<connected-to-tristate_conduit_bridge_0_out_tcm_data_out>),         //                                          .tcm_data_out
+		.tristate_conduit_bridge_0_out_tcm_chipselect_n_out (<connected-to-tristate_conduit_bridge_0_out_tcm_chipselect_n_out>), //                                          .tcm_chipselect_n_out
 		.video_vga_controller_0_external_interface_CLK      (<connected-to-video_vga_controller_0_external_interface_CLK>),      // video_vga_controller_0_external_interface.CLK
 		.video_vga_controller_0_external_interface_HS       (<connected-to-video_vga_controller_0_external_interface_HS>),       //                                          .HS
 		.video_vga_controller_0_external_interface_VS       (<connected-to-video_vga_controller_0_external_interface_VS>),       //                                          .VS
@@ -26,11 +31,6 @@
 		.video_vga_controller_0_external_interface_SYNC     (<connected-to-video_vga_controller_0_external_interface_SYNC>),     //                                          .SYNC
 		.video_vga_controller_0_external_interface_R        (<connected-to-video_vga_controller_0_external_interface_R>),        //                                          .R
 		.video_vga_controller_0_external_interface_G        (<connected-to-video_vga_controller_0_external_interface_G>),        //                                          .G
-		.video_vga_controller_0_external_interface_B        (<connected-to-video_vga_controller_0_external_interface_B>),        //                                          .B
-		.tristate_conduit_bridge_0_out_tcm_address_out      (<connected-to-tristate_conduit_bridge_0_out_tcm_address_out>),      //             tristate_conduit_bridge_0_out.tcm_address_out
-		.tristate_conduit_bridge_0_out_tcm_read_n_out       (<connected-to-tristate_conduit_bridge_0_out_tcm_read_n_out>),       //                                          .tcm_read_n_out
-		.tristate_conduit_bridge_0_out_tcm_write_n_out      (<connected-to-tristate_conduit_bridge_0_out_tcm_write_n_out>),      //                                          .tcm_write_n_out
-		.tristate_conduit_bridge_0_out_tcm_data_out         (<connected-to-tristate_conduit_bridge_0_out_tcm_data_out>),         //                                          .tcm_data_out
-		.tristate_conduit_bridge_0_out_tcm_chipselect_n_out (<connected-to-tristate_conduit_bridge_0_out_tcm_chipselect_n_out>)  //                                          .tcm_chipselect_n_out
+		.video_vga_controller_0_external_interface_B        (<connected-to-video_vga_controller_0_external_interface_B>)         //                                          .B
 	);
 

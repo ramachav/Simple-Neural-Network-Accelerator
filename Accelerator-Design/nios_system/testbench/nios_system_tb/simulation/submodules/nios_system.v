@@ -150,6 +150,11 @@ module nios_system (
 	wire         mm_interconnect_0_new_sdram_controller_0_s1_readdatavalid;                                // new_sdram_controller_0:za_valid -> mm_interconnect_0:new_sdram_controller_0_s1_readdatavalid
 	wire         mm_interconnect_0_new_sdram_controller_0_s1_write;                                        // mm_interconnect_0:new_sdram_controller_0_s1_write -> new_sdram_controller_0:az_wr_n
 	wire  [31:0] mm_interconnect_0_new_sdram_controller_0_s1_writedata;                                    // mm_interconnect_0:new_sdram_controller_0_s1_writedata -> new_sdram_controller_0:az_data
+	wire         mm_interconnect_0_timer_0_s1_chipselect;                                                  // mm_interconnect_0:timer_0_s1_chipselect -> timer_0:chipselect
+	wire  [15:0] mm_interconnect_0_timer_0_s1_readdata;                                                    // timer_0:readdata -> mm_interconnect_0:timer_0_s1_readdata
+	wire   [2:0] mm_interconnect_0_timer_0_s1_address;                                                     // mm_interconnect_0:timer_0_s1_address -> timer_0:address
+	wire         mm_interconnect_0_timer_0_s1_write;                                                       // mm_interconnect_0:timer_0_s1_write -> timer_0:write_n
+	wire  [15:0] mm_interconnect_0_timer_0_s1_writedata;                                                   // mm_interconnect_0:timer_0_s1_writedata -> timer_0:writedata
 	wire   [7:0] mm_interconnect_0_generic_tristate_controller_0_uas_readdata;                             // generic_tristate_controller_0:uas_readdata -> mm_interconnect_0:generic_tristate_controller_0_uas_readdata
 	wire         mm_interconnect_0_generic_tristate_controller_0_uas_waitrequest;                          // generic_tristate_controller_0:uas_waitrequest -> mm_interconnect_0:generic_tristate_controller_0_uas_waitrequest
 	wire         mm_interconnect_0_generic_tristate_controller_0_uas_debugaccess;                          // mm_interconnect_0:generic_tristate_controller_0_uas_debugaccess -> generic_tristate_controller_0:uas_debugaccess
@@ -162,8 +167,9 @@ module nios_system (
 	wire   [7:0] mm_interconnect_0_generic_tristate_controller_0_uas_writedata;                            // mm_interconnect_0:generic_tristate_controller_0_uas_writedata -> generic_tristate_controller_0:uas_writedata
 	wire   [0:0] mm_interconnect_0_generic_tristate_controller_0_uas_burstcount;                           // mm_interconnect_0:generic_tristate_controller_0_uas_burstcount -> generic_tristate_controller_0:uas_burstcount
 	wire         irq_mapper_receiver0_irq;                                                                 // jtag_uart_0:av_irq -> irq_mapper:receiver0_irq
+	wire         irq_mapper_receiver1_irq;                                                                 // timer_0:irq -> irq_mapper:receiver1_irq
 	wire  [31:0] nios2_qsys_0_d_irq_irq;                                                                   // irq_mapper:sender_irq -> nios2_qsys_0:d_irq
-	wire         rst_controller_reset_out_reset;                                                           // rst_controller:reset_out -> [generic_tristate_controller_0:reset_reset, irq_mapper:reset, jtag_uart_0:rst_n, mm_interconnect_0:video_pixel_buffer_dma_0_reset_reset_bridge_in_reset_reset, new_sdram_controller_0:reset_n, nios2_qsys_0:reset_n, performance_counter_0:reset_n, rst_translator:in_reset, sram_0:reset, tristate_conduit_bridge_0:reset, video_alpha_blender_0:reset, video_character_buffer_with_dma_0:reset, video_dual_clock_buffer_0:reset_stream_in, video_pixel_buffer_dma_0:reset, video_rgb_resampler_0:reset]
+	wire         rst_controller_reset_out_reset;                                                           // rst_controller:reset_out -> [generic_tristate_controller_0:reset_reset, irq_mapper:reset, jtag_uart_0:rst_n, mm_interconnect_0:video_pixel_buffer_dma_0_reset_reset_bridge_in_reset_reset, new_sdram_controller_0:reset_n, nios2_qsys_0:reset_n, performance_counter_0:reset_n, rst_translator:in_reset, sram_0:reset, timer_0:reset_n, tristate_conduit_bridge_0:reset, video_alpha_blender_0:reset, video_character_buffer_with_dma_0:reset, video_dual_clock_buffer_0:reset_stream_in, video_pixel_buffer_dma_0:reset, video_rgb_resampler_0:reset]
 	wire         rst_controller_reset_out_reset_req;                                                       // rst_controller:reset_req -> [nios2_qsys_0:reset_req, rst_translator:reset_req_in]
 	wire         nios2_qsys_0_jtag_debug_module_reset_reset;                                               // nios2_qsys_0:jtag_debug_module_resetrequest -> [rst_controller:reset_in2, rst_controller_001:reset_in2]
 	wire         rst_controller_001_reset_out_reset;                                                       // rst_controller_001:reset_out -> [video_dual_clock_buffer_0:reset_stream_out, video_vga_controller_0:reset]
@@ -323,6 +329,17 @@ module nios_system (
 		.writedata     (mm_interconnect_0_sram_0_avalon_sram_slave_writedata),     //                   .writedata
 		.readdata      (mm_interconnect_0_sram_0_avalon_sram_slave_readdata),      //                   .readdata
 		.readdatavalid (mm_interconnect_0_sram_0_avalon_sram_slave_readdatavalid)  //                   .readdatavalid
+	);
+
+	nios_system_timer_0 timer_0 (
+		.clk        (clk_clk),                                 //   clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),         // reset.reset_n
+		.address    (mm_interconnect_0_timer_0_s1_address),    //    s1.address
+		.writedata  (mm_interconnect_0_timer_0_s1_writedata),  //      .writedata
+		.readdata   (mm_interconnect_0_timer_0_s1_readdata),   //      .readdata
+		.chipselect (mm_interconnect_0_timer_0_s1_chipselect), //      .chipselect
+		.write_n    (~mm_interconnect_0_timer_0_s1_write),     //      .write_n
+		.irq        (irq_mapper_receiver1_irq)                 //   irq.irq
 	);
 
 	nios_system_tristate_conduit_bridge_0 tristate_conduit_bridge_0 (
@@ -531,6 +548,11 @@ module nios_system (
 		.sram_0_avalon_sram_slave_writedata                                     (mm_interconnect_0_sram_0_avalon_sram_slave_writedata),                                     //                                                            .writedata
 		.sram_0_avalon_sram_slave_byteenable                                    (mm_interconnect_0_sram_0_avalon_sram_slave_byteenable),                                    //                                                            .byteenable
 		.sram_0_avalon_sram_slave_readdatavalid                                 (mm_interconnect_0_sram_0_avalon_sram_slave_readdatavalid),                                 //                                                            .readdatavalid
+		.timer_0_s1_address                                                     (mm_interconnect_0_timer_0_s1_address),                                                     //                                                  timer_0_s1.address
+		.timer_0_s1_write                                                       (mm_interconnect_0_timer_0_s1_write),                                                       //                                                            .write
+		.timer_0_s1_readdata                                                    (mm_interconnect_0_timer_0_s1_readdata),                                                    //                                                            .readdata
+		.timer_0_s1_writedata                                                   (mm_interconnect_0_timer_0_s1_writedata),                                                   //                                                            .writedata
+		.timer_0_s1_chipselect                                                  (mm_interconnect_0_timer_0_s1_chipselect),                                                  //                                                            .chipselect
 		.video_character_buffer_with_dma_0_avalon_char_buffer_slave_address     (mm_interconnect_0_video_character_buffer_with_dma_0_avalon_char_buffer_slave_address),     //  video_character_buffer_with_dma_0_avalon_char_buffer_slave.address
 		.video_character_buffer_with_dma_0_avalon_char_buffer_slave_write       (mm_interconnect_0_video_character_buffer_with_dma_0_avalon_char_buffer_slave_write),       //                                                            .write
 		.video_character_buffer_with_dma_0_avalon_char_buffer_slave_read        (mm_interconnect_0_video_character_buffer_with_dma_0_avalon_char_buffer_slave_read),        //                                                            .read
@@ -558,6 +580,7 @@ module nios_system (
 		.clk           (clk_clk),                        //       clk.clk
 		.reset         (rst_controller_reset_out_reset), // clk_reset.reset
 		.receiver0_irq (irq_mapper_receiver0_irq),       // receiver0.irq
+		.receiver1_irq (irq_mapper_receiver1_irq),       // receiver1.irq
 		.sender_irq    (nios2_qsys_0_d_irq_irq)          //    sender.irq
 	);
 

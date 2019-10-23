@@ -50,9 +50,9 @@ module nios_system_mm_interconnect_0_router_002_default_decode
                DEFAULT_DESTID = 2 
    )
   (output [96 - 93 : 0] default_destination_id,
-   output [9-1 : 0] default_wr_channel,
-   output [9-1 : 0] default_rd_channel,
-   output [9-1 : 0] default_src_channel
+   output [10-1 : 0] default_wr_channel,
+   output [10-1 : 0] default_rd_channel,
+   output [10-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
@@ -63,7 +63,7 @@ module nios_system_mm_interconnect_0_router_002_default_decode
       assign default_src_channel = '0;
     end
     else begin : default_channel_assignment
-      assign default_src_channel = 9'b1 << DEFAULT_CHANNEL;
+      assign default_src_channel = 10'b1 << DEFAULT_CHANNEL;
     end
   endgenerate
 
@@ -73,8 +73,8 @@ module nios_system_mm_interconnect_0_router_002_default_decode
       assign default_rd_channel = '0;
     end
     else begin : default_rw_channel_assignment
-      assign default_wr_channel = 9'b1 << DEFAULT_WR_CHANNEL;
-      assign default_rd_channel = 9'b1 << DEFAULT_RD_CHANNEL;
+      assign default_wr_channel = 10'b1 << DEFAULT_WR_CHANNEL;
+      assign default_rd_channel = 10'b1 << DEFAULT_RD_CHANNEL;
     end
   endgenerate
 
@@ -103,7 +103,7 @@ module nios_system_mm_interconnect_0_router_002
     // -------------------
     output                          src_valid,
     output reg [110-1    : 0] src_data,
-    output reg [9-1 : 0] src_channel,
+    output reg [10-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
     input                           src_ready
@@ -119,7 +119,7 @@ module nios_system_mm_interconnect_0_router_002
     localparam PKT_PROTECTION_H = 100;
     localparam PKT_PROTECTION_L = 98;
     localparam ST_DATA_W = 110;
-    localparam ST_CHANNEL_W = 9;
+    localparam ST_CHANNEL_W = 10;
     localparam DECODER_TYPE = 0;
 
     localparam PKT_TRANS_WRITE = 70;
@@ -136,12 +136,13 @@ module nios_system_mm_interconnect_0_router_002
     // -------------------------------------------------------
     localparam PAD0 = log2ceil(64'h10000000 - 64'h8000000); 
     localparam PAD1 = log2ceil(64'h10a03000 - 64'h10a02800); 
+    localparam PAD2 = log2ceil(64'h10a030c0 - 64'h10a030a0); 
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
     // address range of the slaves. If the required width is too
     // large or too small, we use the address field width instead.
     // -------------------------------------------------------
-    localparam ADDR_RANGE = 64'h10a03000;
+    localparam ADDR_RANGE = 64'h10a030c0;
     localparam RANGE_ADDR_WIDTH = log2ceil(ADDR_RANGE);
     localparam OPTIMIZED_ADDR_H = (RANGE_ADDR_WIDTH > PKT_ADDR_W) ||
                                   (RANGE_ADDR_WIDTH == 0) ?
@@ -165,7 +166,7 @@ module nios_system_mm_interconnect_0_router_002
     assign src_startofpacket = sink_startofpacket;
     assign src_endofpacket   = sink_endofpacket;
     wire [PKT_DEST_ID_W-1:0] default_destid;
-    wire [9-1 : 0] default_src_channel;
+    wire [10-1 : 0] default_src_channel;
 
 
 
@@ -191,14 +192,20 @@ module nios_system_mm_interconnect_0_router_002
 
     // ( 0x8000000 .. 0x10000000 )
     if ( {address[RG:PAD0],{PAD0{1'b0}}} == 29'h8000000   ) begin
-            src_channel = 9'b10;
+            src_channel = 10'b010;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
     end
 
     // ( 0x10a02800 .. 0x10a03000 )
     if ( {address[RG:PAD1],{PAD1{1'b0}}} == 29'h10a02800   ) begin
-            src_channel = 9'b01;
+            src_channel = 10'b001;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
+    end
+
+    // ( 0x10a030a0 .. 0x10a030c0 )
+    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 29'h10a030a0   ) begin
+            src_channel = 10'b100;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 6;
     end
 
 end

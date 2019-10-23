@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 17.0 595 linux 2019.10.22.20:18:01
+# ACDS 17.0 595 linux 2019.10.23.18:07:50
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 17.0 595 linux 2019.10.22.20:18:01
+# ACDS 17.0 595 linux 2019.10.23.18:07:50
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="nios_system_tb"
@@ -226,6 +226,7 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_up_video_alpha_blender_simple.v \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_video_alpha_blender_0.v \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_tristate_conduit_bridge_0.sv \
+  $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_timer_0.v \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_sram_0.v \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_performance_counter_0.v \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0.vo \

@@ -45,7 +45,7 @@
 //   PIPELINE_ARB:        0
 //   PKT_TRANS_LOCK:      54 (arbitration locking enabled)
 //   ST_DATA_W:           92
-//   ST_CHANNEL_W:        9
+//   ST_CHANNEL_W:        10
 // ------------------------------------------
 
 module nios_system_mm_interconnect_0_rsp_mux
@@ -55,7 +55,7 @@ module nios_system_mm_interconnect_0_rsp_mux
     // ----------------------
     input                       sink0_valid,
     input [92-1   : 0]  sink0_data,
-    input [9-1: 0]  sink0_channel,
+    input [10-1: 0]  sink0_channel,
     input                       sink0_startofpacket,
     input                       sink0_endofpacket,
     output                      sink0_ready,
@@ -66,7 +66,7 @@ module nios_system_mm_interconnect_0_rsp_mux
     // ----------------------
     output                      src_valid,
     output [92-1    : 0] src_data,
-    output [9-1 : 0] src_channel,
+    output [10-1 : 0] src_channel,
     output                      src_startofpacket,
     output                      src_endofpacket,
     input                       src_ready,
@@ -77,12 +77,12 @@ module nios_system_mm_interconnect_0_rsp_mux
     input clk,
     input reset
 );
-    localparam PAYLOAD_W        = 92 + 9 + 2;
+    localparam PAYLOAD_W        = 92 + 10 + 2;
     localparam NUM_INPUTS       = 1;
     localparam SHARE_COUNTER_W  = 1;
     localparam PIPELINE_ARB     = 0;
     localparam ST_DATA_W        = 92;
-    localparam ST_CHANNEL_W     = 9;
+    localparam ST_CHANNEL_W     = 10;
     localparam PKT_TRANS_LOCK   = 54;
 
     assign	src_valid			=  sink0_valid;

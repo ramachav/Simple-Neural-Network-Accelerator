@@ -48,6 +48,7 @@ video_dual_clock_buffer_0:                                              ./librar
 video_character_buffer_with_dma_0:                                      ./libraries/video_character_buffer_with_dma_0/                                     
 video_alpha_blender_0:                                                  ./libraries/video_alpha_blender_0/                                                 
 tristate_conduit_bridge_0:                                              ./libraries/tristate_conduit_bridge_0/                                             
+timer_0:                                                                ./libraries/timer_0/                                                               
 sram_0:                                                                 ./libraries/sram_0/                                                                
 performance_counter_0:                                                  ./libraries/performance_counter_0/                                                 
 nios2_qsys_0:                                                           ./libraries/nios2_qsys_0/                                                          

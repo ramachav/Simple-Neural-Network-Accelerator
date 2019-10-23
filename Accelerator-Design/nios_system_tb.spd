@@ -318,6 +318,10 @@
    type="SYSTEM_VERILOG"
    library="tristate_conduit_bridge_0" />
  <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_timer_0.v"
+   type="VERILOG"
+   library="timer_0" />
+ <file
    path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_sram_0.v"
    type="VERILOG"
    library="sram_0" />

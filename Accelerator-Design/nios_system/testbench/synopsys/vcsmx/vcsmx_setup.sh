@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 17.0 595 linux 2019.10.22.20:18:01
+# ACDS 17.0 595 linux 2019.10.23.18:07:50
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -101,7 +101,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 17.0 595 linux 2019.10.22.20:18:01
+# ACDS 17.0 595 linux 2019.10.23.18:07:50
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="nios_system_tb"
@@ -187,6 +187,7 @@ mkdir -p ./libraries/video_dual_clock_buffer_0/
 mkdir -p ./libraries/video_character_buffer_with_dma_0/
 mkdir -p ./libraries/video_alpha_blender_0/
 mkdir -p ./libraries/tristate_conduit_bridge_0/
+mkdir -p ./libraries/timer_0/
 mkdir -p ./libraries/sram_0/
 mkdir -p ./libraries/performance_counter_0/
 mkdir -p ./libraries/nios2_qsys_0/
@@ -321,6 +322,7 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_up_video_alpha_blender_simple.v"                                 -work video_alpha_blender_0                                                 
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_video_alpha_blender_0.v"                                    -work video_alpha_blender_0                                                 
   vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_tristate_conduit_bridge_0.sv"                               -work tristate_conduit_bridge_0                                             
+  vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_timer_0.v"                                                  -work timer_0                                                               
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_sram_0.v"                                                   -work sram_0                                                                
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_performance_counter_0.v"                                    -work performance_counter_0                                                 
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0.vo"                                            -work nios2_qsys_0                                                          

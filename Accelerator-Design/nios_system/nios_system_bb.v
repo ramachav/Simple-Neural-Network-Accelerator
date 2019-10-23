@@ -20,6 +20,11 @@ module nios_system (
 	sram_0_external_interface_CE_N,
 	sram_0_external_interface_OE_N,
 	sram_0_external_interface_WE_N,
+	tristate_conduit_bridge_0_out_tcm_address_out,
+	tristate_conduit_bridge_0_out_tcm_read_n_out,
+	tristate_conduit_bridge_0_out_tcm_write_n_out,
+	tristate_conduit_bridge_0_out_tcm_data_out,
+	tristate_conduit_bridge_0_out_tcm_chipselect_n_out,
 	video_vga_controller_0_external_interface_CLK,
 	video_vga_controller_0_external_interface_HS,
 	video_vga_controller_0_external_interface_VS,
@@ -27,12 +32,7 @@ module nios_system (
 	video_vga_controller_0_external_interface_SYNC,
 	video_vga_controller_0_external_interface_R,
 	video_vga_controller_0_external_interface_G,
-	video_vga_controller_0_external_interface_B,
-	tristate_conduit_bridge_0_out_tcm_address_out,
-	tristate_conduit_bridge_0_out_tcm_read_n_out,
-	tristate_conduit_bridge_0_out_tcm_write_n_out,
-	tristate_conduit_bridge_0_out_tcm_data_out,
-	tristate_conduit_bridge_0_out_tcm_chipselect_n_out);	
+	video_vga_controller_0_external_interface_B);	
 
 	input		clk_clk;
 	input		clk_0_clk;
@@ -54,6 +54,11 @@ module nios_system (
 	output		sram_0_external_interface_CE_N;
 	output		sram_0_external_interface_OE_N;
 	output		sram_0_external_interface_WE_N;
+	output	[22:0]	tristate_conduit_bridge_0_out_tcm_address_out;
+	output	[0:0]	tristate_conduit_bridge_0_out_tcm_read_n_out;
+	output	[0:0]	tristate_conduit_bridge_0_out_tcm_write_n_out;
+	inout	[7:0]	tristate_conduit_bridge_0_out_tcm_data_out;
+	output	[0:0]	tristate_conduit_bridge_0_out_tcm_chipselect_n_out;
 	output		video_vga_controller_0_external_interface_CLK;
 	output		video_vga_controller_0_external_interface_HS;
 	output		video_vga_controller_0_external_interface_VS;
@@ -62,9 +67,4 @@ module nios_system (
 	output	[7:0]	video_vga_controller_0_external_interface_R;
 	output	[7:0]	video_vga_controller_0_external_interface_G;
 	output	[7:0]	video_vga_controller_0_external_interface_B;
-	output	[22:0]	tristate_conduit_bridge_0_out_tcm_address_out;
-	output	[0:0]	tristate_conduit_bridge_0_out_tcm_read_n_out;
-	output	[0:0]	tristate_conduit_bridge_0_out_tcm_write_n_out;
-	inout	[7:0]	tristate_conduit_bridge_0_out_tcm_data_out;
-	output	[0:0]	tristate_conduit_bridge_0_out_tcm_chipselect_n_out;
 endmodule

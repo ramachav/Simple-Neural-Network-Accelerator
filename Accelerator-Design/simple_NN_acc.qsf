@@ -580,8 +580,6 @@ set_location_assignment PIN_E10 -to EXT_IO[5]
 set_location_assignment PIN_D9 -to EXT_IO[6]
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
-set_global_assignment -name SOURCE_FILE EP4CE115.qsf
-set_global_assignment -name SDC_FILE simple_NN_acc.sdc
 set_global_assignment -name VERILOG_FILE nios_system/synthesis/submodules/nios_system_video_vga_controller_0.v
 set_global_assignment -name VERILOG_FILE nios_system/synthesis/submodules/nios_system_video_rgb_resampler_0.v
 set_global_assignment -name VERILOG_FILE nios_system/synthesis/submodules/nios_system_video_pixel_buffer_dma_0.v
@@ -589,6 +587,7 @@ set_global_assignment -name VERILOG_FILE nios_system/synthesis/submodules/nios_s
 set_global_assignment -name VERILOG_FILE nios_system/synthesis/submodules/nios_system_video_character_buffer_with_dma_0.v
 set_global_assignment -name VERILOG_FILE nios_system/synthesis/submodules/nios_system_video_alpha_blender_0.v
 set_global_assignment -name SYSTEMVERILOG_FILE nios_system/synthesis/submodules/nios_system_tristate_conduit_bridge_0.sv
+set_global_assignment -name VERILOG_FILE nios_system/synthesis/submodules/nios_system_timer_0.v
 set_global_assignment -name VERILOG_FILE nios_system/synthesis/submodules/nios_system_sram_0.v
 set_global_assignment -name VERILOG_FILE nios_system/synthesis/submodules/nios_system_performance_counter_0.v
 set_global_assignment -name VERILOG_FILE nios_system/synthesis/submodules/nios_system_nios2_qsys_0_test_bench.v
@@ -663,6 +662,8 @@ set_global_assignment -name SYSTEMVERILOG_FILE nios_system/synthesis/submodules/
 set_global_assignment -name VERILOG_FILE nios_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
 set_global_assignment -name VERILOG_FILE nios_system/synthesis/submodules/altera_avalon_sc_fifo.v
 set_global_assignment -name VERILOG_FILE nios_system/synthesis/nios_system.v
-set_global_assignment -name VERILOG_FILE simple_NN_acc.v
 set_global_assignment -name VERILOG_FILE pll.v
+set_global_assignment -name SDC_FILE simple_NN_acc.sdc
+set_global_assignment -name VERILOG_FILE simple_NN_acc.v
+set_global_assignment -name SOURCE_FILE EP4CE115.qsf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
