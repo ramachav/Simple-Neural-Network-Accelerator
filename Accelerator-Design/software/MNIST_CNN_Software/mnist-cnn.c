@@ -15,7 +15,7 @@
 #if ECE695R_USE_PERFORMANCE_COUNTER
 #define PERF_REGION_INFERENCE 1
 #endif
-#define NUM_TEST_IMAGES 100
+#define NUM_TEST_IMAGES 10	//100
 #endif
 
 int main(int argc, char *argv[])

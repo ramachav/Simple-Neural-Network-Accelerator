@@ -523,7 +523,7 @@
   <parameter name="period" value="10" />
   <parameter name="periodUnits" value="SEC" />
   <parameter name="resetOutput" value="false" />
-  <parameter name="snapshot" value="true" />
+  <parameter name="snapshot" value="false" />
   <parameter name="systemFrequency" value="50000000" />
   <parameter name="timeoutPulseOutput" value="false" />
   <parameter name="watchdogPulse" value="2" />

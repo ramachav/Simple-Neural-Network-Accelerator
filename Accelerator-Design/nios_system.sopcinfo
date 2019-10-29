@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="nios_system" kind="nios_system" version="1.0" fabric="QSYS">
  <!-- Format version 17.0 595 (Future versions may contain additional information.) -->
- <!-- 2019.10.23.18:06:50 -->
+ <!-- 2019.10.26.18:17:57 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1571868410</value>
+  <value>1572128277</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -7346,7 +7346,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.SNAPSHOT</name>
-   <value>1</value>
+   <value>0</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TICKS_PER_SEC</name>
@@ -7355,22 +7355,6 @@ the requested settings for a module instance. -->
   <assignment>
    <name>embeddedsw.CMacro.TIMEOUT_PULSE_OUTPUT</name>
    <value>0</value>
-  </assignment>
-  <assignment>
-   <name>embeddedsw.dts.compatible</name>
-   <value>altr,timer-1.0</value>
-  </assignment>
-  <assignment>
-   <name>embeddedsw.dts.group</name>
-   <value>timer</value>
-  </assignment>
-  <assignment>
-   <name>embeddedsw.dts.name</name>
-   <value>timer</value>
-  </assignment>
-  <assignment>
-   <name>embeddedsw.dts.params.clock-frequency</name>
-   <value>50000000</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -7426,7 +7410,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="snapshot">
    <type>boolean</type>
-   <value>true</value>
+   <value>false</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -7460,7 +7444,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timerPreset">
    <type>java.lang.String</type>
-   <value>FULL_FEATURED</value>
+   <value>CUSTOM</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>

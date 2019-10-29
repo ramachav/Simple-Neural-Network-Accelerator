@@ -8,8 +8,7 @@
    <name preferredWidth="224" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Library/Basic Functions,Library/Basic Functions/Simulation; Debug and Verification/Debug and Performance,Project,Library,Library/Basic Functions/Simulation; Debug and Verification" />
- <window width="1920" height="1018" x="0" y="28" />
+ <library expandedCategories="Library,Project" />
+ <window width="1924" height="1084" x="1918" y="0" />
  <generation path="_PROJECT_NAME_" testbench_system="SIMPLE" />
 </preferences>

@@ -51,7 +51,6 @@ wire             control_wr_strobe;
 reg              counter_is_running;
 wire             counter_is_zero;
 wire    [ 31: 0] counter_load_value;
-reg     [ 31: 0] counter_snapshot;
 reg              delayed_unxcounter_is_zeroxx0;
 wire             do_start_counter;
 wire             do_stop_counter;
@@ -64,10 +63,6 @@ reg     [ 15: 0] period_l_register;
 wire             period_l_wr_strobe;
 wire    [ 15: 0] read_mux_out;
 reg     [ 15: 0] readdata;
-wire             snap_h_wr_strobe;
-wire             snap_l_wr_strobe;
-wire    [ 31: 0] snap_read_value;
-wire             snap_strobe;
 wire             start_strobe;
 wire             status_wr_strobe;
 wire             stop_strobe;
@@ -143,8 +138,6 @@ reg              timeout_occurred;
   //s1, which is an e_avalon_slave
   assign read_mux_out = ({16 {(address == 2)}} & period_l_register) |
     ({16 {(address == 3)}} & period_h_register) |
-    ({16 {(address == 4)}} & snap_read_value[15 : 0]) |
-    ({16 {(address == 5)}} & snap_read_value[31 : 16]) |
     ({16 {(address == 1)}} & control_register) |
     ({16 {(address == 0)}} & {counter_is_running,
     timeout_occurred});
@@ -178,19 +171,6 @@ reg              timeout_occurred;
     end
 
 
-  assign snap_l_wr_strobe = chipselect && ~write_n && (address == 4);
-  assign snap_h_wr_strobe = chipselect && ~write_n && (address == 5);
-  assign snap_strobe = snap_l_wr_strobe || snap_h_wr_strobe;
-  always @(posedge clk or negedge reset_n)
-    begin
-      if (reset_n == 0)
-          counter_snapshot <= 0;
-      else if (snap_strobe)
-          counter_snapshot <= internal_counter;
-    end
-
-
-  assign snap_read_value = counter_snapshot;
   assign control_wr_strobe = chipselect && ~write_n && (address == 1);
   always @(posedge clk or negedge reset_n)
     begin

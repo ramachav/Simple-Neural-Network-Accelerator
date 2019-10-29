@@ -17,7 +17,7 @@
 #if ECE695R_USE_PERFORMANCE_COUNTER
 #define PERF_REGION_INFERENCE 1
 #endif
-#define NUM_TEST_IMAGES 100
+#define NUM_TEST_IMAGES 10	//100
 #endif
 
 static kann_t *model_gen(int n_in, int n_out, int loss_type, int n_h_layers, int n_h_neurons, float h_dropout)
