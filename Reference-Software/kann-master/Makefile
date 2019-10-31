@@ -1,11 +1,13 @@
 CC=			gcc
-CFLAGS=		-g -Wall -Wextra -Wc++-compat -O2
+CFLAGS=		-g -Wall -Wextra -Wc++-compat -O2 -pg
 CFLAGS_LIB=	#-ansi -pedantic -Wno-long-long # ANSI C does not have inline which affects performance a little bit
 CPPFLAGS=	-DHAVE_PTHREAD
 INCLUDES=	-I.
 EXE=		examples/mlp examples/mnist-cnn examples/inspect examples/textgen examples/rnn-bit \
 			examples/ae examples/vae
 LIBS=		-lpthread -lz -lm
+
+PROFS=		mlp_prof ae_prof vae_prof textgen_prof rnn-bit_prof inspect_prof mnist-cnn_prof
 
 ifdef CBLAS
 	CPPFLAGS+=-DHAVE_CBLAS
@@ -20,6 +22,10 @@ endif
 		$(CC) -c $(CFLAGS) $(INCLUDES) $(CPPFLAGS) $< -o $@
 
 all:kautodiff.o kann.o kann_extra/kann_data.o $(EXE)
+
+all_prof: $(PROFS)
+
+relevant_prof: mlp_prof mnist-cnn_prof
 
 kautodiff.o:kautodiff.c
 		$(CC) -c $(CFLAGS) $(CFLAGS_LIB) $(INCLUDES) $(CPPFLAGS) -o $@ $<
@@ -51,8 +57,51 @@ examples/inspect:examples/inspect.o kautodiff.o kann.o
 examples/mnist-cnn:examples/mnist-cnn.o kautodiff.o kann.o kann_extra/kann_data.o
 		$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
+mlp_prof:
+		mkdir mlp_profiling
+		./examples/mlp -i trained_models/mnist-mlp.kan trained_models/mnist-test-100.knd > mlp_profiling/mnist-mlp.txt
+		mv gmon.out mlp_profiling/
+		gprof examples/mlp mlp_profiling/gmon.out > mlp_profiling/mlp_profile.txt 
+
+ae_prof: 
+		mkdir ae_profiling
+		./examples/ae -i trained_models/mnist-cnn.kan trained_models/mnist-test-100.knd > ae_profiling/ae.txt 
+		mv gmon.out ae_profiling/
+		gprof examples/ae ae_profiling/gmon.out > ae_profiling/ae_profile.txt 
+
+vae_prof:
+		mkdir vae_profiling
+		./examples/vae -i trained_models/mnist-cnn.kan trained_models/mnist-test-100.knd > vae_profiling/vae.txt 
+		mv gmon.out vae_profiling/
+		gprof examples/vae vae_profiling/gmon.out > vae_profiling/vae_profile.txt 
+
+textgen_prof:
+		mkdir textgen_profiling
+		./examples/textgen -i trained_models/mnist-cnn.kan trained_models/mnist-test-100.knd > textgen_profiling/textgen.txt 
+		mv gmon.out textgen_profiling/
+		gprof examples/textgen textgen_profiling/gmon.out > textgen_profiling/textgen_profile.txt 
+
+rnn-bit_prof:
+		mkdir rnn-bit_profiling
+		./examples/rnn-bit -i trained_models/mnist-cnn.kan trained_models/mnist-test-100.knd > rnn-bit_profiling/rnn-bit.txt 
+		mv gmon.out rnn-bit_profiling/
+		gprof examples/rnn-bit rnn-bit_profiling/gmon.out > rnn-bit_profiling/rnn-bit_profile.txt 
+
+inspect_prof:
+		mkdir inspect_profiling
+		./examples/inspect -i trained_models/mnist-cnn.kan trained_models/mnist-test-100.knd > inspect_profiling/inspect.txt 
+		mv gmon.out inspect_profiling/
+		gprof examples/inspect inspect_profiling/gmon.out > inspect_profiling/inspect_profile.txt
+
+mnist-cnn_prof:
+		mkdir mnist-cnn_profiling
+		./examples/mnist-cnn -i trained_models/mnist-cnn.kan trained_models/mnist-test-100.knd > mnist-cnn_profiling/mnist-cnn.txt 
+		mv gmon.out mnist-cnn_profiling/
+		gprof examples/mnist-cnn mnist-cnn_profiling/gmon.out > mnist-cnn_profiling/mnist-cnn_profile.txt 
+
 clean:
-		rm -fr *.o */*.o a.out */a.out *.a *.dSYM */*.dSYM $(EXE)
+		rm -fr *.o */*.o a.out */a.out *.a *.dSYM */*.dSYM $(EXE) 
+		rm -rf mlp_profiling ae_profiling vae_profiling textgen_profiling rnn-bit_profiling inspect_profiling mnist-cnn_profiling
 
 depend:
 		(LC_ALL=C; export LC_ALL; makedepend -Y -- $(CFLAGS) $(DFLAGS) -- *.c kann_extra/*.c examples/*.c)
