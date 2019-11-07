@@ -178,10 +178,7 @@ ELF_PATCH_FLAG  += --simulation_enabled false
 # Causes code to be compiled with gprof profiling enabled and the application 
 # ELF to be linked with the GPROF library. If true, adds -DALT_PROVIDE_GMON to 
 # ALT_CPPFLAGS and -pg to ALT_CFLAGS in public.mk. none 
-# setting hal.enable_gprof is true
-ALT_CPPFLAGS += -DALT_PROVIDE_GMON
-ALT_CFLAGS += -pg
-ELF_PATCH_FLAG  += --profiling_enabled true
+# setting hal.enable_gprof is false
 
 # Enables lightweight device driver API. This reduces code and data footprint 
 # by removing the HAL layer that maps device names (e.g. /dev/uart0) to file 

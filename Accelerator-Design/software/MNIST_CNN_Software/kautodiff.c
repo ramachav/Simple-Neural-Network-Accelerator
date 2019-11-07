@@ -545,12 +545,16 @@ static void kad_propagate_marks(int n, kad_node_t **a)
 
 void kad_eval_marked(int n, kad_node_t **a)
 {
-	int i;
+	int i, conv_counter = 0;
 	kad_propagate_marks(n, a);
-	for (i = 0; i < n; ++i)
-		if (a[i]->n_child && a[i]->tmp > 0)
+	for (i = 0; i < n; ++i) {
+		if (a[i]->n_child && a[i]->tmp > 0) {
 			kad_op_list[a[i]->op](a[i], KAD_FORWARD);
+			if(kad_op_name[a[i]->op] == "conv2d") conv_counter++;	//added
+		}
+	}
 	for (i = 0; i < n; ++i) a[i]->tmp = 0;
+	printf("kad_op_conv2d function calls per kad_eval_at function call: %d\n", conv_counter);	//added
 }
 
 const float *kad_eval_at(int n, kad_node_t **a, int from)
@@ -1930,6 +1934,7 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 
 #define conv2d_loop2(_x, _w, _y, _code) do { /* for the NHWC shape */ \
 		int n, c1, i, j, k, ii, j_skip = aux[1].stride * q->d[1], m = w->d[3] * w->d[1]; \
+		sdot_size = m; /* added */ \
 		for (n = 0; n < q->d[0]; ++n) /* mini-batch */ \
 			for (c1 = 0; c1 < w->d[0]; ++c1) /* output channel */ \
 				for (k = 0; k < w->d[2]; ++k) { /* kernel row */ \
@@ -1941,7 +1946,8 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 							memcpy(x_padded + aux[1].pad[0] * q->d[1], _xx, q->d[3] * q->d[1] * sizeof(float)); \
 							_xx = x_padded; \
 						} \
-						for (j = 0; j < p->d[3]; ++j, _xx += j_skip, ++_yy) _code; /* output and input column */ \
+						weight = _ww, input = _xx; /* added */ \
+						for (j = 0; j < p->d[3]; ++j, _xx += j_skip, ++_yy) _code; /* output and input column */  \
 					} /* ~i */ \
 				} /* ~k, c1, n */ \
 	} while (0)
@@ -1950,6 +1956,8 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 	kad_node_t *q = p->child[0], *w = p->child[1];
 	float *t = 0, *q1 = 0, *w1 = 0, *x_padded = 0;
 	int algo_switch = 0;
+	int sdot_size;
+	float *weight, *input;
 
 	if (action == KAD_FORWARD || action == KAD_BACKWARD) { /* allocate working space */
 		if (w->d[3] * w->d[1] < 16) {

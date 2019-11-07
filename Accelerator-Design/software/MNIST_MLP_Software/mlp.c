@@ -96,11 +96,13 @@ int main(int argc, char *argv[])
 		printf("[INFO] Loading model from %s...\n", in_fn);
 		ann = kann_load(in_fn);
 		assert(kann_dim_in(ann) == 28 * 28);
+		printf("\nNode dimensions (NCHW): Batch-Size: %d, Channel-Size: %d, Height: %d, Width: %d\n", ann->v[0]->d[0], ann->v[0]->d[1], ann->v[0]->d[2], ann->v[0]->d[3]);
 	}
 #if ECE695R
 	printf("[INFO] Loading test images from %s...\n", test_images);
 	in = kann_data_read(test_images); // kann_data_t x;
 	assert(in->n_col == 28 * 28);
+	printf("\nNumber of rows: %d\nNumber of columns: %d\nNumber of groups: %d\n", in->n_row, in->n_col, in->n_grp);
 #endif
 
 #if USE_VGA_DISPLAY

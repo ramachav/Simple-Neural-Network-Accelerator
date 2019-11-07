@@ -1,12 +1,12 @@
-# system info nios_system_tb on 2019.10.26.18:17:34
+# system info nios_system_tb on 2019.10.31.21:44:38
 system_info:
 name,value
 DEVICE,EP4CE115F29C7
 DEVICE_FAMILY,Cyclone IV E
-GENERATION_ID,1572128219
+GENERATION_ID,1572572650
 #
 #
-# Files generated for nios_system_tb on 2019.10.26.18:17:34
+# Files generated for nios_system_tb on 2019.10.31.21:44:38
 files:
 filepath,kind,attributes,module,is_top
 nios_system/testbench/nios_system_tb/simulation/nios_system_tb.v,VERILOG,,nios_system_tb,true

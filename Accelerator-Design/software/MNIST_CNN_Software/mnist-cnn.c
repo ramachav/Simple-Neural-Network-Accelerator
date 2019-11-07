@@ -59,6 +59,8 @@ int main(int argc, char *argv[])
 	if (fn_in) {
 		printf("[INFO] Loading model from %s...\n", fn_in);
 		ann = kann_load(fn_in);
+		printf("\nNode dimensions (NCHW): Batch-Size: %d, Channel-Size: %d, Height: %d, Width: %d\n", ann->v[0]->d[0], ann->v[0]->d[1], ann->v[0]->d[2], ann->v[0]->d[3]);
+
 	} else {
 		kad_node_t *t;
 		t = kad_feed(4, 1, 1, 28, 28), t->ext_flag |= KANN_F_IN;
@@ -77,6 +79,7 @@ int main(int argc, char *argv[])
 	x = kann_data_read(test_images); // kann_data_t x;
 	assert(x->n_col == 28 * 28);
 	y = 0; // force-run inference
+	printf("\nNumber of rows: %d\nNumber of columns: %d\nNumber of groups: %d\n", x->n_row, x->n_col, x->n_grp);
 
 #if USE_VGA_DISPLAY
 	unsigned short *pixel_buffer = (unsigned short*) pb->buffer_start_address;

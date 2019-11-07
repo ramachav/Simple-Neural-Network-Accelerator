@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for simple_NN_acc
-Sat Oct 26 18:21:23 2019
+Thu Oct 31 21:47:22 2019
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
 
 
@@ -129,18 +129,17 @@ agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.21        ;
-; Maximum used               ; 6           ;
+; Average used               ; 1.26        ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   9.4%      ;
-;     Processor 3            ;   4.5%      ;
-;     Processor 4            ;   3.8%      ;
-;     Processors 5-6         ;   1.8%      ;
+;     Processor 2            ;  12.1%      ;
+;     Processor 3            ;   7.3%      ;
+;     Processor 4            ;   6.6%      ;
 +----------------------------+-------------+
 
 
@@ -149,7 +148,7 @@ agreement for further details.
 +-------------------+--------+--------------------------+
 ; SDC File Path     ; Status ; Read at                  ;
 +-------------------+--------+--------------------------+
-; simple_NN_acc.sdc ; OK     ; Sat Oct 26 18:21:15 2019 ;
+; simple_NN_acc.sdc ; OK     ; Thu Oct 31 21:47:16 2019 ;
 +-------------------+--------+--------------------------+
 
 
@@ -4902,11 +4901,11 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
-    Info: Processing started: Sat Oct 26 18:21:11 2019
+    Info: Processing started: Thu Oct 31 21:47:14 2019
 Info: Command: quartus_sta simple_NN_acc -c simple_NN_acc
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Info (332164): Evaluating HDL-embedded SDC commands
@@ -5086,9 +5085,9 @@ Info (332114): Report Metastability: Found 24 synchronizer chains.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 1166 megabytes
-    Info: Processing ended: Sat Oct 26 18:21:23 2019
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Peak virtual memory: 1150 megabytes
+    Info: Processing ended: Thu Oct 31 21:47:22 2019
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:06
 
 

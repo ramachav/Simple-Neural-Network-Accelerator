@@ -1,5 +1,5 @@
 Analysis & Synthesis report for simple_NN_acc
-Sat Oct 26 18:20:14 2019
+Thu Oct 31 21:46:26 2019
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
 
 
@@ -293,7 +293,7 @@ agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Oct 26 18:20:13 2019           ;
+; Analysis & Synthesis Status        ; Successful - Thu Oct 31 21:46:26 2019           ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Standard Edition ;
 ; Revision Name                      ; simple_NN_acc                                   ;
 ; Top-level Entity Name              ; simple_NN_acc                                   ;
@@ -401,19 +401,17 @@ agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
-;     Processor 5            ;   0.0%      ;
-;     Processor 6            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -490,8 +488,8 @@ agreement for further details.
 ; nios_system/synthesis/submodules/altera_merlin_arbitrator.sv                                            ; yes             ; User SystemVerilog HDL File                  ; /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv                                            ;             ;
 ; nios_system/synthesis/submodules/altera_avalon_sc_fifo.v                                                ; yes             ; User Verilog HDL File                        ; /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/synthesis/submodules/altera_avalon_sc_fifo.v                                                ;             ;
 ; nios_system/synthesis/nios_system.v                                                                     ; yes             ; User Verilog HDL File                        ; /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/synthesis/nios_system.v                                                                     ;             ;
-; simple_NN_acc.v                                                                                         ; yes             ; User Verilog HDL File                        ; /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/simple_NN_acc.v                                                                                         ;             ;
 ; pll.v                                                                                                   ; yes             ; User Wizard-Generated File                   ; /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/pll.v                                                                                                   ;             ;
+; simple_NN_acc.v                                                                                         ; yes             ; User Verilog HDL File                        ; /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/simple_NN_acc.v                                                                                         ;             ;
 ; altpll.tdf                                                                                              ; yes             ; Megafunction                                 ; /package/eda/altera/altera17.0/quartus/libraries/megafunctions/altpll.tdf                                                                                                                                    ;             ;
 ; aglobal170.inc                                                                                          ; yes             ; Megafunction                                 ; /package/eda/altera/altera17.0/quartus/libraries/megafunctions/aglobal170.inc                                                                                                                                ;             ;
 ; stratix_pll.inc                                                                                         ; yes             ; Megafunction                                 ; /package/eda/altera/altera17.0/quartus/libraries/megafunctions/stratix_pll.inc                                                                                                                               ;             ;
@@ -8183,7 +8181,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:10     ;
+; Top            ; 00:00:11     ;
 +----------------+--------------+
 
 
@@ -8193,10 +8191,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
-    Info: Processing started: Sat Oct 26 18:18:53 2019
+    Info: Processing started: Thu Oct 31 21:45:22 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off simple_NN_acc -c simple_NN_acc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file nios_system/synthesis/submodules/nios_system_video_vga_controller_0.v
     Info (12023): Found entity 1: nios_system_video_vga_controller_0 File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/synthesis/submodules/nios_system_video_vga_controller_0.v Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file nios_system/synthesis/submodules/nios_system_video_rgb_resampler_0.v
@@ -8406,10 +8404,10 @@ Info (12021): Found 1 design units, including 1 entities, in source file nios_sy
     Info (12023): Found entity 1: altera_avalon_sc_fifo File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/synthesis/submodules/altera_avalon_sc_fifo.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file nios_system/synthesis/nios_system.v
     Info (12023): Found entity 1: nios_system File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/synthesis/nios_system.v Line: 6
-Info (12021): Found 1 design units, including 1 entities, in source file simple_NN_acc.v
-    Info (12023): Found entity 1: simple_NN_acc File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/simple_NN_acc.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pll.v
     Info (12023): Found entity 1: pll File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/pll.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file simple_NN_acc.v
+    Info (12023): Found entity 1: simple_NN_acc File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/simple_NN_acc.v Line: 1
 Warning (10037): Verilog HDL or VHDL warning at nios_system_nios2_qsys_0.v(2138): conditional expression evaluates to a constant File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/synthesis/submodules/nios_system_nios2_qsys_0.v Line: 2138
 Warning (10037): Verilog HDL or VHDL warning at nios_system_nios2_qsys_0.v(2140): conditional expression evaluates to a constant File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/synthesis/submodules/nios_system_nios2_qsys_0.v Line: 2140
 Warning (10037): Verilog HDL or VHDL warning at nios_system_nios2_qsys_0.v(2298): conditional expression evaluates to a constant File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/synthesis/submodules/nios_system_nios2_qsys_0.v Line: 2298
@@ -9818,7 +9816,7 @@ Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "nios_s
 Warning (12030): Port "q_b" on the entity instantiation of "Char_Buffer_Memory" is connected to a signal of width 16. The formal width of the signal in the module is 8.  The extra bits will be left dangling without any fan-out logic. File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/synthesis/submodules/nios_system_video_character_buffer_with_dma_0.v Line: 360
 Warning (12020): Port "jdo" on the entity instantiation of "the_nios_system_nios2_qsys_0_nios2_oci_itrace" is connected to a signal of width 38. The formal width of the signal in the module is 16.  The extra bits will be ignored. File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/synthesis/submodules/nios_system_nios2_qsys_0.v Line: 3584
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2019.10.26.18:19:50 Progress: Loading sld10c016cb/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2019.10.31.21:46:02 Progress: Loading sld10c016cb/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -9907,10 +9905,10 @@ Info (21057): Implemented 8265 device resources after synthesis - the final reso
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 4 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 47 warnings
-    Info: Peak virtual memory: 1371 megabytes
-    Info: Processing ended: Sat Oct 26 18:20:14 2019
-    Info: Elapsed time: 00:01:21
-    Info: Total CPU time (on all processors): 00:01:06
+    Info: Peak virtual memory: 1359 megabytes
+    Info: Processing ended: Thu Oct 31 21:46:26 2019
+    Info: Elapsed time: 00:01:04
+    Info: Total CPU time (on all processors): 00:01:09
 
 
 +------------------------------------------+

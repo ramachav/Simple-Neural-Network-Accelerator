@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Oct 26, 2019 6:42:19 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1572129739099</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Oct 31, 2019 10:11:15 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1572574275384</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/software/MNIST_CNN_Software_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../nios_system.sopcinfo</SopcDesignFile>
@@ -770,7 +770,7 @@
                 <SettingName>hal.enable_gprof</SettingName>
                 <Identifier>ALT_PROVIDE_GMON</Identifier>
                 <Type>Boolean</Type>
-                <Value>1</Value>
+                <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
                 <Description>Causes code to be compiled with gprof profiling enabled and the application ELF to be linked with the GPROF library. If true, adds -DALT_PROVIDE_GMON to ALT_CPPFLAGS and -pg to ALT_CFLAGS in public.mk.</Description>
