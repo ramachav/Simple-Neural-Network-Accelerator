@@ -545,16 +545,13 @@ static void kad_propagate_marks(int n, kad_node_t **a)
 
 void kad_eval_marked(int n, kad_node_t **a)
 {
-	int i, conv_counter = 0;
+	int i;
 	kad_propagate_marks(n, a);
 	for (i = 0; i < n; ++i) {
-		if (a[i]->n_child && a[i]->tmp > 0) {
+		if (a[i]->n_child && a[i]->tmp > 0)
 			kad_op_list[a[i]->op](a[i], KAD_FORWARD);
-			if(kad_op_name[a[i]->op] == "conv2d") conv_counter++;	//added
-		}
 	}
 	for (i = 0; i < n; ++i) a[i]->tmp = 0;
-	printf("kad_op_conv2d function calls per kad_eval_at function call: %d\n", conv_counter);	//added
 }
 
 const float *kad_eval_at(int n, kad_node_t **a, int from)
@@ -1934,7 +1931,6 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 
 #define conv2d_loop2(_x, _w, _y, _code) do { /* for the NHWC shape */ \
 		int n, c1, i, j, k, ii, j_skip = aux[1].stride * q->d[1], m = w->d[3] * w->d[1]; \
-		sdot_size = m; /* added */ \
 		for (n = 0; n < q->d[0]; ++n) /* mini-batch */ \
 			for (c1 = 0; c1 < w->d[0]; ++c1) /* output channel */ \
 				for (k = 0; k < w->d[2]; ++k) { /* kernel row */ \
@@ -1946,8 +1942,7 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 							memcpy(x_padded + aux[1].pad[0] * q->d[1], _xx, q->d[3] * q->d[1] * sizeof(float)); \
 							_xx = x_padded; \
 						} \
-						weight = _ww, input = _xx; /* added */ \
-						for (j = 0; j < p->d[3]; ++j, _xx += j_skip, ++_yy) _code; /* output and input column */  \
+						for (j = 0; j < p->d[3]; ++j, _xx += j_skip, ++_yy) _code; /* output and input column */  /* _code = *_yy += kad_sdot(m, _ww, _xx) */ \
 					} /* ~i */ \
 				} /* ~k, c1, n */ \
 	} while (0)
@@ -1957,7 +1952,6 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 	float *t = 0, *q1 = 0, *w1 = 0, *x_padded = 0;
 	int algo_switch = 0;
 	int sdot_size;
-	float *weight, *input;
 
 	if (action == KAD_FORWARD || action == KAD_BACKWARD) { /* allocate working space */
 		if (w->d[3] * w->d[1] < 16) {
@@ -1984,6 +1978,10 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 			conv2d_move_1to3(q->d, q->x, q1);
 			conv2d_move_1to3(w->d, w->x, w1);
 			conv2d_loop2(q1, w1, p->x, (*_yy += kad_sdot(m, _ww, _xx)));
+			printf("\np->d[0]: %d, p->d[1]: %d, p->d[2]: %d, p->d[3]: %d\n", p->d[0], p->d[1], p->d[2], p->d[3]);
+			printf("Times each for-loop executes in ONE conv2d_loop2 function call: \n");
+			printf("Mini-batch for-loop: %d\nOutput channel for-loop: %d\n", q->d[0], w->d[0]);
+			printf("Kernel row for-loop: %d\nOutput and input row for-loop: %d\nOutput and input column for-loop: %d\n", w->d[2], (2304 / (q->d[0] * w->d[0] * w->d[2])), p->d[3]);
 		}
 		conv_rot180(w->d[0] * w->d[1], w->d[2] * w->d[3], w->x);
 	} else if (action == KAD_BACKWARD) {
