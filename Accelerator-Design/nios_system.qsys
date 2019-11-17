@@ -17,6 +17,22 @@
          type = "int";
       }
    }
+   element floating_point_adder_0
+   {
+      datum _sortIndex
+      {
+         value = "16";
+         type = "int";
+      }
+   }
+   element floating_point_multiplier_0
+   {
+      datum _sortIndex
+      {
+         value = "17";
+         type = "int";
+      }
+   }
    element generic_tristate_controller_0
    {
       datum _sortIndex
@@ -78,6 +94,22 @@
       datum baseAddress
       {
          value = "278931456";
+         type = "String";
+      }
+   }
+   element nios_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element nios_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
          type = "String";
       }
    }
@@ -269,6 +301,16 @@
   <parameter name="resetSynchronousEdges" value="NONE" />
  </module>
  <module
+   name="floating_point_adder_0"
+   kind="floating_point_adder"
+   version="1.0"
+   enabled="1" />
+ <module
+   name="floating_point_multiplier_0"
+   kind="floating_point_multiplier"
+   version="1.0"
+   enabled="1" />
+ <module
    name="generic_tristate_controller_0"
    kind="altera_generic_tristate_controller"
    version="17.0"
@@ -384,7 +426,7 @@
   <parameter name="cpuID" value="0" />
   <parameter name="cpuID_stored" value="0" />
   <parameter name="cpuReset" value="false" />
-  <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
+  <parameter name="customInstSlavesSystemInfo"><![CDATA[<info><slave name="floating_point_adder_0" baseAddress="0" addressSpan="1" clockCycleType="COMBINATORIAL" /><slave name="floating_point_multiplier_0" baseAddress="1" addressSpan="1" clockCycleType="COMBINATORIAL" /></info>]]></parameter>
   <parameter name="dataAddrWidth" value="29" />
   <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='new_sdram_controller_0.s1' start='0x8000000' end='0x10000000' /><slave name='generic_tristate_controller_0.uas' start='0x10000000' end='0x10800000' /><slave name='sram_0.avalon_sram_slave' start='0x10800000' end='0x10A00000' /><slave name='video_character_buffer_with_dma_0.avalon_char_buffer_slave' start='0x10A00000' end='0x10A02000' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x10A02800' end='0x10A03000' /><slave name='performance_counter_0.control_slave' start='0x10A03000' end='0x10A03080' /><slave name='timer_0.s1' start='0x10A030A0' end='0x10A030C0' /><slave name='video_pixel_buffer_dma_0.avalon_control_slave' start='0x10A030C0' end='0x10A030D0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x10A030D0' end='0x10A030D8' /><slave name='video_character_buffer_with_dma_0.avalon_char_control_slave' start='0x10A030D8' end='0x10A030E0' /></address-map>]]></parameter>
   <parameter name="dcache_bursts" value="false" />
@@ -833,6 +875,24 @@
    start="nios2_qsys_0.d_irq"
    end="timer_0.irq">
   <parameter name="irqNumber" value="1" />
+ </connection>
+ <connection
+   kind="nios_custom_instruction"
+   version="17.0"
+   start="nios2_qsys_0.custom_instruction_master"
+   end="floating_point_adder_0.nios_custom_instruction_slave">
+  <parameter name="CIName">floating_point_adder_0</parameter>
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0" />
+ </connection>
+ <connection
+   kind="nios_custom_instruction"
+   version="17.0"
+   start="nios2_qsys_0.custom_instruction_master"
+   end="floating_point_multiplier_0.nios_custom_instruction_slave">
+  <parameter name="CIName">floating_point_multiplier_0</parameter>
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="1" />
  </connection>
  <connection
    kind="reset"

@@ -15,6 +15,19 @@ add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/d_write
 add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/d_writedata
 add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/d_irq
 add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/d_readdatavalid
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_dataa
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_datab
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_ipending
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_status
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_estatus
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_n
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_a
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_b
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_c
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_readra
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_readrb
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_writerc
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_result
 add wave -noupdate -divider {nios_system_nios2_qsys_0: base pipeline}
 add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/clk
 add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/reset_n
@@ -74,6 +87,18 @@ add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/A_ipendi
 add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/A_ipending_reg_irq1
 add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/A_cpuid_reg
 add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_valid_prior_to_hbreak
+add wave -noupdate -divider {nios_system_nios2_qsys_0: combinatorial_custom_instruction}
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ctrl_custom_combo
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_dataa
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_datab
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_ipending
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_status
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_estatus
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_n
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_readra
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_readrb
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_writerc
+add wave -noupdate -format Logic -radix hexadecimal /NIOS2_INSTANCE_TOP/E_ci_combo_result
 
 configure wave -justifyvalue right
 configure wave -signalnamewidth 1

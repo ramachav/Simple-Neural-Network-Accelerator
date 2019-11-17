@@ -1,5 +1,5 @@
 Flow report for simple_NN_acc
-Thu Oct 31 21:47:22 2019
+Fri Nov 15 15:37:36 2019
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
 
 
@@ -41,21 +41,21 @@ agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Thu Oct 31 21:47:13 2019           ;
+; Flow Status                        ; Successful - Fri Nov 15 15:37:18 2019           ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Standard Edition ;
 ; Revision Name                      ; simple_NN_acc                                   ;
 ; Top-level Entity Name              ; simple_NN_acc                                   ;
 ; Family                             ; Cyclone IV E                                    ;
 ; Device                             ; EP4CE115F29C7                                   ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 6,791 / 114,480 ( 6 % )                         ;
-;     Total combinational functions  ; 6,218 / 114,480 ( 5 % )                         ;
-;     Dedicated logic registers      ; 4,173 / 114,480 ( 4 % )                         ;
-; Total registers                    ; 4292                                            ;
+; Total logic elements               ; 8,772 / 114,480 ( 8 % )                         ;
+;     Total combinational functions  ; 8,202 / 114,480 ( 7 % )                         ;
+;     Dedicated logic registers      ; 4,178 / 114,480 ( 4 % )                         ;
+; Total registers                    ; 4297                                            ;
 ; Total pins                         ; 169 / 529 ( 32 % )                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 1,205,376 / 3,981,312 ( 30 % )                  ;
-; Embedded Multiplier 9-bit elements ; 4 / 532 ( < 1 % )                               ;
+; Embedded Multiplier 9-bit elements ; 11 / 532 ( 2 % )                                ;
 ; Total PLLs                         ; 1 / 4 ( 25 % )                                  ;
 +------------------------------------+-------------------------------------------------+
 
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/31/2019 21:45:22 ;
+; Start date & time ; 11/15/2019 15:31:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; simple_NN_acc       ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 88623630948525.157257272204501         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 220037193208074.157384989136691        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
@@ -94,24 +94,24 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:01     ; 1.0                     ; 1344 MB             ; 00:01:07                           ;
-; Fitter                    ; 00:00:38     ; 1.1                     ; 1631 MB             ; 00:00:51                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 962 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:08     ; 1.3                     ; 1150 MB             ; 00:00:06                           ;
-; Total                     ; 00:01:51     ; --                      ; --                  ; 00:02:07                           ;
+; Analysis & Synthesis      ; 00:03:18     ; 1.0                     ; 1426 MB             ; 00:03:41                           ;
+; Fitter                    ; 00:01:47     ; 1.2                     ; 1941 MB             ; 00:03:09                           ;
+; Assembler                 ; 00:00:15     ; 1.0                     ; 966 MB              ; 00:00:14                           ;
+; TimeQuest Timing Analyzer ; 00:00:17     ; 1.4                     ; 1277 MB             ; 00:00:19                           ;
+; Total                     ; 00:05:37     ; --                      ; --                  ; 00:07:23                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                                    ;
-+---------------------------+-------------------------+----------------+------------+----------------+
-; Module Name               ; Machine Hostname        ; OS Name        ; OS Version ; Processor type ;
-+---------------------------+-------------------------+----------------+------------+----------------+
-; Analysis & Synthesis      ; cparch20.ecn.purdue.edu ; CentOS release ; 6          ; x86_64         ;
-; Fitter                    ; cparch20.ecn.purdue.edu ; CentOS release ; 6          ; x86_64         ;
-; Assembler                 ; cparch20.ecn.purdue.edu ; CentOS release ; 6          ; x86_64         ;
-; TimeQuest Timing Analyzer ; cparch20.ecn.purdue.edu ; CentOS release ; 6          ; x86_64         ;
-+---------------------------+-------------------------+----------------+------------+----------------+
++---------------------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                                         ;
++---------------------------+------------------------------+----------------+------------+----------------+
+; Module Name               ; Machine Hostname             ; OS Name        ; OS Version ; Processor type ;
++---------------------------+------------------------------+----------------+------------+----------------+
+; Analysis & Synthesis      ; ecegrid-thin4.ecn.purdue.edu ; CentOS release ; 6          ; x86_64         ;
+; Fitter                    ; ecegrid-thin4.ecn.purdue.edu ; CentOS release ; 6          ; x86_64         ;
+; Assembler                 ; ecegrid-thin4.ecn.purdue.edu ; CentOS release ; 6          ; x86_64         ;
+; TimeQuest Timing Analyzer ; ecegrid-thin4.ecn.purdue.edu ; CentOS release ; 6          ; x86_64         ;
++---------------------------+------------------------------+----------------+------------+----------------+
 
 
 ------------

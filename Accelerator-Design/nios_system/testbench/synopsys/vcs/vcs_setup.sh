@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 17.0 595 linux 2019.10.31.21:44:39
+# ACDS 17.0 595 linux 2019.11.15.15:29:57
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 17.0 595 linux 2019.10.31.21:44:39
+# ACDS 17.0 595 linux 2019.11.15.15:29:57
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="nios_system_tb"
@@ -214,6 +214,9 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_reset_synchronizer.v \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_irq_mapper.sv \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0.v \
+  $QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_customins_slave_translator.sv \
+  $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_custom_instruction_master_comb_xconnect.sv \
+  $QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_customins_master_translator.v \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_up_avalon_video_vga_timing.v \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_video_vga_controller_0.v \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_video_rgb_resampler_0.v \
@@ -239,6 +242,8 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_new_sdram_controller_0.v \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_jtag_uart_0.v \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_generic_tristate_controller_0.v \
+  $QSYS_SIMDIR/nios_system_tb/simulation/submodules/fp_multiplier.sv \
+  $QSYS_SIMDIR/nios_system_tb/simulation/submodules/fp_adder.sv \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_inout.sv \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_tristate_conduit_bridge_translator.sv \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_avalon_reset_source.sv \

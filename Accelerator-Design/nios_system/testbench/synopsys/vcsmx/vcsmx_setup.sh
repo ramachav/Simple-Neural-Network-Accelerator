@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 17.0 595 linux 2019.10.31.21:44:39
+# ACDS 17.0 595 linux 2019.11.15.15:29:57
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -101,7 +101,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 17.0 595 linux 2019.10.31.21:44:39
+# ACDS 17.0 595 linux 2019.11.15.15:29:57
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="nios_system_tb"
@@ -180,6 +180,9 @@ mkdir -p ./libraries/tdt/
 mkdir -p ./libraries/rst_controller/
 mkdir -p ./libraries/irq_mapper/
 mkdir -p ./libraries/mm_interconnect_0/
+mkdir -p ./libraries/nios2_qsys_0_custom_instruction_master_comb_slave_translator0/
+mkdir -p ./libraries/nios2_qsys_0_custom_instruction_master_comb_xconnect/
+mkdir -p ./libraries/nios2_qsys_0_custom_instruction_master_translator/
 mkdir -p ./libraries/video_vga_controller_0/
 mkdir -p ./libraries/video_rgb_resampler_0/
 mkdir -p ./libraries/video_pixel_buffer_dma_0/
@@ -194,6 +197,8 @@ mkdir -p ./libraries/nios2_qsys_0/
 mkdir -p ./libraries/new_sdram_controller_0/
 mkdir -p ./libraries/jtag_uart_0/
 mkdir -p ./libraries/generic_tristate_controller_0/
+mkdir -p ./libraries/floating_point_multiplier_0/
+mkdir -p ./libraries/floating_point_adder_0/
 mkdir -p ./libraries/tristate_conduit_bridge_0_tcb_translator/
 mkdir -p ./libraries/nios_system_inst_reset_0_bfm/
 mkdir -p ./libraries/nios_system_inst_clk_0_bfm/
@@ -310,6 +315,9 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_reset_synchronizer.v"                                            -work rst_controller                                                        
   vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_irq_mapper.sv"                                              -work irq_mapper                                                            
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0.v"                                        -work mm_interconnect_0                                                     
+  vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_customins_slave_translator.sv"                                   -work nios2_qsys_0_custom_instruction_master_comb_slave_translator0         
+  vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_custom_instruction_master_comb_xconnect.sv"    -work nios2_qsys_0_custom_instruction_master_comb_xconnect                  
+  vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_customins_master_translator.v"                                   -work nios2_qsys_0_custom_instruction_master_translator                     
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_up_avalon_video_vga_timing.v"                                    -work video_vga_controller_0                                                
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_video_vga_controller_0.v"                                   -work video_vga_controller_0                                                
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_video_rgb_resampler_0.v"                                    -work video_rgb_resampler_0                                                 
@@ -335,6 +343,8 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_new_sdram_controller_0.v"                                   -work new_sdram_controller_0                                                
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_jtag_uart_0.v"                                              -work jtag_uart_0                                                           
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_generic_tristate_controller_0.v"                            -work generic_tristate_controller_0                                         
+  vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/fp_multiplier.sv"                                                       -work floating_point_multiplier_0                                           
+  vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/fp_adder.sv"                                                            -work floating_point_adder_0                                                
   vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_inout.sv"                                                        -work tristate_conduit_bridge_0_tcb_translator                              
   vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_tristate_conduit_bridge_translator.sv"                           -work tristate_conduit_bridge_0_tcb_translator                              
   vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_avalon_reset_source.sv"                                          -work nios_system_inst_reset_0_bfm                                          

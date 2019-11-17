@@ -872,7 +872,12 @@ static inline float kad_sdot(int n, const float *x, const float *y) /* BLAS sdot
 {
 	int i;
 	float s = 0.;
-	for (i = 0; i < n; ++i) s += x[i] * y[i];
+	float temp = 0.;
+	for (i = 0; i < n; ++i) {
+		temp = ALT_CI_FLOATING_POINT_MULTIPLIER_0(x[i],y[i]);
+		printf("\nx[i]: %f,\ty[i]: %f,\t temp: %f\n", x[i], y[i], temp);
+		s = ALT_CI_FLOATING_POINT_ADDER_0(s,temp);  //x[i] * y[i];	/* added */
+	}
 	return s;
 }
 static inline void kad_saxpy_inlined(int n, float a, const float *x, float *y) // BLAS saxpy

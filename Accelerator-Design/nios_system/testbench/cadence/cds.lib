@@ -48,6 +48,9 @@ DEFINE tdt                                                                    ./
 DEFINE rst_controller                                                         ./libraries/rst_controller/                                                        
 DEFINE irq_mapper                                                             ./libraries/irq_mapper/                                                            
 DEFINE mm_interconnect_0                                                      ./libraries/mm_interconnect_0/                                                     
+DEFINE nios2_qsys_0_custom_instruction_master_comb_slave_translator0          ./libraries/nios2_qsys_0_custom_instruction_master_comb_slave_translator0/         
+DEFINE nios2_qsys_0_custom_instruction_master_comb_xconnect                   ./libraries/nios2_qsys_0_custom_instruction_master_comb_xconnect/                  
+DEFINE nios2_qsys_0_custom_instruction_master_translator                      ./libraries/nios2_qsys_0_custom_instruction_master_translator/                     
 DEFINE video_vga_controller_0                                                 ./libraries/video_vga_controller_0/                                                
 DEFINE video_rgb_resampler_0                                                  ./libraries/video_rgb_resampler_0/                                                 
 DEFINE video_pixel_buffer_dma_0                                               ./libraries/video_pixel_buffer_dma_0/                                              
@@ -62,6 +65,8 @@ DEFINE nios2_qsys_0                                                           ./
 DEFINE new_sdram_controller_0                                                 ./libraries/new_sdram_controller_0/                                                
 DEFINE jtag_uart_0                                                            ./libraries/jtag_uart_0/                                                           
 DEFINE generic_tristate_controller_0                                          ./libraries/generic_tristate_controller_0/                                         
+DEFINE floating_point_multiplier_0                                            ./libraries/floating_point_multiplier_0/                                           
+DEFINE floating_point_adder_0                                                 ./libraries/floating_point_adder_0/                                                
 DEFINE tristate_conduit_bridge_0_tcb_translator                               ./libraries/tristate_conduit_bridge_0_tcb_translator/                              
 DEFINE nios_system_inst_reset_0_bfm                                           ./libraries/nios_system_inst_reset_0_bfm/                                          
 DEFINE nios_system_inst_clk_0_bfm                                             ./libraries/nios_system_inst_clk_0_bfm/                                            

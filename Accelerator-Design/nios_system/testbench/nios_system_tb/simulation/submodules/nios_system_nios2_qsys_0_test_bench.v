@@ -39,6 +39,7 @@ module nios_system_nios2_qsys_0_test_bench (
                                               M_valid,
                                               W_dst_regnum,
                                               W_iw,
+                                              W_iw_custom_n,
                                               W_iw_op,
                                               W_iw_opx,
                                               W_pcb,
@@ -92,11 +93,12 @@ module nios_system_nios2_qsys_0_test_bench (
   input            M_valid;
   input   [  4: 0] W_dst_regnum;
   input   [ 31: 0] W_iw;
+  input   [  7: 0] W_iw_custom_n;
   input   [  5: 0] W_iw_op;
   input   [  5: 0] W_iw_opx;
   input   [ 28: 0] W_pcb;
   input            W_valid;
-  input   [ 55: 0] W_vinst;
+  input   [215: 0] W_vinst;
   input            W_wr_dst_reg;
   input            clk;
   input   [ 28: 0] d_address;
@@ -182,6 +184,8 @@ wire             W_op_custom;
 wire             W_op_div;
 wire             W_op_divu;
 wire             W_op_eret;
+wire             W_op_floating_point_adder_0;
+wire             W_op_floating_point_multiplier_0;
 wire             W_op_flushd;
 wire             W_op_flushda;
 wire             W_op_flushi;
@@ -404,6 +408,8 @@ wire             test_has_ended;
   assign W_op_rsvx56 = W_op_opx & (W_iw_opx == 56);
   assign W_op_rsvx60 = W_op_opx & (W_iw_opx == 60);
   assign W_op_rsvx63 = W_op_opx & (W_iw_opx == 63);
+  assign W_op_floating_point_adder_0 = W_op_custom & ({W_iw_custom_n[0]} == 1'h0);
+  assign W_op_floating_point_multiplier_0 = W_op_custom & ({W_iw_custom_n[0]} == 1'h1);
   assign W_op_opx = W_iw_op == 58;
   assign W_op_custom = W_iw_op == 50;
   always @(posedge clk or negedge reset_n)

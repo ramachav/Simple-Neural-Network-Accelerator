@@ -41,6 +41,9 @@ tdt:                                                                    ./librar
 rst_controller:                                                         ./libraries/rst_controller/                                                        
 irq_mapper:                                                             ./libraries/irq_mapper/                                                            
 mm_interconnect_0:                                                      ./libraries/mm_interconnect_0/                                                     
+nios2_qsys_0_custom_instruction_master_comb_slave_translator0:          ./libraries/nios2_qsys_0_custom_instruction_master_comb_slave_translator0/         
+nios2_qsys_0_custom_instruction_master_comb_xconnect:                   ./libraries/nios2_qsys_0_custom_instruction_master_comb_xconnect/                  
+nios2_qsys_0_custom_instruction_master_translator:                      ./libraries/nios2_qsys_0_custom_instruction_master_translator/                     
 video_vga_controller_0:                                                 ./libraries/video_vga_controller_0/                                                
 video_rgb_resampler_0:                                                  ./libraries/video_rgb_resampler_0/                                                 
 video_pixel_buffer_dma_0:                                               ./libraries/video_pixel_buffer_dma_0/                                              
@@ -55,6 +58,8 @@ nios2_qsys_0:                                                           ./librar
 new_sdram_controller_0:                                                 ./libraries/new_sdram_controller_0/                                                
 jtag_uart_0:                                                            ./libraries/jtag_uart_0/                                                           
 generic_tristate_controller_0:                                          ./libraries/generic_tristate_controller_0/                                         
+floating_point_multiplier_0:                                            ./libraries/floating_point_multiplier_0/                                           
+floating_point_adder_0:                                                 ./libraries/floating_point_adder_0/                                                
 tristate_conduit_bridge_0_tcb_translator:                               ./libraries/tristate_conduit_bridge_0_tcb_translator/                              
 nios_system_inst_reset_0_bfm:                                           ./libraries/nios_system_inst_reset_0_bfm/                                          
 nios_system_inst_clk_0_bfm:                                             ./libraries/nios_system_inst_clk_0_bfm/                                            

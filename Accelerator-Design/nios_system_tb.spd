@@ -262,6 +262,18 @@
    type="VERILOG"
    library="mm_interconnect_0" />
  <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/altera_customins_slave_translator.sv"
+   type="SYSTEM_VERILOG"
+   library="nios2_qsys_0_custom_instruction_master_comb_slave_translator0" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_custom_instruction_master_comb_xconnect.sv"
+   type="SYSTEM_VERILOG"
+   library="nios2_qsys_0_custom_instruction_master_comb_xconnect" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/altera_customins_master_translator.v"
+   type="VERILOG"
+   library="nios2_qsys_0_custom_instruction_master_translator" />
+ <file
    path="nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_avalon_video_vga_timing.v"
    type="VERILOG"
    library="video_vga_controller_0" />
@@ -449,6 +461,14 @@
    path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_generic_tristate_controller_0.v"
    type="VERILOG"
    library="generic_tristate_controller_0" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/fp_multiplier.sv"
+   type="SYSTEM_VERILOG"
+   library="floating_point_multiplier_0" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/fp_adder.sv"
+   type="SYSTEM_VERILOG"
+   library="floating_point_adder_0" />
  <file
    path="nios_system/testbench/nios_system_tb/simulation/submodules/altera_inout.sv"
    type="SYSTEM_VERILOG"

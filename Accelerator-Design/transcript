@@ -1,0 +1,58 @@
+# //  Questa Sim-64
+# //  Version 10.6b linux_x86_64 May 25 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading project floating_multiplier
+# Compile of fp_multiplier.sv was successful.
+# Compile of fp_multiplier_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -i work.fp_multiplier_tb -voptargs=+acc
+# vsim -i work.fp_multiplier_tb -voptargs="+acc" 
+# Start time: 18:01:48 on Nov 17,2019
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.fp_multiplier_tb(fast)
+# Loading work.test(fast)
+# Loading work.fp_multiplier(fast)
+add wave -position insertpoint  \
+sim:/fp_multiplier_tb/FP_MULTIPLIER/A \
+sim:/fp_multiplier_tb/FP_MULTIPLIER/B \
+sim:/fp_multiplier_tb/FP_MULTIPLIER/O \
+sim:/fp_multiplier_tb/FP_MULTIPLIER/O_sign \
+sim:/fp_multiplier_tb/FP_MULTIPLIER/O_exponent \
+sim:/fp_multiplier_tb/FP_MULTIPLIER/O_mantissa \
+sim:/fp_multiplier_tb/FP_MULTIPLIER/multiplier_in_A \
+sim:/fp_multiplier_tb/FP_MULTIPLIER/multiplier_in_B \
+sim:/fp_multiplier_tb/FP_MULTIPLIER/multiplier_out_s \
+sim:/fp_multiplier_tb/FP_MULTIPLIER/multiplier_out_e \
+sim:/fp_multiplier_tb/FP_MULTIPLIER/multiplier_out_m \
+sim:/fp_multiplier_tb/FP_MULTIPLIER/A_sign \
+sim:/fp_multiplier_tb/FP_MULTIPLIER/A_exponent \
+sim:/fp_multiplier_tb/FP_MULTIPLIER/A_mantissa \
+sim:/fp_multiplier_tb/FP_MULTIPLIER/B_sign \
+sim:/fp_multiplier_tb/FP_MULTIPLIER/B_exponent \
+sim:/fp_multiplier_tb/FP_MULTIPLIER/B_mantissa \
+sim:/fp_multiplier_tb/FP_MULTIPLIER/intermediate_product \
+sim:/fp_multiplier_tb/FP_MULTIPLIER/final_mantissa
+run -all
+# Output from the multiplier: 0x3ca5c28c (Expected value is 0x3CA5C28C
+# Output from the multiplier: 0x38bbe61e (Expected value is 0x38BBE61E
+# Output from the multiplier: 0x3b48fb0f (Expected value is 0x3B48FB0F
+# Output from the multiplier: 0x3acda2ab (Expected value is 0x3ACDA2AB
+# Output from the multiplier: 0x48ffffff (Expected value is 0x48FFFFFE
+# ** Note: $finish    : /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_multiplier_tb.sv(115)
+#    Time: 635 ns  Iteration: 1  Instance: /fp_multiplier_tb/PROG
+# 1
+# Break in Module test at /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_multiplier_tb.sv line 115
+# End time: 18:03:23 on Nov 17,2019, Elapsed time: 0:01:35
+# Errors: 0, Warnings: 0

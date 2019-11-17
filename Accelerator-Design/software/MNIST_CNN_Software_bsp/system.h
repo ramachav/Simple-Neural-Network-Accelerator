@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_qsys_0' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: ../../nios_system.sopcinfo
  *
- * Generated: Sat Oct 26 17:53:42 EDT 2019
+ * Generated: Fri Nov 15 16:36:01 EST 2019
  */
 
 /*
@@ -123,6 +123,17 @@
 
 
 /*
+ * Custom instruction macros
+ *
+ */
+
+#define ALT_CI_FLOATING_POINT_ADDER_0(A,B) __builtin_custom_inii(ALT_CI_FLOATING_POINT_ADDER_0_N,(A),(B))
+#define ALT_CI_FLOATING_POINT_ADDER_0_N 0x0
+#define ALT_CI_FLOATING_POINT_MULTIPLIER_0(A,B) __builtin_custom_inii(ALT_CI_FLOATING_POINT_MULTIPLIER_0_N,(A),(B))
+#define ALT_CI_FLOATING_POINT_MULTIPLIER_0_N 0x1
+
+
+/*
  * Define for each module class mastered by the CPU
  *
  */
@@ -136,6 +147,8 @@
 #define __ALTERA_UP_AVALON_SRAM
 #define __ALTERA_UP_AVALON_VIDEO_CHARACTER_BUFFER_WITH_DMA
 #define __ALTERA_UP_AVALON_VIDEO_PIXEL_BUFFER_DMA
+#define __FLOATING_POINT_ADDER
+#define __FLOATING_POINT_MULTIPLIER
 
 
 /*

@@ -31,6 +31,7 @@
 
 #include <stdio.h>
 #include <stdint.h>
+#include "system.h"
 
 #ifdef __STRICT_ANSI__
 #define inline
