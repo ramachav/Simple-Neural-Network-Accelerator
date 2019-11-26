@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 17.0 595 linux 2019.11.15.15:29:57
+# ACDS 17.0 595 linux 2019.11.19.12:44:37
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 17.0 595 linux 2019.11.15.15:29:57
+# ACDS 17.0 595 linux 2019.11.19.12:44:37
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="nios_system_tb"
@@ -239,6 +239,7 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_oci_test_bench.v \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_mult_cell.v \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_test_bench.v \
+  $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_new_sdram_controller_0_test_component.v \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_new_sdram_controller_0.v \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_jtag_uart_0.v \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_generic_tristate_controller_0.v \
@@ -249,6 +250,7 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_avalon_reset_source.sv \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_avalon_clock_source.sv \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system.v \
+  $QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_sdram_partner_module.v \
   $QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_external_memory_bfm.sv \
   $QSYS_SIMDIR/nios_system_tb/simulation/nios_system_tb.v \
   -top $TOP_LEVEL_NAME

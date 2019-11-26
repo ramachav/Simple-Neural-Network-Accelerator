@@ -1,0 +1,56 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/software/MNIST_CNN_Software/obj/default/runtime/sim/mentor
+valtera_merlin_burst_uncompressor
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 f1?Rb<=9U?R9LJoHl;7>T3
+I2`aQ3=^>;z0akgP7PP^zi0
+!s105 altera_merlin_burst_uncompressor_sv_unit
+S1
+R0
+Z3 w1574118718
+8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv
+F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv
+L0 40
+Z4 OL;L;10.6b;65
+Z5 !s108 1574119519.000000
+!s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv|
+!s90 -reportprogress|300|-sv|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv|-L|altera_common_sv_packages|-work|sram_0_avalon_sram_slave_agent|
+!i113 0
+Z6 o-sv -L altera_common_sv_packages -work sram_0_avalon_sram_slave_agent -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z7 tCvgOpt 0
+valtera_merlin_slave_agent
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 ePZN1d?B062J`OBb?blff3
+IOGm91g?2Oe<Eb6TWZMb9^3
+!s105 altera_merlin_slave_agent_sv_unit
+S1
+R0
+R3
+8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_slave_agent.sv
+F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_slave_agent.sv
+L0 34
+R4
+R5
+!s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_slave_agent.sv|
+!s90 -reportprogress|300|-sv|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_slave_agent.sv|-L|altera_common_sv_packages|-work|sram_0_avalon_sram_slave_agent|
+!i113 0
+R6
+R7

@@ -1,0 +1,110 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/software/MNIST_CNN_Software/obj/default/runtime/sim/mentor
+vnios_system_jtag_uart_0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 Fm>ZJdEGihkV`?f6BLz:H0
+IJ@:4@5dReF^E@36X8FLZX2
+R0
+Z2 w1574118696
+Z3 8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_jtag_uart_0.v
+Z4 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_jtag_uart_0.v
+L0 331
+Z5 OL;L;10.6b;65
+Z6 !s108 1574119531.000000
+Z7 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_jtag_uart_0.v|
+Z8 !s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_jtag_uart_0.v|-work|jtag_uart_0|
+!i113 0
+Z9 o-work jtag_uart_0 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 tCvgOpt 0
+vnios_system_jtag_uart_0_scfifo_r
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 47KZM;KA2nU8Ze;ai4g7l3
+I81cSW:z@DQM=glJeF7Z<[3
+R0
+R2
+R3
+R4
+L0 243
+R5
+R6
+R7
+R8
+!i113 0
+R9
+R10
+vnios_system_jtag_uart_0_scfifo_w
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 5`B6]mFoZZhff:NBY<]Fk2
+IUZ9307NDGNI`5h>TQ5;eG2
+R0
+R2
+R3
+R4
+L0 78
+R5
+R6
+R7
+R8
+!i113 0
+R9
+R10
+vnios_system_jtag_uart_0_sim_scfifo_r
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 YkRUSd:;8GKW7U=PAIGm80
+I^Rj>Oh[QczQ8[0EV4VXR[0
+R0
+R2
+R3
+R4
+L0 164
+R5
+R6
+R7
+R8
+!i113 0
+R9
+R10
+vnios_system_jtag_uart_0_sim_scfifo_w
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 XFzYcMA6@JMe5hE`VK9ci3
+I6nF0z^=NZ2jh?2Bek`4<c2
+R0
+R2
+R3
+R4
+L0 21
+R5
+R6
+R7
+R8
+!i113 0
+R9
+R10

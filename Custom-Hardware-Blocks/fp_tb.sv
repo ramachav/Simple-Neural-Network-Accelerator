@@ -4,6 +4,8 @@
 *  Simple Neural Network Accelerator                         *
 *************************************************************/
 
+`timescale 1 ns / 1 ns
+
 module fp_tb();
 
 	reg clk;
@@ -16,12 +18,12 @@ module fp_tb();
 
 	fp_adder add 
 	(
-		.A(A), .B(B), .O(AddO)
+		.dataa(A), .datab(B), .result(AddO)
 	);
 
 	fp_multiplier mul 
 	(
-		.A(A), .B(B), .O(MulO)
+		.dataa(A), .datab(B), .result(MulO)
 	);
 
 	fp_test testAdd 

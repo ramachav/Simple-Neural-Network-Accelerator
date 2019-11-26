@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="nios_system" kind="system" version="17.0" fabric="QSYS">
  <!-- Format version 17.0 595 (Future versions may contain additional information.) -->
- <!-- 2019.11.15.15:28:47 -->
+ <!-- 2019.11.19.12:43:59 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1573849705</value>
+  <value>1574185425</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -660,19 +660,19 @@ parameters are a RESULT of the module parameters. -->
    <type>nios_custom_instruction</type>
    <isStart>false</isStart>
    <port>
-    <name>A</name>
+    <name>dataa</name>
     <direction>Input</direction>
     <width>32</width>
     <role>dataa</role>
    </port>
    <port>
-    <name>B</name>
+    <name>datab</name>
     <direction>Input</direction>
     <width>32</width>
     <role>datab</role>
    </port>
    <port>
-    <name>O</name>
+    <name>result</name>
     <direction>Output</direction>
     <width>32</width>
     <role>result</role>
@@ -792,19 +792,19 @@ parameters are a RESULT of the module parameters. -->
    <type>nios_custom_instruction</type>
    <isStart>false</isStart>
    <port>
-    <name>A</name>
+    <name>dataa</name>
     <direction>Input</direction>
     <width>32</width>
     <role>dataa</role>
    </port>
    <port>
-    <name>B</name>
+    <name>datab</name>
     <direction>Input</direction>
     <width>32</width>
     <role>datab</role>
    </port>
    <port>
-    <name>O</name>
+    <name>result</name>
     <direction>Output</direction>
     <width>32</width>
     <role>result</role>
@@ -2849,7 +2849,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.SIM_MODEL_BASE</name>
-   <value>0</value>
+   <value>1</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.STARVATION_INDICATOR</name>
@@ -2894,6 +2894,58 @@ the requested settings for a module instance. -->
   <assignment>
    <name>embeddedsw.memoryInfo.MEM_INIT_DATA_WIDTH</name>
    <value>32</value>
+  </assignment>
+  <assignment>
+   <name>postgeneration.simulation.init_file.param_name</name>
+   <value>INIT_FILE</value>
+  </assignment>
+  <assignment>
+   <name>postgeneration.simulation.init_file.param_owner</name>
+   <value>wire</value>
+  </assignment>
+  <assignment>
+   <name>postgeneration.simulation.init_file.type</name>
+   <value>MEM_INIT</value>
+  </assignment>
+  <assignment>
+   <name>testbench.partner.map.clk</name>
+   <value>my_partner.clk</value>
+  </assignment>
+  <assignment>
+   <name>testbench.partner.map.wire</name>
+   <value>my_partner.conduit</value>
+  </assignment>
+  <assignment>
+   <name>testbench.partner.my_partner.class</name>
+   <value>altera_sdram_partner_module</value>
+  </assignment>
+  <assignment>
+   <name>testbench.partner.my_partner.parameter.CAS_LATENCY</name>
+   <value>3</value>
+  </assignment>
+  <assignment>
+   <name>testbench.partner.my_partner.parameter.CONTR_NAME</name>
+   <value>nios_system_new_sdram_controller_0</value>
+  </assignment>
+  <assignment>
+   <name>testbench.partner.my_partner.parameter.SDRAM_BANK_WIDTH</name>
+   <value>2</value>
+  </assignment>
+  <assignment>
+   <name>testbench.partner.my_partner.parameter.SDRAM_COL_WIDTH</name>
+   <value>10</value>
+  </assignment>
+  <assignment>
+   <name>testbench.partner.my_partner.parameter.SDRAM_DATA_WIDTH</name>
+   <value>32</value>
+  </assignment>
+  <assignment>
+   <name>testbench.partner.my_partner.parameter.SDRAM_NUM_CHIPSELECTS</name>
+   <value>1</value>
+  </assignment>
+  <assignment>
+   <name>testbench.partner.my_partner.parameter.SDRAM_ROW_WIDTH</name>
+   <value>13</value>
   </assignment>
   <parameter name="TAC">
    <type>double</type>
@@ -2961,7 +3013,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="generateSimulationModel">
    <type>boolean</type>
-   <value>false</value>
+   <value>true</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -24471,5 +24523,5 @@ parameters are a RESULT of the module parameters. -->
   <version>17.0</version>
  </plugin>
  <reportVersion>17.0 595</reportVersion>
- <uniqueIdentifier>C81F66BD11070000016E70C0B68D</uniqueIdentifier>
+ <uniqueIdentifier>F48E388B945A0000016E84C3608B</uniqueIdentifier>
 </EnsembleReport>

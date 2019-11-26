@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Fri Nov 15 15:35:08 2019
+Analysis & Synthesis Status : Successful - Tue Nov 19 12:46:52 2019
 Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Standard Edition
 Revision Name : simple_NN_acc
 Top-level Entity Name : simple_NN_acc
 Family : Cyclone IV E
-Total logic elements : 9,165
-    Total combinational functions : 8,194
+Total logic elements : 8,753
+    Total combinational functions : 7,782
     Dedicated logic registers : 4,321
 Total registers : 4321
 Total pins : 169

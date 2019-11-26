@@ -1,0 +1,33 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/software/MNIST_CNN_Software/obj/default/runtime/sim/mentor
+valtera_merlin_master_translator
+DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 NdRk@]3fC2C@V7Rm;dQM31
+IR7AJF;am46=on5C>2zR_i3
+!s105 altera_merlin_master_translator_sv_unit
+S1
+R0
+w1574118717
+8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_master_translator.sv
+F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_master_translator.sv
+L0 32
+OL;L;10.6b;65
+!s108 1574119520.000000
+!s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_master_translator.sv|
+!s90 -reportprogress|300|-sv|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_master_translator.sv|-L|altera_common_sv_packages|-work|video_pixel_buffer_dma_0_avalon_pixel_dma_master_translator|
+!i113 0
+o-sv -L altera_common_sv_packages -work video_pixel_buffer_dma_0_avalon_pixel_dma_master_translator -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+tCvgOpt 0

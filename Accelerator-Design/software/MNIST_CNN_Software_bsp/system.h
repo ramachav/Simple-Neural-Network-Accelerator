@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_qsys_0' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: ../../nios_system.sopcinfo
  *
- * Generated: Fri Nov 15 16:36:01 EST 2019
+ * Generated: Tue Nov 19 12:52:37 EST 2019
  */
 
 /*
@@ -270,7 +270,7 @@
 #define NEW_SDRAM_CONTROLLER_0_SDRAM_NUM_CHIPSELECTS 1
 #define NEW_SDRAM_CONTROLLER_0_SDRAM_ROW_WIDTH 13
 #define NEW_SDRAM_CONTROLLER_0_SHARED_DATA 0
-#define NEW_SDRAM_CONTROLLER_0_SIM_MODEL_BASE 0
+#define NEW_SDRAM_CONTROLLER_0_SIM_MODEL_BASE 1
 #define NEW_SDRAM_CONTROLLER_0_SPAN 134217728
 #define NEW_SDRAM_CONTROLLER_0_STARVATION_INDICATOR 0
 #define NEW_SDRAM_CONTROLLER_0_TRISTATE_BRIDGE_SLAVE ""

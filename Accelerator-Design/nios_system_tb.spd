@@ -450,6 +450,10 @@
    type="MIF"
    library="nios2_qsys_0" />
  <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_new_sdram_controller_0_test_component.v"
+   type="VERILOG"
+   library="new_sdram_controller_0" />
+ <file
    path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_new_sdram_controller_0.v"
    type="VERILOG"
    library="new_sdram_controller_0" />
@@ -490,6 +494,10 @@
    type="VERILOG"
    library="nios_system_inst" />
  <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/altera_sdram_partner_module.v"
+   type="VERILOG"
+   library="new_sdram_controller_0_my_partner" />
+ <file
    path="nios_system/testbench/nios_system_tb/simulation/submodules/altera_external_memory_bfm.sv"
    type="SYSTEM_VERILOG"
    library="generic_tristate_controller_0_external_mem_bfm" />
@@ -505,4 +513,7 @@
  <modelMap
    controllerPath="nios_system_tb.nios_system_inst.generic_tristate_controller_0"
    modelPath="nios_system_tb.generic_tristate_controller_0_external_mem_bfm" />
+ <modelMap
+   controllerPath="nios_system_tb.nios_system_inst.new_sdram_controller_0"
+   modelPath="nios_system_tb.new_sdram_controller_0_my_partner" />
 </simPackage>

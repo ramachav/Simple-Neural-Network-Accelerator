@@ -109,9 +109,9 @@ module nios_system (
 	wire  [31:0] nios2_qsys_0_custom_instruction_master_comb_xconnect_ci_master0_dataa;                    // nios2_qsys_0_custom_instruction_master_comb_xconnect:ci_master0_dataa -> nios2_qsys_0_custom_instruction_master_comb_slave_translator0:ci_slave_dataa
 	wire         nios2_qsys_0_custom_instruction_master_comb_xconnect_ci_master0_writerc;                  // nios2_qsys_0_custom_instruction_master_comb_xconnect:ci_master0_writerc -> nios2_qsys_0_custom_instruction_master_comb_slave_translator0:ci_slave_writerc
 	wire   [7:0] nios2_qsys_0_custom_instruction_master_comb_xconnect_ci_master0_n;                        // nios2_qsys_0_custom_instruction_master_comb_xconnect:ci_master0_n -> nios2_qsys_0_custom_instruction_master_comb_slave_translator0:ci_slave_n
-	wire  [31:0] nios2_qsys_0_custom_instruction_master_comb_slave_translator0_ci_master_result;           // floating_point_adder_0:O -> nios2_qsys_0_custom_instruction_master_comb_slave_translator0:ci_master_result
-	wire  [31:0] nios2_qsys_0_custom_instruction_master_comb_slave_translator0_ci_master_datab;            // nios2_qsys_0_custom_instruction_master_comb_slave_translator0:ci_master_datab -> floating_point_adder_0:B
-	wire  [31:0] nios2_qsys_0_custom_instruction_master_comb_slave_translator0_ci_master_dataa;            // nios2_qsys_0_custom_instruction_master_comb_slave_translator0:ci_master_dataa -> floating_point_adder_0:A
+	wire  [31:0] nios2_qsys_0_custom_instruction_master_comb_slave_translator0_ci_master_result;           // floating_point_adder_0:result -> nios2_qsys_0_custom_instruction_master_comb_slave_translator0:ci_master_result
+	wire  [31:0] nios2_qsys_0_custom_instruction_master_comb_slave_translator0_ci_master_datab;            // nios2_qsys_0_custom_instruction_master_comb_slave_translator0:ci_master_datab -> floating_point_adder_0:datab
+	wire  [31:0] nios2_qsys_0_custom_instruction_master_comb_slave_translator0_ci_master_dataa;            // nios2_qsys_0_custom_instruction_master_comb_slave_translator0:ci_master_dataa -> floating_point_adder_0:dataa
 	wire  [31:0] nios2_qsys_0_custom_instruction_master_comb_xconnect_ci_master1_result;                   // nios2_qsys_0_custom_instruction_master_comb_slave_translator1:ci_slave_result -> nios2_qsys_0_custom_instruction_master_comb_xconnect:ci_master1_result
 	wire         nios2_qsys_0_custom_instruction_master_comb_xconnect_ci_master1_readra;                   // nios2_qsys_0_custom_instruction_master_comb_xconnect:ci_master1_readra -> nios2_qsys_0_custom_instruction_master_comb_slave_translator1:ci_slave_readra
 	wire   [4:0] nios2_qsys_0_custom_instruction_master_comb_xconnect_ci_master1_a;                        // nios2_qsys_0_custom_instruction_master_comb_xconnect:ci_master1_a -> nios2_qsys_0_custom_instruction_master_comb_slave_translator1:ci_slave_a
@@ -124,9 +124,9 @@ module nios_system (
 	wire  [31:0] nios2_qsys_0_custom_instruction_master_comb_xconnect_ci_master1_dataa;                    // nios2_qsys_0_custom_instruction_master_comb_xconnect:ci_master1_dataa -> nios2_qsys_0_custom_instruction_master_comb_slave_translator1:ci_slave_dataa
 	wire         nios2_qsys_0_custom_instruction_master_comb_xconnect_ci_master1_writerc;                  // nios2_qsys_0_custom_instruction_master_comb_xconnect:ci_master1_writerc -> nios2_qsys_0_custom_instruction_master_comb_slave_translator1:ci_slave_writerc
 	wire   [7:0] nios2_qsys_0_custom_instruction_master_comb_xconnect_ci_master1_n;                        // nios2_qsys_0_custom_instruction_master_comb_xconnect:ci_master1_n -> nios2_qsys_0_custom_instruction_master_comb_slave_translator1:ci_slave_n
-	wire  [31:0] nios2_qsys_0_custom_instruction_master_comb_slave_translator1_ci_master_result;           // floating_point_multiplier_0:O -> nios2_qsys_0_custom_instruction_master_comb_slave_translator1:ci_master_result
-	wire  [31:0] nios2_qsys_0_custom_instruction_master_comb_slave_translator1_ci_master_datab;            // nios2_qsys_0_custom_instruction_master_comb_slave_translator1:ci_master_datab -> floating_point_multiplier_0:B
-	wire  [31:0] nios2_qsys_0_custom_instruction_master_comb_slave_translator1_ci_master_dataa;            // nios2_qsys_0_custom_instruction_master_comb_slave_translator1:ci_master_dataa -> floating_point_multiplier_0:A
+	wire  [31:0] nios2_qsys_0_custom_instruction_master_comb_slave_translator1_ci_master_result;           // floating_point_multiplier_0:result -> nios2_qsys_0_custom_instruction_master_comb_slave_translator1:ci_master_result
+	wire  [31:0] nios2_qsys_0_custom_instruction_master_comb_slave_translator1_ci_master_datab;            // nios2_qsys_0_custom_instruction_master_comb_slave_translator1:ci_master_datab -> floating_point_multiplier_0:datab
+	wire  [31:0] nios2_qsys_0_custom_instruction_master_comb_slave_translator1_ci_master_dataa;            // nios2_qsys_0_custom_instruction_master_comb_slave_translator1:ci_master_dataa -> floating_point_multiplier_0:dataa
 	wire         video_pixel_buffer_dma_0_avalon_pixel_dma_master_waitrequest;                             // mm_interconnect_0:video_pixel_buffer_dma_0_avalon_pixel_dma_master_waitrequest -> video_pixel_buffer_dma_0:master_waitrequest
 	wire  [15:0] video_pixel_buffer_dma_0_avalon_pixel_dma_master_readdata;                                // mm_interconnect_0:video_pixel_buffer_dma_0_avalon_pixel_dma_master_readdata -> video_pixel_buffer_dma_0:master_readdata
 	wire  [31:0] video_pixel_buffer_dma_0_avalon_pixel_dma_master_address;                                 // video_pixel_buffer_dma_0:master_address -> mm_interconnect_0:video_pixel_buffer_dma_0_avalon_pixel_dma_master_address
@@ -229,15 +229,15 @@ module nios_system (
 	wire         rst_controller_001_reset_out_reset;                                                       // rst_controller_001:reset_out -> [video_dual_clock_buffer_0:reset_stream_out, video_vga_controller_0:reset]
 
 	fp_adder floating_point_adder_0 (
-		.A (nios2_qsys_0_custom_instruction_master_comb_slave_translator0_ci_master_dataa),  // nios_custom_instruction_slave.dataa
-		.B (nios2_qsys_0_custom_instruction_master_comb_slave_translator0_ci_master_datab),  //                              .datab
-		.O (nios2_qsys_0_custom_instruction_master_comb_slave_translator0_ci_master_result)  //                              .result
+		.dataa  (nios2_qsys_0_custom_instruction_master_comb_slave_translator0_ci_master_dataa),  // nios_custom_instruction_slave.dataa
+		.datab  (nios2_qsys_0_custom_instruction_master_comb_slave_translator0_ci_master_datab),  //                              .datab
+		.result (nios2_qsys_0_custom_instruction_master_comb_slave_translator0_ci_master_result)  //                              .result
 	);
 
 	fp_multiplier floating_point_multiplier_0 (
-		.A (nios2_qsys_0_custom_instruction_master_comb_slave_translator1_ci_master_dataa),  // nios_custom_instruction_slave.dataa
-		.B (nios2_qsys_0_custom_instruction_master_comb_slave_translator1_ci_master_datab),  //                              .datab
-		.O (nios2_qsys_0_custom_instruction_master_comb_slave_translator1_ci_master_result)  //                              .result
+		.dataa  (nios2_qsys_0_custom_instruction_master_comb_slave_translator1_ci_master_dataa),  // nios_custom_instruction_slave.dataa
+		.datab  (nios2_qsys_0_custom_instruction_master_comb_slave_translator1_ci_master_datab),  //                              .datab
+		.result (nios2_qsys_0_custom_instruction_master_comb_slave_translator1_ci_master_result)  //                              .result
 	);
 
 	nios_system_generic_tristate_controller_0 #(

@@ -37,6 +37,16 @@
 #define inline
 #endif
 
+/*
+ * Floating Point Custom instruction macros
+ *
+ */
+
+#define FLOATING_POINT_ADDER_0(A,B) __builtin_custom_fnff(FLOATING_POINT_ADDER_N,(A),(B))
+#define FLOATING_POINT_ADDER_N 0x0
+#define FLOATING_POINT_MULTIPLIER_0(A,B) __builtin_custom_fnff(FLOATING_POINT_MULTIPLIER_N,(A),(B))
+#define FLOATING_POINT_MULTIPLIER_N 0x1
+
 #define KAD_MAX_DIM 4     /* max dimension */
 #define KAD_MAX_OP  64    /* max number of operators */
 

@@ -195,6 +195,7 @@ generic_tristate_controller_0: check_elf_exists $(HDL_SIM_DIR)/$(MEM_0).dat $(HD
 # Memory: new_sdram_controller_0
 MEM_1 := new_sdram_controller_0
 $(MEM_1)_NAME := new_sdram_controller_0
+$(MEM_1)_MEM_INIT_FILE_PARAM_NAME := INIT_FILE
 DAT_FILES += $(HDL_SIM_DIR)/$(MEM_1).dat
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_1).dat
 SYM_FILES += $(HDL_SIM_DIR)/$(MEM_1).sym

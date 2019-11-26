@@ -1,0 +1,71 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/software/MNIST_CNN_Software/obj/default/runtime/sim/mentor
+valtera_up_video_128_character_rom
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 :fAOWXBVoQ5_U^dM5<^Lc1
+I:l=aj8:nPZ?DT[SeUN@?Z1
+R0
+Z2 w1574118716
+8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_video_128_character_rom.v
+F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_video_128_character_rom.v
+L0 28
+Z3 OL;L;10.6b;65
+Z4 !s108 1574119525.000000
+!s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_video_128_character_rom.v|
+!s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_video_128_character_rom.v|-work|video_character_buffer_with_dma_0|
+!i113 0
+Z5 o-work video_character_buffer_with_dma_0 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z6 tCvgOpt 0
+valtera_up_video_fb_color_rom
+!s110 1574119525
+!i10b 1
+!s100 mR>IQLeX9KoLeEB]ie]zo2
+IEYDO;1f]Jn4bQZiECWIRm0
+R1
+R0
+R2
+8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_video_fb_color_rom.v
+F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_video_fb_color_rom.v
+Z7 L0 29
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_video_fb_color_rom.v|
+!s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_video_fb_color_rom.v|-work|video_character_buffer_with_dma_0|
+!i113 0
+R5
+R6
+vnios_system_video_character_buffer_with_dma_0
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 mNW0gZZd9iORT3;Y_AWb31
+I[Od5NoI?a=@;o<zYZ0F8h2
+R0
+R2
+8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_video_character_buffer_with_dma_0.v
+F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_video_character_buffer_with_dma_0.v
+R7
+R3
+R4
+!s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_video_character_buffer_with_dma_0.v|
+!s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_video_character_buffer_with_dma_0.v|-work|video_character_buffer_with_dma_0|
+!i113 0
+R5
+R6

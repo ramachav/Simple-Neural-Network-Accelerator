@@ -872,11 +872,11 @@ static inline float kad_sdot(int n, const float *x, const float *y) /* BLAS sdot
 {
 	int i;
 	float s = 0.;
-	float temp = 0.;
+	float temp_mult = 0.;  /* added */
 	for (i = 0; i < n; ++i) {
-		temp = ALT_CI_FLOATING_POINT_MULTIPLIER_0(x[i],y[i]);
-		printf("\nx[i]: %f,\ty[i]: %f,\t temp: %f\n", x[i], y[i], temp);
-		s = ALT_CI_FLOATING_POINT_ADDER_0(s,temp);  //x[i] * y[i];	/* added */
+		//s += x[i] * y[i];
+		temp_mult = FLOATING_POINT_MULTIPLIER_0(x[i],y[i]);  /* added */
+		s = FLOATING_POINT_ADDER_0(s,temp_mult);  /* added */
 	}
 	return s;
 }
@@ -1983,10 +1983,6 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 			conv2d_move_1to3(q->d, q->x, q1);
 			conv2d_move_1to3(w->d, w->x, w1);
 			conv2d_loop2(q1, w1, p->x, (*_yy += kad_sdot(m, _ww, _xx)));
-			printf("\np->d[0]: %d, p->d[1]: %d, p->d[2]: %d, p->d[3]: %d\n", p->d[0], p->d[1], p->d[2], p->d[3]);
-			printf("Times each for-loop executes in ONE conv2d_loop2 function call: \n");
-			printf("Mini-batch for-loop: %d\nOutput channel for-loop: %d\n", q->d[0], w->d[0]);
-			printf("Kernel row for-loop: %d\nOutput and input row for-loop: %d\nOutput and input column for-loop: %d\n", w->d[2], (2304 / (q->d[0] * w->d[0] * w->d[2])), p->d[3]);
 		}
 		conv_rot180(w->d[0] * w->d[1], w->d[2] * w->d[3], w->x);
 	} else if (action == KAD_BACKWARD) {

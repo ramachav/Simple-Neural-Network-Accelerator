@@ -6,8 +6,17 @@
 module nios_system_tb (
 	);
 
-	wire         nios_system_inst_clk_bfm_clk_clk;                                    // nios_system_inst_clk_bfm:clk -> [generic_tristate_controller_0_external_mem_bfm:clk, nios_system_inst:clk_clk, nios_system_inst_reset_0_bfm:clk, nios_system_inst_reset_bfm:clk]
+	wire         nios_system_inst_clk_bfm_clk_clk;                                    // nios_system_inst_clk_bfm:clk -> [generic_tristate_controller_0_external_mem_bfm:clk, new_sdram_controller_0_my_partner:clk, nios_system_inst:clk_clk, nios_system_inst_reset_0_bfm:clk, nios_system_inst_reset_bfm:clk]
 	wire         nios_system_inst_clk_0_bfm_clk_clk;                                  // nios_system_inst_clk_0_bfm:clk -> nios_system_inst:clk_0_clk
+	wire         nios_system_inst_new_sdram_controller_0_wire_cs_n;                   // nios_system_inst:new_sdram_controller_0_wire_cs_n -> new_sdram_controller_0_my_partner:zs_cs_n
+	wire   [3:0] nios_system_inst_new_sdram_controller_0_wire_dqm;                    // nios_system_inst:new_sdram_controller_0_wire_dqm -> new_sdram_controller_0_my_partner:zs_dqm
+	wire         nios_system_inst_new_sdram_controller_0_wire_cas_n;                  // nios_system_inst:new_sdram_controller_0_wire_cas_n -> new_sdram_controller_0_my_partner:zs_cas_n
+	wire         nios_system_inst_new_sdram_controller_0_wire_ras_n;                  // nios_system_inst:new_sdram_controller_0_wire_ras_n -> new_sdram_controller_0_my_partner:zs_ras_n
+	wire         nios_system_inst_new_sdram_controller_0_wire_we_n;                   // nios_system_inst:new_sdram_controller_0_wire_we_n -> new_sdram_controller_0_my_partner:zs_we_n
+	wire  [12:0] nios_system_inst_new_sdram_controller_0_wire_addr;                   // nios_system_inst:new_sdram_controller_0_wire_addr -> new_sdram_controller_0_my_partner:zs_addr
+	wire         nios_system_inst_new_sdram_controller_0_wire_cke;                    // nios_system_inst:new_sdram_controller_0_wire_cke -> new_sdram_controller_0_my_partner:zs_cke
+	wire  [31:0] new_sdram_controller_0_my_partner_conduit_dq;                        // [] -> [new_sdram_controller_0_my_partner:zs_dq, nios_system_inst:new_sdram_controller_0_wire_dq]
+	wire   [1:0] nios_system_inst_new_sdram_controller_0_wire_ba;                     // nios_system_inst:new_sdram_controller_0_wire_ba -> new_sdram_controller_0_my_partner:zs_ba
 	wire   [0:0] tristate_conduit_bridge_0_tcb_translator_out_tcm_chipselect_n_out;   // tristate_conduit_bridge_0_tcb_translator:tcm_chipselect_n_out -> generic_tristate_controller_0_external_mem_bfm:cdt_chipselect
 	wire  [22:0] tristate_conduit_bridge_0_tcb_translator_out_tcm_address_out;        // tristate_conduit_bridge_0_tcb_translator:tcm_address_out -> generic_tristate_controller_0_external_mem_bfm:cdt_address
 	wire   [7:0] generic_tristate_controller_0_external_mem_bfm_conduit_tcm_data_out; // [] -> [generic_tristate_controller_0_external_mem_bfm:cdt_data_io, tristate_conduit_bridge_0_tcb_translator:tcm_data_out]
@@ -53,18 +62,31 @@ module nios_system_tb (
 		.cdt_reset         (1'b0)                                                                 // (terminated)
 	);
 
+	altera_sdram_partner_module new_sdram_controller_0_my_partner (
+		.clk      (nios_system_inst_clk_bfm_clk_clk),                   //     clk.clk
+		.zs_dq    (new_sdram_controller_0_my_partner_conduit_dq),       // conduit.dq
+		.zs_addr  (nios_system_inst_new_sdram_controller_0_wire_addr),  //        .addr
+		.zs_ba    (nios_system_inst_new_sdram_controller_0_wire_ba),    //        .ba
+		.zs_cas_n (nios_system_inst_new_sdram_controller_0_wire_cas_n), //        .cas_n
+		.zs_cke   (nios_system_inst_new_sdram_controller_0_wire_cke),   //        .cke
+		.zs_cs_n  (nios_system_inst_new_sdram_controller_0_wire_cs_n),  //        .cs_n
+		.zs_dqm   (nios_system_inst_new_sdram_controller_0_wire_dqm),   //        .dqm
+		.zs_ras_n (nios_system_inst_new_sdram_controller_0_wire_ras_n), //        .ras_n
+		.zs_we_n  (nios_system_inst_new_sdram_controller_0_wire_we_n)   //        .we_n
+	);
+
 	nios_system nios_system_inst (
 		.clk_clk                                            (nios_system_inst_clk_bfm_clk_clk),                                    //                                       clk.clk
 		.clk_0_clk                                          (nios_system_inst_clk_0_bfm_clk_clk),                                  //                                     clk_0.clk
-		.new_sdram_controller_0_wire_addr                   (),                                                                    //               new_sdram_controller_0_wire.addr
-		.new_sdram_controller_0_wire_ba                     (),                                                                    //                                          .ba
-		.new_sdram_controller_0_wire_cas_n                  (),                                                                    //                                          .cas_n
-		.new_sdram_controller_0_wire_cke                    (),                                                                    //                                          .cke
-		.new_sdram_controller_0_wire_cs_n                   (),                                                                    //                                          .cs_n
-		.new_sdram_controller_0_wire_dq                     (),                                                                    //                                          .dq
-		.new_sdram_controller_0_wire_dqm                    (),                                                                    //                                          .dqm
-		.new_sdram_controller_0_wire_ras_n                  (),                                                                    //                                          .ras_n
-		.new_sdram_controller_0_wire_we_n                   (),                                                                    //                                          .we_n
+		.new_sdram_controller_0_wire_addr                   (nios_system_inst_new_sdram_controller_0_wire_addr),                   //               new_sdram_controller_0_wire.addr
+		.new_sdram_controller_0_wire_ba                     (nios_system_inst_new_sdram_controller_0_wire_ba),                     //                                          .ba
+		.new_sdram_controller_0_wire_cas_n                  (nios_system_inst_new_sdram_controller_0_wire_cas_n),                  //                                          .cas_n
+		.new_sdram_controller_0_wire_cke                    (nios_system_inst_new_sdram_controller_0_wire_cke),                    //                                          .cke
+		.new_sdram_controller_0_wire_cs_n                   (nios_system_inst_new_sdram_controller_0_wire_cs_n),                   //                                          .cs_n
+		.new_sdram_controller_0_wire_dq                     (new_sdram_controller_0_my_partner_conduit_dq),                        //                                          .dq
+		.new_sdram_controller_0_wire_dqm                    (nios_system_inst_new_sdram_controller_0_wire_dqm),                    //                                          .dqm
+		.new_sdram_controller_0_wire_ras_n                  (nios_system_inst_new_sdram_controller_0_wire_ras_n),                  //                                          .ras_n
+		.new_sdram_controller_0_wire_we_n                   (nios_system_inst_new_sdram_controller_0_wire_we_n),                   //                                          .we_n
 		.reset_reset_n                                      (nios_system_inst_reset_bfm_reset_reset),                              //                                     reset.reset_n
 		.reset_0_reset_n                                    (nios_system_inst_reset_0_bfm_reset_reset),                            //                                   reset_0.reset_n
 		.sram_0_external_interface_DQ                       (),                                                                    //                 sram_0_external_interface.DQ

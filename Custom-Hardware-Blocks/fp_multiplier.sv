@@ -5,9 +5,9 @@
 ***********************************************************************************/
 
 module fp_multiplier (
-	input logic [31:0] A,
-	input logic [31:0] B,
-	output logic [31:0] O
+	input logic [31:0] dataa,
+	input logic [31:0] datab,
+	output logic [31:0] result
 );
 
 	//Corner Case Block I/O signals
@@ -29,17 +29,19 @@ module fp_multiplier (
 	logic B_sign;
 	logic [7:0] B_exponent;
 	logic [23:0] B_mantissa;
+	logic [8:0] intermediate_exponent;
+	logic [8:0] A_plus_B_exponent;
 	logic [47:0] intermediate_product;	//To hold A_mantissa * B_mantissa.
 	logic [47:0] final_mantissa;		//Temp to hold intermediate _product shifted
 
 	//Assign statements for the outputs/inputs
-	assign O = {O_sign, O_exponent, O_mantissa};
-	assign multiplier_in_A = A;
-	assign multiplier_in_B = B;
+	assign result = {O_sign, O_exponent, O_mantissa};
+	assign multiplier_in_A = dataa;
+	assign multiplier_in_B = datab;
 
-	always_comb begin 
+	always @ (dataa, datab) begin 
 	//Multiplier Logic block (Block where the actual multiplication happens)
-	//always_comb begin
+	//always @ (dataa, datab) begin
 		A_sign = multiplier_in_A[31];
 		A_exponent = (multiplier_in_A[30:23] == 8'h0)? 8'h1 : multiplier_in_A[30:23];
 		A_mantissa = (multiplier_in_A[30:23] == 8'h0)? {1'b0, multiplier_in_A[22:0]} : {1'b1, multiplier_in_A[22:0]};
@@ -50,35 +52,53 @@ module fp_multiplier (
 
 		intermediate_product = A_mantissa * B_mantissa;										//Simply multiply the mantissas. (Implementation up to the compiler)
 		final_mantissa = intermediate_product[47]? intermediate_product : intermediate_product << 1;
-		
+		A_plus_B_exponent = A_exponent + B_exponent;
+		intermediate_exponent = (A_plus_B_exponent - 127 + intermediate_product[47]);		//Biasing the final exponent.
+
 		multiplier_out_s = A_sign ^ B_sign;													//XORing the input sign bits.
-		multiplier_out_e = A_exponent + B_exponent - 8'h7F + intermediate_product[47];		//Biasing the final exponent.
+		multiplier_out_e = intermediate_exponent[7:0];
 		multiplier_out_m = final_mantissa[46:24] + (final_mantissa[23] & final_mantissa[22] | (| final_mantissa[21:0]));
+
+	//Exponent Overflow/Underflow Checks
+		if(intermediate_exponent >= 255) begin 	//Overflow detected? Most likely because the result needed 9-bits instead of 8-bits.
+			if(A_plus_B_exponent <= 127) begin //Underflow detected? Maybe since (A_exp + Bias + B_exp + Bias <= Bias -> A_exp + B_exp <= -Bias)
+				multiplier_out_e = '0;
+				multiplier_out_m = '0;
+			end 
+			else begin 
+				multiplier_out_e = 8'hFF;
+				multiplier_out_m = '0;
+			end 
+		end
+		else if(A_plus_B_exponent <= 127) begin //Underflow detected? Maybe since (A_exp + Bias + B_exp + Bias <= Bias -> A_exp + B_exp <= -Bias)
+			multiplier_out_e = '0;
+			multiplier_out_m = '0;
+		end  
 	//end
 
 	//Corner Case Block (Block where the corner cases are taken care of before actual multiplication takes place)
-		if(A[30:23] == 8'hFF && A[22:0] != '0) begin		//A is NaN, output a NaN {A_sign, A_exp, A_mant} = {x, '1, x}.
-			O_sign = A[31];
-			O_exponent = A[30:23];
-			O_mantissa = A[22:0];
+		if(dataa[30:23] == 8'hFF && dataa[22:0] != '0) begin		//A is NaN, output a NaN {A_sign, A_exp, A_mant} = {x, '1, x}.
+			O_sign = dataa[31];
+			O_exponent = dataa[30:23];
+			O_mantissa = dataa[22:0];
 		end 
-		else if(B[30:23] == 8'hFF && B[22:0] != '0) begin 	//B is NaN, output a NaN {B_sign, B_exp, B_mant} = {x, '1, x}.
-			O_sign = B[31];
-			O_exponent = B[30:23];
-			O_mantissa = B[22:0];
+		else if(datab[30:23] == 8'hFF && datab[22:0] != '0) begin 	//B is NaN, output a NaN {B_sign, B_exp, B_mant} = {x, '1, x}.
+			O_sign = datab[31];
+			O_exponent = datab[30:23];
+			O_mantissa = datab[22:0];
 		end 
-		else if(A[30:0] == 31'h7F800000) begin	//A is inf, output an inf {A_sign, A_exp, A_mant} = {x, '1, '0}.
-			O_sign = A[31];
+		else if(dataa[30:0] == 31'h7F800000) begin	//A is inf, output an inf {A_sign, A_exp, A_mant} = {x, '1, '0}.
+			O_sign = dataa[31];
 			O_exponent = 8'hFF;
 			O_mantissa = '0;
 		end
-		else if(B[30:0] == 31'h7F800000) begin	//B is inf, output an inf {B_sign, B_exp, B_mant} = {x, '1, '0}.
-			O_sign = B[31];
+		else if(datab[30:0] == 31'h7F800000) begin	//B is inf, output an inf {B_sign, B_exp, B_mant} = {x, '1, '0}.
+			O_sign = datab[31];
 			O_exponent = 8'hFF;
 			O_mantissa = '0;
 		end
-		else if(A[30:0] == '0 || B[30:0] == '0) begin		//A or B is zero, output a zero.
-			O_sign = A[31] ^ B[31];
+		else if(dataa[30:0] == '0 || datab[30:0] == '0) begin		//A or B is zero, output a zero.
+			O_sign = dataa[31] ^ datab[31];
 			O_exponent = '0;
 			O_mantissa = '0;
 		end 

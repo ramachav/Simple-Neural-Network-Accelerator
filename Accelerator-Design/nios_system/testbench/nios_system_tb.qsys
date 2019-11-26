@@ -13,7 +13,15 @@
    {
       datum _sortIndex
       {
-         value = "6";
+         value = "7";
+         type = "int";
+      }
+   }
+   element new_sdram_controller_0_my_partner
+   {
+      datum _sortIndex
+      {
+         value = "5";
          type = "int";
       }
    }
@@ -61,7 +69,7 @@
    {
       datum _sortIndex
       {
-         value = "5";
+         value = "6";
          type = "int";
       }
    }
@@ -120,6 +128,21 @@
   <parameter name="USE_RESET" value="0" />
   <parameter name="USE_WRITE" value="1" />
   <parameter name="VHDL_ID" value="0" />
+ </module>
+ <module
+   name="new_sdram_controller_0_my_partner"
+   kind="altera_sdram_partner_module"
+   version="11.0"
+   enabled="1">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="CAS_LATENCY" value="3" />
+  <parameter name="CONTR_NAME">nios_system_new_sdram_controller_0</parameter>
+  <parameter name="SDRAM_BANK_WIDTH" value="2" />
+  <parameter name="SDRAM_COL_WIDTH" value="10" />
+  <parameter name="SDRAM_DATA_WIDTH" value="32" />
+  <parameter name="SDRAM_NUM_CHIPSELECTS" value="1" />
+  <parameter name="SDRAM_ROW_WIDTH" value="13" />
  </module>
  <module name="nios_system_inst" kind="nios_system" version="1.0" enabled="1">
   <parameter name="AUTO_CLK_0_CLOCK_DOMAIN" value="1" />
@@ -196,12 +219,28 @@
    kind="clock"
    version="17.0"
    start="nios_system_inst_clk_bfm.clk"
+   end="new_sdram_controller_0_my_partner.clk" />
+ <connection
+   kind="clock"
+   version="17.0"
+   start="nios_system_inst_clk_bfm.clk"
    end="generic_tristate_controller_0_external_mem_bfm.clk" />
  <connection
    kind="clock"
    version="17.0"
    start="nios_system_inst_clk_0_bfm.clk"
    end="nios_system_inst.clk_0" />
+ <connection
+   kind="conduit"
+   version="17.0"
+   start="new_sdram_controller_0_my_partner.conduit"
+   end="nios_system_inst.new_sdram_controller_0_wire">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
  <connection
    kind="conduit"
    version="17.0"

@@ -5,9 +5,9 @@
 *************************************************************/
 
 module fp_adder (
-	input logic [31:0] A,
-	input logic [31:0] B,
-	output logic [31:0] O
+	input logic [31:0] dataa,
+	input logic [31:0] datab,
+	output logic [31:0] result
 );
 
 	//Corner Case Block I/O signals
@@ -38,37 +38,13 @@ module fp_adder (
 	logic [7:0] normalizer_out_e;
 	logic [24:0] normalizer_out_m;		//normalizer_out_m[47] is a hidden bit. 
 
-	//Assign statements for the output
-  	assign O = {O_sign, O_exponent, O_mantissa};
+	//Assign statements for the outputs/inputs
+  	assign result = {O_sign, O_exponent, O_mantissa};
+	assign adder_in_A = dataa;
+	assign adder_in_B = datab;
 
-	//Corner Case Block (Block where the corner cases are taken care of before actual addition takes place)
-	always @ (A,B) begin
-		if((A[30:23] == 8'hFF && A[22:0] != '0) || (B[30:0] == '0)) begin	//A + B = A if A = NaN or B = 0.
-			O_sign = A[31];
-			O_exponent = A[30:23];
-			O_mantissa = A[22:0];
-		end
-		else if((B[30:23] == 8'hFF && B[22:0] != '0) || (A[30:0] == '0)) begin	//A + B = B if A = 0 or B = NaN.
-			O_sign = B[31];
-			O_exponent = B[30:23];
-			O_mantissa = B[22:0];
-		end
-		else if((A[30:23] == 8'hFF && A[22:0] == '0) || (B[30:23] == 8'hFF && B[22:0] == '0)) begin 	//A + B = inf if A = inf or B = inf.
-			O_sign = A[31] ^ B[31];
-			O_exponent = 8'hFF;
-			O_mantissa = '0;
-		end 
-		else begin 		//Passed all the corner cases. Pass the inputs to the adder block.
-			adder_in_A = A;
-			adder_in_B = B;
-			O_sign = adder_out_s;
-			O_exponent = adder_out_e;
-			O_mantissa = adder_out_m[22:0];
-		end 
-	//end 
-
+	always @ (dataa, datab) begin
 	//Adder Logic Block (Block where the actual addition happens)
-	//always @ (A,B) begin 
 		A_sign = adder_in_A[31];
 		A_exponent = (adder_in_A[30:23] == 8'h0)? 8'h1 : adder_in_A[30:23];
 		A_mantissa = (adder_in_A[30:23] == 8'h0)? {1'b0, adder_in_A[22:0]} : {1'b1, adder_in_A[22:0]};
@@ -111,22 +87,13 @@ module fp_adder (
 				adder_out_m = (A_sign == B_sign)? (B_mantissa + intermediate_mantissa) : (B_mantissa - intermediate_mantissa);
 			end 
 		end 
-
-		//Shifting/Alignment logic
-		if(adder_out_m[24]) begin 								//Just need to align the bits by 1.
-			adder_out_m = adder_out_m >> 1;
-			adder_out_e = adder_out_e + 1;
-		end 
-		else if(!adder_out_m[23] && adder_out_e != '0) begin 	//Use the normalizer block.
-			normalizer_in_m = adder_out_m;
-			normalizer_in_e = adder_out_e;
-			adder_out_m = normalizer_out_m;
-			adder_out_e = normalizer_out_e;
-		end 
 	//end 
+	//Setting the inputs for the normalizer (In case needed)
+		normalizer_in_m = adder_out_m;
+		normalizer_in_e = adder_out_e;
 
 	//Adder Normalizer block (This normalizer is for the case where the hidden bit is a 0 (And bit 24 is also a 0))
-	//always @ (A,B) begin 
+	//always @ (dataa, datab) begin 
 		if(normalizer_in_m[23:3] == 21'h1) begin
 			normalizer_out_e = normalizer_in_e - 20;
 			normalizer_out_m = normalizer_in_m << 20;
@@ -206,6 +173,40 @@ module fp_adder (
 		else if(normalizer_in_m[23:22] == 2'h1) begin
 			normalizer_out_e = normalizer_in_e - 1;
 			normalizer_out_m = normalizer_in_m << 1;
+		end
+	//end
+
+	//Shifting/Alignment logic
+		if(adder_out_m[24]) begin 								//Just need to align the bits by 1.
+			adder_out_m = adder_out_m >> 1;
+			adder_out_e = adder_out_e + 1;
+		end 
+		else if(!adder_out_m[23] && adder_out_e != '0) begin 	//Use the normalizer block.
+			adder_out_m = normalizer_out_m;
+			adder_out_e = normalizer_out_e;
+		end 
+
+	//Corner Case Block (Block where the corner cases are taken care of before actual addition takes place)
+	//always @ (dataa, datab) begin 
+		if((dataa[30:23] == 8'hFF && dataa[22:0] != '0) || (datab[30:0] == '0)) begin	//A + B = A if A = NaN or B = 0.
+			O_sign = dataa[31];
+			O_exponent = dataa[30:23];
+			O_mantissa = dataa[22:0];
+		end
+		else if((datab[30:23] == 8'hFF && datab[22:0] != '0) || (dataa[30:0] == '0)) begin	//A + B = B if A = 0 or B = NaN.
+			O_sign = datab[31];
+			O_exponent = datab[30:23];
+			O_mantissa = datab[22:0];
+		end
+		else if((dataa[30:23] == 8'hFF && dataa[22:0] == '0) || (datab[30:23] == 8'hFF && datab[22:0] == '0)) begin 	//A + B = inf if A = inf or B = inf.
+			O_sign = dataa[31] ^ datab[31];
+			O_exponent = 8'hFF;
+			O_mantissa = '0;
+		end 
+		else begin 		//Passed all the corner cases. Pass the inputs to the adder block.
+			O_sign = adder_out_s;
+			O_exponent = adder_out_e;
+			O_mantissa = adder_out_m[22:0];
 		end
   	end
 

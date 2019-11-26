@@ -1,17 +1,18 @@
-# system info nios_system_tb on 2019.11.15.15:29:56
+# system info nios_system_tb on 2019.11.19.12:44:36
 system_info:
 name,value
 DEVICE,EP4CE115F29C7
 DEVICE_FAMILY,Cyclone IV E
-GENERATION_ID,1573849739
+GENERATION_ID,1574185449
 #
 #
-# Files generated for nios_system_tb on 2019.11.15.15:29:56
+# Files generated for nios_system_tb on 2019.11.19.12:44:36
 files:
 filepath,kind,attributes,module,is_top
 nios_system/testbench/nios_system_tb/simulation/nios_system_tb.v,VERILOG,,nios_system_tb,true
 nios_system/testbench/nios_system_tb/simulation/submodules/altera_external_memory_bfm.sv,SYSTEM_VERILOG,,altera_external_memory_bfm,false
 nios_system/testbench/nios_system_tb/simulation/submodules/altera_external_memory_bfm.hex,HEX,,altera_external_memory_bfm,false
+nios_system/testbench/nios_system_tb/simulation/submodules/altera_sdram_partner_module.v,VERILOG,,altera_sdram_partner_module,false
 nios_system/testbench/nios_system_tb/simulation/submodules/nios_system.v,VERILOG,,nios_system,false
 nios_system/testbench/nios_system_tb/simulation/submodules/verbosity_pkg.sv,SYSTEM_VERILOG, COMMON_SYSTEMVERILOG_PACKAGE=avalon_vip_verbosity_pkg,altera_avalon_clock_source,false
 nios_system/testbench/nios_system_tb/simulation/submodules/altera_avalon_clock_source.sv,SYSTEM_VERILOG,,altera_avalon_clock_source,false
@@ -23,6 +24,7 @@ nios_system/testbench/nios_system_tb/simulation/submodules/fp_adder.sv,SYSTEM_VE
 nios_system/testbench/nios_system_tb/simulation/submodules/fp_multiplier.sv,SYSTEM_VERILOG,,fp_multiplier,false
 nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_generic_tristate_controller_0.v,VERILOG,,nios_system_generic_tristate_controller_0,false
 nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_jtag_uart_0.v,VERILOG,,nios_system_jtag_uart_0,false
+nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_new_sdram_controller_0_test_component.v,VERILOG,,nios_system_new_sdram_controller_0,false
 nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_new_sdram_controller_0.v,VERILOG,,nios_system_new_sdram_controller_0,false
 nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0.vo,VERILOG,,nios_system_nios2_qsys_0,false
 nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_jtag_debug_module_wrapper.v,VERILOG,,nios_system_nios2_qsys_0,false
@@ -140,6 +142,7 @@ nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interc
 instances:
 instancePath,module
 nios_system_tb.generic_tristate_controller_0_external_mem_bfm,altera_external_memory_bfm
+nios_system_tb.new_sdram_controller_0_my_partner,altera_sdram_partner_module
 nios_system_tb.nios_system_inst,nios_system
 nios_system_tb.nios_system_inst.floating_point_adder_0,fp_adder
 nios_system_tb.nios_system_inst.floating_point_multiplier_0,fp_multiplier

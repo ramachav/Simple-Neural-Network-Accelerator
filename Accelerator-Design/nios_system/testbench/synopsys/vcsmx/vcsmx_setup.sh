@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 17.0 595 linux 2019.11.15.15:29:57
+# ACDS 17.0 595 linux 2019.11.19.12:44:37
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -101,7 +101,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 17.0 595 linux 2019.11.15.15:29:57
+# ACDS 17.0 595 linux 2019.11.19.12:44:37
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="nios_system_tb"
@@ -203,6 +203,7 @@ mkdir -p ./libraries/tristate_conduit_bridge_0_tcb_translator/
 mkdir -p ./libraries/nios_system_inst_reset_0_bfm/
 mkdir -p ./libraries/nios_system_inst_clk_0_bfm/
 mkdir -p ./libraries/nios_system_inst/
+mkdir -p ./libraries/new_sdram_controller_0_my_partner/
 mkdir -p ./libraries/generic_tristate_controller_0_external_mem_bfm/
 mkdir -p ./libraries/altera_ver/
 mkdir -p ./libraries/lpm_ver/
@@ -340,6 +341,7 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_oci_test_bench.v"                              -work nios2_qsys_0                                                          
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_mult_cell.v"                                   -work nios2_qsys_0                                                          
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_test_bench.v"                                  -work nios2_qsys_0                                                          
+  vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_new_sdram_controller_0_test_component.v"                    -work new_sdram_controller_0                                                
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_new_sdram_controller_0.v"                                   -work new_sdram_controller_0                                                
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_jtag_uart_0.v"                                              -work jtag_uart_0                                                           
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_generic_tristate_controller_0.v"                            -work generic_tristate_controller_0                                         
@@ -350,6 +352,7 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_avalon_reset_source.sv"                                          -work nios_system_inst_reset_0_bfm                                          
   vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_avalon_clock_source.sv"                                          -work nios_system_inst_clk_0_bfm                                            
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system.v"                                                          -work nios_system_inst                                                      
+  vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_sdram_partner_module.v"                                          -work new_sdram_controller_0_my_partner                                     
   vlogan +v2k -sverilog $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/altera_external_memory_bfm.sv"                                          -work generic_tristate_controller_0_external_mem_bfm                        
   vlogan +v2k $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/nios_system_tb/simulation/nios_system_tb.v"                                                                                                                                              
 fi

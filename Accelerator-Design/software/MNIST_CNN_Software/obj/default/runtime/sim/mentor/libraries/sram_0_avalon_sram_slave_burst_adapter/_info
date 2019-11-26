@@ -1,0 +1,344 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/software/MNIST_CNN_Software/obj/default/runtime/sim/mentor
+valtera_avalon_st_pipeline_base
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+!s110 1574119515
+!i10b 1
+!s100 IZ246NSd;dW2a7WAUFMLa1
+ILkLRQBV`eoWB[CE<eB=;F1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 altera_avalon_st_pipeline_base_v_unit
+S1
+R0
+Z3 w1574118718
+8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_avalon_st_pipeline_base.v
+F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_avalon_st_pipeline_base.v
+Z4 L0 22
+Z5 OL;L;10.6b;65
+r1
+!s85 0
+31
+Z6 !s108 1574119514.000000
+!s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_avalon_st_pipeline_base.v|
+!s90 -reportprogress|300|-sv|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_avalon_st_pipeline_base.v|-L|altera_common_sv_packages|-work|sram_0_avalon_sram_slave_burst_adapter|
+!i113 0
+Z7 o-sv -L altera_common_sv_packages -work sram_0_avalon_sram_slave_burst_adapter -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 tCvgOpt 0
+valtera_avalon_st_pipeline_stage
+R1
+Z9 !s110 1574119514
+!i10b 1
+!s100 0[eR^H<[LF9R7ZA?d`HaW2
+IXFIb36j;65oFh=Odj8ec02
+R2
+!s105 altera_avalon_st_pipeline_stage_sv_unit
+S1
+R0
+R3
+8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_avalon_st_pipeline_stage.sv
+F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_avalon_st_pipeline_stage.sv
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_avalon_st_pipeline_stage.sv|
+!s90 -reportprogress|300|-sv|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_avalon_st_pipeline_stage.sv|-L|altera_common_sv_packages|-work|sram_0_avalon_sram_slave_burst_adapter|
+!i113 0
+R7
+R8
+valtera_default_burst_converter
+R1
+R9
+!i10b 1
+!s100 EmN7^KGFmnmba?3NNCWgU0
+I508RFmH@Zf99oB03986k_0
+R2
+!s105 altera_default_burst_converter_sv_unit
+S1
+R0
+R3
+8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_default_burst_converter.sv
+F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_default_burst_converter.sv
+L0 30
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_default_burst_converter.sv|
+!s90 -reportprogress|300|-sv|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_default_burst_converter.sv|-L|altera_common_sv_packages|-work|sram_0_avalon_sram_slave_burst_adapter|
+!i113 0
+R7
+R8
+valtera_incr_burst_converter
+R1
+Z10 !s110 1574119513
+!i10b 1
+!s100 9gP0R0To835oQO4JK^zb<3
+IU9UR]VL_?NU5nST`^WeX^2
+R2
+!s105 altera_incr_burst_converter_sv_unit
+S1
+R0
+R3
+8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_incr_burst_converter.sv
+F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_incr_burst_converter.sv
+L0 28
+R5
+r1
+!s85 0
+31
+Z11 !s108 1574119513.000000
+!s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_incr_burst_converter.sv|
+!s90 -reportprogress|300|-sv|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_incr_burst_converter.sv|-L|altera_common_sv_packages|-work|sram_0_avalon_sram_slave_burst_adapter|
+!i113 0
+R7
+R8
+valtera_merlin_address_alignment
+R1
+R9
+!i10b 1
+!s100 ;A9^i^d]cR@BAQXEG>h_<3
+IJ[_XV`W>NZ6X7NUfLcBOM0
+R2
+!s105 altera_merlin_address_alignment_sv_unit
+S1
+R0
+R3
+8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_address_alignment.sv
+F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_address_alignment.sv
+L0 26
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_address_alignment.sv|
+!s90 -reportprogress|300|-sv|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_address_alignment.sv|-L|altera_common_sv_packages|-work|sram_0_avalon_sram_slave_burst_adapter|
+!i113 0
+R7
+R8
+valtera_merlin_burst_adapter
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 OCc70X^k:B?GW6i71n`L_3
+I2Ab[]3:QjQ>@D7GZTN:WT0
+!s105 altera_merlin_burst_adapter_sv_unit
+S1
+R0
+R3
+8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_adapter.sv
+F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_adapter.sv
+L0 21
+R5
+Z12 !s108 1574119512.000000
+!s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_adapter.sv|
+!s90 -reportprogress|300|-sv|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_adapter.sv|-L|altera_common_sv_packages|-work|sram_0_avalon_sram_slave_burst_adapter|
+!i113 0
+R7
+R8
+valtera_merlin_burst_adapter_13_1
+R1
+Z13 !s110 1574119512
+!i10b 1
+!s100 iQDJAL[b9z>XeokOb35D]1
+IenE6lPYYPKIdFlbMEoh@j1
+R2
+Z14 !s105 altera_merlin_burst_adapter_13_1_sv_unit
+S1
+R0
+R3
+Z15 8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_adapter_13_1.sv
+Z16 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_adapter_13_1.sv
+L0 264
+R5
+r1
+!s85 0
+31
+R12
+Z17 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_adapter_13_1.sv|
+Z18 !s90 -reportprogress|300|-sv|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_adapter_13_1.sv|-L|altera_common_sv_packages|-work|sram_0_avalon_sram_slave_burst_adapter|
+!i113 0
+R7
+R8
+valtera_merlin_burst_adapter_adder
+R1
+R13
+!i10b 1
+!s100 cJB8e]Mn>T^mE[9iEE1jk1
+I<`nY>I=fI=bZ=a<8jR>b90
+R2
+R14
+S1
+R0
+R3
+R15
+R16
+L0 55
+R5
+r1
+!s85 0
+31
+R12
+R17
+R18
+!i113 0
+R7
+R8
+valtera_merlin_burst_adapter_burstwrap_increment
+R1
+R13
+!i10b 1
+!s100 ILP^RoOQ^]Ef]XAJeF<SX0
+IkGz8TjJhKEIje[4@_;Q8I3
+R2
+R14
+S1
+R0
+R3
+R15
+R16
+L0 40
+R5
+r1
+!s85 0
+31
+R12
+R17
+R18
+!i113 0
+R7
+R8
+valtera_merlin_burst_adapter_min
+R1
+R13
+!i10b 1
+!s100 5OK?oF?>S0i7IYQi<IKhS1
+I:fMM^N56]>_fNoB0Mi<IA3
+R2
+R14
+S1
+R0
+R3
+R15
+R16
+L0 98
+R5
+r1
+!s85 0
+31
+R12
+R17
+R18
+!i113 0
+R7
+R8
+valtera_merlin_burst_adapter_new
+R1
+R10
+!i10b 1
+!s100 eY?@Ti=8ZUfaj_BZGBf:M0
+I>]lXI]2>>7WO6UmH_dBSM0
+R2
+!s105 altera_merlin_burst_adapter_new_sv_unit
+S1
+R0
+R3
+8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_adapter_new.sv
+F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_adapter_new.sv
+L0 25
+R5
+r1
+!s85 0
+31
+R11
+!s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_adapter_new.sv|
+!s90 -reportprogress|300|-sv|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_adapter_new.sv|-L|altera_common_sv_packages|-work|sram_0_avalon_sram_slave_burst_adapter|
+!i113 0
+R7
+R8
+valtera_merlin_burst_adapter_subtractor
+R1
+R13
+!i10b 1
+!s100 3nMfY`gC_:azzfSULAX8f2
+I3PI@ZOfhQzYY:m]Wk3@3@0
+R2
+R14
+S1
+R0
+R3
+R15
+R16
+L0 77
+R5
+r1
+!s85 0
+31
+R12
+R17
+R18
+!i113 0
+R7
+R8
+valtera_merlin_burst_adapter_uncompressed_only
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 STH]BdUM[JDMJZNJGXCd>0
+IB5zIbOezf5me720dk[DjY3
+!s105 altera_merlin_burst_adapter_uncmpr_sv_unit
+S1
+R0
+R3
+8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_adapter_uncmpr.sv
+F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_adapter_uncmpr.sv
+L0 39
+R5
+R12
+!s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_adapter_uncmpr.sv|
+!s90 -reportprogress|300|-sv|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_adapter_uncmpr.sv|-L|altera_common_sv_packages|-work|sram_0_avalon_sram_slave_burst_adapter|
+!i113 0
+R7
+R8
+valtera_wrap_burst_converter
+R1
+R10
+!i10b 1
+!s100 NPBYN=]<L:km?aGk_2fQE3
+INYGe1Zo5HaW`zeI@39mIR0
+R2
+!s105 altera_wrap_burst_converter_sv_unit
+S1
+R0
+R3
+8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_wrap_burst_converter.sv
+F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_wrap_burst_converter.sv
+L0 27
+R5
+r1
+!s85 0
+31
+R11
+!s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_wrap_burst_converter.sv|
+!s90 -reportprogress|300|-sv|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_wrap_burst_converter.sv|-L|altera_common_sv_packages|-work|sram_0_avalon_sram_slave_burst_adapter|
+!i113 0
+R7
+R8

@@ -1,0 +1,92 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/software/MNIST_CNN_Software/obj/default/runtime/sim/mentor
+vnios_system_new_sdram_controller_0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 2`oJZ]Ih5[SXO]V=iW2>]3
+IQ^2ci^R3P:NI`;H]]lT]B0
+R0
+Z2 w1574118696
+Z3 8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_new_sdram_controller_0.v
+Z4 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_new_sdram_controller_0.v
+L0 159
+Z5 OL;L;10.6b;65
+Z6 !s108 1574119531.000000
+Z7 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_new_sdram_controller_0.v|
+Z8 !s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_new_sdram_controller_0.v|-work|new_sdram_controller_0|
+!i113 0
+Z9 o-work new_sdram_controller_0 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 tCvgOpt 0
+vnios_system_new_sdram_controller_0_input_efifo_module
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 D_oTAa2cL:fOgl`56=U110
+IOFgZI4>@R?22RZ?e8Hj571
+R0
+R2
+R3
+R4
+Z11 L0 21
+R5
+R6
+R7
+R8
+!i113 0
+R9
+R10
+vnios_system_new_sdram_controller_0_test_component
+Z12 !s110 1574119530
+!i10b 1
+!s100 =9>mB?YLVD0]GH:Sl97@A2
+IQ568V[URlEeT[ZI00OHFe3
+R1
+R0
+R2
+Z13 8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_new_sdram_controller_0_test_component.v
+Z14 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_new_sdram_controller_0_test_component.v
+L0 114
+R5
+r1
+!s85 0
+31
+Z15 !s108 1574119530.000000
+Z16 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_new_sdram_controller_0_test_component.v|
+Z17 !s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_new_sdram_controller_0_test_component.v|-work|new_sdram_controller_0|
+!i113 0
+R9
+R10
+vnios_system_new_sdram_controller_0_test_component_ram_module
+R12
+!i10b 1
+!s100 z_Dkb^GznF8g3:Hn;8S1b0
+IZfSljTeYiYN3^DAKgEmU53
+R1
+R0
+R2
+R13
+R14
+R11
+R5
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R9
+R10

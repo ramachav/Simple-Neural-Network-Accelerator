@@ -64,6 +64,7 @@ tristate_conduit_bridge_0_tcb_translator:                               ./librar
 nios_system_inst_reset_0_bfm:                                           ./libraries/nios_system_inst_reset_0_bfm/                                          
 nios_system_inst_clk_0_bfm:                                             ./libraries/nios_system_inst_clk_0_bfm/                                            
 nios_system_inst:                                                       ./libraries/nios_system_inst/                                                      
+new_sdram_controller_0_my_partner:                                      ./libraries/new_sdram_controller_0_my_partner/                                     
 generic_tristate_controller_0_external_mem_bfm:                         ./libraries/generic_tristate_controller_0_external_mem_bfm/                        
 altera_ver:                                                             ./libraries/altera_ver/                                                            
 lpm_ver:                                                                ./libraries/lpm_ver/                                                               
