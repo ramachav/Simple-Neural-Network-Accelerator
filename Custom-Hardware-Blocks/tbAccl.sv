@@ -13,7 +13,7 @@ import AcceleratorPackage::*;
 module tbAccl();
 
 	reg clk;
-	reg rst;
+	reg reset;
 
 	wire rdEn;
 	wire wrEn;
@@ -25,7 +25,7 @@ module tbAccl();
 	(
 
 		.clk(clk),		// Clock
-		.rst(rst),		// Asynchronous reset active low
+		.reset(reset),	// Asynchronous reset active low
 
 		.ReadEnIn(rdEn),
 		.WriteEnIn(wrEn),
@@ -39,7 +39,7 @@ module tbAccl();
 	loadTest tbLd
 	(
 		.clk(clk),		// Clock
-		.rst(rst),		// Asynchronous reset active low
+		.reset(reset),	// Asynchronous reset active low
 
 		.ReadEnIn(rdEn),
 		.WriteEnIn(wrEn),
@@ -52,9 +52,9 @@ module tbAccl();
 	initial begin
 		$display( "Starting testbench" );
 		clk = 0;
-		rst = 1;
+		reset = 1;
 		#100
-		rst = 0;
+		reset = 0;
 	end
 
 	always #5 clk = ~clk;
@@ -63,7 +63,7 @@ endmodule	// tbAccl
 
 program loadTest (
 	input  logic	clk,
-	input  logic	rst,
+	input  logic	reset,
 
 	output logic	ReadEnIn,
 	output logic	WriteEnIn,
@@ -87,6 +87,16 @@ program loadTest (
 	end
 	endtask	//automatic
 
+	task automatic busIdle;
+	begin
+		@(posedge clk);
+		WriteEnIn	<= 0;
+		ReadEnIn	<= 0;
+		AddressIn	<= 0;
+		DataIn		<= 0;
+	end
+	endtask	//automatic
+
 	initial begin
 
 		WriteEnIn	<= 0;
@@ -95,7 +105,7 @@ program loadTest (
 		DataIn		<= 0;
 
 		#10
-		wait (rst == 0);
+		wait (reset == 0);
 
 		@(posedge clk);
 		@(posedge clk);
@@ -103,23 +113,28 @@ program loadTest (
 		for ( int i=0; i<NumFilterCoeffs; i++ ) begin
 			writeData( (AddrOffsetCoeff + i), i+1 );
 		end
+
+		busIdle();
 
 		#20
 
 		$display("Reset");
 		writeData( AddrOffsetControl, 0 );
+		busIdle();
 
 		#20
 
 		for ( int i=0; i<NumFilterCoeffs; i++ ) begin
 			writeData( (AddrOffsetCoeff + i), i+1 );
 		end
+		busIdle();
 
-		for (int i = 0; i <16; i++) begin
-			writeData( AddrOffsetData + i, 32'h0001_0000 + i );
+		for (int i = 0; i <64; i++) begin
+			writeData( AddrOffsetData, 32'h0100_0000 + i );
 		end
+		busIdle();
 
-		#100;
+		#100000;
 	end
 
 endprogram

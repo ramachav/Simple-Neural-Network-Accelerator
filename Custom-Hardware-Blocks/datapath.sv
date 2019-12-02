@@ -70,7 +70,7 @@ module datapath (
 	pipeline_registers PIPELINE_REGISTERS (
 		.clk(clk), .reset(reset),
 		//Stage 1 Registers
-		.stage_1_en(stage_1_en), .muladd_in0(mul0_out), , .muladd_in1(mul1_out), .muladd_in2(mul2_out), .muladd_in3(mul3_out), .muladd_in4(mul4_out), .muladd_in5(mul5_out), .muladd_in6(mul6_out), .muladd_in7(mul7_out),
+		.stage_1_en(stage_1_en), .muladd_in0(mul0_out), .muladd_in1(mul1_out), .muladd_in2(mul2_out), .muladd_in3(mul3_out), .muladd_in4(mul4_out), .muladd_in5(mul5_out), .muladd_in6(mul6_out), .muladd_in7(mul7_out),
 		.muladd_out0(add0_in0), .muladd_out1(add0_in1), .muladd_out2(add1_in0), .muladd_out3(add1_in1), .muladd_out4(add2_in0), .muladd_out5(add2_in1), .muladd_out6(add3_in0), .muladd_out7(add3_in1),
 		//Stage 2 Registers
 		.stage_2_en(stage_2_en), .addsum_in0(add0_out), .addsum_in1(add1_out), .addsum_in2(add2_out), .addsum_in3(add3_out),

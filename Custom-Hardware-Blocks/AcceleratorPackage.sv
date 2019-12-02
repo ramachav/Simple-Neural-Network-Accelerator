@@ -41,4 +41,13 @@ package AcceleratorPackage;
 	parameter PixelBufferDepth = 4;
 	parameter PixelBufferCount = 8;
 
+	typedef enum {
+		s_Idle,
+		s_ReadInput,
+		s_WaitForCalc,
+		s_ReadResult
+	} MacStateType;
+
+	parameter MacEngineLatency = 5;
+
 endpackage
