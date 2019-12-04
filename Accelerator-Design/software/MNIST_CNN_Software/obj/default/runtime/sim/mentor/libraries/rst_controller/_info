@@ -17,17 +17,17 @@ r1
 !s100 z[H_hRO9gO=:^2E3_jWH03
 ILZ_nKAZS>1nY0H;6PV`gG3
 R0
-Z2 w1574118717
+Z2 w1575391644
 8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_reset_controller.v
 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_reset_controller.v
 L0 42
 Z3 OL;L;10.6b;65
-!s108 1574119521.000000
+Z4 !s108 1575394935.000000
 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_reset_controller.v|
 !s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_reset_controller.v|-work|rst_controller|
 !i113 0
-Z4 o-work rst_controller -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z5 tCvgOpt 0
+Z5 o-work rst_controller -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z6 tCvgOpt 0
 valtera_reset_synchronizer
 R1
 r1
@@ -42,9 +42,9 @@ R2
 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_reset_synchronizer.v
 L0 24
 R3
-!s108 1574119522.000000
+R4
 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_reset_synchronizer.v|
 !s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_reset_synchronizer.v|-work|rst_controller|
 !i113 0
-R4
 R5
+R6

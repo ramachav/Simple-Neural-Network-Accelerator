@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 d/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/software/MNIST_CNN_Software/obj/default/runtime/sim/mentor
 vlpm_abs
-Z1 !s110 1574119496
+Z1 !s110 1575394912
 !i10b 1
 !s100 O9i<YS?ECZC8XU2m2T>HQ0
 IZGD8M014cSSNS=oAYQkQ^2
@@ -23,7 +23,7 @@ Z6 OL;L;10.6b;65
 r1
 !s85 0
 31
-Z7 !s108 1574119495.000000
+Z7 !s108 1575394912.000000
 Z8 !s107 /package/eda/altera/altera17.0/quartus/eda/sim_lib/220model.v|
 Z9 !s90 -reportprogress|300|/package/eda/altera/altera17.0/quartus/eda/sim_lib/220model.v|-work|lpm_ver|
 !i113 0
@@ -50,7 +50,7 @@ R9
 R10
 R11
 vlpm_and
-Z12 !s110 1574119495
+R1
 !i10b 1
 !s100 =VzM;OhZJQ@Wjl;2UNDFd0
 INj6UMZEcn:^l;C@N5QIHU1
@@ -92,7 +92,7 @@ R9
 R10
 R11
 vlpm_bustri
-R12
+R1
 !i10b 1
 !s100 J0ek53f5aGEe08O]9M7g41
 Ik_GzR?3aKVEB_^5jQ@fg93
@@ -113,7 +113,7 @@ R9
 R10
 R11
 vlpm_clshift
-R12
+R1
 !i10b 1
 !s100 CP<i@cgQUkc]3i2];nPVY1
 I25XbB0]9G<Tb7n24=m<]<2
@@ -134,7 +134,7 @@ R9
 R10
 R11
 vlpm_compare
-R12
+R1
 !i10b 1
 !s100 HQ<EAlR:a2A5A=OK;22fi1
 IM1O4mKjDaE97zQmgd@2S83
@@ -155,7 +155,7 @@ R9
 R10
 R11
 vlpm_constant
-R12
+R1
 !i10b 1
 !s100 FkMf<gh?_E[^916k78`m>1
 IfgWoz3WZ;=>JNzWZTUAe70
@@ -197,7 +197,7 @@ R9
 R10
 R11
 vlpm_decode
-R12
+R1
 !i10b 1
 !s100 9gcEgnXo<S5MFjD`]mj9V3
 INhmjL1_>gSNHD8<bk:S?G0
@@ -218,7 +218,7 @@ R9
 R10
 R11
 vLPM_DEVICE_FAMILIES
-R12
+R1
 !i10b 1
 !s100 L`<Bd0JTNL:2;lDY0S`zk1
 IGGaea6QQF_ca]nnRaOX@E0
@@ -387,7 +387,7 @@ R9
 R10
 R11
 vLPM_HINT_EVALUATION
-R12
+R1
 !i10b 1
 !s100 `WKMS]SM@JbIe0gCi<3f82
 IEicU8V1QZG77FnG>RFSZe1
@@ -430,7 +430,7 @@ R9
 R10
 R11
 vlpm_inv
-R12
+R1
 !i10b 1
 !s100 ^?DV;oC5m>1zlEkCWIQzM1
 ITFOh1hJ:M8o?1]RJZL2`a0
@@ -472,7 +472,7 @@ R9
 R10
 R11
 vLPM_MEMORY_INITIALIZATION
-R12
+R1
 !i10b 1
 !s100 DR_SV_J4fzH0gTOLESO6;1
 Ie3Tn=zi??QY;FX]=61a9A3
@@ -515,7 +515,7 @@ R9
 R10
 R11
 vlpm_mux
-R12
+R1
 !i10b 1
 !s100 27TaUnFLk_F<gH`najTXL3
 ImLfhh>M:WkKNRAzQ[J0l82
@@ -536,7 +536,7 @@ R9
 R10
 R11
 vlpm_or
-R12
+R1
 !i10b 1
 !s100 PVk12KKE0fG4m[5a;LJV22
 IXA>Xki?QYVCM=@1@IzTAS3
@@ -683,7 +683,7 @@ R9
 R10
 R11
 vlpm_xor
-R12
+R1
 !i10b 1
 !s100 5BXY01B<ogg>d2@mk^Kmo0
 Ib=jZzL4YJ7QUb_bci4Ko_2

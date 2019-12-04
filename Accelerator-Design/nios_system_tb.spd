@@ -42,6 +42,14 @@
    type="SYSTEM_VERILOG"
    library="nios2_qsys_0_data_master_to_sram_0_avalon_sram_slave_cmd_width_adapter" />
  <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_rsp_mux_003.sv"
+   type="SYSTEM_VERILOG"
+   library="rsp_mux_003" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"
+   type="SYSTEM_VERILOG"
+   library="rsp_mux_003" />
+ <file
    path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_rsp_mux_002.sv"
    type="SYSTEM_VERILOG"
    library="rsp_mux_002" />
@@ -66,9 +74,13 @@
    type="SYSTEM_VERILOG"
    library="rsp_mux" />
  <file
-   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_rsp_demux_006.sv"
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_rsp_demux_009.sv"
    type="SYSTEM_VERILOG"
-   library="rsp_demux_006" />
+   library="rsp_demux_009" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_rsp_demux_005.sv"
+   type="SYSTEM_VERILOG"
+   library="rsp_demux_005" />
  <file
    path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_rsp_demux_002.sv"
    type="SYSTEM_VERILOG"
@@ -82,13 +94,29 @@
    type="SYSTEM_VERILOG"
    library="rsp_demux" />
  <file
-   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_cmd_mux_006.sv"
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_cmd_mux_009.sv"
    type="SYSTEM_VERILOG"
-   library="cmd_mux_006" />
+   library="cmd_mux_009" />
  <file
    path="nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"
    type="SYSTEM_VERILOG"
-   library="cmd_mux_006" />
+   library="cmd_mux_009" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_cmd_mux_008.sv"
+   type="SYSTEM_VERILOG"
+   library="cmd_mux_008" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"
+   type="SYSTEM_VERILOG"
+   library="cmd_mux_008" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_cmd_mux_005.sv"
+   type="SYSTEM_VERILOG"
+   library="cmd_mux_005" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"
+   type="SYSTEM_VERILOG"
+   library="cmd_mux_005" />
  <file
    path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_cmd_mux_002.sv"
    type="SYSTEM_VERILOG"
@@ -113,6 +141,14 @@
    path="nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_arbitrator.sv"
    type="SYSTEM_VERILOG"
    library="cmd_mux" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_cmd_demux_004.sv"
+   type="SYSTEM_VERILOG"
+   library="cmd_demux_004" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_cmd_demux_003.sv"
+   type="SYSTEM_VERILOG"
+   library="cmd_demux_003" />
  <file
    path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_cmd_demux_002.sv"
    type="SYSTEM_VERILOG"
@@ -182,17 +218,29 @@
    type="SYSTEM_VERILOG"
    library="nios2_qsys_0_data_master_limiter" />
  <file
-   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_009.sv"
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_014.sv"
    type="SYSTEM_VERILOG"
-   library="router_009" />
+   library="router_014" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_013.sv"
+   type="SYSTEM_VERILOG"
+   library="router_013" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_010.sv"
+   type="SYSTEM_VERILOG"
+   library="router_010" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_007.sv"
+   type="SYSTEM_VERILOG"
+   library="router_007" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_006.sv"
+   type="SYSTEM_VERILOG"
+   library="router_006" />
  <file
    path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_005.sv"
    type="SYSTEM_VERILOG"
    library="router_005" />
- <file
-   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_004.sv"
-   type="SYSTEM_VERILOG"
-   library="router_004" />
  <file
    path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_003.sv"
    type="SYSTEM_VERILOG"
@@ -342,6 +390,22 @@
    type="VERILOG"
    library="performance_counter_0" />
  <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/data_buffer.sv"
+   type="SYSTEM_VERILOG"
+   library="nn_acc_single_buffer_version_1" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/fp_adder.sv"
+   type="SYSTEM_VERILOG"
+   library="nn_acc_single_buffer_version_1" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/fp_multiplier.sv"
+   type="SYSTEM_VERILOG"
+   library="nn_acc_single_buffer_version_1" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/nn_acc_single.sv"
+   type="SYSTEM_VERILOG"
+   library="nn_acc_single_buffer_version_1" />
+ <file
    path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0.vo"
    type="VERILOG"
    library="nios2_qsys_0" />
@@ -473,6 +537,10 @@
    path="nios_system/testbench/nios_system_tb/simulation/submodules/fp_adder.sv"
    type="SYSTEM_VERILOG"
    library="floating_point_adder_0" />
+ <file
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_dma_0.v"
+   type="VERILOG"
+   library="dma_0" />
  <file
    path="nios_system/testbench/nios_system_tb/simulation/submodules/altera_inout.sv"
    type="SYSTEM_VERILOG"

@@ -3,13 +3,12 @@
  <debug showDebugMenu="0" />
  <systemtable filter="All Interfaces">
   <columns>
-   <connections preferredWidth="287" />
+   <connections preferredWidth="319" />
    <irq preferredWidth="34" />
    <name preferredWidth="224" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Library,Library/Interface Protocols/PCI Express/QSYS Example Designs,Library/University Program/Audio &amp; Video/Video,Library/Interface Protocols,Library/University Program,Library/University Program/Audio &amp; Video,Library/Interface Protocols/PCI Express,Library/Basic Functions/DMA,Project,Library/Basic Functions/DMA/mSGDMA Sub-core,Library/Basic Functions" />
+ <library expandedCategories="Project,Library" />
  <window width="1924" height="1084" x="1918" y="0" />
  <generation path="_PROJECT_NAME_" testbench_system="SIMPLE" simulation="VERILOG" />
 </preferences>

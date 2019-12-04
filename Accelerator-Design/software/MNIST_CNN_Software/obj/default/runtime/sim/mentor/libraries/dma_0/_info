@@ -1,0 +1,150 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/software/MNIST_CNN_Software/obj/default/runtime/sim/mentor
+vnios_system_dma_0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 `OE80XUhFTC6Rh5JQOm;D1
+IDMGO1I]1bb49CS@nOW?861
+R0
+Z2 w1575391624
+Z3 8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_dma_0.v
+Z4 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_dma_0.v
+L0 555
+Z5 OL;L;10.6b;65
+Z6 !s108 1575394945.000000
+Z7 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_dma_0.v|
+Z8 !s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_dma_0.v|-work|dma_0|
+!i113 0
+Z9 o-work dma_0 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 tCvgOpt 0
+vnios_system_dma_0_byteenables
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 9m@=MU[ZS^<??ZDAc5G5k3
+I3e4WO6K@NkI:aI21gi:Jb0
+R0
+R2
+R3
+R4
+L0 106
+R5
+R6
+R7
+R8
+!i113 0
+R9
+R10
+vnios_system_dma_0_fifo_module
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 _lGJ[4?Vi5<K[NFmd8Omn0
+IcffG^><mAE93bL<c[kM[c3
+R0
+R2
+R3
+R4
+L0 253
+R5
+R6
+R7
+R8
+!i113 0
+R9
+R10
+vnios_system_dma_0_fifo_module_fifo_ram_module
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 `e1=0XmDaz]T8dP^0XDJS2
+I7kLI`Ki1Va[?cQTlWG0:61
+R0
+R2
+R3
+R4
+L0 154
+R5
+R6
+R7
+R8
+!i113 0
+R9
+R10
+vnios_system_dma_0_mem_read
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 NUMOk45]81eF42I1HHRDm2
+ITdX6L;6LLLL1JETeRA8ha3
+R0
+R2
+R3
+R4
+L0 417
+R5
+R6
+R7
+R8
+!i113 0
+R9
+R10
+vnios_system_dma_0_mem_write
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 >>AZ[JmUUF1@F8RkbnDKW1
+I^8>ImkMC2b<0[dA>4Y8cV1
+R0
+R2
+R3
+R4
+L0 505
+R5
+R6
+R7
+R8
+!i113 0
+R9
+R10
+vnios_system_dma_0_read_data_mux
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 TQGMO1DiY43HAKoFKm:=l2
+Ic`QElAJioh0ML`fl@N^jF3
+R0
+R2
+R3
+R4
+L0 21
+R5
+R6
+R7
+R8
+!i113 0
+R9
+R10

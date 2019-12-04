@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags=""
+   categories="" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element generic_tristate_controller_0_external_mem_bfm
+   {
+      datum _sortIndex
+      {
+         value = "7";
+         type = "int";
+      }
+   }
+   element new_sdram_controller_0_my_partner
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+   }
+   element nios_system_inst
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+   element nios_system_inst_clk_0_bfm
+   {
+      datum _sortIndex
+      {
+         value = "2";
+         type = "int";
+      }
+   }
+   element nios_system_inst_clk_bfm
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+   }
+   element nios_system_inst_reset_0_bfm
+   {
+      datum _sortIndex
+      {
+         value = "4";
+         type = "int";
+      }
+   }
+   element nios_system_inst_reset_bfm
+   {
+      datum _sortIndex
+      {
+         value = "3";
+         type = "int";
+      }
+   }
+   element tristate_conduit_bridge_0_tcb_translator
+   {
+      datum _sortIndex
+      {
+         value = "6";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="device" value="EP4CE115F29C7" />
+ <parameter name="deviceFamily" value="Cyclone IV E" />
+ <parameter name="deviceSpeedGrade" value="7" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="hideFromIPCatalog" value="false" />
+ <parameter name="lockedInterfaceDefinition" value="" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="simple_NN_acc.qpf" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="0" />
+ <parameter name="testBenchDutName" value="nios_system" />
+ <parameter name="timeStamp" value="0" />
+ <parameter name="useTestBenchNamingPattern" value="true" />
+ <instanceScript></instanceScript>
+ <module
+   name="generic_tristate_controller_0_external_mem_bfm"
+   kind="altera_external_memory_bfm"
+   version="17.0"
+   enabled="1">
+  <parameter name="ACTIVE_LOW_BEGINTRANSFER" value="0" />
+  <parameter name="ACTIVE_LOW_BYTEENABLE" value="0" />
+  <parameter name="ACTIVE_LOW_CHIPSELECT" value="1" />
+  <parameter name="ACTIVE_LOW_OUTPUTENABLE" value="0" />
+  <parameter name="ACTIVE_LOW_READ" value="1" />
+  <parameter name="ACTIVE_LOW_RESET" value="0" />
+  <parameter name="ACTIVE_LOW_WRITE" value="1" />
+  <parameter name="CDT_ADDRESS_W" value="23" />
+  <parameter name="CDT_NUMSYMBOLS" value="1" />
+  <parameter name="CDT_READ_LATENCY" value="0" />
+  <parameter name="CDT_SYMBOL_W" value="8" />
+  <parameter name="INIT_FILE">altera_external_memory_bfm.hex</parameter>
+  <parameter name="SIGNAL_ADDRESS_ROLES" value="tcm_address_out" />
+  <parameter name="SIGNAL_BEGINTRANSFER_ROLES">tcm_begintransfer_out</parameter>
+  <parameter name="SIGNAL_BYTEENABLE_ROLES" value="tcm_byteenable_out" />
+  <parameter name="SIGNAL_CHIPSELECT_ROLES">tcm_chipselect_n_out</parameter>
+  <parameter name="SIGNAL_DATA_ROLES" value="tcm_data_out" />
+  <parameter name="SIGNAL_OUTPUTENABLE_ROLES">tcm_outputenable_out</parameter>
+  <parameter name="SIGNAL_READ_ROLES" value="tcm_read_n_out" />
+  <parameter name="SIGNAL_RESET_ROLES" value="tcm_reset_out" />
+  <parameter name="SIGNAL_WRITE_ROLES" value="tcm_write_n_out" />
+  <parameter name="USE_BEGINTRANSFER" value="0" />
+  <parameter name="USE_BYTEENABLE" value="0" />
+  <parameter name="USE_CHIPSELECT" value="1" />
+  <parameter name="USE_OUTPUTENABLE" value="0" />
+  <parameter name="USE_READ" value="1" />
+  <parameter name="USE_RESET" value="0" />
+  <parameter name="USE_WRITE" value="1" />
+  <parameter name="VHDL_ID" value="0" />
+ </module>
+ <module
+   name="new_sdram_controller_0_my_partner"
+   kind="altera_sdram_partner_module"
+   version="11.0"
+   enabled="1">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="CAS_LATENCY" value="3" />
+  <parameter name="CONTR_NAME">nios_system_new_sdram_controller_0</parameter>
+  <parameter name="SDRAM_BANK_WIDTH" value="2" />
+  <parameter name="SDRAM_COL_WIDTH" value="10" />
+  <parameter name="SDRAM_DATA_WIDTH" value="32" />
+  <parameter name="SDRAM_NUM_CHIPSELECTS" value="1" />
+  <parameter name="SDRAM_ROW_WIDTH" value="13" />
+ </module>
+ <module name="nios_system_inst" kind="nios_system" version="1.0" enabled="1">
+  <parameter name="AUTO_CLK_0_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_CLK_0_CLOCK_RATE" value="0" />
+  <parameter name="AUTO_CLK_0_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="2" />
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="2" />
+  <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_UNIQUE_ID" value="nios_system" />
+ </module>
+ <module
+   name="nios_system_inst_clk_0_bfm"
+   kind="altera_avalon_clock_source"
+   version="17.0"
+   enabled="1">
+  <parameter name="CLOCK_RATE" value="25000000" />
+  <parameter name="CLOCK_UNIT" value="1" />
+ </module>
+ <module
+   name="nios_system_inst_clk_bfm"
+   kind="altera_avalon_clock_source"
+   version="17.0"
+   enabled="1">
+  <parameter name="CLOCK_RATE" value="50000000" />
+  <parameter name="CLOCK_UNIT" value="1" />
+ </module>
+ <module
+   name="nios_system_inst_reset_0_bfm"
+   kind="altera_avalon_reset_source"
+   version="17.0"
+   enabled="1">
+  <parameter name="ASSERT_HIGH_RESET" value="0" />
+  <parameter name="INITIAL_RESET_CYCLES" value="50" />
+ </module>
+ <module
+   name="nios_system_inst_reset_bfm"
+   kind="altera_avalon_reset_source"
+   version="17.0"
+   enabled="1">
+  <parameter name="ASSERT_HIGH_RESET" value="0" />
+  <parameter name="INITIAL_RESET_CYCLES" value="50" />
+ </module>
+ <module
+   name="tristate_conduit_bridge_0_tcb_translator"
+   kind="altera_tristate_conduit_bridge_translator"
+   version="17.0"
+   enabled="1">
+  <parameter name="CHAIN_LENGTH" value="4" />
+  <parameter name="MODULE_ORIGIN_LIST">generic_tristate_controller_0.tcm,generic_tristate_controller_0.tcm,generic_tristate_controller_0.tcm,generic_tristate_controller_0.tcm,generic_tristate_controller_0.tcm</parameter>
+  <parameter name="SIGNAL_ORIGIN_LIST">tcm_address_out,tcm_read_n_out,tcm_write_n_out,tcm_data_out,tcm_chipselect_n_out</parameter>
+  <parameter name="SIGNAL_ORIGIN_TYPE">Output,Output,Output,Bidirectional,Output</parameter>
+  <parameter name="SIGNAL_ORIGIN_WIDTH" value="23,1,1,8,1" />
+ </module>
+ <connection
+   kind="clock"
+   version="17.0"
+   start="nios_system_inst_clk_bfm.clk"
+   end="nios_system_inst.clk" />
+ <connection
+   kind="clock"
+   version="17.0"
+   start="nios_system_inst_clk_bfm.clk"
+   end="nios_system_inst_reset_bfm.clk" />
+ <connection
+   kind="clock"
+   version="17.0"
+   start="nios_system_inst_clk_bfm.clk"
+   end="nios_system_inst_reset_0_bfm.clk" />
+ <connection
+   kind="clock"
+   version="17.0"
+   start="nios_system_inst_clk_bfm.clk"
+   end="new_sdram_controller_0_my_partner.clk" />
+ <connection
+   kind="clock"
+   version="17.0"
+   start="nios_system_inst_clk_bfm.clk"
+   end="generic_tristate_controller_0_external_mem_bfm.clk" />
+ <connection
+   kind="clock"
+   version="17.0"
+   start="nios_system_inst_clk_0_bfm.clk"
+   end="nios_system_inst.clk_0" />
+ <connection
+   kind="conduit"
+   version="17.0"
+   start="new_sdram_controller_0_my_partner.conduit"
+   end="nios_system_inst.new_sdram_controller_0_wire">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
+ <connection
+   kind="conduit"
+   version="17.0"
+   start="generic_tristate_controller_0_external_mem_bfm.conduit"
+   end="tristate_conduit_bridge_0_tcb_translator.out">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
+ <connection
+   kind="conduit"
+   version="17.0"
+   start="tristate_conduit_bridge_0_tcb_translator.in"
+   end="nios_system_inst.tristate_conduit_bridge_0_out">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
+ <connection
+   kind="reset"
+   version="17.0"
+   start="nios_system_inst_reset_bfm.reset"
+   end="nios_system_inst.reset" />
+ <connection
+   kind="reset"
+   version="17.0"
+   start="nios_system_inst_reset_0_bfm.reset"
+   end="nios_system_inst.reset_0" />
+ <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
+ <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
+</system>

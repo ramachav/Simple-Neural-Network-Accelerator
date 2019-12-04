@@ -9,11 +9,11 @@ z2
 cModel Technology
 Z0 d/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/software/MNIST_CNN_Software/obj/default/runtime/sim/mentor
 T_opt
-!s110 1574044273
-V7Gbni;Qd^?mld5zE90ii^0
+!s110 1575394950
+VD@JJ`SRP`61I<f`TRmXDM0
 Z1 04 14 4 work nios_system_tb fast 0
-=1-6c2b59f2f1d3-5dd20270-2c18c-5fd0
-o-quiet -auto_acc_if_foreign -work work -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter_002 -L avalon_st_adapter_001 -L avalon_st_adapter -L nios2_qsys_0_data_master_to_sram_0_avalon_sram_slave_cmd_width_adapter -L rsp_mux_002 -L rsp_mux_001 -L rsp_mux -L rsp_demux_006 -L rsp_demux_002 -L rsp_demux_001 -L rsp_demux -L cmd_mux_006 -L cmd_mux_002 -L cmd_mux_001 -L cmd_mux -L cmd_demux_002 -L cmd_demux_001 -L cmd_demux -L sram_0_avalon_sram_slave_burst_adapter -L nios2_qsys_0_data_master_limiter -L router_009 -L router_005 -L router_004 -L router_003 -L router_002 -L router_001 -L router -L sram_0_avalon_sram_slave_agent_rsp_fifo -L sram_0_avalon_sram_slave_agent -L video_pixel_buffer_dma_0_avalon_pixel_dma_master_agent -L video_pixel_buffer_dma_0_avalon_pixel_dma_master_translator -L tda -L slave_translator -L tdt -L rst_controller -L irq_mapper -L mm_interconnect_0 -L nios2_qsys_0_custom_instruction_master_comb_slave_translator0 -L nios2_qsys_0_custom_instruction_master_comb_xconnect -L nios2_qsys_0_custom_instruction_master_translator -L video_vga_controller_0 -L video_rgb_resampler_0 -L video_pixel_buffer_dma_0 -L video_dual_clock_buffer_0 -L video_character_buffer_with_dma_0 -L video_alpha_blender_0 -L tristate_conduit_bridge_0 -L timer_0 -L sram_0 -L performance_counter_0 -L nios2_qsys_0 -L new_sdram_controller_0 -L jtag_uart_0 -L generic_tristate_controller_0 -L floating_point_multiplier_0 -L floating_point_adder_0 -L tristate_conduit_bridge_0_tcb_translator -L nios_system_inst_reset_0_bfm -L nios_system_inst_clk_0_bfm -L nios_system_inst -L generic_tristate_controller_0_external_mem_bfm -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver
+=1-6c2b59f49b66-5de69e84-127a0-1e7e
+o-quiet -auto_acc_if_foreign -work work -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter_002 -L avalon_st_adapter_001 -L avalon_st_adapter -L nios2_qsys_0_data_master_to_sram_0_avalon_sram_slave_cmd_width_adapter -L rsp_mux_003 -L rsp_mux_002 -L rsp_mux_001 -L rsp_mux -L rsp_demux_008 -L rsp_demux_002 -L rsp_demux_001 -L rsp_demux -L cmd_mux_008 -L cmd_mux_007 -L cmd_mux_002 -L cmd_mux_001 -L cmd_mux -L cmd_demux_004 -L cmd_demux_003 -L cmd_demux_002 -L cmd_demux_001 -L cmd_demux -L sram_0_avalon_sram_slave_burst_adapter -L nios2_qsys_0_data_master_limiter -L router_016 -L router_013 -L router_012 -L router_007 -L router_006 -L router_005 -L router_003 -L router_002 -L router_001 -L router -L sram_0_avalon_sram_slave_agent_rsp_fifo -L sram_0_avalon_sram_slave_agent -L video_pixel_buffer_dma_0_avalon_pixel_dma_master_agent -L video_pixel_buffer_dma_0_avalon_pixel_dma_master_translator -L tda -L slave_translator -L tdt -L rst_controller -L irq_mapper -L mm_interconnect_0 -L nios2_qsys_0_custom_instruction_master_comb_slave_translator0 -L nios2_qsys_0_custom_instruction_master_comb_xconnect -L nios2_qsys_0_custom_instruction_master_translator -L video_vga_controller_0 -L video_rgb_resampler_0 -L video_pixel_buffer_dma_0 -L video_dual_clock_buffer_0 -L video_character_buffer_with_dma_0 -L video_alpha_blender_0 -L tristate_conduit_bridge_0 -L timer_0 -L sram_0 -L performance_counter_0 -L nn_acc_single_buffer_version_1 -L nios2_qsys_0 -L new_sdram_controller_0 -L jtag_uart_0 -L generic_tristate_controller_0 -L floating_point_multiplier_0 -L floating_point_adder_0 -L dma_0 -L tristate_conduit_bridge_0_tcb_translator -L nios_system_inst_reset_0_bfm -L nios_system_inst_clk_0_bfm -L nios_system_inst -L new_sdram_controller_0_my_partner -L generic_tristate_controller_0_external_mem_bfm -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver
 Z2 tCvgOpt 0
 n@_opt
 Z3 OL;O;10.6b;65
@@ -47,12 +47,12 @@ r1
 !s100 nGjjfXNOmEA6YU`<OW89W3
 Im^?@VMgf8@8K3[In3B9>40
 R0
-w1574118693
+w1575391621
 8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/nios_system_tb.v
 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/nios_system_tb.v
 L0 6
 OL;L;10.6b;65
-!s108 1574119535.000000
+!s108 1575394947.000000
 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/nios_system_tb.v|
 !s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/nios_system_tb.v|
 !i113 0

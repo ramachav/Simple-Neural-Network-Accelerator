@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 17.0 595 linux 2019.11.18.18:24:36
+# ACDS 17.0 595 linux 2019.12.03.12:09:11
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 17.0 595 linux 2019.11.18.18:24:36
+# ACDS 17.0 595 linux 2019.12.03.12:09:11
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="nios_system_tb"
@@ -170,18 +170,22 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_width_adapter.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_address_alignment.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv \
-  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_rsp_mux_002.sv \
+  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_rsp_mux_003.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_arbitrator.sv \
+  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_rsp_mux_002.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_rsp_mux_001.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_rsp_mux.sv \
-  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_rsp_demux_006.sv \
+  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_rsp_demux_008.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_rsp_demux_002.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_rsp_demux_001.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_rsp_demux.sv \
-  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_cmd_mux_006.sv \
+  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_cmd_mux_008.sv \
+  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_cmd_mux_007.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_cmd_mux_002.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_cmd_mux_001.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_cmd_mux.sv \
+  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_cmd_demux_004.sv \
+  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_cmd_demux_003.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_cmd_demux_002.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_cmd_demux_001.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_cmd_demux.sv \
@@ -197,9 +201,12 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_traffic_limiter.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_merlin_reorder_memory.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_avalon_sc_fifo.v \
-  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_009.sv \
+  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_016.sv \
+  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_013.sv \
+  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_012.sv \
+  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_007.sv \
+  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_006.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_005.sv \
-  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_004.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_003.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_002.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_001.sv \
@@ -214,7 +221,6 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_reset_synchronizer.v \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_irq_mapper.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0.v \
-  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_custom_instruction_master_multi_xconnect.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_customins_slave_translator.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_custom_instruction_master_comb_xconnect.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_customins_master_translator.v \
@@ -233,6 +239,10 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_timer_0.v \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_sram_0.v \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_performance_counter_0.v \
+  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/data_buffer.sv \
+  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/fp_adder.sv \
+  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/fp_multiplier.sv \
+  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nn_acc_single.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0.vo \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_jtag_debug_module_wrapper.v \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_jtag_debug_module_sysclk.v \
@@ -244,10 +254,7 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_new_sdram_controller_0.v \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_jtag_uart_0.v \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_generic_tristate_controller_0.v \
-  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/fp_multiplier.sv \
-  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/fp_multiplier_multi.sv \
-  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/fp_adder_multi.sv \
-  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/fp_adder.sv \
+  /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_dma_0.v \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_inout.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_tristate_conduit_bridge_translator.sv \
   /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_avalon_reset_source.sv \

@@ -9,13 +9,13 @@ z2
 cModel Technology
 Z0 d/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/software/MNIST_CNN_Software/obj/default/runtime/sim/mentor
 valtera_up_video_alpha_blender_normal
-!s110 1574119526
+!s110 1575394939
 !i10b 1
 !s100 HTHFDh14cm63=75LbdoLz2
 IZ4`59=OAQnB><[CeVm]9T1
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z2 w1574118716
+Z2 w1575391643
 8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_video_alpha_blender_normal.v
 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_video_alpha_blender_normal.v
 Z3 L0 34
@@ -23,7 +23,7 @@ Z4 OL;L;10.6b;65
 r1
 !s85 0
 31
-Z5 !s108 1574119526.000000
+Z5 !s108 1575394939.000000
 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_video_alpha_blender_normal.v|
 !s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_video_alpha_blender_normal.v|-work|video_alpha_blender_0|
 !i113 0

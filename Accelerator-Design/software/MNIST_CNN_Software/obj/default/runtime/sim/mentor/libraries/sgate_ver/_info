@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 d/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/software/MNIST_CNN_Software/obj/default/runtime/sim/mentor
 vio_buf_opdrn
-Z1 !s110 1574119496
+Z1 !s110 1575394912
 !i10b 1
 !s100 VhizJG_UoJ<b<SS=?:bCT2
 IN1eCVPj@93<5VhncSBF0]0
@@ -23,7 +23,7 @@ Z6 OL;L;10.6b;65
 r1
 !s85 0
 31
-Z7 !s108 1574119496.000000
+Z7 !s108 1575394912.000000
 Z8 !s107 /package/eda/altera/altera17.0/quartus/eda/sim_lib/sgate.v|
 Z9 !s90 -reportprogress|300|/package/eda/altera/altera17.0/quartus/eda/sim_lib/sgate.v|-work|sgate_ver|
 !i113 0

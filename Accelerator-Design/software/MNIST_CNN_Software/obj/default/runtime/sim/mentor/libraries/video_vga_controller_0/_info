@@ -17,17 +17,17 @@ r1
 !s100 f77gT?TV7S[KXD:O7VH0H1
 IoDYaAAWJo<YjmgcQ<:mS^3
 R0
-Z2 w1574118716
+Z2 w1575391643
 8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_avalon_video_vga_timing.v
 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_avalon_video_vga_timing.v
 Z3 L0 28
 Z4 OL;L;10.6b;65
-!s108 1574119523.000000
+Z5 !s108 1575394937.000000
 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_avalon_video_vga_timing.v|
 !s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_avalon_video_vga_timing.v|-work|video_vga_controller_0|
 !i113 0
-Z5 o-work video_vga_controller_0 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z6 tCvgOpt 0
+Z6 o-work video_vga_controller_0 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z7 tCvgOpt 0
 vnios_system_video_vga_controller_0
 R1
 r1
@@ -42,9 +42,9 @@ R2
 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_video_vga_controller_0.v
 R3
 R4
-!s108 1574119524.000000
+R5
 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_video_vga_controller_0.v|
 !s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_video_vga_controller_0.v|-work|video_vga_controller_0|
 !i113 0
-R5
 R6
+R7

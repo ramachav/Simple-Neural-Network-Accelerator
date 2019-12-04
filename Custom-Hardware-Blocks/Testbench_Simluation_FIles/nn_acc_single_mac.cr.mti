@@ -1,0 +1,37 @@
+/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_adder.sv {1 {vlog -work work -vopt -sv -stats=none /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_adder.sv
+QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+-- Compiling module fp_adder
+
+Top level modules:
+	fp_adder
+
+} {} {}} /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/data_buffer.sv {1 {vlog -work work -vopt -sv -stats=none /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/data_buffer.sv
+QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+-- Compiling module data_buffer
+
+Top level modules:
+	data_buffer
+
+} {} {}} /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/nn_acc_single.sv {1 {vlog -work work -vopt -sv -stats=none /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/nn_acc_single.sv
+QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+-- Compiling module nn_acc_single
+
+Top level modules:
+	nn_acc_single
+
+} {} {}} /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_multiplier.sv {1 {vlog -work work -vopt -sv -stats=none /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_multiplier.sv
+QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+-- Compiling module fp_multiplier
+
+Top level modules:
+	fp_multiplier
+
+} {} {}} /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/nn_acc_single_tb.sv {1 {vlog -work work -vopt -sv -stats=none /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/nn_acc_single_tb.sv
+QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+-- Compiling module nn_acc_single_tb
+-- Compiling program nn_acc_single_test
+
+Top level modules:
+	nn_acc_single_tb
+
+} {} {}}

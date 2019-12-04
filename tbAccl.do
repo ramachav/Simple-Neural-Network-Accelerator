@@ -1,5 +1,5 @@
 
-quietly set PROJECT_DIR "/home/ecegrid/a/695r07/ece695r/Project/SoCProject"
+quietly set PROJECT_DIR "/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator"
 
 vlog -reportprogress 300 -work work "${PROJECT_DIR}/Custom-Hardware-Blocks/AcceleratorPackage.sv"
 

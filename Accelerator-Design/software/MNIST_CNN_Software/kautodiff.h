@@ -32,20 +32,30 @@
 #include <stdio.h>
 #include <stdint.h>
 #include "system.h"
+#include "altera_avalon_dma_regs.h"
+#include "altera_avalon_dma.h"
+#include "sys/alt_dma.h"
+#include "sys/alt_cache.h"
 
 #ifdef __STRICT_ANSI__
 #define inline
 #endif
 
-/*
- * Floating Point Custom instruction macros
- *
- */
-
+/********************************************
+ * Floating Point Custom instruction macros *
+ ********************************************/
 #define FLOATING_POINT_ADDER_0(A,B) __builtin_custom_fnff(FLOATING_POINT_ADDER_N,(A),(B))
 #define FLOATING_POINT_ADDER_N 0x0
 #define FLOATING_POINT_MULTIPLIER_0(A,B) __builtin_custom_fnff(FLOATING_POINT_MULTIPLIER_N,(A),(B))
 #define FLOATING_POINT_MULTIPLIER_N 0x1
+
+/***************************************
+ * NN Single Buffer Accelerator macros *
+ ***************************************/
+#define NN_ACC_BASE 0x8000000
+#define NN_ACC_WEIGHT_BUFFER_OFFSET 1*4
+#define NN_ACC_IMAGE_BUFFER_OFFSET 97*4
+#define NN_ACC_RESULT_BUFFER_OFFSET 193*4
 
 #define KAD_MAX_DIM 4     /* max dimension */
 #define KAD_MAX_OP  64    /* max number of operators */

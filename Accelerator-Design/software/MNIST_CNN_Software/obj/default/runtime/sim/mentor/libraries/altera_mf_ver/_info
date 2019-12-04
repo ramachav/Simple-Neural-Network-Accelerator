@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 d/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/software/MNIST_CNN_Software/obj/default/runtime/sim/mentor
 va_graycounter
-Z1 !s110 1574119497
+Z1 !s110 1575394913
 !i10b 1
 !s100 7RL@7]^Mkb[^0^A4A<DHg3
 IMc333U;9Kc^gLJ1]7z2kH0
@@ -23,7 +23,7 @@ Z6 OL;L;10.6b;65
 r1
 !s85 0
 31
-Z7 !s108 1574119496.000000
+Z7 !s108 1575394912.000000
 Z8 !s107 /package/eda/altera/altera17.0/quartus/eda/sim_lib/altera_mf.v|
 Z9 !s90 -reportprogress|300|/package/eda/altera/altera17.0/quartus/eda/sim_lib/altera_mf.v|-work|altera_mf_ver|
 !i113 0
@@ -825,7 +825,7 @@ R9
 R10
 R11
 varm_m_cntr
-Z12 !s110 1574119496
+R1
 !i10b 1
 !s100 aE>Dk`dHV;WL1F5DL`IJe0
 IG2bVzi>1A2G9Q28[PE=La2
@@ -846,7 +846,7 @@ R9
 R10
 R11
 varm_n_cntr
-R12
+R1
 !i10b 1
 !s100 XVOhjdU?l`B?8Uf;M45`N2
 I?<I]H:AA4We64f9TShY9:2
@@ -867,7 +867,7 @@ R9
 R10
 R11
 varm_scale_cntr
-R12
+R1
 !i10b 1
 !s100 j]gN?cGBNo4nUKi^cZIh[0
 Ia=:f1m6?hBiU`_Qb]lYCh3
@@ -1113,7 +1113,7 @@ R9
 R10
 R11
 vdffp
-R12
+R1
 !i10b 1
 !s100 SnNjJNaU3KC[OThjodVFi2
 IiFNjHU_TVA6bOoDKQFkmX0
@@ -1218,7 +1218,7 @@ R9
 R10
 R11
 vlcell
-R12
+R1
 !i10b 1
 !s100 5QGV:R[KdXJ5TR1bkQiUU0
 IF4b_FPW2g4XXc7iW5@9^Y1
@@ -1349,7 +1349,7 @@ R10
 R11
 n@m@f_cycloneiiigl_scale_cntr
 vMF_pll_reg
-R12
+R1
 !i10b 1
 !s100 0HDLA_Ae606hC35WQ6^7]2
 IDih12N_:>c@=nFf<l4?=z3
@@ -1371,7 +1371,7 @@ R10
 R11
 n@m@f_pll_reg
 vMF_stratix_pll
-R12
+R1
 !i10b 1
 !s100 kITDCAAk7nE?EU[@=@9Oo1
 IFi@AF?]P7bYdJc3n=lh_Q1
@@ -1393,7 +1393,7 @@ R10
 R11
 n@m@f_stratix_pll
 vMF_stratixii_pll
-R12
+R1
 !i10b 1
 !s100 m<j8S?b80d7m:cRfTMSCR0
 I0VOBnT2nRU_z0AFJ4:0<j2
@@ -1458,7 +1458,7 @@ R9
 R10
 R11
 vpll_iobuf
-R12
+R1
 !i10b 1
 !s100 Y>n^z1AP@XWBOng[;X`=B1
 I7K<0eHgaKPI2;FJzGL8<_1
@@ -1772,7 +1772,7 @@ R9
 R10
 R11
 vstx_m_cntr
-R12
+R1
 !i10b 1
 !s100 ?>o7Q<XCBPSD4HoGd5:>A0
 IB8`cHaa3OfZHABZTjl?OA0
@@ -1793,7 +1793,7 @@ R9
 R10
 R11
 vstx_n_cntr
-R12
+R1
 !i10b 1
 !s100 ?P@b:4DafJ_^m9ka]DFD53
 I5:1UZz@2b>LokmiZA4o853
@@ -1814,7 +1814,7 @@ R9
 R10
 R11
 vstx_scale_cntr
-R12
+R1
 !i10b 1
 !s100 a@[2eTC]]LIFm0QFl5WUj2
 I59WJJgjC;MMRY3mEhB7Hb2
@@ -1835,7 +1835,7 @@ R9
 R10
 R11
 vttn_m_cntr
-R12
+R1
 !i10b 1
 !s100 ;3NK]8TY<L]eQ[IJY0gF32
 I1Mi_RWUIOedigeMJJ4W4I2
@@ -1856,7 +1856,7 @@ R9
 R10
 R11
 vttn_n_cntr
-R12
+R1
 !i10b 1
 !s100 7nCN0ZiXcEmbIBT5Y>_4a1
 ILj=nmB5=a16z2XnXWbY=91
@@ -1877,7 +1877,7 @@ R9
 R10
 R11
 vttn_scale_cntr
-R12
+R1
 !i10b 1
 !s100 _jZZ0@3D`H8_VG516F<O_0
 IQ4gMKE0PfB_QToL5YE3oa3

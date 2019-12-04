@@ -17,19 +17,19 @@ r1
 !s100 :fAOWXBVoQ5_U^dM5<^Lc1
 I:l=aj8:nPZ?DT[SeUN@?Z1
 R0
-Z2 w1574118716
+Z2 w1575391643
 8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_video_128_character_rom.v
 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_video_128_character_rom.v
 L0 28
 Z3 OL;L;10.6b;65
-Z4 !s108 1574119525.000000
+Z4 !s108 1575394938.000000
 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_video_128_character_rom.v|
 !s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_up_video_128_character_rom.v|-work|video_character_buffer_with_dma_0|
 !i113 0
 Z5 o-work video_character_buffer_with_dma_0 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 Z6 tCvgOpt 0
 valtera_up_video_fb_color_rom
-!s110 1574119525
+!s110 1575394938
 !i10b 1
 !s100 mR>IQLeX9KoLeEB]ie]zo2
 IEYDO;1f]Jn4bQZiECWIRm0

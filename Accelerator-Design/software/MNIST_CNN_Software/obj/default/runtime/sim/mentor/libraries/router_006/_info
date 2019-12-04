@@ -1,0 +1,56 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/software/MNIST_CNN_Software/obj/default/runtime/sim/mentor
+vnios_system_mm_interconnect_0_router_006
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 l_I[VA7KF93K6Ld3T^Fec1
+I3Q6z_LQdQ2_L61HJNQ?ch0
+Z3 !s105 nios_system_mm_interconnect_0_router_006_sv_unit
+S1
+R0
+Z4 w1575391645
+Z5 8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_006.sv
+Z6 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_006.sv
+L0 84
+Z7 OL;L;10.6b;65
+Z8 !s108 1575394930.000000
+Z9 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_006.sv|
+Z10 !s90 -reportprogress|300|-sv|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_mm_interconnect_0_router_006.sv|-L|altera_common_sv_packages|-work|router_006|
+!i113 0
+Z11 o-sv -L altera_common_sv_packages -work router_006 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z12 tCvgOpt 0
+vnios_system_mm_interconnect_0_router_006_default_decode
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 V`E?AzZAJkWe^f]FeOCVW0
+IzcKCKd;oVe5^_34H3H>]l1
+R3
+S1
+R0
+R4
+R5
+R6
+L0 45
+R7
+R8
+R9
+R10
+!i113 0
+R11
+R12

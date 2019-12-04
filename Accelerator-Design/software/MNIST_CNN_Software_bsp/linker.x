@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_qsys_0' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: ../../nios_system.sopcinfo
  *
- * Generated: Wed Oct 23 14:34:45 EDT 2019
+ * Generated: Tue Dec 03 16:21:40 EST 2019
  */
 
 /*
@@ -50,14 +50,14 @@
 
 MEMORY
 {
-    reset : ORIGIN = 0x8000000, LENGTH = 32
-    new_sdram_controller_0 : ORIGIN = 0x8000020, LENGTH = 134217696
-    generic_tristate_controller_0 : ORIGIN = 0x10000000, LENGTH = 8388608
+    reset : ORIGIN = 0x0, LENGTH = 32
+    new_sdram_controller_0 : ORIGIN = 0x20, LENGTH = 134217696
+    generic_tristate_controller_0 : ORIGIN = 0x8800000, LENGTH = 8388608
 }
 
 /* Define symbols for each memory base-address */
-__alt_mem_new_sdram_controller_0 = 0x8000000;
-__alt_mem_generic_tristate_controller_0 = 0x10000000;
+__alt_mem_new_sdram_controller_0 = 0x0;
+__alt_mem_generic_tristate_controller_0 = 0x8800000;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
                "elf32-littlenios2",
@@ -386,7 +386,7 @@ SECTIONS
 /*
  * Don't override this, override the __alt_stack_* symbols instead.
  */
-__alt_data_end = 0x10000000;
+__alt_data_end = 0x8000000;
 
 /*
  * The next two symbols define the location of the default stack.  You can
@@ -402,4 +402,4 @@ PROVIDE( __alt_stack_limit   = __alt_stack_base );
  * Override this symbol to put the heap in a different memory.
  */
 PROVIDE( __alt_heap_start    = end );
-PROVIDE( __alt_heap_limit    = 0x10000000 );
+PROVIDE( __alt_heap_limit    = 0x8000000 );

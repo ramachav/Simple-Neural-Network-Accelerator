@@ -6,12 +6,138 @@
 #include <math.h>
 #include "kautodiff.h"
 
+#include <stdint.h> //Added
+#include "system.h" //Added
+
 typedef struct {
 	uint64_t s[2];
 	double n_gset;
 	int n_iset;
 	volatile int lock;
 } kad_rng_t;
+
+/*******************************
+ * Code that was Added (Start) *
+ *******************************/
+static volatile int rx_done = 0;
+/********************************
+ * DMA Data Transfer Operations *
+ ********************************/
+static void transfer_done(void *handle, void *data)
+{
+	rx_done++;
+}
+
+static inline void dma_data_transfer(float *data_to_transmit, float *location_to_receive, uint32_t number_of_bytes)
+{
+	alt_dma_txchan txchan;
+	alt_dma_rxchan rxchan;
+
+	int transmit_request_status;
+	int receive_request_status;
+
+	rx_done = 0;
+
+	/* Open a DMA transmit channel */
+	txchan = alt_dma_txchan_open("/dev/dma_0");
+	if(txchan == NULL)
+	{
+		printf("\nFailed to open transmit channel\n");
+		exit(1);
+	}
+
+	/* Open a DMA receive channel */
+	rxchan = alt_dma_rxchan_open("/dev/dma_0");
+	if(rxchan == NULL)
+	{
+		printf("\nFailed to open receive channel\n");
+		exit(1);
+	}
+
+	/* Post a transmit request on the DMA transmit channel */
+	transmit_request_status = alt_dma_txchan_send(txchan, data_to_transmit, number_of_bytes, NULL, NULL);
+	if(transmit_request_status < 0)
+	{
+		printf("\nFailed to post transmit request, reason is error code %i\n", transmit_request_status);
+		exit(1);
+	}
+
+	/* Post a receive request on the DMA receive channel */
+	receive_request_status = alt_dma_rxchan_prepare(rxchan, location_to_receive, number_of_bytes, transfer_done, NULL);
+	if(receive_request_status < 0)
+	{
+		printf("\nFailed to post receive request, reason is error code %i\n", receive_request_status);
+		exit(1);
+	}
+
+	/* Wait for the DMA transfer to complete */
+	while(!rx_done);
+
+	/* Close both the DMA transmit and receive channels that were opened previously */
+	alt_dma_txchan_close(txchan);
+	alt_dma_rxchan_close(rxchan);
+}
+
+static inline void weight_buffer_write(float *data_to_transmit, uint32_t number_of_bytes)
+{
+	volatile float *accelerator_base_address = (float *) (0x80000000 | 0x08000000);
+	volatile float *location_to_receive = (float *) (accelerator_base_address + NN_ACC_WEIGHT_BUFFER_OFFSET);
+	float *data_being_transmitted = (float *) (data_to_transmit + 0x80000000);
+
+	dma_data_transfer(data_being_transmitted, location_to_receive, number_of_bytes);
+}
+
+static inline void image_buffer_write(float *data_to_transmit, uint32_t number_of_bytes)
+{
+	volatile float *accelerator_base_address = (float *) (0x80000000 | 0x08000000);
+	volatile float *location_to_receive = (float *) (accelerator_base_address + NN_ACC_IMAGE_BUFFER_OFFSET);
+	float *data_being_transmitted = (float *) (data_to_transmit + 0x80000000);
+
+	dma_data_transfer(data_being_transmitted, location_to_receive, number_of_bytes);
+}
+
+static inline void result_buffer_read(float *location_to_receive, uint32_t number_of_bytes)
+{
+	volatile float *accelerator_base_address = (float *) (0x80000000 | 0x08000000);
+	volatile float *data_to_transmit = (float *) (accelerator_base_address + NN_ACC_RESULT_BUFFER_OFFSET);
+	float *location_receiving_data = (float *) (location_to_receive + 0x80000000);
+
+	dma_data_transfer(data_to_transmit, location_receiving_data, number_of_bytes);
+}
+
+/***********************************************************
+ * Transfer from Result Buffer and Update Memory Correctly *
+ ***********************************************************/
+static inline void result_memory_update(float *location_in_memory, uint32_t number_of_bytes)
+{
+	float *_temp_yy = (float *)malloc((number_of_bytes / 4) * sizeof(float));
+	result_buffer_read(_temp_yy, number_of_bytes);
+	for(int i = 0; i < (number_of_bytes / 4); i++, ++location_in_memory)
+		*location_in_memory += _temp_yy[i];
+	free(_temp_yy);
+}
+
+/***********************************************************
+ * Compare expected vs actual results of the sdot function *
+ ***********************************************************/
+static inline void result_compare(float *actual_result, uint32_t number_of_bytes)
+{
+	float *_temp_yy = (float *)malloc((number_of_bytes / 4) * sizeof(float));
+	result_buffer_read(_temp_yy, number_of_bytes);
+	for(int i = 0; i < (number_of_bytes / 4); i++)
+		printf("\nExpected (_yy[%d]): %f, Actual (_temp_yy[%d]): %f", i, actual_result[i], i, _temp_yy[i]);
+	free(_temp_yy);
+}
+
+static inline void result_compare_non_dma(float *expected_result, float *actual_result, int number_of_elements)
+{
+	for(int i = 0; i < number_of_elements; i++)
+			printf("\nExpected (_yy[%d]): %f, Actual (_temp_yy[%d]): %f", i, *(expected_result + i), i, *(actual_result + i));
+}
+
+/*****************************
+ * Code that was Added (End) *
+ *****************************/
 
 /**********************
  * Graph construction *
@@ -1935,19 +2061,35 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 	} while (0)
 
 #define conv2d_loop2(_x, _w, _y, _code) do { /* for the NHWC shape */ \
-		int n, c1, i, j, k, ii, j_skip = aux[1].stride * q->d[1], m = w->d[3] * w->d[1]; \
+		int n, c1, i, j, k, ii, j_skip = aux[1].stride * q->d[1], m = w->d[3] * w->d[1], index, temp_value; \
+		static float *image_buffer_address = (float *) (0x80000000 + (NN_ACC_BASE + NN_ACC_IMAGE_BUFFER_OFFSET)); /* Added */ \
+		static float *weight_buffer_address = (float *) (0x80000000 + (NN_ACC_BASE + NN_ACC_WEIGHT_BUFFER_OFFSET)); /* Added */ \
+		static float *result_buffer_address = (float *) (0x80000000 + (NN_ACC_BASE + NN_ACC_RESULT_BUFFER_OFFSET)); /* Added */ \
 		for (n = 0; n < q->d[0]; ++n) /* mini-batch */ \
 			for (c1 = 0; c1 < w->d[0]; ++c1) /* output channel */ \
 				for (k = 0; k < w->d[2]; ++k) { /* kernel row */ \
 					float *_ww = &(_w)[(c1 * w->d[2] + k) * m]; \
+					\
+					/* weight_buffer_write(_ww, (m * 4)); Added */ \
+					for(index = 0; index < m; index++) *weight_buffer_address = *(_ww + index); /* Added */ \
+					\
 					for (i = 0, ii = k - aux[0].pad[0]; i < p->d[2] && ii >= 0 && ii < q->d[2]; ++i, ii += aux[0].stride) { /* output and input row */ \
 						float *_xx = &(_x)[(n * q->d[2] + ii) * q->d[3] * q->d[1]]; \
 						float *_yy = &(_y)[((n * p->d[1] + c1) * p->d[2] + i) * p->d[3]]; \
+						float *_yy_copy = _yy; /* Added */ \
 						if (x_padded) { \
 							memcpy(x_padded + aux[1].pad[0] * q->d[1], _xx, q->d[3] * q->d[1] * sizeof(float)); \
 							_xx = x_padded; \
 						} \
-						for (j = 0; j < p->d[3]; ++j, _xx += j_skip, ++_yy) _code; /* output and input column */  /* _code = *_yy += kad_sdot(m, _ww, _xx) */ \
+						for (j = 0; j < p->d[3]; ++j, _xx += j_skip, ++_yy) { \
+							for(index = 0; index < m; index++) *image_buffer_address = *(_xx + index); /* Added */ \
+							_code; \
+						}/* output and input column */ /* image_buffer_write(_xx, (m * 4)); Added */ \
+						\
+						float *_temp_yy = (float *) malloc(p->d[3] * sizeof(float)); /* Added */ \
+						for(index = 0; index < p->d[3]; index++) *(_temp_yy + index) = *result_buffer_address; /* result_compare(_yy, (p->d[2] * 4)); */ /* result_memory_update(_yy, (p->d[2] * 4)); */ /* Added */ \
+						result_compare_non_dma(_yy_copy, _temp_yy, p->d[3]); /* Added */ \
+						free(_temp_yy); /* Added */ \
 					} /* ~i */ \
 				} /* ~k, c1, n */ \
 	} while (0)
@@ -1956,7 +2098,6 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 	kad_node_t *q = p->child[0], *w = p->child[1];
 	float *t = 0, *q1 = 0, *w1 = 0, *x_padded = 0;
 	int algo_switch = 0;
-	int sdot_size;
 
 	if (action == KAD_FORWARD || action == KAD_BACKWARD) { /* allocate working space */
 		if (w->d[3] * w->d[1] < 16) {
@@ -1982,7 +2123,7 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 		} else { /* this is the second algorithm */
 			conv2d_move_1to3(q->d, q->x, q1);
 			conv2d_move_1to3(w->d, w->x, w1);
-			conv2d_loop2(q1, w1, p->x, (*_yy += kad_sdot(m, _ww, _xx)));
+			conv2d_loop2(q1, w1, p->x, (*_yy += kad_sdot(m, _ww, _xx))); /* image_buffer_write(_xx, (m * 4)) */ /* result_buffer_read(_yy, 4) */ /* Added */
 		}
 		conv_rot180(w->d[0] * w->d[1], w->d[2] * w->d[3], w->x);
 	} else if (action == KAD_BACKWARD) {

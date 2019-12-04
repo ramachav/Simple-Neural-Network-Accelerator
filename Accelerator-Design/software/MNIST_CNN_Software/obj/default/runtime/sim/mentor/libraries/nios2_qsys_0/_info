@@ -14,20 +14,20 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 C`zGlOc0LNXMW0Zc2;nbd3
-I9b5JU47NeiB=HnO_M<kK`3
+!s100 9h7N[hA34XXXdO=4dRM>>0
+I_IljESHDdZ96Ifd<AF7@93
 R0
-Z2 w1574118715
+Z2 w1575391642
 8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0.vo
 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0.vo
 L0 32
 Z3 OL;L;10.6b;65
-Z4 !s108 1574119528.000000
+!s108 1575394941.000000
 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0.vo|
 !s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0.vo|-work|nios2_qsys_0|
 !i113 0
-Z5 o-work nios2_qsys_0 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z6 tCvgOpt 0
+Z4 o-work nios2_qsys_0 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z5 tCvgOpt 0
 vnios_system_nios2_qsys_0_jtag_debug_module_sysclk
 R1
 r1
@@ -40,14 +40,14 @@ R0
 R2
 8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_jtag_debug_module_sysclk.v
 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_jtag_debug_module_sysclk.v
-Z7 L0 21
+Z6 L0 21
 R3
-Z8 !s108 1574119529.000000
+Z7 !s108 1575394942.000000
 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_jtag_debug_module_sysclk.v|
 !s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_jtag_debug_module_sysclk.v|-work|nios2_qsys_0|
 !i113 0
+R4
 R5
-R6
 vnios_system_nios2_qsys_0_jtag_debug_module_tck
 R1
 r1
@@ -60,14 +60,14 @@ R0
 R2
 8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_jtag_debug_module_tck.v
 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_jtag_debug_module_tck.v
-R7
+R6
 R3
-R8
+Z8 !s108 1575394943.000000
 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_jtag_debug_module_tck.v|
 !s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_jtag_debug_module_tck.v|-work|nios2_qsys_0|
 !i113 0
+R4
 R5
-R6
 vnios_system_nios2_qsys_0_jtag_debug_module_wrapper
 R1
 r1
@@ -80,14 +80,14 @@ R0
 R2
 8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_jtag_debug_module_wrapper.v
 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_jtag_debug_module_wrapper.v
-R7
+R6
 R3
-R4
+R7
 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_jtag_debug_module_wrapper.v|
 !s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_jtag_debug_module_wrapper.v|-work|nios2_qsys_0|
 !i113 0
+R4
 R5
-R6
 vnios_system_nios2_qsys_0_mult_cell
 R1
 r1
@@ -100,14 +100,14 @@ R0
 R2
 8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_mult_cell.v
 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_mult_cell.v
-R7
+R6
 R3
 R8
 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_mult_cell.v|
 !s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_mult_cell.v|-work|nios2_qsys_0|
 !i113 0
+R4
 R5
-R6
 vnios_system_nios2_qsys_0_oci_test_bench
 R1
 r1
@@ -120,31 +120,31 @@ R0
 R2
 8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_oci_test_bench.v
 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_oci_test_bench.v
-R7
+R6
 R3
 R8
 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_oci_test_bench.v|
 !s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_oci_test_bench.v|-work|nios2_qsys_0|
 !i113 0
+R4
 R5
-R6
 vnios_system_nios2_qsys_0_test_bench
 R1
 r1
 !s85 0
 31
 !i10b 1
-!s100 1bShz<<G2b0]l4j76bJ851
-ICgeI6z7_Ve>?]P6W8Nc<R2
+!s100 3S0XePP<M;Bf^5XQ3@J`D2
+I=P?SchUS`UGP5DI7<ea=m0
 R0
 R2
 8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_test_bench.v
 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_test_bench.v
-R7
+R6
 R3
-!s108 1574119530.000000
+R8
 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_test_bench.v|
 !s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_test_bench.v|-work|nios2_qsys_0|
 !i113 0
+R4
 R5
-R6

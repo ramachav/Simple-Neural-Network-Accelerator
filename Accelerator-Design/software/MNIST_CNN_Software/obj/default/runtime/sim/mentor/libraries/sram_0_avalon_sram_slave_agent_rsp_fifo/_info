@@ -9,13 +9,13 @@ z2
 cModel Technology
 Z0 d/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/software/MNIST_CNN_Software/obj/default/runtime/sim/mentor
 valtera_avalon_sc_fifo
-!s110 1574119519
+!s110 1575394932
 !i10b 1
 !s100 4mK@em][G=j]om3zJIhOc0
 IWK@Z]?<VcA7EVd2gC`Ki[1
 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1574118718
+w1575391645
 8/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_avalon_sc_fifo.v
 F/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_avalon_sc_fifo.v
 L0 21
@@ -23,7 +23,7 @@ OL;L;10.6b;65
 r1
 !s85 0
 31
-!s108 1574119518.000000
+!s108 1575394932.000000
 !s107 /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_avalon_sc_fifo.v|
 !s90 -reportprogress|300|/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/nios_system/testbench/nios_system_tb/simulation/submodules/altera_avalon_sc_fifo.v|-work|sram_0_avalon_sram_slave_agent_rsp_fifo|
 !i113 0
