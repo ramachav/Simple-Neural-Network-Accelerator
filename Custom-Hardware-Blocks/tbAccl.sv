@@ -110,8 +110,10 @@ program loadTest (
 		@(posedge clk);
 		@(posedge clk);
 
-		for ( int i=0; i<NumFilterCoeffs; i++ ) begin
-			writeData( (AddrOffsetCoeff + i), i+1 );
+		for ( int i=0; i<FilterRowSize; i++ ) begin
+			for (int j = 0; j < FilterLayerSize; j++) begin
+				writeData( (AddrOffsetCoeff + i*FilterLayerSize + j), ( ((i+1)<<12) + (j+1) ) );
+			end
 		end
 
 		busIdle();
@@ -124,12 +126,14 @@ program loadTest (
 
 		#20
 
-		for ( int i=0; i<NumFilterCoeffs; i++ ) begin
-			writeData( (AddrOffsetCoeff + i), i+1 );
+		for ( int i=0; i<FilterRowSize; i++ ) begin
+			for (int j = 0; j < FilterLayerSize; j++) begin
+				writeData( (AddrOffsetCoeff + i*FilterLayerSize + j), ( ((i+1)<<12) + (j+1) ) );
+			end
 		end
 		busIdle();
 
-		for (int i = 0; i <64; i++) begin
+		for (int i = 0; i <192; i++) begin
 			writeData( AddrOffsetData, 32'h0100_0000 + i );
 		end
 		busIdle();

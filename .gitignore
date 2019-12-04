@@ -12,12 +12,14 @@
 
 # ignore Quartus II generated folders
 *_sim
-db
-greybox_tmp
-incremental_db
-simulation
-testbench
-timing
+Accelerator-Design/db
+Accelerator-Design/greybox_tmp
+Accelerator-Design/incremental_db
+Accelerator-Design/simulation
+Accelerator-Design/testbench
+Accelerator-Design/timing
+
+Accelerator-Design/nios_system/synthesis
 
 # ignore Quartus II generated files
 *_generation_script*
