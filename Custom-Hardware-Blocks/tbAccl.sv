@@ -112,7 +112,7 @@ program loadTest (
 
 		for ( int i=0; i<FilterRowSize; i++ ) begin
 			for (int j = 0; j < FilterLayerSize; j++) begin
-				writeData( (AddrOffsetCoeff + i*FilterLayerSize + j), ( ((i+1)<<12) + (j+1) ) );
+				writeData( (AddrOffsetCoeff + i*FilterLayerSize + j), ( 32'h4000_0000 + ((i+1)<<12) + (j+1) ) );
 			end
 		end
 
@@ -128,13 +128,13 @@ program loadTest (
 
 		for ( int i=0; i<FilterRowSize; i++ ) begin
 			for (int j = 0; j < FilterLayerSize; j++) begin
-				writeData( (AddrOffsetCoeff + i*FilterLayerSize + j), ( ((i+1)<<12) + (j+1) ) );
+				writeData( (AddrOffsetCoeff + i*FilterLayerSize + j), ( 32'h4000_0000 + ((i+1)<<12) + (j+1) ) );
 			end
 		end
 		busIdle();
 
 		for (int i = 0; i <192; i++) begin
-			writeData( AddrOffsetData, 32'h0100_0000 + i );
+			writeData( AddrOffsetData, 32'h4100_0000 + i );
 		end
 		busIdle();
 

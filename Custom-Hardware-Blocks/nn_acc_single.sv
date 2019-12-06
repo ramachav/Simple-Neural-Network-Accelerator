@@ -62,6 +62,10 @@ module nn_acc_single (
 			adder_input_a <= adder_output;
 			adder_input_b <= multiplier_output;
 		end 
+		else if(result_write_enable) begin
+			adder_input_a <= '0;
+			adder_input_b <= '0;
+		end 
 		else begin 
 			adder_input_a <= adder_input_a; 
 			adder_input_b <= adder_input_b;

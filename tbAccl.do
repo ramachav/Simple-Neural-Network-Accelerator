@@ -16,7 +16,8 @@ vsim -novopt work.tbAccl
 
 
 add wave -position insertpoint sim:/tbAccl/accl/*
-# add wave -position insertpoint sim:/tbAccl/accl/mac/*
+add wave -position insertpoint sim:/tbAccl/accl/mac/*
+add wave -position insertpoint sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/*
 
 run 200 ns
 

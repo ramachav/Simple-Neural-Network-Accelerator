@@ -15,7 +15,7 @@ module nn_acc_single_tb();
 	logic [31:0] readdata_tb, writedata_tb;
 
 	parameter WEIGHT_BUFFER_SIZE = 96;
-	parameter IMAGE_BUFFER_SIZE = 8; //96;
+	parameter IMAGE_BUFFER_SIZE = 96; //8;
 	parameter RESULT_BUFFER_SIZE = 24;
 
 	nn_acc_single #(.WEIGHT_BUFFER_SIZE(WEIGHT_BUFFER_SIZE), .IMAGE_BUFFER_SIZE(IMAGE_BUFFER_SIZE), .RESULT_BUFFER_SIZE(RESULT_BUFFER_SIZE)) 
@@ -79,7 +79,7 @@ program nn_acc_single_test (
 	logic [7:0] temp_address;
 
 	parameter WEIGHT_BUFFER_SIZE = 96;
-	parameter IMAGE_BUFFER_SIZE = 8; //96;
+	parameter IMAGE_BUFFER_SIZE = 96; //8;
 	parameter RESULT_BUFFER_SIZE = 24;
 
 	task automatic genRands;

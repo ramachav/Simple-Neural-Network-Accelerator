@@ -64,6 +64,7 @@ module AcceleratorTopMod
 		reg  [clog2(MacEngineLatency):0] macWaitCounter;
 		reg  macWaitEnd;
 		reg  [MacEngineLatency:0] macPipeSReg;
+		AcclDataType macResult;
 
 
 	/*******************    Avalon Interface    *******************/
@@ -148,7 +149,7 @@ module AcceleratorTopMod
 				coeffRdCellOffset	<= 0;
 			end else begin
 				if (macRdEn == 1) begin
-					macInputValid	<= 0;
+					macInputValid	<= 1;
 					pxBfrRdOffset	<= pxBfrRdOffset + 1;
 					for (int i = 0; i < PxBfrCount; i++) begin
 						macInputs[i*2+0] <= pxBuffer[pxBfrRdOffset][i];
@@ -268,15 +269,14 @@ module AcceleratorTopMod
 			if(reset) begin
 				macPipeSReg <= 0;
 			end else begin
-				macPipeSReg <= { macPipeSReg[MacEngineLatency-1:0], 
-									macPipeSReg[MacEngineLatency] };
+				macPipeSReg <= { macPipeSReg[MacEngineLatency-1:0], macInputValid };
 			end
 		end
 
 
 	/**********************    MAC Engine    **********************/
 
-		/*
+		
 		datapath mac
 		(
 			.clk(clk),
@@ -301,6 +301,6 @@ module AcceleratorTopMod
 			//Results
 			.result(macResult)
 		);
-		*/
+		
 
 endmodule

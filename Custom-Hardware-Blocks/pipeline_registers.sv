@@ -1,16 +1,16 @@
-/*************************************************************************
-*  Pipeline Registers for the Accelerator				     			 *
-*  ECE 69500R SoC Architecture                               			 *
-*  Simple Neural Network Accelerator                         			 *
-*															 			 *
-*  Pipeline stages: MULTIPLY | ADDITION | SUM | ACCUMULATE				 *
-*  Acronyms: MULTIPLY: mul, ADDITION: add, 								 *
-*			 SUM: sum, ACCUMULATE: acc, RESULT: res				     	 *
-*************************************************************************/
+/*****************************************************************************
+*  Pipeline Registers for the Accelerator				      _________      *
+*  ECE 69500R SoC Architecture                                |       |	     *
+*  Simple Neural Network Accelerator                          |   	  |	 	 *
+*														      | 	  |	 	 *
+*  Pipeline stages: MULTIPLY || ADDITION || SUM || ACCUMULATE |->|| RESULT	 *
+*  Acronyms: MULTIPLY: mul, ADDITION: add, 								     *
+*			 SUM: sum, ACCUMULATE: acc, RESULT: res				     	     *
+*****************************************************************************/
 
 module pipeline_registers (
 	input logic  clk, 
-	input logic  n_rst,
+	input logic  reset,
 	//Stage 1 Registers (From MULTIPLY to ADDITION)
 	input logic  stage_1_en,
 	input logic  [31:0] muladd_in0, muladd_in1, muladd_in2, muladd_in3, muladd_in4, muladd_in5, muladd_in6, muladd_in7,
@@ -22,12 +22,16 @@ module pipeline_registers (
 	//Stage 3 Registers (From SUM to ACCUMULATE)
 	input logic stage_3_en,
 	input logic  [31:0] sumacc_in0, sumacc_in1, 
-	output logic [31:0] sumacc_out0, sumacc_out1
+	output logic [31:0] sumacc_out0, sumacc_out1,
+	//Stage 4 Registers (From ACCUMULATE to RESULT)
+	input logic stage_4_en,
+	input logic [31:0] accres_in0, accres_in1,
+	output logic [31:0] accres_out0, accres_out1
 );
 
 //Stage 1 Registers
-always_ff @ (posedge clk, negedge n_rst) begin 
-	if(!n_rst) begin 
+always_ff @ (posedge clk, posedge reset) begin 
+	if(reset) begin 
 		muladd_out0 <= '0;
 		muladd_out1 <= '0;
 		muladd_out2 <= '0;
@@ -60,8 +64,8 @@ always_ff @ (posedge clk, negedge n_rst) begin
 end 
 
 //Stage 2 Registers
-always_ff @ (posedge clk, negedge n_rst) begin 
-	if(!n_rst) begin 
+always_ff @ (posedge clk, posedge reset) begin 
+	if(reset) begin 
 		addsum_out0 <= '0;
 		addsum_out1 <= '0;
 		addsum_out2 <= '0;
@@ -82,8 +86,8 @@ always_ff @ (posedge clk, negedge n_rst) begin
 end 
 
 //Stage 3 Registers
-always_ff @ (posedge clk, negedge n_rst) begin 
-	if(!n_rst) begin 
+always_ff @ (posedge clk, posedge reset) begin 
+	if(reset) begin 
 		sumacc_out0 <= '0;
 		sumacc_out1 <= '0;
 	end 
@@ -94,6 +98,22 @@ always_ff @ (posedge clk, negedge n_rst) begin
 	else begin
 		sumacc_out0 <= sumacc_out0;
 		sumacc_out1 <= sumacc_out1;
+	end 
+end
+
+//Stage 4 Registers
+always_ff @ (posedge clk, posedge reset) begin 
+	if(reset) begin 
+		accres_out0 <= '0;
+		accres_out1 <= '0;
+	end 
+	else if(stage_4_en) begin 
+		accres_out0 <= accres_in0;
+		accres_out1 <= accres_in1;
+	end 
+	else begin
+		accres_out0 <= accres_out0;
+		accres_out1 <= accres_out1;
 	end 
 end
 
