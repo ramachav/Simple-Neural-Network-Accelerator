@@ -55,6 +55,8 @@ module fp_adder (
 
 		if(A_exponent == B_exponent) begin 				//Exponents are equal. Just add/subtract mantissas and align.
 			adder_out_e = A_exponent;
+			exponent_diff = A_exponent - B_exponent;
+			intermediate_mantissa = A_mantissa;
 			if(A_sign == B_sign) begin 					//Signs are the same. Just add mantissas and align.
 				adder_out_m = A_mantissa + B_mantissa;
 				adder_out_s = A_sign;
@@ -173,6 +175,9 @@ module fp_adder (
 		else if(normalizer_in_m[23:22] == 2'h1) begin
 			normalizer_out_e = normalizer_in_e - 1;
 			normalizer_out_m = normalizer_in_m << 1;
+		end else begin
+			normalizer_out_e = 25'hFFFFFFF;
+			normalizer_out_m = 0;
 		end
 	//end
 
