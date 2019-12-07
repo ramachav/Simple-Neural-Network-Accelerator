@@ -87,6 +87,16 @@ program loadTest (
 	end
 	endtask	//automatic
 
+	task automatic readData;
+		input int readAddr;
+	begin
+		@(posedge clk);
+		WriteEnIn	<= 0;
+		ReadEnIn	<= 1;
+		AddressIn	<= readAddr;
+	end
+	endtask	//automatic
+
 	task automatic busIdle;
 	begin
 		@(posedge clk);
@@ -138,7 +148,14 @@ program loadTest (
 		end
 		busIdle();
 
-		#100000;
+		#10000;
+
+		$display("Results\n");
+		for (int i = 0; i < ResultBufferSize; i++) begin
+			readData( AddrOffsetResult + i );
+			$display(" %08X = %15f @ %d",DataOut, DataOut, i);
+		end
+
 	end
 
 endprogram

@@ -63,12 +63,20 @@ module AcceleratorTopMod
 
 		reg  [clog2(MacEngineLatency):0] macWaitCounter;
 		reg  macWaitEnd;
-		reg  [MacEngineLatency:0] macPipeSReg;
+		reg  [MacEngineLatency:0] macRdEnPipeSReg;
+		reg  [MacEngineLatency:0] cellEndPipeSReg;
+		reg  [MacEngineLatency:0] rowEndPipeSReg;
 		AcclDataType macResult;
+
+		AcclDataType dMacResult;
+		AcclDataType [ResultBufferSize-1:0] resultBuffer;
+		logic [clog2(ResultBufferSize):0] resultWrOffset;
+		AcclDataType rdData;
+
 
 
 	/*******************    Avalon Interface    *******************/
-
+		
 		assign addrRoute	= AddressIn[AddressWidth-1:AddressWidth-AddrRoutingBits];
 
 		always_ff @(posedge clk) begin	:	wrCoeff
@@ -267,11 +275,19 @@ module AcceleratorTopMod
 
 		always_ff @(posedge clk) begin : macPipe
 			if(reset) begin
-				macPipeSReg <= 0;
+				macRdEnPipeSReg	<= 0;
+				cellEndPipeSReg	<= 0;
+				rowEndPipeSReg	<= 0;
 			end else begin
-				macPipeSReg <= { macPipeSReg[MacEngineLatency-1:0], macInputValid };
+				macRdEnPipeSReg	<= { macRdEnPipeSReg[MacEngineLatency-1:0], macRdEn };
+				cellEndPipeSReg	<= { cellEndPipeSReg[MacEngineLatency-1:0], filterCellEnd };
+				rowEndPipeSReg	<= {  rowEndPipeSReg[MacEngineLatency-1:0], filterRowEnd };
 			end
 		end
+
+
+		wire resultWrEn = rowEndPipeSReg[MacEngineLatency-1];
+		wire accumReset	= rowEndPipeSReg[MacEngineLatency];
 
 
 	/**********************    MAC Engine    **********************/
@@ -283,10 +299,10 @@ module AcceleratorTopMod
 			.reset(reset),
 
 			//Pipeline Register Enables
-			.stage_1_en(macPipeSReg[0]),
-			.stage_2_en(macPipeSReg[1]),
-			.stage_3_en(macPipeSReg[2]),
-			.stage_4_en(macPipeSReg[3]),
+			.stage_1_en(macRdEnPipeSReg[0]),
+			.stage_2_en(macRdEnPipeSReg[1]),
+			.stage_3_en(macRdEnPipeSReg[2]),
+			.stage_4_en(macRdEnPipeSReg[3]),
 
 			//MULTIPLY Stage Inputs
 			.mul0_in0(macInputs[ 0]), .mul0_in1(macInputs[ 1]),
@@ -298,9 +314,56 @@ module AcceleratorTopMod
 			.mul6_in0(macInputs[12]), .mul6_in1(macInputs[13]),
 			.mul7_in0(macInputs[14]), .mul7_in1(macInputs[15]),
 
+			.accumulatorReset(accumReset),
+
 			//Results
 			.result(macResult)
 		);
 		
+
+	/********************    Result Buffer    *********************/
+
+
+
+		always_ff @(posedge clk) begin : flopMacResult
+			if(reset == 1 || cmdReset == 1) begin
+				dMacResult <= 0;
+			end else begin
+				dMacResult <= macResult;
+			end
+		end
+
+
+
+		always_ff @(posedge clk) begin : wrMacResult
+			if(reset == 1 || cmdReset == 1) begin
+				resultBuffer 	<= '{default:'0};
+				resultWrOffset	<= 0;
+			end else begin
+				if (resultWrEn == 1) begin
+				 	resultBuffer[resultWrOffset] <= dMacResult;
+				 	if (resultWrOffset == ResultBufferSize-1) begin
+				 		resultWrOffset <= 0;
+				 	end else begin
+				 		resultWrOffset <= resultWrOffset + 1;
+				 	end
+				 end
+			end
+		end
+
+		always_ff @(posedge clk) begin : resultRd
+			if(reset == 1 || cmdReset == 1) begin
+				rdData <= 0;
+			end else begin
+				if (addrRoute == routeResult) begin
+				 	rdData <= resultBuffer[AddressIn[clog2(ResultBufferSize):0]];
+				end else begin
+					rdData <= '0;
+				end
+			end
+		end
+
+
+		assign DataOut = rdData;
 
 endmodule

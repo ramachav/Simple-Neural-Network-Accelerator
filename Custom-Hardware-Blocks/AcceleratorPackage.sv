@@ -59,4 +59,8 @@ package AcceleratorPackage;
 
 	parameter MacEngineLatency = 5;
 
+	const AcclDataType FloatValue_1_0 = 'h3f800000;
+
+	parameter ResultBufferSize = 24;
+
 endpackage

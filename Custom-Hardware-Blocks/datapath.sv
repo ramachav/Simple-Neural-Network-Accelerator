@@ -22,6 +22,7 @@ module datapath (
 	input logic [31:0] mul5_in0, mul5_in1,
 	input logic [31:0] mul6_in0, mul6_in1,
 	input logic [31:0] mul7_in0, mul7_in1,
+	input logic accumulatorReset,
 	output logic [31:0] result
 );
 	
@@ -80,7 +81,9 @@ module datapath (
 		.sumacc_out0(acc0_in0), .sumacc_out1(acc0_in1),
 		//Stage 4 Registers
 		.stage_4_en(stage_4_en), .accres_in0(acc0_out), .accres_in1(res0_out),
-		.accres_out0(res0_in0), .accres_out1(res0_in1)
+		.accres_out0(res0_in0), .accres_out1(res0_in1),
+
+		.accumulatorReset(accumulatorReset)
 	);
 
 	assign result = res0_out;	

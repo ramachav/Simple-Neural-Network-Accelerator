@@ -26,7 +26,9 @@ module pipeline_registers (
 	//Stage 4 Registers (From ACCUMULATE to RESULT)
 	input logic stage_4_en,
 	input logic [31:0] accres_in0, accres_in1,
-	output logic [31:0] accres_out0, accres_out1
+	output logic [31:0] accres_out0, accres_out1,
+
+	input logic accumulatorReset
 );
 
 //Stage 1 Registers
@@ -105,6 +107,10 @@ end
 always_ff @ (posedge clk, posedge reset) begin 
 	if(reset) begin 
 		accres_out0 <= '0;
+		accres_out1 <= '0;
+	end 
+	else if(accumulatorReset) begin
+		accres_out0 <= accres_in0;
 		accres_out1 <= '0;
 	end 
 	else if(stage_4_en) begin 
