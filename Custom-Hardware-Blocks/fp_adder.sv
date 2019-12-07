@@ -176,8 +176,8 @@ module fp_adder (
 			normalizer_out_e = normalizer_in_e - 1;
 			normalizer_out_m = normalizer_in_m << 1;
 		end else begin
-			normalizer_out_e = 25'hFFFFFFF;
-			normalizer_out_m = 0;
+			normalizer_out_e = 'h0000;
+			normalizer_out_m = 'h0000_0000;
 		end
 	//end
 
