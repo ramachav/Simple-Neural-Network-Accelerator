@@ -153,8 +153,6 @@ module AcceleratorTopMod
 				pxBfrRdOffset		<= 0;
 				macInputs			<= '{default:32'h0};
 				macInputValid		<= 0;
-				coeffRdBlockOffset	<= 0;
-				coeffRdCellOffset	<= 0;
 			end else begin
 				if (macRdEn == 1) begin
 					macInputValid	<= 1;
@@ -171,16 +169,18 @@ module AcceleratorTopMod
 
 		always_ff @(posedge clk) begin : rdLogic
 			if(reset == 1 || cmdReset == 1) begin
-				filterCellEnd	<= 0;
-				filterRowEnd	<= 0;
+				filterCellEnd		<= 0;
+				filterRowEnd		<= 0;
+				coeffRdBlockOffset	<= 0;
+				coeffRdCellOffset	<= 0;
 			end else begin
 				if (macRdEn == 1) begin
 					if (coeffRdBlockOffset == BlockCount - 1) begin
 						coeffRdBlockOffset	<= 0;
 						filterCellEnd		<= 1;
 						if (coeffRdCellOffset == FilterRowSize - 1) begin
-							coeffRdCellOffset <= 0;
-							filterRowEnd <= 1;
+							coeffRdCellOffset	<= 0;
+							filterRowEnd		<= 1;
 						end else begin
 							coeffRdCellOffset <= coeffRdCellOffset + 1;
 							filterRowEnd <= 0;
