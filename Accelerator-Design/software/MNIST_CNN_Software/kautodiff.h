@@ -57,6 +57,18 @@
 #define NN_ACC_IMAGE_BUFFER_OFFSET 97*4
 #define NN_ACC_RESULT_BUFFER_OFFSET 193*4
 
+/**********************************
+ * Custom DMA Cache Bypass macros *
+ **********************************/
+#define DMA_BASE_ADDRESS (0x80004c0 | 0x80000000)
+#define DMA_STATUS_REG_ADDRESS (int *) DMA_BASE_ADDRESS
+#define DMA_READ_ADDR_REG_ADDRESS (int *) (DMA_BASE_ADDRESS + 0x4)
+#define DMA_WRITE_ADDR_REG_ADDRESS (int *) (DMA_BASE_ADDRESS + 0x8)
+#define DMA_LENGTH_REG_ADDRESS (int *) (DMA_BASE_ADDRESS + 0xC)
+#define DMA_CONTROL_REG_ADDRESS (int *) (DMA_BASE_ADDRESS + 0x18)
+#define DMA_TRANSFER_BUSY 0x00000002
+#define DMA_TRANSFER_DONE 0x0
+
 #define KAD_MAX_DIM 4     /* max dimension */
 #define KAD_MAX_OP  64    /* max number of operators */
 

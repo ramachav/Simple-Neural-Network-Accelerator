@@ -13,11 +13,11 @@
 #include "altera_up_avalon_video_pixel_buffer_dma.h"
 #include "altera_up_avalon_video_character_buffer_with_dma.h"
 #define USE_VGA_DISPLAY 1
-#define ECE695R_USE_PERFORMANCE_COUNTER 0
+#define ECE695R_USE_PERFORMANCE_COUNTER 1
 #if ECE695R_USE_PERFORMANCE_COUNTER
 #define PERF_REGION_INFERENCE 1
 #endif
-#define NUM_TEST_IMAGES 10	//100
+#define NUM_TEST_IMAGES 100	//10
 #endif
 
 static kann_t *model_gen(int n_in, int n_out, int loss_type, int n_h_layers, int n_h_neurons, float h_dropout)
@@ -96,13 +96,11 @@ int main(int argc, char *argv[])
 		printf("[INFO] Loading model from %s...\n", in_fn);
 		ann = kann_load(in_fn);
 		assert(kann_dim_in(ann) == 28 * 28);
-		printf("\nNode dimensions (NCHW): Batch-Size: %d, Channel-Size: %d, Height: %d, Width: %d\n", ann->v[0]->d[0], ann->v[0]->d[1], ann->v[0]->d[2], ann->v[0]->d[3]);
 	}
 #if ECE695R
 	printf("[INFO] Loading test images from %s...\n", test_images);
 	in = kann_data_read(test_images); // kann_data_t x;
 	assert(in->n_col == 28 * 28);
-	printf("\nNumber of rows: %d\nNumber of columns: %d\nNumber of groups: %d\n", in->n_row, in->n_col, in->n_grp);
 #endif
 
 #if USE_VGA_DISPLAY
@@ -209,7 +207,7 @@ int main(int argc, char *argv[])
 
 #if ECE695R_USE_PERFORMANCE_COUNTER
 		PERF_STOP_MEASURING(alt_get_performance_counter_base());
-		perf_print_formatted_report(alt_get_performance_counter_base(), alt_get_cpu_freq(), 1, "inference");
+		perf_print_formatted_report(alt_get_performance_counter_base(), alt_get_cpu_freq(), 1, "inference - Software");
 #endif
 	}
 

@@ -871,13 +871,13 @@ static inline float kad_sdot(int n, const float *x, const float *y) /* BLAS sdot
 {
 	int i;
 	float s = 0.;
-	for (i = 0; i < n; ++i) s += x[i] * y[i];
+	for (i = 0; i < n; ++i) s = FLOATING_POINT_ADDER_0(s,FLOATING_POINT_MULTIPLIER_0(x[i],y[i])); //s += x[i] * y[i];
 	return s;
 }
 static inline void kad_saxpy_inlined(int n, float a, const float *x, float *y) // BLAS saxpy
 {
 	int i;
-	for (i = 0; i < n; ++i) y[i] += a * x[i];
+	for (i = 0; i < n; ++i) y[i] = FLOATING_POINT_ADDER_0(y[i],FLOATING_POINT_MULTIPLIER_0(a,x[i])); //y[i] += a * x[i];
 }
 #endif
 
@@ -1930,7 +1930,6 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 
 #define conv2d_loop2(_x, _w, _y, _code) do { /* for the NHWC shape */ \
 		int n, c1, i, j, k, ii, j_skip = aux[1].stride * q->d[1], m = w->d[3] * w->d[1]; \
-		int convolution_counter = 0; \
 		for (n = 0; n < q->d[0]; ++n) /* mini-batch */ \
 			for (c1 = 0; c1 < w->d[0]; ++c1) /* output channel */ \
 				for (k = 0; k < w->d[2]; ++k) { /* kernel row */ \
@@ -1942,8 +1941,7 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 							memcpy(x_padded + aux[1].pad[0] * q->d[1], _xx, q->d[3] * q->d[1] * sizeof(float)); \
 							_xx = x_padded; \
 						} \
-						for (j = 0; j < p->d[3]; ++j, _xx += j_skip, ++_yy) { _code; convolution_counter++; } /* output and input column */ \
-						printf("\nNumber of times dot product function is called per kad_op_conv2d function call: %d", convolution_counter); \
+						for (j = 0; j < p->d[3]; ++j, _xx += j_skip, ++_yy) _code; /* output and input column */ \
 					} /* ~i */ \
 				} /* ~k, c1, n */ \
 	} while (0)

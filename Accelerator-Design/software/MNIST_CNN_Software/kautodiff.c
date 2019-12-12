@@ -19,120 +19,65 @@ typedef struct {
 /*******************************
  * Code that was Added (Start) *
  *******************************/
-static volatile int rx_done = 0;
+
 /********************************
  * DMA Data Transfer Operations *
  ********************************/
-static void transfer_done(void *handle, void *data)
+static inline void weight_buffer_write(const float *data_to_transmit)
 {
-	rx_done++;
+	*(DMA_CONTROL_REG_ADDRESS) = 0x00000284; //Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 0, WORD = 1)
+	*(DMA_READ_ADDR_REG_ADDRESS) = data_to_transmit;	//Address for the data to be transmitted
+	*(DMA_WRITE_ADDR_REG_ADDRESS) = NN_ACC_BASE + NN_ACC_WEIGHT_BUFFER_OFFSET; //Address for the weight buffer in the accelerator
+	*(DMA_LENGTH_REG_ADDRESS) = 384; //Sending 96 words = 384 Bytes
+	*(DMA_CONTROL_REG_ADDRESS) = 0x0000028C; //Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 1, WORD = 1)
+	printf("\nControl Reg: 0x%08X\tRead Address Reg: 0x%08X\tWrite Address Reg: 0x%08X\tLength Reg: 0x%08X\tStatus Reg: 0x%08X\n",*(DMA_CONTROL_REG_ADDRESS), *(DMA_READ_ADDR_REG_ADDRESS), *(DMA_WRITE_ADDR_REG_ADDRESS), *(DMA_LENGTH_REG_ADDRESS), *(DMA_STATUS_REG_ADDRESS));
+	while(*(DMA_STATUS_REG_ADDRESS) & DMA_TRANSFER_BUSY);
+	printf("\nWeight transfer done!\n"); //Sanity check
+	//*(DMA_STATUS_REG_ADDRESS) = DMA_TRANSFER_DONE;
 }
 
-static inline void dma_data_transfer(float *data_to_transmit, float *location_to_receive, uint32_t number_of_bytes)
+static inline void image_buffer_write(const float *data_to_transmit)
 {
-	alt_dma_txchan txchan;
-	alt_dma_rxchan rxchan;
-
-	int transmit_request_status;
-	int receive_request_status;
-
-	rx_done = 0;
-
-	/* Open a DMA transmit channel */
-	txchan = alt_dma_txchan_open("/dev/dma_0");
-	if(txchan == NULL)
-	{
-		printf("\nFailed to open transmit channel\n");
-		exit(1);
-	}
-
-	/* Open a DMA receive channel */
-	rxchan = alt_dma_rxchan_open("/dev/dma_0");
-	if(rxchan == NULL)
-	{
-		printf("\nFailed to open receive channel\n");
-		exit(1);
-	}
-
-	/* Post a transmit request on the DMA transmit channel */
-	transmit_request_status = alt_dma_txchan_send(txchan, data_to_transmit, number_of_bytes, NULL, NULL);
-	if(transmit_request_status < 0)
-	{
-		printf("\nFailed to post transmit request, reason is error code %i\n", transmit_request_status);
-		exit(1);
-	}
-
-	/* Post a receive request on the DMA receive channel */
-	receive_request_status = alt_dma_rxchan_prepare(rxchan, location_to_receive, number_of_bytes, transfer_done, NULL);
-	if(receive_request_status < 0)
-	{
-		printf("\nFailed to post receive request, reason is error code %i\n", receive_request_status);
-		exit(1);
-	}
-
-	/* Wait for the DMA transfer to complete */
-	while(!rx_done);
-
-	/* Close both the DMA transmit and receive channels that were opened previously */
-	alt_dma_txchan_close(txchan);
-	alt_dma_rxchan_close(rxchan);
+	*(DMA_CONTROL_REG_ADDRESS) = 0x00000284; //Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 1, WORD = 1)
+	*(DMA_READ_ADDR_REG_ADDRESS) = data_to_transmit;	//Address for the data to be transmitted
+	*(DMA_WRITE_ADDR_REG_ADDRESS) = NN_ACC_BASE + NN_ACC_IMAGE_BUFFER_OFFSET; //Address for the image buffer in the accelerator
+	*(DMA_LENGTH_REG_ADDRESS) = 384; //Sending 96 words = 384 Bytes
+	*(DMA_CONTROL_REG_ADDRESS) = 0x0000028C; //Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 1, WORD = 1)
+	//printf("\nControl Reg: 0x%08X\tRead Address Reg: 0x%08X\tWrite Address Reg: 0x%08X\tLength Reg: 0x%08X\tStatus Reg: 0x%08X\n",*(DMA_CONTROL_REG_ADDRESS), *(DMA_READ_ADDR_REG_ADDRESS), *(DMA_WRITE_ADDR_REG_ADDRESS), *(DMA_LENGTH_REG_ADDRESS), *(DMA_STATUS_REG_ADDRESS));
+	while(*(DMA_STATUS_REG_ADDRESS) & DMA_TRANSFER_BUSY);
+	//printf("\nImage transfer done!\n"); //Sanity check
+	//*(DMA_STATUS_REG_ADDRESS) = DMA_TRANSFER_DONE;
 }
 
-static inline void weight_buffer_write(float *data_to_transmit, uint32_t number_of_bytes)
+static inline void result_buffer_read(float *location_to_receive)
 {
-	volatile float *accelerator_base_address = (float *) (0x80000000 | 0x08000000);
-	volatile float *location_to_receive = (float *) (accelerator_base_address + NN_ACC_WEIGHT_BUFFER_OFFSET);
-	float *data_being_transmitted = (float *) (data_to_transmit + 0x80000000);
-
-	dma_data_transfer(data_being_transmitted, location_to_receive, number_of_bytes);
+	*(DMA_CONTROL_REG_ADDRESS) = 0x00000184; //Setting the appropriate control bits for the DMA transfer (RCON = 1, LEEN = 1, GO = 1, WORD = 1)
+	*(DMA_READ_ADDR_REG_ADDRESS) = NN_ACC_BASE + NN_ACC_RESULT_BUFFER_OFFSET;	//Address for the result buffer in the accelerator
+	*(DMA_WRITE_ADDR_REG_ADDRESS) = location_to_receive; //Address for the data to be written to
+	*(DMA_LENGTH_REG_ADDRESS) = 96; //Sending 24 words = 96 Bytes
+	*(DMA_CONTROL_REG_ADDRESS) = 0x0000018C; //Setting the appropriate control bits for the DMA transfer (RCON = 1, LEEN = 1, GO = 1, WORD = 1)
+	while(*(DMA_STATUS_REG_ADDRESS) & DMA_TRANSFER_BUSY);
+	//printf("\nResult transfer done!\n"); //Sanity check
+	//*(DMA_STATUS_REG_ADDRESS) = DMA_TRANSFER_DONE;
 }
 
-static inline void image_buffer_write(float *data_to_transmit, uint32_t number_of_bytes)
+/************************
+ * kad_sdot DMA version *
+ ************************/
+static inline void kad_sdot_dma(const float *y)
 {
-	volatile float *accelerator_base_address = (float *) (0x80000000 | 0x08000000);
-	volatile float *location_to_receive = (float *) (accelerator_base_address + NN_ACC_IMAGE_BUFFER_OFFSET);
-	float *data_being_transmitted = (float *) (data_to_transmit + 0x80000000);
-
-	dma_data_transfer(data_being_transmitted, location_to_receive, number_of_bytes);
-}
-
-static inline void result_buffer_read(float *location_to_receive, uint32_t number_of_bytes)
-{
-	volatile float *accelerator_base_address = (float *) (0x80000000 | 0x08000000);
-	volatile float *data_to_transmit = (float *) (accelerator_base_address + NN_ACC_RESULT_BUFFER_OFFSET);
-	float *location_receiving_data = (float *) (location_to_receive + 0x80000000);
-
-	dma_data_transfer(data_to_transmit, location_receiving_data, number_of_bytes);
-}
-
-/***********************************************************
- * Transfer from Result Buffer and Update Memory Correctly *
- ***********************************************************/
-static inline void result_memory_update(float *location_in_memory, uint32_t number_of_bytes)
-{
-	float *_temp_yy = (float *)malloc((number_of_bytes / 4) * sizeof(float));
-	result_buffer_read(_temp_yy, number_of_bytes);
-	for(int i = 0; i < (number_of_bytes / 4); i++, ++location_in_memory)
-		*location_in_memory += _temp_yy[i];
-	free(_temp_yy);
-}
-
-/***********************************************************
- * Compare expected vs actual results of the sdot function *
- ***********************************************************/
-static inline void result_compare(float *actual_result, uint32_t number_of_bytes)
-{
-	float *_temp_yy = (float *)malloc((number_of_bytes / 4) * sizeof(float));
-	result_buffer_read(_temp_yy, number_of_bytes);
-	for(int i = 0; i < (number_of_bytes / 4); i++)
-		printf("\nExpected (_yy[%d]): %f, Actual (_temp_yy[%d]): %f", i, actual_result[i], i, _temp_yy[i]);
-	free(_temp_yy);
-}
-
-static inline void result_compare_non_dma(float *expected_result, float *actual_result, int number_of_elements)
-{
-	for(int i = 0; i < number_of_elements; i++)
-			printf("\nExpected (_yy[%d]): %f, Actual (_temp_yy[%d]): %f", i, *(expected_result + i), i, *(actual_result + i));
+	//float s = 0.;
+	//static float *result_buffer_address = (0x80000000 + (NN_ACC_BASE + NN_ACC_RESULT_BUFFER_OFFSET));
+	//*(DMA_CONTROL_REG_ADDRESS) = 0x00000284; //Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 1, WORD = 1)
+	//*(DMA_READ_ADDR_REG_ADDRESS) = y;	//Address for the data to be transmitted
+	//*(DMA_WRITE_ADDR_REG_ADDRESS) = NN_ACC_BASE + NN_ACC_IMAGE_BUFFER_OFFSET; //Address for the image buffer in the accelerator
+	//*(DMA_LENGTH_REG_ADDRESS) = 384; //Sending 96 words = 384 Bytes
+	//*(DMA_CONTROL_REG_ADDRESS) = 0x0000028C; //Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 1, WORD = 1)
+	//while(*(DMA_STATUS_REG_ADDRESS) & DMA_TRANSFER_BUSY);
+	static float *image_buffer_address = (float *) (0x80000000 + (NN_ACC_BASE + NN_ACC_IMAGE_BUFFER_OFFSET));
+	for(int index = 0; index < 96; index++) *image_buffer_address = *(y + index);
+	//s = *result_buffer_address;
+	//return s;
 }
 
 /*****************************
@@ -998,18 +943,13 @@ static inline float kad_sdot(int n, const float *x, const float *y) /* BLAS sdot
 {
 	int i;
 	float s = 0.;
-	float temp_mult = 0.;  /* added */
-	for (i = 0; i < n; ++i) {
-		//s += x[i] * y[i];
-		temp_mult = FLOATING_POINT_MULTIPLIER_0(x[i],y[i]);  /* added */
-		s = FLOATING_POINT_ADDER_0(s,temp_mult);  /* added */
-	}
+	for (i = 0; i < n; ++i) s = FLOATING_POINT_ADDER_0(s,FLOATING_POINT_MULTIPLIER_0(x[i],y[i])); //s += x[i] * y[i];
 	return s;
 }
 static inline void kad_saxpy_inlined(int n, float a, const float *x, float *y) // BLAS saxpy
 {
 	int i;
-	for (i = 0; i < n; ++i) y[i] += a * x[i];
+	for (i = 0; i < n; ++i) y[i] = FLOATING_POINT_ADDER_0(y[i],FLOATING_POINT_MULTIPLIER_0(a,x[i])); //y[i] += a * x[i];
 }
 #endif
 
@@ -2061,35 +2001,47 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 	} while (0)
 
 #define conv2d_loop2(_x, _w, _y, _code) do { /* for the NHWC shape */ \
-		int n, c1, i, j, k, ii, j_skip = aux[1].stride * q->d[1], m = w->d[3] * w->d[1], index, temp_value; \
+		int n, c1, i, j, k, ii, j_skip = aux[1].stride * q->d[1], m = w->d[3] * w->d[1], index; \
 		static float *image_buffer_address = (float *) (0x80000000 + (NN_ACC_BASE + NN_ACC_IMAGE_BUFFER_OFFSET)); /* Added */ \
 		static float *weight_buffer_address = (float *) (0x80000000 + (NN_ACC_BASE + NN_ACC_WEIGHT_BUFFER_OFFSET)); /* Added */ \
-		static float *result_buffer_address = (float *) (0x80000000 + (NN_ACC_BASE + NN_ACC_RESULT_BUFFER_OFFSET)); /* Added */ \
+		static float *result_buffer_address = /* (float *)alt_uncached_malloc(p->d[3] * sizeof(float)); */ (0x80000000 + (NN_ACC_BASE + NN_ACC_RESULT_BUFFER_OFFSET)); /* Added */ \
 		for (n = 0; n < q->d[0]; ++n) /* mini-batch */ \
 			for (c1 = 0; c1 < w->d[0]; ++c1) /* output channel */ \
 				for (k = 0; k < w->d[2]; ++k) { /* kernel row */ \
 					float *_ww = &(_w)[(c1 * w->d[2] + k) * m]; \
 					\
-					/* weight_buffer_write(_ww, (m * 4)); Added */ \
+					/*(DMA_CONTROL_REG_ADDRESS) = 0x00000284; Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 0, WORD = 1) */ \
+					/*(DMA_READ_ADDR_REG_ADDRESS) = _ww; Address for the data to be transmitted */ \
+					/*(DMA_WRITE_ADDR_REG_ADDRESS) = NN_ACC_BASE + NN_ACC_WEIGHT_BUFFER_OFFSET; Address for the weight buffer in the accelerator */ \
+					/*(DMA_LENGTH_REG_ADDRESS) = 384; Sending 96 words = 384 Bytes */ \
+					/*(DMA_CONTROL_REG_ADDRESS) = 0x0000028C; Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 1, WORD = 1) */ \
+					/* while(*(DMA_STATUS_REG_ADDRESS) & DMA_TRANSFER_BUSY); */ \
+					/* weight_buffer_write(_ww); Added */ \
 					for(index = 0; index < m; index++) *weight_buffer_address = *(_ww + index); /* Added */ \
 					\
 					for (i = 0, ii = k - aux[0].pad[0]; i < p->d[2] && ii >= 0 && ii < q->d[2]; ++i, ii += aux[0].stride) { /* output and input row */ \
 						float *_xx = &(_x)[(n * q->d[2] + ii) * q->d[3] * q->d[1]]; \
 						float *_yy = &(_y)[((n * p->d[1] + c1) * p->d[2] + i) * p->d[3]]; \
-						float *_yy_copy = _yy; /* Added */ \
 						if (x_padded) { \
 							memcpy(x_padded + aux[1].pad[0] * q->d[1], _xx, q->d[3] * q->d[1] * sizeof(float)); \
 							_xx = x_padded; \
 						} \
-						for (j = 0; j < p->d[3]; ++j, _xx += j_skip, ++_yy) { \
+						for (j = 0; j < p->d[3]; ++j, _xx += j_skip/*, ++_yy*/) { /* output and input column */ \
 							for(index = 0; index < m; index++) *image_buffer_address = *(_xx + index); /* Added */ \
-							_code; \
-						}/* output and input column */ /* image_buffer_write(_xx, (m * 4)); Added */ \
-						\
-						float *_temp_yy = (float *) malloc(p->d[3] * sizeof(float)); /* Added */ \
-						for(index = 0; index < p->d[3]; index++) *(_temp_yy + index) = *result_buffer_address; /* result_compare(_yy, (p->d[2] * 4)); */ /* result_memory_update(_yy, (p->d[2] * 4)); */ /* Added */ \
-						result_compare_non_dma(_yy_copy, _temp_yy, p->d[3]); /* Added */ \
-						free(_temp_yy); /* Added */ \
+							/*(DMA_CONTROL_REG_ADDRESS) = 0x00000284; Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 1, WORD = 1) */ \
+							/*(DMA_READ_ADDR_REG_ADDRESS) = _xx; Address for the data to be transmitted */ \
+							/*(DMA_WRITE_ADDR_REG_ADDRESS) = NN_ACC_BASE + NN_ACC_IMAGE_BUFFER_OFFSET; Address for the image buffer in the accelerator */ \
+							/*(DMA_LENGTH_REG_ADDRESS) = 384; Sending 96 words = 384 Bytes */ \
+							/*(DMA_CONTROL_REG_ADDRESS) = 0x0000028C; Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 1, WORD = 1) */ \
+							/*while(*(DMA_STATUS_REG_ADDRESS) & DMA_TRANSFER_BUSY); */ \
+						} \
+						/*(DMA_CONTROL_REG_ADDRESS) = 0x00000184; Setting the appropriate control bits for the DMA transfer (RCON = 1, LEEN = 1, GO = 1, WORD = 1) */ \
+						/*(DMA_READ_ADDR_REG_ADDRESS) = NN_ACC_BASE + NN_ACC_RESULT_BUFFER_OFFSET; Address for the result buffer in the accelerator */ \
+						/*(DMA_WRITE_ADDR_REG_ADDRESS) = result_buffer_address; Address for the data to be written to */ \
+						/*(DMA_LENGTH_REG_ADDRESS) = 96; Sending 24 words = 96 Bytes */ \
+						/*(DMA_CONTROL_REG_ADDRESS) = 0x0000018C; Setting the appropriate control bits for the DMA transfer (RCON = 1, LEEN = 1, GO = 1, WORD = 1) */ \
+						/* while(*(DMA_STATUS_REG_ADDRESS) & DMA_TRANSFER_BUSY); */ \
+						for(index = 0; index < p->d[3]; index++, ++_yy) _code; /* Added */ \
 					} /* ~i */ \
 				} /* ~k, c1, n */ \
 	} while (0)
@@ -2123,7 +2075,9 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 		} else { /* this is the second algorithm */
 			conv2d_move_1to3(q->d, q->x, q1);
 			conv2d_move_1to3(w->d, w->x, w1);
-			conv2d_loop2(q1, w1, p->x, (*_yy += kad_sdot(m, _ww, _xx))); /* image_buffer_write(_xx, (m * 4)) */ /* result_buffer_read(_yy, 4) */ /* Added */
+			alt_dcache_flush_all();
+			conv2d_loop2(q1, w1, p->x, *_yy += *result_buffer_address); /* (*_yy += kad_sdot(m, _ww, _xx)) */
+			/* image_buffer_write(_xx) */ /* Added */
 		}
 		conv_rot180(w->d[0] * w->d[1], w->d[2] * w->d[3], w->x);
 	} else if (action == KAD_BACKWARD) {
