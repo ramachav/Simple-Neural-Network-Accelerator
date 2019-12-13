@@ -65,8 +65,8 @@ module nios_system_video_pixel_buffer_dma_0 (
  *****************************************************************************/
 
 // Parameters
-parameter DEFAULT_BUFFER_ADDRESS		= 32'd276824064;
-parameter DEFAULT_BACK_BUF_ADDRESS	= 32'd277872640;
+parameter DEFAULT_BUFFER_ADDRESS		= 32'd136314880;
+parameter DEFAULT_BACK_BUF_ADDRESS	= 32'd137363456;
 
 parameter AW						= 18; // Image size's address width
 

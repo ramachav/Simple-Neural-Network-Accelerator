@@ -153,14 +153,12 @@ module nios_system (
 	wire  [27:0] dma_0_read_master_address;                                                                // dma_0:read_address -> mm_interconnect_0:dma_0_read_master_address
 	wire         dma_0_read_master_read;                                                                   // dma_0:read_read_n -> mm_interconnect_0:dma_0_read_master_read
 	wire         dma_0_read_master_readdatavalid;                                                          // mm_interconnect_0:dma_0_read_master_readdatavalid -> dma_0:read_readdatavalid
-	wire   [7:0] dma_0_read_master_burstcount;                                                             // dma_0:read_burstcount -> mm_interconnect_0:dma_0_read_master_burstcount
 	wire         dma_0_write_master_chipselect;                                                            // dma_0:write_chipselect -> mm_interconnect_0:dma_0_write_master_chipselect
 	wire         dma_0_write_master_waitrequest;                                                           // mm_interconnect_0:dma_0_write_master_waitrequest -> dma_0:write_waitrequest
 	wire  [27:0] dma_0_write_master_address;                                                               // dma_0:write_address -> mm_interconnect_0:dma_0_write_master_address
 	wire   [3:0] dma_0_write_master_byteenable;                                                            // dma_0:write_byteenable -> mm_interconnect_0:dma_0_write_master_byteenable
 	wire         dma_0_write_master_write;                                                                 // dma_0:write_write_n -> mm_interconnect_0:dma_0_write_master_write
 	wire  [31:0] dma_0_write_master_writedata;                                                             // dma_0:write_writedata -> mm_interconnect_0:dma_0_write_master_writedata
-	wire   [7:0] dma_0_write_master_burstcount;                                                            // dma_0:write_burstcount -> mm_interconnect_0:dma_0_write_master_burstcount
 	wire  [15:0] mm_interconnect_0_sram_0_avalon_sram_slave_readdata;                                      // sram_0:readdata -> mm_interconnect_0:sram_0_avalon_sram_slave_readdata
 	wire  [19:0] mm_interconnect_0_sram_0_avalon_sram_slave_address;                                       // mm_interconnect_0:sram_0_avalon_sram_slave_address -> sram_0:address
 	wire         mm_interconnect_0_sram_0_avalon_sram_slave_read;                                          // mm_interconnect_0:sram_0_avalon_sram_slave_read -> sram_0:read
@@ -196,15 +194,11 @@ module nios_system (
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_read;                                     // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_read -> jtag_uart_0:av_read_n
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_write;                                    // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_write -> jtag_uart_0:av_write_n
 	wire  [31:0] mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_writedata;                                // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_writedata -> jtag_uart_0:av_writedata
-	wire         mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_beginbursttransfer;       // mm_interconnect_0:nn_acc_single_buffer_version_1_avalon_slave_0_beginbursttransfer -> nn_acc_single_buffer_version_1:beginbursttransfer
 	wire  [31:0] mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_readdata;                 // nn_acc_single_buffer_version_1:readdata -> mm_interconnect_0:nn_acc_single_buffer_version_1_avalon_slave_0_readdata
-	wire         mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_waitrequest;              // nn_acc_single_buffer_version_1:waitrequest -> mm_interconnect_0:nn_acc_single_buffer_version_1_avalon_slave_0_waitrequest
 	wire   [7:0] mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_address;                  // mm_interconnect_0:nn_acc_single_buffer_version_1_avalon_slave_0_address -> nn_acc_single_buffer_version_1:address
 	wire         mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_read;                     // mm_interconnect_0:nn_acc_single_buffer_version_1_avalon_slave_0_read -> nn_acc_single_buffer_version_1:read
-	wire         mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_readdatavalid;            // nn_acc_single_buffer_version_1:readdatavalid -> mm_interconnect_0:nn_acc_single_buffer_version_1_avalon_slave_0_readdatavalid
 	wire         mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_write;                    // mm_interconnect_0:nn_acc_single_buffer_version_1_avalon_slave_0_write -> nn_acc_single_buffer_version_1:write
 	wire  [31:0] mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_writedata;                // mm_interconnect_0:nn_acc_single_buffer_version_1_avalon_slave_0_writedata -> nn_acc_single_buffer_version_1:writedata
-	wire  [10:0] mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_burstcount;               // mm_interconnect_0:nn_acc_single_buffer_version_1_avalon_slave_0_burstcount -> nn_acc_single_buffer_version_1:burstcount
 	wire         mm_interconnect_0_dma_0_control_port_slave_chipselect;                                    // mm_interconnect_0:dma_0_control_port_slave_chipselect -> dma_0:dma_ctl_chipselect
 	wire  [27:0] mm_interconnect_0_dma_0_control_port_slave_readdata;                                      // dma_0:dma_ctl_readdata -> mm_interconnect_0:dma_0_control_port_slave_readdata
 	wire   [2:0] mm_interconnect_0_dma_0_control_port_slave_address;                                       // mm_interconnect_0:dma_0_control_port_slave_address -> dma_0:dma_ctl_address
@@ -272,14 +266,12 @@ module nios_system (
 		.read_readdata      (dma_0_read_master_readdata),                            //                   .readdata
 		.read_readdatavalid (dma_0_read_master_readdatavalid),                       //                   .readdatavalid
 		.read_waitrequest   (dma_0_read_master_waitrequest),                         //                   .waitrequest
-		.read_burstcount    (dma_0_read_master_burstcount),                          //                   .burstcount
 		.write_address      (dma_0_write_master_address),                            //       write_master.address
 		.write_chipselect   (dma_0_write_master_chipselect),                         //                   .chipselect
 		.write_waitrequest  (dma_0_write_master_waitrequest),                        //                   .waitrequest
 		.write_write_n      (dma_0_write_master_write),                              //                   .write_n
 		.write_writedata    (dma_0_write_master_writedata),                          //                   .writedata
-		.write_byteenable   (dma_0_write_master_byteenable),                         //                   .byteenable
-		.write_burstcount   (dma_0_write_master_burstcount)                          //                   .burstcount
+		.write_byteenable   (dma_0_write_master_byteenable)                          //                   .byteenable
 	);
 
 	fp_adder floating_point_adder_0 (
@@ -433,22 +425,17 @@ module nios_system (
 		.E_ci_combo_writerc                    (nios2_qsys_0_custom_instruction_master_writerc)                //                          .writerc
 	);
 
-	nn_acc_single #(
+	nn_acc_single_non_burst #(
 		.WEIGHT_BUFFER_SIZE (96),
-		.IMAGE_BUFFER_SIZE  (8),
-		.RESULT_BUFFER_SIZE (24)
+		.IMAGE_BUFFER_SIZE  (8)
 	) nn_acc_single_buffer_version_1 (
-		.clk                (clk_clk),                                                                            //          clock.clk
-		.reset              (rst_controller_reset_out_reset),                                                     //          reset.reset
-		.address            (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_address),            // avalon_slave_0.address
-		.read               (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_read),               //               .read
-		.write              (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_write),              //               .write
-		.beginbursttransfer (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_beginbursttransfer), //               .beginbursttransfer
-		.burstcount         (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_burstcount),         //               .burstcount
-		.writedata          (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_writedata),          //               .writedata
-		.waitrequest        (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_waitrequest),        //               .waitrequest
-		.readdatavalid      (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_readdatavalid),      //               .readdatavalid
-		.readdata           (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_readdata)            //               .readdata
+		.clk       (clk_clk),                                                                   //          clock.clk
+		.reset     (rst_controller_reset_out_reset),                                            //          reset.reset
+		.address   (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_address),   // avalon_slave_0.address
+		.read      (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_read),      //               .read
+		.write     (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_write),     //               .write
+		.writedata (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_writedata), //               .writedata
+		.readdata  (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_readdata)   //               .readdata
 	);
 
 	nios_system_performance_counter_0 performance_counter_0 (
@@ -818,14 +805,12 @@ module nios_system (
 		.video_pixel_buffer_dma_0_reset_reset_bridge_in_reset_reset             (rst_controller_reset_out_reset),                                                           //        video_pixel_buffer_dma_0_reset_reset_bridge_in_reset.reset
 		.dma_0_read_master_address                                              (dma_0_read_master_address),                                                                //                                           dma_0_read_master.address
 		.dma_0_read_master_waitrequest                                          (dma_0_read_master_waitrequest),                                                            //                                                            .waitrequest
-		.dma_0_read_master_burstcount                                           (dma_0_read_master_burstcount),                                                             //                                                            .burstcount
 		.dma_0_read_master_chipselect                                           (dma_0_read_master_chipselect),                                                             //                                                            .chipselect
 		.dma_0_read_master_read                                                 (~dma_0_read_master_read),                                                                  //                                                            .read
 		.dma_0_read_master_readdata                                             (dma_0_read_master_readdata),                                                               //                                                            .readdata
 		.dma_0_read_master_readdatavalid                                        (dma_0_read_master_readdatavalid),                                                          //                                                            .readdatavalid
 		.dma_0_write_master_address                                             (dma_0_write_master_address),                                                               //                                          dma_0_write_master.address
 		.dma_0_write_master_waitrequest                                         (dma_0_write_master_waitrequest),                                                           //                                                            .waitrequest
-		.dma_0_write_master_burstcount                                          (dma_0_write_master_burstcount),                                                            //                                                            .burstcount
 		.dma_0_write_master_byteenable                                          (dma_0_write_master_byteenable),                                                            //                                                            .byteenable
 		.dma_0_write_master_chipselect                                          (dma_0_write_master_chipselect),                                                            //                                                            .chipselect
 		.dma_0_write_master_write                                               (~dma_0_write_master_write),                                                                //                                                            .write
@@ -895,10 +880,6 @@ module nios_system (
 		.nn_acc_single_buffer_version_1_avalon_slave_0_read                     (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_read),                     //                                                            .read
 		.nn_acc_single_buffer_version_1_avalon_slave_0_readdata                 (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_readdata),                 //                                                            .readdata
 		.nn_acc_single_buffer_version_1_avalon_slave_0_writedata                (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_writedata),                //                                                            .writedata
-		.nn_acc_single_buffer_version_1_avalon_slave_0_beginbursttransfer       (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_beginbursttransfer),       //                                                            .beginbursttransfer
-		.nn_acc_single_buffer_version_1_avalon_slave_0_burstcount               (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_burstcount),               //                                                            .burstcount
-		.nn_acc_single_buffer_version_1_avalon_slave_0_readdatavalid            (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_readdatavalid),            //                                                            .readdatavalid
-		.nn_acc_single_buffer_version_1_avalon_slave_0_waitrequest              (mm_interconnect_0_nn_acc_single_buffer_version_1_avalon_slave_0_waitrequest),              //                                                            .waitrequest
 		.performance_counter_0_control_slave_address                            (mm_interconnect_0_performance_counter_0_control_slave_address),                            //                         performance_counter_0_control_slave.address
 		.performance_counter_0_control_slave_write                              (mm_interconnect_0_performance_counter_0_control_slave_write),                              //                                                            .write
 		.performance_counter_0_control_slave_readdata                           (mm_interconnect_0_performance_counter_0_control_slave_readdata),                           //                                                            .readdata

@@ -20,45 +20,6 @@
 
 int main(int argc, char *argv[])
 {
-	/* float *weights_to_transmit = alt_uncached_malloc(96 * sizeof(float));
-	for(int i = 0; i < 96; i++) *(weights_to_transmit + i) = 2.0;
-	float *inputs_to_transmit = alt_uncached_malloc(96 * sizeof(float));
-	for(int i = 0; i < 96; i++) *(inputs_to_transmit + i) = 4.0;
-	float *results_to_store = alt_uncached_malloc(24 * sizeof(float));
-
-	*(DMA_CONTROL_REG_ADDRESS) = 0x00000284; //Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 0, WORD = 1)
-	*(DMA_READ_ADDR_REG_ADDRESS) = weights_to_transmit;	//Address for the data to be transmitted
-	*(DMA_WRITE_ADDR_REG_ADDRESS) = NN_ACC_BASE + NN_ACC_WEIGHT_BUFFER_OFFSET; //Address for the weight buffer in the accelerator
-	*(DMA_LENGTH_REG_ADDRESS) = 0x180; //Sending 96 words = 384 Bytes
-	*(DMA_CONTROL_REG_ADDRESS) = 0x0000028C; //Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 1, WORD = 1)
-	while(*(DMA_STATUS_REG_ADDRESS) & DMA_TRANSFER_BUSY);
-	printf("\nControl Reg: 0x%08X\tRead Address Reg: 0x%08X\tWrite Address Reg: 0x%08X\tLength Reg: 0x%08X\tStatus Reg: 0x%08X\n",*(DMA_CONTROL_REG_ADDRESS), *(DMA_READ_ADDR_REG_ADDRESS), *(DMA_WRITE_ADDR_REG_ADDRESS), *(DMA_LENGTH_REG_ADDRESS), *(DMA_STATUS_REG_ADDRESS));
-	printf("\nWeight transfer done!\n"); //Sanity check
-
-	for(int index = 0; index < 24; index++) {
-		*(DMA_CONTROL_REG_ADDRESS) = 0x00000284; //Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 1, WORD = 1)
-		*(DMA_READ_ADDR_REG_ADDRESS) = inputs_to_transmit;	//Address for the data to be transmitted
-		*(DMA_WRITE_ADDR_REG_ADDRESS) = NN_ACC_BASE + NN_ACC_IMAGE_BUFFER_OFFSET; //Address for the image buffer in the accelerator
-		*(DMA_LENGTH_REG_ADDRESS) = 384; //Sending 96 words = 384 Bytes
-		*(DMA_CONTROL_REG_ADDRESS) = 0x0000028C; //Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 1, WORD = 1)
-		while(*(DMA_STATUS_REG_ADDRESS) & DMA_TRANSFER_BUSY);
-		printf("\nControl Reg: 0x%08X\tRead Address Reg: 0x%08X\tWrite Address Reg: 0x%08X\tLength Reg: 0x%08X\tStatus Reg: 0x%08X\n",*(DMA_CONTROL_REG_ADDRESS), *(DMA_READ_ADDR_REG_ADDRESS), *(DMA_WRITE_ADDR_REG_ADDRESS), *(DMA_LENGTH_REG_ADDRESS), *(DMA_STATUS_REG_ADDRESS));
-		printf("\nImage transfer done! %d\n", index); //Sanity check
-	}
-
-	*(DMA_CONTROL_REG_ADDRESS) = 0x00000184; //Setting the appropriate control bits for the DMA transfer (RCON = 1, LEEN = 1, GO = 1, WORD = 1)
-	*(DMA_READ_ADDR_REG_ADDRESS) = NN_ACC_BASE + NN_ACC_RESULT_BUFFER_OFFSET;	//Address for the result buffer in the accelerator
-	*(DMA_WRITE_ADDR_REG_ADDRESS) = results_to_store; //Address for the data to be written to
-	*(DMA_LENGTH_REG_ADDRESS) = 96; //Sending 24 words = 96 Bytes
-	*(DMA_CONTROL_REG_ADDRESS) = 0x0000018C; //Setting the appropriate control bits for the DMA transfer (RCON = 1, LEEN = 1, GO = 1, WORD = 1)
-	while(*(DMA_STATUS_REG_ADDRESS) & DMA_TRANSFER_BUSY);
-	printf("\nResult transfer done!\n\n"); //Sanity check
-
-	for(int i = 0; i < 24; i++)
-		printf("Result[%d]: %f\n", i, *(results_to_store + i));
-
-	return 0; */
-
 	kann_t *ann;
 	kann_data_t *x, *y;
 	char *fn_in = 0, *fn_out = 0;

@@ -31,6 +31,8 @@
 
 #include <stdio.h>
 #include <stdint.h>
+#include "altera_avalon_dma_regs.h"
+#include "altera_avalon_dma.h"
 
 #ifdef __STRICT_ANSI__
 #define inline
@@ -48,21 +50,15 @@
  * NN Single Buffer Accelerator macros *
  ***************************************/
 #define NN_ACC_BASE 0x8000000
-#define NN_ACC_WEIGHT_BUFFER_OFFSET 1*4
-#define NN_ACC_IMAGE_BUFFER_OFFSET 97*4
-#define NN_ACC_RESULT_BUFFER_OFFSET 193*4
+#define NN_ACC_WEIGHT_BUFFER_OFFSET 0x4
+#define NN_ACC_IMAGE_BUFFER_OFFSET 0x184
+#define NN_ACC_RESULT_BUFFER_OFFSET 0x304
+#define NN_ACC_ALLOW_RESULT_READ_REG_OFFSET 0x364
 
 /**********************************
  * Custom DMA Cache Bypass macros *
  **********************************/
-#define DMA_BASE_ADDRESS (0x80004c0 | 0x80000000)
-#define DMA_STATUS_REG_ADDRESS (int *) DMA_BASE_ADDRESS
-#define DMA_READ_ADDR_REG_ADDRESS (int *) (DMA_BASE_ADDRESS + 0x4)
-#define DMA_WRITE_ADDR_REG_ADDRESS (int *) (DMA_BASE_ADDRESS + 0x8)
-#define DMA_LENGTH_REG_ADDRESS (int *) (DMA_BASE_ADDRESS + 0xC)
-#define DMA_CONTROL_REG_ADDRESS (int *) (DMA_BASE_ADDRESS + 0x18)
-#define DMA_TRANSFER_BUSY 0x00000002
-#define DMA_TRANSFER_DONE 0x0
+#define DMA_BASE_ADDRESS 0x80004c0
 
 #define KAD_MAX_DIM 4     /* max dimension */
 #define KAD_MAX_OP  64    /* max number of operators */

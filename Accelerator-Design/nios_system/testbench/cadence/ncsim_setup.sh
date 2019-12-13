@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 17.0 595 linux 2019.12.03.18:52:21
+# ACDS 17.0 595 linux 2019.12.13.10:18:56
 
 # ----------------------------------------
 # ncsim - auto-generated simulation script
@@ -101,7 +101,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 17.0 595 linux 2019.12.03.18:52:21
+# ACDS 17.0 595 linux 2019.12.13.10:18:56
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="nios_system_tb"
@@ -360,7 +360,7 @@ if [ $SKIP_COM -eq 0 ]; then
   ncvlog -sv $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/data_buffer.sv"                                                         -work nn_acc_single_buffer_version_1                                         -cdslib ./cds_libs/nn_acc_single_buffer_version_1.cds.lib                                        
   ncvlog -sv $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/fp_adder.sv"                                                            -work nn_acc_single_buffer_version_1                                         -cdslib ./cds_libs/nn_acc_single_buffer_version_1.cds.lib                                        
   ncvlog -sv $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/fp_multiplier.sv"                                                       -work nn_acc_single_buffer_version_1                                         -cdslib ./cds_libs/nn_acc_single_buffer_version_1.cds.lib                                        
-  ncvlog -sv $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nn_acc_single.sv"                                                       -work nn_acc_single_buffer_version_1                                         -cdslib ./cds_libs/nn_acc_single_buffer_version_1.cds.lib                                        
+  ncvlog -sv $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nn_acc_single_non_burst.sv"                                             -work nn_acc_single_buffer_version_1                                         -cdslib ./cds_libs/nn_acc_single_buffer_version_1.cds.lib                                        
   ncvlog $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0.vo"                                            -work nios2_qsys_0                                                           -cdslib ./cds_libs/nios2_qsys_0.cds.lib                                                          
   ncvlog $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_jtag_debug_module_wrapper.v"                   -work nios2_qsys_0                                                           -cdslib ./cds_libs/nios2_qsys_0.cds.lib                                                          
   ncvlog $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_jtag_debug_module_sysclk.v"                    -work nios2_qsys_0                                                           -cdslib ./cds_libs/nios2_qsys_0.cds.lib                                                          

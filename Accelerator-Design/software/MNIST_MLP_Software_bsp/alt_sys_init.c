@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_qsys_0' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: ../../nios_system.sopcinfo
  *
- * Generated: Wed Oct 23 17:02:35 EDT 2019
+ * Generated: Thu Dec 05 21:37:04 EST 2019
  */
 
 /*
@@ -60,6 +60,7 @@
 
 #include "altera_nios2_qsys_irq.h"
 #include "altera_avalon_cfi_flash.h"
+#include "altera_avalon_dma.h"
 #include "altera_avalon_jtag_uart.h"
 #include "altera_avalon_performance_counter.h"
 #include "altera_avalon_timer.h"
@@ -73,6 +74,7 @@
 
 ALTERA_NIOS2_QSYS_IRQ_INSTANCE ( NIOS2_QSYS_0, nios2_qsys_0);
 ALTERA_AVALON_CFI_FLASH_INSTANCE ( GENERIC_TRISTATE_CONTROLLER_0, generic_tristate_controller_0);
+ALTERA_AVALON_DMA_INSTANCE ( DMA_0, dma_0);
 ALTERA_AVALON_JTAG_UART_INSTANCE ( JTAG_UART_0, jtag_uart_0);
 ALTERA_AVALON_PERFORMANCE_COUNTER_INSTANCE ( PERFORMANCE_COUNTER_0, performance_counter_0);
 ALTERA_AVALON_TIMER_INSTANCE ( TIMER_0, timer_0);
@@ -103,6 +105,7 @@ void alt_sys_init( void )
 {
     ALTERA_AVALON_TIMER_INIT ( TIMER_0, timer_0);
     ALTERA_AVALON_CFI_FLASH_INIT ( GENERIC_TRISTATE_CONTROLLER_0, generic_tristate_controller_0);
+    ALTERA_AVALON_DMA_INIT ( DMA_0, dma_0);
     ALTERA_AVALON_JTAG_UART_INIT ( JTAG_UART_0, jtag_uart_0);
     ALTERA_AVALON_PERFORMANCE_COUNTER_INIT ( PERFORMANCE_COUNTER_0, performance_counter_0);
     ALTERA_RO_ZIPFS_INIT ( ALTERA_RO_ZIPFS, altera_ro_zipfs);

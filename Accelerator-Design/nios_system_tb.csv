@@ -1,12 +1,12 @@
-# system info nios_system_tb on 2019.12.03.18:52:20
+# system info nios_system_tb on 2019.12.13.10:18:54
 system_info:
 name,value
 DEVICE,EP4CE115F29C7
 DEVICE_FAMILY,Cyclone IV E
-GENERATION_ID,1575417115
+GENERATION_ID,1576250306
 #
 #
-# Files generated for nios_system_tb on 2019.12.03.18:52:20
+# Files generated for nios_system_tb on 2019.12.13.10:18:54
 files:
 filepath,kind,attributes,module,is_top
 nios_system/testbench/nios_system_tb/simulation/nios_system_tb.v,VERILOG,,nios_system_tb,true
@@ -54,10 +54,10 @@ nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsy
 nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_ic_tag_ram.hex,HEX,,nios_system_nios2_qsys_0,false
 nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_ic_tag_ram.dat,DAT,,nios_system_nios2_qsys_0,false
 nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_nios2_qsys_0_ic_tag_ram.mif,MIF,,nios_system_nios2_qsys_0,false
-nios_system/testbench/nios_system_tb/simulation/submodules/data_buffer.sv,SYSTEM_VERILOG,,nn_acc_single,false
-nios_system/testbench/nios_system_tb/simulation/submodules/fp_adder.sv,SYSTEM_VERILOG,,nn_acc_single,false
-nios_system/testbench/nios_system_tb/simulation/submodules/fp_multiplier.sv,SYSTEM_VERILOG,,nn_acc_single,false
-nios_system/testbench/nios_system_tb/simulation/submodules/nn_acc_single.sv,SYSTEM_VERILOG,,nn_acc_single,false
+nios_system/testbench/nios_system_tb/simulation/submodules/data_buffer.sv,SYSTEM_VERILOG,,nn_acc_single_non_burst,false
+nios_system/testbench/nios_system_tb/simulation/submodules/fp_adder.sv,SYSTEM_VERILOG,,nn_acc_single_non_burst,false
+nios_system/testbench/nios_system_tb/simulation/submodules/fp_multiplier.sv,SYSTEM_VERILOG,,nn_acc_single_non_burst,false
+nios_system/testbench/nios_system_tb/simulation/submodules/nn_acc_single_non_burst.sv,SYSTEM_VERILOG,,nn_acc_single_non_burst,false
 nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_performance_counter_0.v,VERILOG,,nios_system_performance_counter_0,false
 nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_sram_0.v,VERILOG,,nios_system_sram_0,false
 nios_system/testbench/nios_system_tb/simulation/submodules/nios_system_timer_0.v,VERILOG,,nios_system_timer_0,false
@@ -171,7 +171,7 @@ nios_system_tb.nios_system_inst.generic_tristate_controller_0.tda,altera_tristat
 nios_system_tb.nios_system_inst.jtag_uart_0,nios_system_jtag_uart_0
 nios_system_tb.nios_system_inst.new_sdram_controller_0,nios_system_new_sdram_controller_0
 nios_system_tb.nios_system_inst.nios2_qsys_0,nios_system_nios2_qsys_0
-nios_system_tb.nios_system_inst.nn_acc_single_buffer_version_1,nn_acc_single
+nios_system_tb.nios_system_inst.nn_acc_single_buffer_version_1,nn_acc_single_non_burst
 nios_system_tb.nios_system_inst.performance_counter_0,nios_system_performance_counter_0
 nios_system_tb.nios_system_inst.sram_0,nios_system_sram_0
 nios_system_tb.nios_system_inst.timer_0,nios_system_timer_0
@@ -257,7 +257,6 @@ nios_system_tb.nios_system_inst.mm_interconnect_0.nios2_qsys_0_instruction_maste
 nios_system_tb.nios_system_inst.mm_interconnect_0.dma_0_read_master_limiter,altera_merlin_traffic_limiter
 nios_system_tb.nios_system_inst.mm_interconnect_0.sram_0_avalon_sram_slave_burst_adapter,altera_merlin_burst_adapter
 nios_system_tb.nios_system_inst.mm_interconnect_0.video_character_buffer_with_dma_0_avalon_char_buffer_slave_burst_adapter,altera_merlin_burst_adapter
-nios_system_tb.nios_system_inst.mm_interconnect_0.new_sdram_controller_0_s1_burst_adapter,altera_merlin_burst_adapter
 nios_system_tb.nios_system_inst.mm_interconnect_0.generic_tristate_controller_0_uas_burst_adapter,altera_merlin_burst_adapter
 nios_system_tb.nios_system_inst.mm_interconnect_0.cmd_demux,nios_system_mm_interconnect_0_cmd_demux
 nios_system_tb.nios_system_inst.mm_interconnect_0.cmd_demux_001,nios_system_mm_interconnect_0_cmd_demux_001

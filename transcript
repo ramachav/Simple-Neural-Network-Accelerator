@@ -12,17 +12,1130 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
- do tbAccl.do
+tbAccl.do
+# invalid command name "tbAccl.do"
+do tbAccl.do
 # QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
-# Start time: 16:40:16 on Dec 03,2019
-# vlog -reportprogress 300 -work work /home/ecegrid/a/695r07/ece695r/Project/SoCProject/Custom-Hardware-Blocks/AcceleratorPackage.sv 
-# ** Warning: (vlog-20) Cannot access for reading (Permission denied) file "/home/ecegrid/a/695r07/ece695r/Project/SoCProject/Custom-Hardware-Blocks/AcceleratorPackage.sv".
-# ** Error: (vlog-7) Failed to open design unit file "/home/ecegrid/a/695r07/ece695r/Project/SoCProject/Custom-Hardware-Blocks/AcceleratorPackage.sv" in read mode.
-# Permission denied. (errno = EACCES)
-# End time: 16:40:16 on Dec 03,2019, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 1
+# Start time: 18:54:51 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorPackage.sv 
+# -- Compiling package AcceleratorPackage
+# 
+# Top level modules:
+# 	--none--
+# End time: 18:54:52 on Dec 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 18:54:52 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_adder.sv 
+# -- Compiling module fp_adder
+# 
+# Top level modules:
+# 	fp_adder
+# End time: 18:54:52 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 18:54:52 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_multiplier.sv 
+# -- Compiling module fp_multiplier
+# 
+# Top level modules:
+# 	fp_multiplier
+# End time: 18:54:52 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 18:54:52 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/pipeline_registers.sv 
+# -- Compiling module pipeline_registers
+# 
+# Top level modules:
+# 	pipeline_registers
+# End time: 18:54:52 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 18:54:52 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/data_buffer.sv 
+# -- Compiling module data_buffer
+# 
+# Top level modules:
+# 	data_buffer
+# End time: 18:54:52 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 18:54:52 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv 
+# -- Compiling module datapath
+# 
+# Top level modules:
+# 	datapath
+# End time: 18:54:53 on Dec 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 18:54:53 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorTopMod.sv 
+# -- Compiling package AcceleratorTopMod_sv_unit
+# -- Importing package AcceleratorPackage
+# -- Compiling module AcceleratorTopMod
+# 
+# Top level modules:
+# 	AcceleratorTopMod
+# End time: 18:54:53 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 18:54:53 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/tbAccl.sv 
+# -- Compiling package tbAccl_sv_unit
+# -- Importing package AcceleratorPackage
+# -- Compiling module tbAccl
+# -- Compiling program loadTest
+# 
+# Top level modules:
+# 	tbAccl
+# End time: 18:54:53 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt work.tbAccl 
+# Start time: 18:54:53 on Dec 05,2019
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.tbAccl
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.tbAccl_sv_unit
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorPackage
+# Loading sv_std.std
+# Loading work.AcceleratorPackage
+# Loading work.tbAccl_sv_unit
+# Loading work.tbAccl
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorTopMod
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorTopMod_sv_unit
+# Loading work.AcceleratorTopMod_sv_unit
+# Loading work.AcceleratorTopMod
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.loadTest
+# Loading work.loadTest
+# Starting testbench
+do tbAccl.do
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 18:55:43 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorPackage.sv 
+# -- Compiling package AcceleratorPackage
+# 
+# Top level modules:
+# 	--none--
+# End time: 18:55:43 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 18:55:43 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_adder.sv 
+# -- Compiling module fp_adder
+# 
+# Top level modules:
+# 	fp_adder
+# End time: 18:55:44 on Dec 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 18:55:44 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_multiplier.sv 
+# -- Compiling module fp_multiplier
+# 
+# Top level modules:
+# 	fp_multiplier
+# End time: 18:55:44 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 18:55:44 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/pipeline_registers.sv 
+# -- Compiling module pipeline_registers
+# 
+# Top level modules:
+# 	pipeline_registers
+# End time: 18:55:44 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 18:55:44 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/data_buffer.sv 
+# -- Compiling module data_buffer
+# 
+# Top level modules:
+# 	data_buffer
+# End time: 18:55:44 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 18:55:44 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv 
+# -- Compiling module datapath
+# 
+# Top level modules:
+# 	datapath
+# End time: 18:55:44 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 18:55:45 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorTopMod.sv 
+# -- Compiling package AcceleratorTopMod_sv_unit
+# -- Importing package AcceleratorPackage
+# -- Compiling module AcceleratorTopMod
+# 
+# Top level modules:
+# 	AcceleratorTopMod
+# End time: 18:55:45 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 18:55:45 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/tbAccl.sv 
+# -- Compiling package tbAccl_sv_unit
+# -- Importing package AcceleratorPackage
+# -- Compiling module tbAccl
+# -- Compiling program loadTest
+# 
+# Top level modules:
+# 	tbAccl
+# End time: 18:55:45 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 18:55:46 on Dec 05,2019, Elapsed time: 0:00:53
+# Errors: 0, Warnings: 1
+# vsim -novopt work.tbAccl 
+# Start time: 18:55:46 on Dec 05,2019
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.tbAccl
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.tbAccl_sv_unit
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorPackage
+# Loading sv_std.std
+# Loading work.AcceleratorPackage
+# Loading work.tbAccl_sv_unit
+# Loading work.tbAccl
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorTopMod
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorTopMod_sv_unit
+# Loading work.AcceleratorTopMod_sv_unit
+# Loading work.AcceleratorTopMod
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.datapath
+# Loading work.datapath
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.fp_multiplier
+# Loading work.fp_multiplier
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.fp_adder
+# Loading work.fp_adder
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.pipeline_registers
+# Loading work.pipeline_registers
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.loadTest
+# Loading work.loadTest
+# ** Warning: (vsim-3015) /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorTopMod.sv(280): [PCDPC] - Port size (32) does not match connection size (1) for port 'result'. The port definition is at: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv(25).
+#    Time: 0 ns  Iteration: 0  Instance: /tbAccl/accl/mac File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv
+# ** Error: (vsim-3389) /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv(70): Port 'reset' not found in the connected module (2nd connection).
+#    Time: 0 ns  Iteration: 0  Instance: /tbAccl/accl/mac/PIPELINE_REGISTERS File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/pipeline_registers.sv
+# ** Error: (vsim-3389) /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv(70): Port 'stage_4_en' not found in the connected module (34th connection).
+#    Time: 0 ns  Iteration: 0  Instance: /tbAccl/accl/mac/PIPELINE_REGISTERS File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/pipeline_registers.sv
+# ** Error: (vsim-3389) /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv(70): Port 'accres_in0' not found in the connected module (35th connection).
+#    Time: 0 ns  Iteration: 0  Instance: /tbAccl/accl/mac/PIPELINE_REGISTERS File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/pipeline_registers.sv
+# ** Error: (vsim-3389) /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv(70): Port 'accres_in1' not found in the connected module (36th connection).
+#    Time: 0 ns  Iteration: 0  Instance: /tbAccl/accl/mac/PIPELINE_REGISTERS File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/pipeline_registers.sv
+# ** Error: (vsim-3389) /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv(70): Port 'accres_out0' not found in the connected module (37th connection).
+#    Time: 0 ns  Iteration: 0  Instance: /tbAccl/accl/mac/PIPELINE_REGISTERS File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/pipeline_registers.sv
+# ** Error: (vsim-3389) /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv(70): Port 'accres_out1' not found in the connected module (38th connection).
+#    Time: 0 ns  Iteration: 0  Instance: /tbAccl/accl/mac/PIPELINE_REGISTERS File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/pipeline_registers.sv
+# ** Fatal: (vsim-3365) /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv(70): Too many port connections. Expected 33, found 38.
+#    Time: 0 ns  Iteration: 0  Instance: /tbAccl/accl/mac/PIPELINE_REGISTERS File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/pipeline_registers.sv
+# FATAL ERROR while loading design
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./tbAccl.do PAUSED at line 15
+do tbAccl.do
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:01:54 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorPackage.sv 
+# -- Compiling package AcceleratorPackage
+# 
+# Top level modules:
+# 	--none--
+# End time: 19:01:55 on Dec 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:01:55 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_adder.sv 
+# -- Compiling module fp_adder
+# 
+# Top level modules:
+# 	fp_adder
+# End time: 19:01:55 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:01:55 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_multiplier.sv 
+# -- Compiling module fp_multiplier
+# 
+# Top level modules:
+# 	fp_multiplier
+# End time: 19:01:55 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:01:55 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/pipeline_registers.sv 
+# -- Compiling module pipeline_registers
+# ** Error: (vlog-13069) /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/pipeline_registers.sv(27): near "input": syntax error, unexpected input, expecting ')'.
+# End time: 19:01:55 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
 # ** Error: /package/eda/mg/questa10.6b/questasim/linux_x86_64/vlog failed.
-# Error in macro ./tbAccl.do line 4
+# Error in macro ./tbAccl.do line 8
 # /package/eda/mg/questa10.6b/questasim/linux_x86_64/vlog failed.
 #     while executing
-# "vlog -reportprogress 300 -work work "${PROJECT_DIR}/Custom-Hardware-Blocks/AcceleratorPackage.sv""
+# "vlog -reportprogress 300 -work work "${PROJECT_DIR}/Custom-Hardware-Blocks/pipeline_registers.sv""
+do tbAccl.do
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:03:28 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorPackage.sv 
+# -- Compiling package AcceleratorPackage
+# 
+# Top level modules:
+# 	--none--
+# End time: 19:03:28 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:03:28 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_adder.sv 
+# -- Compiling module fp_adder
+# 
+# Top level modules:
+# 	fp_adder
+# End time: 19:03:28 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:03:28 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_multiplier.sv 
+# -- Compiling module fp_multiplier
+# 
+# Top level modules:
+# 	fp_multiplier
+# End time: 19:03:29 on Dec 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:03:29 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/pipeline_registers.sv 
+# -- Compiling module pipeline_registers
+# 
+# Top level modules:
+# 	pipeline_registers
+# End time: 19:03:29 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:03:29 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/data_buffer.sv 
+# -- Compiling module data_buffer
+# 
+# Top level modules:
+# 	data_buffer
+# End time: 19:03:29 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:03:29 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv 
+# -- Compiling module datapath
+# 
+# Top level modules:
+# 	datapath
+# End time: 19:03:30 on Dec 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:03:30 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorTopMod.sv 
+# -- Compiling package AcceleratorTopMod_sv_unit
+# -- Importing package AcceleratorPackage
+# -- Compiling module AcceleratorTopMod
+# 
+# Top level modules:
+# 	AcceleratorTopMod
+# End time: 19:03:30 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:03:30 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/tbAccl.sv 
+# -- Compiling package tbAccl_sv_unit
+# -- Importing package AcceleratorPackage
+# -- Compiling module tbAccl
+# -- Compiling program loadTest
+# 
+# Top level modules:
+# 	tbAccl
+# End time: 19:03:30 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt work.tbAccl 
+# Start time: 18:55:46 on Dec 05,2019
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.tbAccl
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.tbAccl_sv_unit
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorPackage
+# Loading sv_std.std
+# Loading work.AcceleratorPackage
+# Loading work.tbAccl_sv_unit
+# Loading work.tbAccl
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorTopMod
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorTopMod_sv_unit
+# Loading work.AcceleratorTopMod_sv_unit
+# Loading work.AcceleratorTopMod
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.datapath
+# Loading work.datapath
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.fp_multiplier
+# Loading work.fp_multiplier
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.fp_adder
+# Loading work.fp_adder
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.pipeline_registers
+# Loading work.pipeline_registers
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.loadTest
+# Loading work.loadTest
+# ** Warning: (vsim-3015) /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorTopMod.sv(280): [PCDPC] - Port size (32) does not match connection size (1) for port 'result'. The port definition is at: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv(25).
+#    Time: 0 ns  Iteration: 0  Instance: /tbAccl/accl/mac File: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv
+# Starting testbench
+run 1000 ns
+# Reset
+run 10000 ns
+do tbAccl.do
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:05:32 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorPackage.sv 
+# -- Compiling package AcceleratorPackage
+# 
+# Top level modules:
+# 	--none--
+# End time: 19:05:32 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:05:32 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_adder.sv 
+# -- Compiling module fp_adder
+# 
+# Top level modules:
+# 	fp_adder
+# End time: 19:05:32 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:05:32 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_multiplier.sv 
+# -- Compiling module fp_multiplier
+# 
+# Top level modules:
+# 	fp_multiplier
+# End time: 19:05:32 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:05:32 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/pipeline_registers.sv 
+# -- Compiling module pipeline_registers
+# 
+# Top level modules:
+# 	pipeline_registers
+# End time: 19:05:33 on Dec 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:05:33 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/data_buffer.sv 
+# -- Compiling module data_buffer
+# 
+# Top level modules:
+# 	data_buffer
+# End time: 19:05:33 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:05:33 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv 
+# -- Compiling module datapath
+# 
+# Top level modules:
+# 	datapath
+# End time: 19:05:33 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:05:33 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorTopMod.sv 
+# -- Compiling package AcceleratorTopMod_sv_unit
+# -- Importing package AcceleratorPackage
+# -- Compiling module AcceleratorTopMod
+# 
+# Top level modules:
+# 	AcceleratorTopMod
+# End time: 19:05:34 on Dec 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:05:34 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/tbAccl.sv 
+# -- Compiling package tbAccl_sv_unit
+# -- Importing package AcceleratorPackage
+# -- Compiling module tbAccl
+# -- Compiling program loadTest
+# 
+# Top level modules:
+# 	tbAccl
+# End time: 19:05:34 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 19:05:34 on Dec 05,2019, Elapsed time: 0:09:48
+# Errors: 7, Warnings: 4
+# vsim -novopt work.tbAccl 
+# Start time: 19:05:34 on Dec 05,2019
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.tbAccl
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.tbAccl_sv_unit
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorPackage
+# Loading sv_std.std
+# Loading work.AcceleratorPackage
+# Loading work.tbAccl_sv_unit
+# Loading work.tbAccl
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorTopMod
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorTopMod_sv_unit
+# Loading work.AcceleratorTopMod_sv_unit
+# Loading work.AcceleratorTopMod
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.datapath
+# Loading work.datapath
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.fp_multiplier
+# Loading work.fp_multiplier
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.fp_adder
+# Loading work.fp_adder
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.pipeline_registers
+# Loading work.pipeline_registers
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.loadTest
+# Loading work.loadTest
+# Starting testbench
+run 20000 ns
+# Reset
+add wave -position insertpoint sim:/tbAccl/accl/mac/*
+add wave -position insertpoint  \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/clk \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/reset \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/stage_1_en \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/muladd_in0 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/muladd_in1 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/muladd_in2 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/muladd_in3 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/muladd_in4 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/muladd_in5 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/muladd_in6 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/muladd_in7 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/muladd_out0 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/muladd_out1 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/muladd_out2 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/muladd_out3 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/muladd_out4 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/muladd_out5 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/muladd_out6 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/muladd_out7 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/stage_2_en \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/addsum_in0 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/addsum_in1 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/addsum_in2 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/addsum_in3 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/addsum_out0 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/addsum_out1 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/addsum_out2 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/addsum_out3 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/stage_3_en \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/sumacc_in0 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/sumacc_in1 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/sumacc_out0 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/sumacc_out1 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/stage_4_en \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/accres_in0 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/accres_in1 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/accres_out0 \
+sim:/tbAccl/accl/mac/PIPELINE_REGISTERS/accres_out1
+restart -f
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+run 20000 ns
+# Starting testbench
+# Reset
+do tbAccl.do
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:09:27 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorPackage.sv 
+# -- Compiling package AcceleratorPackage
+# 
+# Top level modules:
+# 	--none--
+# End time: 19:09:28 on Dec 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:09:28 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_adder.sv 
+# -- Compiling module fp_adder
+# 
+# Top level modules:
+# 	fp_adder
+# End time: 19:09:28 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:09:28 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_multiplier.sv 
+# -- Compiling module fp_multiplier
+# 
+# Top level modules:
+# 	fp_multiplier
+# End time: 19:09:28 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:09:28 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/pipeline_registers.sv 
+# -- Compiling module pipeline_registers
+# 
+# Top level modules:
+# 	pipeline_registers
+# End time: 19:09:29 on Dec 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:09:29 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/data_buffer.sv 
+# -- Compiling module data_buffer
+# 
+# Top level modules:
+# 	data_buffer
+# End time: 19:09:29 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:09:29 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv 
+# -- Compiling module datapath
+# 
+# Top level modules:
+# 	datapath
+# End time: 19:09:29 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:09:29 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorTopMod.sv 
+# -- Compiling package AcceleratorTopMod_sv_unit
+# -- Importing package AcceleratorPackage
+# -- Compiling module AcceleratorTopMod
+# 
+# Top level modules:
+# 	AcceleratorTopMod
+# End time: 19:09:30 on Dec 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:09:30 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/tbAccl.sv 
+# -- Compiling package tbAccl_sv_unit
+# -- Importing package AcceleratorPackage
+# -- Compiling module tbAccl
+# -- Compiling program loadTest
+# 
+# Top level modules:
+# 	tbAccl
+# End time: 19:09:30 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 19:09:30 on Dec 05,2019, Elapsed time: 0:03:56
+# Errors: 0, Warnings: 0
+# vsim -novopt work.tbAccl 
+# Start time: 19:09:30 on Dec 05,2019
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.tbAccl
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.tbAccl_sv_unit
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorPackage
+# Loading sv_std.std
+# Loading work.AcceleratorPackage
+# Loading work.tbAccl_sv_unit
+# Loading work.tbAccl
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorTopMod
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorTopMod_sv_unit
+# Loading work.AcceleratorTopMod_sv_unit
+# Loading work.AcceleratorTopMod
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.datapath
+# Loading work.datapath
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.fp_multiplier
+# Loading work.fp_multiplier
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.fp_adder
+# Loading work.fp_adder
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.pipeline_registers
+# Loading work.pipeline_registers
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.loadTest
+# Loading work.loadTest
+# Starting testbench
+run 10000 ns
+# Reset
+do tbAccl.do
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:10:47 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorPackage.sv 
+# -- Compiling package AcceleratorPackage
+# 
+# Top level modules:
+# 	--none--
+# End time: 19:10:48 on Dec 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:10:48 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_adder.sv 
+# -- Compiling module fp_adder
+# 
+# Top level modules:
+# 	fp_adder
+# End time: 19:10:48 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:10:48 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_multiplier.sv 
+# -- Compiling module fp_multiplier
+# 
+# Top level modules:
+# 	fp_multiplier
+# End time: 19:10:48 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:10:48 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/pipeline_registers.sv 
+# -- Compiling module pipeline_registers
+# 
+# Top level modules:
+# 	pipeline_registers
+# End time: 19:10:48 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:10:49 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/data_buffer.sv 
+# -- Compiling module data_buffer
+# 
+# Top level modules:
+# 	data_buffer
+# End time: 19:10:49 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:10:49 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv 
+# -- Compiling module datapath
+# 
+# Top level modules:
+# 	datapath
+# End time: 19:10:49 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:10:49 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorTopMod.sv 
+# -- Compiling package AcceleratorTopMod_sv_unit
+# -- Importing package AcceleratorPackage
+# -- Compiling module AcceleratorTopMod
+# 
+# Top level modules:
+# 	AcceleratorTopMod
+# End time: 19:10:49 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:10:49 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/tbAccl.sv 
+# -- Compiling package tbAccl_sv_unit
+# -- Importing package AcceleratorPackage
+# -- Compiling module tbAccl
+# -- Compiling program loadTest
+# 
+# Top level modules:
+# 	tbAccl
+# End time: 19:10:49 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 19:10:50 on Dec 05,2019, Elapsed time: 0:01:20
+# Errors: 0, Warnings: 1
+# vsim -novopt work.tbAccl 
+# Start time: 19:10:50 on Dec 05,2019
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.tbAccl
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.tbAccl_sv_unit
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorPackage
+# Loading sv_std.std
+# Loading work.AcceleratorPackage
+# Loading work.tbAccl_sv_unit
+# Loading work.tbAccl
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorTopMod
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorTopMod_sv_unit
+# Loading work.AcceleratorTopMod_sv_unit
+# Loading work.AcceleratorTopMod
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.datapath
+# Loading work.datapath
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.fp_multiplier
+# Loading work.fp_multiplier
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.fp_adder
+# Loading work.fp_adder
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.pipeline_registers
+# Loading work.pipeline_registers
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.loadTest
+# Loading work.loadTest
+# Starting testbench
+run 10 us
+# Reset
+do tbAccl.do
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:11:54 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorPackage.sv 
+# -- Compiling package AcceleratorPackage
+# 
+# Top level modules:
+# 	--none--
+# End time: 19:11:54 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:11:55 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_adder.sv 
+# -- Compiling module fp_adder
+# 
+# Top level modules:
+# 	fp_adder
+# End time: 19:11:55 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:11:55 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_multiplier.sv 
+# -- Compiling module fp_multiplier
+# 
+# Top level modules:
+# 	fp_multiplier
+# End time: 19:11:55 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:11:55 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/pipeline_registers.sv 
+# -- Compiling module pipeline_registers
+# 
+# Top level modules:
+# 	pipeline_registers
+# End time: 19:11:55 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:11:55 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/data_buffer.sv 
+# -- Compiling module data_buffer
+# 
+# Top level modules:
+# 	data_buffer
+# End time: 19:11:55 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:11:55 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv 
+# -- Compiling module datapath
+# 
+# Top level modules:
+# 	datapath
+# End time: 19:11:56 on Dec 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:11:56 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorTopMod.sv 
+# -- Compiling package AcceleratorTopMod_sv_unit
+# -- Importing package AcceleratorPackage
+# -- Compiling module AcceleratorTopMod
+# 
+# Top level modules:
+# 	AcceleratorTopMod
+# End time: 19:11:56 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:11:56 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/tbAccl.sv 
+# -- Compiling package tbAccl_sv_unit
+# -- Importing package AcceleratorPackage
+# -- Compiling module tbAccl
+# -- Compiling program loadTest
+# 
+# Top level modules:
+# 	tbAccl
+# End time: 19:11:56 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 19:11:57 on Dec 05,2019, Elapsed time: 0:01:07
+# Errors: 0, Warnings: 1
+# vsim -novopt work.tbAccl 
+# Start time: 19:11:57 on Dec 05,2019
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.tbAccl
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.tbAccl_sv_unit
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorPackage
+# Loading sv_std.std
+# Loading work.AcceleratorPackage
+# Loading work.tbAccl_sv_unit
+# Loading work.tbAccl
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorTopMod
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorTopMod_sv_unit
+# Loading work.AcceleratorTopMod_sv_unit
+# Loading work.AcceleratorTopMod
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.datapath
+# Loading work.datapath
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.fp_multiplier
+# Loading work.fp_multiplier
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.fp_adder
+# Loading work.fp_adder
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.pipeline_registers
+# Loading work.pipeline_registers
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.loadTest
+# Loading work.loadTest
+# Starting testbench
+run 10 us
+# Reset
+do tbAccl.do
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:12:57 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorPackage.sv 
+# -- Compiling package AcceleratorPackage
+# 
+# Top level modules:
+# 	--none--
+# End time: 19:12:57 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:12:57 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_adder.sv 
+# -- Compiling module fp_adder
+# 
+# Top level modules:
+# 	fp_adder
+# End time: 19:12:57 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:12:57 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_multiplier.sv 
+# -- Compiling module fp_multiplier
+# 
+# Top level modules:
+# 	fp_multiplier
+# End time: 19:12:58 on Dec 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:12:58 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/pipeline_registers.sv 
+# -- Compiling module pipeline_registers
+# 
+# Top level modules:
+# 	pipeline_registers
+# End time: 19:12:58 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:12:58 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/data_buffer.sv 
+# -- Compiling module data_buffer
+# 
+# Top level modules:
+# 	data_buffer
+# End time: 19:12:58 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:12:58 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv 
+# -- Compiling module datapath
+# 
+# Top level modules:
+# 	datapath
+# End time: 19:12:58 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:12:58 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorTopMod.sv 
+# -- Compiling package AcceleratorTopMod_sv_unit
+# -- Importing package AcceleratorPackage
+# -- Compiling module AcceleratorTopMod
+# 
+# Top level modules:
+# 	AcceleratorTopMod
+# End time: 19:12:59 on Dec 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:12:59 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/tbAccl.sv 
+# -- Compiling package tbAccl_sv_unit
+# -- Importing package AcceleratorPackage
+# -- Compiling module tbAccl
+# -- Compiling program loadTest
+# 
+# Top level modules:
+# 	tbAccl
+# End time: 19:12:59 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 19:12:59 on Dec 05,2019, Elapsed time: 0:01:02
+# Errors: 0, Warnings: 1
+# vsim -novopt work.tbAccl 
+# Start time: 19:12:59 on Dec 05,2019
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.tbAccl
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.tbAccl_sv_unit
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorPackage
+# Loading sv_std.std
+# Loading work.AcceleratorPackage
+# Loading work.tbAccl_sv_unit
+# Loading work.tbAccl
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorTopMod
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorTopMod_sv_unit
+# Loading work.AcceleratorTopMod_sv_unit
+# Loading work.AcceleratorTopMod
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.datapath
+# Loading work.datapath
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.fp_multiplier
+# Loading work.fp_multiplier
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.fp_adder
+# Loading work.fp_adder
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.pipeline_registers
+# Loading work.pipeline_registers
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.loadTest
+# Loading work.loadTest
+# Starting testbench
+run 10 us
+# Reset
+do tbAccl.do
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:14:55 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorPackage.sv 
+# -- Compiling package AcceleratorPackage
+# 
+# Top level modules:
+# 	--none--
+# End time: 19:14:55 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:14:55 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_adder.sv 
+# -- Compiling module fp_adder
+# 
+# Top level modules:
+# 	fp_adder
+# End time: 19:14:55 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:14:55 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_multiplier.sv 
+# -- Compiling module fp_multiplier
+# 
+# Top level modules:
+# 	fp_multiplier
+# End time: 19:14:55 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:14:55 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/pipeline_registers.sv 
+# -- Compiling module pipeline_registers
+# 
+# Top level modules:
+# 	pipeline_registers
+# End time: 19:14:56 on Dec 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:14:56 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/data_buffer.sv 
+# -- Compiling module data_buffer
+# 
+# Top level modules:
+# 	data_buffer
+# End time: 19:14:56 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:14:56 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv 
+# -- Compiling module datapath
+# 
+# Top level modules:
+# 	datapath
+# End time: 19:14:56 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:14:56 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorTopMod.sv 
+# ** Error: /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorTopMod.sv(272): (vlog-2730) Undefined variable: 'macRd'.
+# End time: 19:14:57 on Dec 05,2019, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# ** Error: /package/eda/mg/questa10.6b/questasim/linux_x86_64/vlog failed.
+# Error in macro ./tbAccl.do line 11
+# /package/eda/mg/questa10.6b/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -reportprogress 300 -work work "${PROJECT_DIR}/Custom-Hardware-Blocks/AcceleratorTopMod.sv""
+do tbAccl.do
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:15:14 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorPackage.sv 
+# -- Compiling package AcceleratorPackage
+# 
+# Top level modules:
+# 	--none--
+# End time: 19:15:14 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:15:14 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_adder.sv 
+# -- Compiling module fp_adder
+# 
+# Top level modules:
+# 	fp_adder
+# End time: 19:15:14 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:15:14 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/fp_multiplier.sv 
+# -- Compiling module fp_multiplier
+# 
+# Top level modules:
+# 	fp_multiplier
+# End time: 19:15:14 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:15:14 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/pipeline_registers.sv 
+# -- Compiling module pipeline_registers
+# 
+# Top level modules:
+# 	pipeline_registers
+# End time: 19:15:15 on Dec 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:15:15 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/data_buffer.sv 
+# -- Compiling module data_buffer
+# 
+# Top level modules:
+# 	data_buffer
+# End time: 19:15:15 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:15:15 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/datapath.sv 
+# -- Compiling module datapath
+# 
+# Top level modules:
+# 	datapath
+# End time: 19:15:15 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:15:15 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/AcceleratorTopMod.sv 
+# -- Compiling package AcceleratorTopMod_sv_unit
+# -- Importing package AcceleratorPackage
+# -- Compiling module AcceleratorTopMod
+# 
+# Top level modules:
+# 	AcceleratorTopMod
+# End time: 19:15:15 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vlog 10.6b Compiler 2017.05 May 25 2017
+# Start time: 19:15:15 on Dec 05,2019
+# vlog -reportprogress 300 -work work /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Custom-Hardware-Blocks/tbAccl.sv 
+# -- Compiling package tbAccl_sv_unit
+# -- Importing package AcceleratorPackage
+# -- Compiling module tbAccl
+# -- Compiling program loadTest
+# 
+# Top level modules:
+# 	tbAccl
+# End time: 19:15:15 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 19:15:16 on Dec 05,2019, Elapsed time: 0:02:17
+# Errors: 4, Warnings: 1
+# vsim -novopt work.tbAccl 
+# Start time: 19:15:16 on Dec 05,2019
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.tbAccl
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.tbAccl_sv_unit
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorPackage
+# Loading sv_std.std
+# Loading work.AcceleratorPackage
+# Loading work.tbAccl_sv_unit
+# Loading work.tbAccl
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorTopMod
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.AcceleratorTopMod_sv_unit
+# Loading work.AcceleratorTopMod_sv_unit
+# Loading work.AcceleratorTopMod
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.datapath
+# Loading work.datapath
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.fp_multiplier
+# Loading work.fp_multiplier
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.fp_adder
+# Loading work.fp_adder
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.pipeline_registers
+# Loading work.pipeline_registers
+# Refreshing /home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/work.loadTest
+# Loading work.loadTest
+# Starting testbench
+run 10 us
+# Reset
+quit -sim
+# End time: 19:36:07 on Dec 05,2019, Elapsed time: 0:20:51
+# Errors: 0, Warnings: 1
+quit 

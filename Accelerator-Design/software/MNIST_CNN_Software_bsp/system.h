@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_qsys_0' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: ../../nios_system.sopcinfo
  *
- * Generated: Tue Dec 03 18:59:31 EST 2019
+ * Generated: Fri Dec 13 15:30:58 EST 2019
  */
 
 /*
@@ -205,16 +205,16 @@
  */
 
 #define ALT_MODULE_CLASS_dma_0 altera_avalon_dma
-#define DMA_0_ALLOW_BYTE_TRANSACTIONS 1
-#define DMA_0_ALLOW_DOUBLEWORD_TRANSACTIONS 1
-#define DMA_0_ALLOW_HW_TRANSACTIONS 1
-#define DMA_0_ALLOW_QUADWORD_TRANSACTIONS 1
+#define DMA_0_ALLOW_BYTE_TRANSACTIONS 0
+#define DMA_0_ALLOW_DOUBLEWORD_TRANSACTIONS 0
+#define DMA_0_ALLOW_HW_TRANSACTIONS 0
+#define DMA_0_ALLOW_QUADWORD_TRANSACTIONS 0
 #define DMA_0_ALLOW_WORD_TRANSACTIONS 1
 #define DMA_0_BASE 0x80004c0
 #define DMA_0_IRQ 2
 #define DMA_0_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define DMA_0_LENGTHWIDTH 13
-#define DMA_0_MAX_BURST_SIZE 128
+#define DMA_0_LENGTHWIDTH 12
+#define DMA_0_MAX_BURST_SIZE 1024
 #define DMA_0_NAME "/dev/dma_0"
 #define DMA_0_SPAN 32
 #define DMA_0_TYPE "altera_avalon_dma"

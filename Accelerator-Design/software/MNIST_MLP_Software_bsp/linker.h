@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_qsys_0' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: ../../nios_system.sopcinfo
  *
- * Generated: Wed Oct 23 14:33:33 EDT 2019
+ * Generated: Thu Dec 05 21:37:03 EST 2019
  */
 
 /*
@@ -65,11 +65,11 @@
  *
  */
 
-#define GENERIC_TRISTATE_CONTROLLER_0_REGION_BASE 0x10000000
+#define GENERIC_TRISTATE_CONTROLLER_0_REGION_BASE 0x8800000
 #define GENERIC_TRISTATE_CONTROLLER_0_REGION_SPAN 8388608
-#define NEW_SDRAM_CONTROLLER_0_REGION_BASE 0x8000020
+#define NEW_SDRAM_CONTROLLER_0_REGION_BASE 0x20
 #define NEW_SDRAM_CONTROLLER_0_REGION_SPAN 134217696
-#define RESET_REGION_BASE 0x8000000
+#define RESET_REGION_BASE 0x0
 #define RESET_REGION_SPAN 32
 
 

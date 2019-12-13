@@ -53,15 +53,15 @@
  * NN Single Buffer Accelerator macros *
  ***************************************/
 #define NN_ACC_BASE 0x8000000
-#define NN_ACC_WEIGHT_BUFFER_OFFSET 1*4 //0x100
-#define NN_ACC_IMAGE_BUFFER_OFFSET 97*4 //0x200
-#define NN_ACC_RESULT_BUFFER_OFFSET 193*4 //0x300
-#define NN_ACC_ALLOW_RESULT_READ_REG_OFFSET 217*4
+#define NN_ACC_WEIGHT_BUFFER_OFFSET 0x4
+#define NN_ACC_IMAGE_BUFFER_OFFSET 0x184
+#define NN_ACC_RESULT_BUFFER_OFFSET 0x304
+#define NN_ACC_ALLOW_RESULT_READ_REG_OFFSET 0x364
 
 /**********************************
  * Custom DMA Cache Bypass macros *
  **********************************/
-#define DMA_BASE_ADDRESS 0x80004c0 //0x080004c0
+#define DMA_BASE_ADDRESS 0x80004c0
 
 #define KAD_MAX_DIM 4     /* max dimension */
 #define KAD_MAX_OP  64    /* max number of operators */

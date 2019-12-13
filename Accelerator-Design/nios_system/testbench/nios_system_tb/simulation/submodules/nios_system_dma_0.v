@@ -27,7 +27,6 @@ module nios_system_dma_0_read_data_mux (
                                           dma_ctl_chipselect,
                                           dma_ctl_write_n,
                                           dma_ctl_writedata,
-                                          hw,
                                           read_readdata,
                                           read_readdatavalid,
                                           readaddress,
@@ -48,7 +47,6 @@ module nios_system_dma_0_read_data_mux (
   input            dma_ctl_chipselect;
   input            dma_ctl_write_n;
   input   [ 27: 0] dma_ctl_writedata;
-  input            hw;
   input   [ 31: 0] read_readdata;
   input            read_readdatavalid;
   input   [ 27: 0] readaddress;
@@ -79,16 +77,11 @@ reg     [  1: 0] readdata_mux_select;
 
 
   assign fifo_wr_data[31 : 16] = read_readdata[31 : 16];
-  assign fifo_wr_data[15 : 8] = ({8 {(hw & (readdata_mux_select[1] == 0))}} & read_readdata[15 : 8]) |
-    ({8 {(hw & (readdata_mux_select[1] == 1))}} & read_readdata[31 : 24]) |
-    ({8 {word}} & read_readdata[15 : 8]);
-
+  assign fifo_wr_data[15 : 8] = read_readdata[15 : 8];
   assign fifo_wr_data[7 : 0] = ({8 {(byte_access & (readdata_mux_select[1 : 0] == 0))}} & read_readdata[7 : 0]) |
     ({8 {(byte_access & (readdata_mux_select[1 : 0] == 1))}} & read_readdata[15 : 8]) |
     ({8 {(byte_access & (readdata_mux_select[1 : 0] == 2))}} & read_readdata[23 : 16]) |
     ({8 {(byte_access & (readdata_mux_select[1 : 0] == 3))}} & read_readdata[31 : 24]) |
-    ({8 {(hw & (readdata_mux_select[1] == 0))}} & read_readdata[7 : 0]) |
-    ({8 {(hw & (readdata_mux_select[1] == 1))}} & read_readdata[23 : 16]) |
     ({8 {word}} & read_readdata[7 : 0]);
 
 
@@ -106,7 +99,6 @@ endmodule
 module nios_system_dma_0_byteenables (
                                        // inputs:
                                         byte_access,
-                                        hw,
                                         word,
                                         write_address,
 
@@ -117,13 +109,10 @@ module nios_system_dma_0_byteenables (
 
   output  [  3: 0] write_byteenable;
   input            byte_access;
-  input            hw;
   input            word;
   input   [ 27: 0] write_address;
 
 
-wire             wa_1_is_0;
-wire             wa_1_is_1;
 wire             wa_1_to_0_is_0;
 wire             wa_1_to_0_is_1;
 wire             wa_1_to_0_is_2;
@@ -133,10 +122,7 @@ wire    [  3: 0] write_byteenable;
   assign wa_1_to_0_is_2 = write_address[1 : 0] == 2'h2;
   assign wa_1_to_0_is_1 = write_address[1 : 0] == 2'h1;
   assign wa_1_to_0_is_0 = write_address[1 : 0] == 2'h0;
-  assign wa_1_is_1 = write_address[1] == 1'h1;
-  assign wa_1_is_0 = write_address[1] == 1'h0;
   assign write_byteenable = ({4 {byte_access}} & {wa_1_to_0_is_3, wa_1_to_0_is_2, wa_1_to_0_is_1, wa_1_to_0_is_0}) |
-    ({4 {hw}} & {wa_1_is_1, wa_1_is_1, wa_1_is_0, wa_1_is_0}) |
     ({4 {word}} & 4'b1111);
 
 
@@ -170,17 +156,17 @@ module nios_system_dma_0_fifo_module_fifo_ram_module (
   output  [ 31: 0] q;
   input            clk;
   input   [ 31: 0] data;
-  input   [  7: 0] rdaddress;
+  input   [  4: 0] rdaddress;
   input            rdclken;
   input            reset_n;
-  input   [  7: 0] wraddress;
+  input   [  4: 0] wraddress;
   input            wrclock;
   input            wren;
 
 
-reg     [ 31: 0] mem_array [255: 0];
+reg     [ 31: 0] mem_array [ 31: 0];
 wire    [ 31: 0] q;
-reg     [  7: 0] read_address;
+reg     [  4: 0] read_address;
 
 //synthesis translate_off
 //////////////// SIMULATION-ONLY CONTENTS
@@ -233,7 +219,7 @@ reg     [  7: 0] read_address;
 //           lpm_ram_dp_component.lpm_outdata = "UNREGISTERED",
 //           lpm_ram_dp_component.lpm_rdaddress_control = "REGISTERED",
 //           lpm_ram_dp_component.lpm_width = 32,
-//           lpm_ram_dp_component.lpm_widthad = 8,
+//           lpm_ram_dp_component.lpm_widthad = 5,
 //           lpm_ram_dp_component.lpm_wraddress_control = "REGISTERED",
 //           lpm_ram_dp_component.suppress_memory_conversion_warnings = "ON";
 //
@@ -283,8 +269,8 @@ module nios_system_dma_0_fifo_module (
   input            reset_n;
 
 
-wire    [  7: 0] estimated_rdaddress;
-reg     [  7: 0] estimated_wraddress;
+wire    [  4: 0] estimated_rdaddress;
+reg     [  4: 0] estimated_wraddress;
 wire             fifo_datavalid;
 wire             fifo_dec;
 reg              fifo_empty;
@@ -294,13 +280,13 @@ wire    [ 31: 0] fifo_ram_q;
 wire    [ 31: 0] fifo_rd_data;
 reg              last_write_collision;
 reg     [ 31: 0] last_write_data;
-wire    [  7: 0] p1_estimated_wraddress;
+wire    [  4: 0] p1_estimated_wraddress;
 wire             p1_fifo_empty;
 wire             p1_fifo_full;
-wire    [  7: 0] p1_wraddress;
-wire    [  7: 0] rdaddress;
-reg     [  7: 0] rdaddress_reg;
-reg     [  7: 0] wraddress;
+wire    [  4: 0] p1_wraddress;
+wire    [  4: 0] rdaddress;
+reg     [  4: 0] rdaddress_reg;
+reg     [  4: 0] wraddress;
 wire             write_collision;
   assign p1_wraddress = (fifo_write)? wraddress - 1 :
     wraddress;
@@ -337,10 +323,10 @@ wire             write_collision;
   always @(posedge clk or negedge reset_n)
     begin
       if (reset_n == 0)
-          estimated_wraddress <= {8 {1'b1}};
+          estimated_wraddress <= {5 {1'b1}};
       else if (clk_en)
           if (flush_fifo)
-              estimated_wraddress <= {8 {1'b1}};
+              estimated_wraddress <= {5 {1'b1}};
           else 
             estimated_wraddress <= p1_estimated_wraddress;
     end
@@ -569,11 +555,9 @@ module nios_system_dma_0 (
                             dma_ctl_irq,
                             dma_ctl_readdata,
                             read_address,
-                            read_burstcount,
                             read_chipselect,
                             read_read_n,
                             write_address,
-                            write_burstcount,
                             write_byteenable,
                             write_chipselect,
                             write_write_n,
@@ -584,11 +568,9 @@ module nios_system_dma_0 (
   output           dma_ctl_irq;
   output  [ 27: 0] dma_ctl_readdata;
   output  [ 27: 0] read_address;
-  output  [  7: 0] read_burstcount;
   output           read_chipselect;
   output           read_read_n;
   output  [ 27: 0] write_address;
-  output  [  7: 0] write_burstcount;
   output  [  3: 0] write_byteenable;
   output           write_chipselect;
   output           write_write_n;
@@ -605,9 +587,6 @@ module nios_system_dma_0 (
   input            write_waitrequest;
 
 
-reg              burst_read_waitrequest_s1;
-reg     [  7: 0] burstcount;
-reg     [  7: 0] burstcount_update;
 wire             busy;
 wire             byte_access;
 wire             clk_en;
@@ -627,7 +606,6 @@ wire             fifo_datavalid;
 wire             fifo_empty;
 wire    [ 31: 0] fifo_rd_data;
 wire    [ 31: 0] fifo_rd_data_as_byte_access;
-wire    [ 31: 0] fifo_rd_data_as_hw;
 wire    [ 31: 0] fifo_rd_data_as_word;
 wire             fifo_read;
 wire    [ 31: 0] fifo_wr_data;
@@ -643,7 +621,6 @@ wire             leen;
 reg              len;
 reg     [ 26: 0] length;
 reg              length_eq_0;
-wire             length_register_write;
 wire             mem_read_n;
 wire             mem_write_n;
 wire    [ 12: 0] p1_control;
@@ -662,12 +639,10 @@ wire             p1_writelength_eq_0;
 wire             quadword;
 wire             rcon;
 wire    [ 27: 0] read_address;
-wire    [  7: 0] read_burstcount;
 wire             read_chipselect;
 wire             read_endofpacket;
 reg              read_got_endofpacket;
 wire             read_read_n;
-reg              read_waitrequest_s1;
 reg     [ 27: 0] readaddress;
 wire    [  4: 0] readaddress_inc;
 wire             reen;
@@ -683,7 +658,6 @@ wire             ween;
 reg              weop;
 wire             word;
 wire    [ 27: 0] write_address;
-wire    [  7: 0] write_burstcount;
 wire    [  3: 0] write_byteenable;
 wire             write_chipselect;
 wire             write_endofpacket;
@@ -708,7 +682,6 @@ reg              writelength_eq_0;
       .dma_ctl_write_n    (dma_ctl_write_n),
       .dma_ctl_writedata  (dma_ctl_writedata),
       .fifo_wr_data       (fifo_wr_data),
-      .hw                 (hw),
       .read_readdata      (read_readdata),
       .read_readdatavalid (read_readdatavalid),
       .readaddress        (readaddress),
@@ -721,53 +694,12 @@ reg              writelength_eq_0;
   nios_system_dma_0_byteenables the_nios_system_dma_0_byteenables
     (
       .byte_access      (byte_access),
-      .hw               (hw),
       .word             (word),
       .write_address    (write_address),
       .write_byteenable (write_byteenable)
     );
 
-  assign length_register_write = dma_ctl_chipselect & ~dma_ctl_write_n & (dma_ctl_address == 3);
-  always @(posedge clk or negedge reset_n)
-    begin
-      if (reset_n == 0)
-          burstcount_update <= 1;
-      else if (length_register_write)
-          burstcount_update <= dma_ctl_writedata >> 2;
-    end
-
-
-  always @(posedge clk or negedge reset_n)
-    begin
-      if (reset_n == 0)
-          burstcount <= 1;
-      else if (~busy)
-          burstcount <= burstcount_update;
-    end
-
-
-  assign read_burstcount = burstcount;
-  assign write_burstcount = burstcount;
-  //read burst request cycle
-  always @(posedge clk or negedge reset_n)
-    begin
-      if (reset_n == 0)
-          burst_read_waitrequest_s1 <= 0;
-      else if (clk_en)
-          burst_read_waitrequest_s1 <= ~mem_read_n;
-    end
-
-
-  always @(posedge clk or negedge reset_n)
-    begin
-      if (reset_n == 0)
-          read_waitrequest_s1 <= 0;
-      else if (clk_en)
-          read_waitrequest_s1 <= read_waitrequest;
-    end
-
-
-  assign read_read_n = (~read_waitrequest_s1 & burst_read_waitrequest_s1) || mem_read_n;
+  assign read_read_n = mem_read_n;
   assign status_register_write = dma_ctl_chipselect & ~dma_ctl_write_n & (dma_ctl_address == 0);
   // read address
   always @(posedge clk or negedge reset_n)
@@ -808,7 +740,11 @@ reg              writelength_eq_0;
 
 
   assign p1_length = ((dma_ctl_chipselect & ~dma_ctl_write_n & (dma_ctl_address == 3)))? dma_ctl_writedata :
-    ((inc_read && (!length_eq_0)))? length - length :
+    ((inc_read && (!length_eq_0)))? length - {1'b0,
+    1'b0,
+    word,
+    1'b0,
+    byte_access} :
     length;
 
   // control register
@@ -838,17 +774,22 @@ reg              writelength_eq_0;
     ((inc_write && (!writelength_eq_0)))? writelength - {1'b0,
     1'b0,
     word,
-    hw,
+    1'b0,
     byte_access} :
     writelength;
 
   assign p1_writelength_eq_0 = inc_write && (!writelength_eq_0) && ((writelength  - {1'b0,
     1'b0,
     word,
-    hw,
+    1'b0,
     byte_access}) == 0);
 
-  assign p1_length_eq_0 = inc_read && (!length_eq_0) && ((length  - length) == 0);
+  assign p1_length_eq_0 = inc_read && (!length_eq_0) && ((length  - {1'b0,
+    1'b0,
+    word,
+    1'b0,
+    byte_access}) == 0);
+
   always @(posedge clk or negedge reset_n)
     begin
       if (reset_n == 0)
@@ -874,19 +815,17 @@ reg              writelength_eq_0;
 
 
   assign writeaddress_inc = (wcon)? 0 :
-    (1)? 0 :
     {1'b0,
     1'b0,
     word,
-    hw,
+    1'b0,
     byte_access};
 
   assign readaddress_inc = (rcon)? 0 :
-    (1)? 0 :
     {1'b0,
     1'b0,
     word,
-    hw,
+    1'b0,
     byte_access};
 
   assign p1_dma_ctl_readdata = ({28 {(dma_ctl_address == 0)}} & status) |
@@ -937,8 +876,8 @@ reg              writelength_eq_0;
   assign word = control[2];
   assign go = control[3];
   assign i_en = control[4];
-  assign reen = 1'b0;
-  assign ween = 1'b0;
+  assign reen = control[5];
+  assign ween = control[6];
   assign leen = control[7];
   assign rcon = control[8];
   assign wcon = control[9];
@@ -1088,12 +1027,8 @@ reg              writelength_eq_0;
     fifo_rd_data[7 : 0],
     fifo_rd_data[7 : 0]};
 
-  assign fifo_rd_data_as_hw = {fifo_rd_data[15 : 0],
-    fifo_rd_data[15 : 0]};
-
   assign fifo_rd_data_as_word = fifo_rd_data[31 : 0];
   assign write_writedata = ({32 {byte_access}} & fifo_rd_data_as_byte_access) |
-    ({32 {hw}} & fifo_rd_data_as_hw) |
     ({32 {word}} & fifo_rd_data_as_word);
 
   assign fifo_write_data_valid = read_readdatavalid;

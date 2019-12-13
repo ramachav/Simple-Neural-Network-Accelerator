@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Oct 31, 2019 10:10:06 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1572574206012</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Dec 13, 2019 2:52:44 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1576266764092</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/home/ecegrid/a/695r15/ece695r/ramachav_project/Simple-Neural-Network-Accelerator/Accelerator-Design/software/MNIST_MLP_Software_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../nios_system.sopcinfo</SopcDesignFile>
@@ -902,7 +902,7 @@
                 <SettingName>altera_ro_zipfs.ro_zipfs_base</SettingName>
                 <Identifier>ALTERA_RO_ZIPFS_BASE</Identifier>
                 <Type>HexNumber</Type>
-                <Value>0x10000000</Value>
+                <Value>0x8800000</Value>
                 <DefaultValue>0x0</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Base address of flash memory device</Description>
@@ -936,57 +936,69 @@
         </Setting>
         <MemoryMap>
                 <slaveDescriptor>new_sdram_controller_0</slaveDescriptor>
-                <addressRange>0x08000000 - 0x0FFFFFFF</addressRange>
+                <addressRange>0x00000000 - 0x07FFFFFF</addressRange>
                 <addressSpan>134217728</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>generic_tristate_controller_0</slaveDescriptor>
-                <addressRange>0x10000000 - 0x107FFFFF</addressRange>
-                <addressSpan>8388608</addressSpan>
-                <attributes>flash, memory, non-volatile</attributes>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>sram_0</slaveDescriptor>
-                <addressRange>0x10800000 - 0x109FFFFF</addressRange>
-                <addressSpan>2097152</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>video_character_buffer_with_dma_0_avalon_char_buffer_slave</slaveDescriptor>
-                <addressRange>0x10A00000 - 0x10A01FFF</addressRange>
-                <addressSpan>8192</addressSpan>
+                <slaveDescriptor>nn_acc_single_buffer_version_1</slaveDescriptor>
+                <addressRange>0x08000000 - 0x080003FF</addressRange>
+                <addressSpan>1024</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>performance_counter_0</slaveDescriptor>
-                <addressRange>0x10A03000 - 0x10A0307F</addressRange>
+                <addressRange>0x08000400 - 0x0800047F</addressRange>
                 <addressSpan>128</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>timer_0</slaveDescriptor>
-                <addressRange>0x10A030A0 - 0x10A030BF</addressRange>
+                <addressRange>0x080004A0 - 0x080004BF</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>dma_0</slaveDescriptor>
+                <addressRange>0x080004C0 - 0x080004DF</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>video_pixel_buffer_dma_0</slaveDescriptor>
-                <addressRange>0x10A030C0 - 0x10A030CF</addressRange>
+                <addressRange>0x080004E0 - 0x080004EF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x10A030D0 - 0x10A030D7</addressRange>
+                <addressRange>0x080004F0 - 0x080004F7</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>video_character_buffer_with_dma_0_avalon_char_control_slave</slaveDescriptor>
-                <addressRange>0x10A030D8 - 0x10A030DF</addressRange>
+                <addressRange>0x080004F8 - 0x080004FF</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>video_character_buffer_with_dma_0_avalon_char_buffer_slave</slaveDescriptor>
+                <addressRange>0x08002000 - 0x08003FFF</addressRange>
+                <addressSpan>8192</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>sram_0</slaveDescriptor>
+                <addressRange>0x08200000 - 0x083FFFFF</addressRange>
+                <addressSpan>2097152</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>generic_tristate_controller_0</slaveDescriptor>
+                <addressRange>0x08800000 - 0x08FFFFFF</addressRange>
+                <addressSpan>8388608</addressSpan>
+                <attributes>flash, memory, non-volatile</attributes>
         </MemoryMap>
         <LinkerSection>
                 <sectionName>.text</sectionName>

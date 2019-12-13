@@ -35,7 +35,6 @@ static inline void weight_buffer_write(const float *data_to_transmit)
 
 static inline float image_buffer_write(const float *data_to_transmit)
 {
-	float s = 0.;
 	static float *result_buffer_address = (0x80000000 + (NN_ACC_BASE + NN_ACC_RESULT_BUFFER_OFFSET));
 	IOWR_ALTERA_AVALON_DMA_CONTROL(DMA_BASE_ADDRESS, 0x00000284);
 	IOWR_ALTERA_AVALON_DMA_RADDRESS(DMA_BASE_ADDRESS, data_to_transmit);
@@ -43,8 +42,7 @@ static inline float image_buffer_write(const float *data_to_transmit)
 	IOWR_ALTERA_AVALON_DMA_LENGTH(DMA_BASE_ADDRESS, 0x00000180);
 	IOWR_ALTERA_AVALON_DMA_CONTROL(DMA_BASE_ADDRESS, 0x0000028C);
 	while(IORD_ALTERA_AVALON_DMA_STATUS(DMA_BASE_ADDRESS) & ALTERA_AVALON_DMA_STATUS_BUSY_MSK);
-	s = *result_buffer_address;
-	return s;
+	return (*result_buffer_address);
 }
 
 /*****************************
@@ -910,13 +908,15 @@ static inline float kad_sdot(int n, const float *x, const float *y) /* BLAS sdot
 {
 	int i;
 	float s = 0.;
-	for (i = 0; i < n; ++i) s = FLOATING_POINT_ADDER_0(s,FLOATING_POINT_MULTIPLIER_0(x[i],y[i])); //s += x[i] * y[i];
+	//for (i = 0; i < n; ++i) s += x[i] * y[i];
+	for (i = 0; i < n; ++i) s = FLOATING_POINT_ADDER_0(s,FLOATING_POINT_MULTIPLIER_0(x[i],y[i]));
 	return s;
 }
 static inline void kad_saxpy_inlined(int n, float a, const float *x, float *y) // BLAS saxpy
 {
 	int i;
-	for (i = 0; i < n; ++i) y[i] = FLOATING_POINT_ADDER_0(y[i],FLOATING_POINT_MULTIPLIER_0(a,x[i])); //y[i] += a * x[i];
+	//for (i = 0; i < n; ++i) y[i] += a * x[i];
+	for (i = 0; i < n; ++i) y[i] = FLOATING_POINT_ADDER_0(y[i],FLOATING_POINT_MULTIPLIER_0(a,x[i]));
 }
 #endif
 
@@ -1969,11 +1969,15 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 
 #define conv2d_loop2(_x, _w, _y, _code) do { /* for the NHWC shape */ \
 		int n, c1, i, j, k, ii, j_skip = aux[1].stride * q->d[1], m = w->d[3] * w->d[1]; \
+		static float *weight_buffer_address = (float *) (0x80000000 + NN_ACC_BASE + NN_ACC_WEIGHT_BUFFER_OFFSET); \
+		static float *image_buffer_address = (float *) (0x80000000 + NN_ACC_BASE + NN_ACC_IMAGE_BUFFER_OFFSET); \
+		static float *result_buffer_address = (float *) (0x80000000 + NN_ACC_BASE + NN_ACC_RESULT_BUFFER_OFFSET); \
 		for (n = 0; n < q->d[0]; ++n) /* mini-batch */ \
 			for (c1 = 0; c1 < w->d[0]; ++c1) /* output channel */ \
 				for (k = 0; k < w->d[2]; ++k) { /* kernel row */ \
 					float *_ww = &(_w)[(c1 * w->d[2] + k) * m]; \
 					weight_buffer_write(_ww); /* Added */ \
+					/* for(int index = 0; index < m; index++) *weight_buffer_address = *(_ww + index); Added */ \
 					for (i = 0, ii = k - aux[0].pad[0]; i < p->d[2] && ii >= 0 && ii < q->d[2]; ++i, ii += aux[0].stride) { /* output and input row */ \
 						float *_xx = &(_x)[(n * q->d[2] + ii) * q->d[3] * q->d[1]]; \
 						float *_yy = &(_y)[((n * p->d[1] + c1) * p->d[2] + i) * p->d[3]]; \
@@ -1981,7 +1985,10 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 							memcpy(x_padded + aux[1].pad[0] * q->d[1], _xx, q->d[3] * q->d[1] * sizeof(float)); \
 							_xx = x_padded; \
 						} \
-						for (j = 0; j < p->d[3]; ++j, _xx += j_skip, ++_yy) _code; /* output and input column */ \
+						for (j = 0; j < p->d[3]; ++j, _xx += j_skip, ++_yy) { /* output and input column */ \
+							/* for(int index = 0; index < m; index++) *image_buffer_address = *(_xx + index); Added */ \
+							_code; \
+						} \
 					} /* ~i */ \
 				} /* ~k, c1, n */ \
 	} while (0)
@@ -2015,7 +2022,10 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 		} else { /* this is the second algorithm */
 			conv2d_move_1to3(q->d, q->x, q1);
 			conv2d_move_1to3(w->d, w->x, w1);
-			conv2d_loop2(q1, w1, p->x, *_yy += image_buffer_write(_xx));
+			//conv2d_loop2(q1, w1, p->x, *_yy += kad_sdot(m, _ww, _xx));
+			//conv2d_loop2(q1, w1, p->x, *_yy = FLOATING_POINT_ADDER(*_yy,kad_sdot(m, _ww, _xx)));
+			//conv2d_loop2(q1, w1, p->x, *_yy = FLOATING_POINT_ADDER(*_yy, *result_buffer_address));
+			conv2d_loop2(q1, w1, p->x, *_yy = FLOATING_POINT_ADDER_0(*_yy, image_buffer_write(_xx)));
 		}
 		conv_rot180(w->d[0] * w->d[1], w->d[2] * w->d[3], w->x);
 	} else if (action == KAD_BACKWARD) {

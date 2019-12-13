@@ -62,6 +62,10 @@ module nn_acc_single (
 			adder_input_a <= adder_output;
 			adder_input_b <= multiplier_output;
 		end 
+		else if(result_write_enable) begin
+			adder_input_a <= '0;
+			adder_input_b <= '0;
+		end 
 		else begin 
 			adder_input_a <= adder_input_a; 
 			adder_input_b <= adder_input_b;
@@ -129,14 +133,14 @@ module nn_acc_single (
 	assign image_write_data = writedata;
 	
 	assign result_write_enable = (calccount == WEIGHT_BUFFER_SIZE)? '1 : '0;
-	assign result_read_enable = ifbursttransfer? (burstread && (burstaddress > 8'hC0) && (burstaddress < 8'hD9) && !waitrequest && (current_burstcount != '0)) : (burstread && (address > 8'hC0) && (address < 8'hD9) && !waitrequest);
+	assign result_read_enable = ifbursttransfer? (burstread && (burstaddress > 8'hC0) && (burstaddress < 8'hD9) && !waitrequest && (current_burstcount != '0)) : (read && (address > 8'hC0) && (address < 8'hD9) && !waitrequest);
 	assign result_write_data = adder_output; //adder_input_a;
 	
 	assign nextstate_burstcount = beginbursttransfer? burstcount : ((waitrequest || (current_burstcount == '0))? current_burstcount : (current_burstcount - 1));
 	assign nextstate_calccount = (calccount == WEIGHT_BUFFER_SIZE)? '0 : (adder_enable? calccount + 1 : calccount);
 	assign illegal_weight_access = weight_buffer_full && write && ((burstaddress > 8'h00 && burstaddress < 8'h61) || (address > 8'h00 && address < 8'h61));
 	assign illegal_image_access = image_buffer_full && write && ((burstaddress > 8'h60 && burstaddress < 8'hC1) || (address > 8'h60 && address < 8'hC1));
-	assign illegal_result_access = result_buffer_empty && read && ((burstaddress > 8'hC0 && burstaddress < 8'hD9) || (address > 8'hC0 && address < 8'hD9));
+	assign illegal_result_access = result_buffer_empty && (burstread || read) && ((burstaddress > 8'hC0 && burstaddress < 8'hD9) || (address > 8'hC0 && address < 8'hD9));
 	assign calcinprogress = (calccount != '0 && calccount != WEIGHT_BUFFER_SIZE)? (image_buffer_full? '1 : (image_buffer_empty? '0 : calcinprogress_reg)) : (image_buffer_full? '1 : '0);
 	
 	assign waitrequest = (beginbursttransfer || illegal_image_access || illegal_result_access || calcinprogress)? 1'b1 : 1'b0; /*|| illegal_weight_access */

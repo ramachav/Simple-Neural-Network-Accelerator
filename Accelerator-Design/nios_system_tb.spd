@@ -402,7 +402,7 @@
    type="SYSTEM_VERILOG"
    library="nn_acc_single_buffer_version_1" />
  <file
-   path="nios_system/testbench/nios_system_tb/simulation/submodules/nn_acc_single.sv"
+   path="nios_system/testbench/nios_system_tb/simulation/submodules/nn_acc_single_non_burst.sv"
    type="SYSTEM_VERILOG"
    library="nn_acc_single_buffer_version_1" />
  <file

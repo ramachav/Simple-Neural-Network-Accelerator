@@ -146,7 +146,6 @@ C_SRCS += kann.c
 C_SRCS += kann_data.c
 C_SRCS += kautodiff.c
 C_SRCS += mnist-cnn.c
-C_SRCS += nn_acc_dma_driver.c
 CXX_SRCS :=
 ASM_SRCS :=
 

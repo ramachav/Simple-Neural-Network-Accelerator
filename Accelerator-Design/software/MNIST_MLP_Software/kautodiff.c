@@ -6,12 +6,47 @@
 #include <math.h>
 #include "kautodiff.h"
 
+#include "system.h"
+
 typedef struct {
 	uint64_t s[2];
 	double n_gset;
 	int n_iset;
 	volatile int lock;
 } kad_rng_t;
+
+/*******************************
+ * Code that was Added (Start) *
+ *******************************/
+
+/********************************
+ * DMA Data Transfer Operations *
+ ********************************/
+static inline void weight_buffer_write(const float *data_to_transmit)
+{
+	IOWR_ALTERA_AVALON_DMA_CONTROL(DMA_BASE_ADDRESS, 0x00000284);
+	IOWR_ALTERA_AVALON_DMA_RADDRESS(DMA_BASE_ADDRESS, data_to_transmit);
+	IOWR_ALTERA_AVALON_DMA_WADDRESS(DMA_BASE_ADDRESS, (NN_ACC_BASE + NN_ACC_WEIGHT_BUFFER_OFFSET));
+	IOWR_ALTERA_AVALON_DMA_LENGTH(DMA_BASE_ADDRESS, 0x00000C40);
+	IOWR_ALTERA_AVALON_DMA_CONTROL(DMA_BASE_ADDRESS, 0x0000028C);
+	while(IORD_ALTERA_AVALON_DMA_STATUS(DMA_BASE_ADDRESS) & ALTERA_AVALON_DMA_STATUS_BUSY_MSK);
+}
+
+static inline float image_buffer_write(const float *data_to_transmit)
+{
+	static float *result_buffer_address = (0x80000000 + (NN_ACC_BASE + NN_ACC_RESULT_BUFFER_OFFSET));
+	IOWR_ALTERA_AVALON_DMA_CONTROL(DMA_BASE_ADDRESS, 0x00000284);
+	IOWR_ALTERA_AVALON_DMA_RADDRESS(DMA_BASE_ADDRESS, data_to_transmit);
+	IOWR_ALTERA_AVALON_DMA_WADDRESS(DMA_BASE_ADDRESS, (NN_ACC_BASE + NN_ACC_IMAGE_BUFFER_OFFSET));
+	IOWR_ALTERA_AVALON_DMA_LENGTH(DMA_BASE_ADDRESS, 0x00000C40);
+	IOWR_ALTERA_AVALON_DMA_CONTROL(DMA_BASE_ADDRESS, 0x0000028C);
+	while(IORD_ALTERA_AVALON_DMA_STATUS(DMA_BASE_ADDRESS) & ALTERA_AVALON_DMA_STATUS_BUSY_MSK);
+	return (*result_buffer_address);
+}
+
+/*****************************
+ * Code that was Added (End) *
+ *****************************/
 
 /**********************
  * Graph construction *
@@ -871,13 +906,15 @@ static inline float kad_sdot(int n, const float *x, const float *y) /* BLAS sdot
 {
 	int i;
 	float s = 0.;
-	for (i = 0; i < n; ++i) s = FLOATING_POINT_ADDER_0(s,FLOATING_POINT_MULTIPLIER_0(x[i],y[i])); //s += x[i] * y[i];
+	//for (i = 0; i < n; ++i) s += x[i] * y[i];
+	for (i = 0; i < n; ++i) s = FLOATING_POINT_ADDER_0(s,FLOATING_POINT_MULTIPLIER_0(x[i],y[i]));
 	return s;
 }
 static inline void kad_saxpy_inlined(int n, float a, const float *x, float *y) // BLAS saxpy
 {
 	int i;
-	for (i = 0; i < n; ++i) y[i] = FLOATING_POINT_ADDER_0(y[i],FLOATING_POINT_MULTIPLIER_0(a,x[i])); //y[i] += a * x[i];
+	//for (i = 0; i < n; ++i) y[i] += a * x[i];
+	for (i = 0; i < n; ++i) y[i] = FLOATING_POINT_ADDER_0(y[i],FLOATING_POINT_MULTIPLIER_0(a,x[i]));
 }
 #endif
 
@@ -899,19 +936,43 @@ void kad_sgemm_simple(int trans_A, int trans_B, int M, int N, int K, const float
 void kad_sgemm_simple(int trans_A, int trans_B, int M, int N, int K, const float *A, const float *B, float *C) /* simplified BLAS sgemm */
 {
 	static const int x = 16;
+	static float *weight_buffer_address = (float *) (0x80000000 + NN_ACC_BASE + NN_ACC_WEIGHT_BUFFER_OFFSET);
+	static float *image_buffer_address = (float *) (0x80000000 + NN_ACC_BASE + NN_ACC_IMAGE_BUFFER_OFFSET);
+	static float *result_buffer_address = (float *) (0x80000000 + NN_ACC_BASE + NN_ACC_RESULT_BUFFER_OFFSET);
 	int i, j, k;
 	if (!trans_A && trans_B) {
-		for (i = 0; i < M; i += x)
-			for (j = 0; j < N; j += x) {
-				int ii, ie = M < i + x? M : i + x;
-				int jj, je = N < j + x? N : j + x;
-				for (ii = i; ii < ie; ++ii) { /* loop tiling */
-					const float *aii = A + ii * K, *bjj;
-					float *cii = C + ii * N;
-					for (jj = j, bjj = B + j * K; jj < je; ++jj, bjj += K)
-						cii[jj] += kad_sdot(K, aii, bjj);
+		if(K == 784) {
+			for (i = 0; i < M; i += x)
+				for (j = 0; j < N; j += x) {
+					int ii, ie = M < i + x? M : i + x;
+					int jj, je = N < j + x? N : j + x;
+					for (ii = i; ii < ie; ++ii) { /* loop tiling */
+						const float *aii = A + ii * K, *bjj;
+						//for(int index = 0; index < K; index++) *weight_buffer_address = *(aii + index);
+						weight_buffer_write(aii);
+						float *cii = C + ii * N;
+						for (jj = j, bjj = B + j * K; jj < je; ++jj, bjj += K) {
+							//for(int index = 0; index < K; index++) *image_buffer_address = *(bjj + index);
+							//cii[jj] += *result_buffer_address;
+							cii[jj] += image_buffer_write(bjj);
+							//cii[jj] += kad_sdot(K, aii, bjj);
+						}
+					}
 				}
-			}
+		}
+		else {
+			for (i = 0; i < M; i += x)
+				for (j = 0; j < N; j += x) {
+					int ii, ie = M < i + x? M : i + x;
+					int jj, je = N < j + x? N : j + x;
+					for (ii = i; ii < ie; ++ii) { /* loop tiling */
+						const float *aii = A + ii * K, *bjj;
+						float *cii = C + ii * N;
+						for (jj = j, bjj = B + j * K; jj < je; ++jj, bjj += K)
+							cii[jj] += kad_sdot(K, aii, bjj);
+					}
+				}
+		}
 	} else if (!trans_A && !trans_B) {
 		for (i = 0; i < M; ++i)
 			for (k = 0; k < K; ++k)
