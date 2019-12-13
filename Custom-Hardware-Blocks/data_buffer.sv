@@ -23,7 +23,6 @@ module data_buffer (
 
 	always_ff @ (posedge clk, posedge reset) begin
 		if(reset) begin
-			read_ptr <= '0;
 			write_ptr <= '0;
 			data_buffer_array <= '{default:'0};
 		end
@@ -31,13 +30,21 @@ module data_buffer (
 			data_buffer_array[write_ptr[$clog2(BUFFER_SIZE)-1:0]] <= write_data;
 			write_ptr <= nextstate_write_ptr;
 		end
-		else if(read_enable) begin
-			read_ptr <= nextstate_read_ptr;
-		end
 		else begin
-			read_ptr <= read_ptr;
 			write_ptr <= write_ptr;
 		end
+	end
+
+	always_ff @ (posedge clk, posedge reset) begin 
+		if(reset) begin 
+			read_ptr <= '0;
+		end 
+		else if(read_enable) begin 
+			read_ptr <= nextstate_read_ptr;
+		end 
+		else begin 
+			read_ptr <= read_ptr;
+		end 
 	end
 
 	assign nextstate_read_ptr = (read_ptr[$clog2(BUFFER_SIZE)-1:0] == (BUFFER_SIZE-1))? { ~read_ptr[$clog2(BUFFER_SIZE)], {$clog2(BUFFER_SIZE){1'b0}} } : (read_ptr + 1);

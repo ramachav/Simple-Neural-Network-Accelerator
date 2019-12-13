@@ -25,59 +25,26 @@ typedef struct {
  ********************************/
 static inline void weight_buffer_write(const float *data_to_transmit)
 {
-	*(DMA_CONTROL_REG_ADDRESS) = 0x00000284; //Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 0, WORD = 1)
-	*(DMA_READ_ADDR_REG_ADDRESS) = data_to_transmit;	//Address for the data to be transmitted
-	*(DMA_WRITE_ADDR_REG_ADDRESS) = NN_ACC_BASE + NN_ACC_WEIGHT_BUFFER_OFFSET; //Address for the weight buffer in the accelerator
-	*(DMA_LENGTH_REG_ADDRESS) = 384; //Sending 96 words = 384 Bytes
-	*(DMA_CONTROL_REG_ADDRESS) = 0x0000028C; //Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 1, WORD = 1)
-	printf("\nControl Reg: 0x%08X\tRead Address Reg: 0x%08X\tWrite Address Reg: 0x%08X\tLength Reg: 0x%08X\tStatus Reg: 0x%08X\n",*(DMA_CONTROL_REG_ADDRESS), *(DMA_READ_ADDR_REG_ADDRESS), *(DMA_WRITE_ADDR_REG_ADDRESS), *(DMA_LENGTH_REG_ADDRESS), *(DMA_STATUS_REG_ADDRESS));
-	while(*(DMA_STATUS_REG_ADDRESS) & DMA_TRANSFER_BUSY);
-	printf("\nWeight transfer done!\n"); //Sanity check
-	//*(DMA_STATUS_REG_ADDRESS) = DMA_TRANSFER_DONE;
+	IOWR_ALTERA_AVALON_DMA_CONTROL(DMA_BASE_ADDRESS, 0x00000284);
+	IOWR_ALTERA_AVALON_DMA_RADDRESS(DMA_BASE_ADDRESS, data_to_transmit);
+	IOWR_ALTERA_AVALON_DMA_WADDRESS(DMA_BASE_ADDRESS, (NN_ACC_BASE + NN_ACC_WEIGHT_BUFFER_OFFSET));
+	IOWR_ALTERA_AVALON_DMA_LENGTH(DMA_BASE_ADDRESS, 0x00000180);
+	IOWR_ALTERA_AVALON_DMA_CONTROL(DMA_BASE_ADDRESS, 0x0000028C);
+	while(IORD_ALTERA_AVALON_DMA_STATUS(DMA_BASE_ADDRESS) & ALTERA_AVALON_DMA_STATUS_BUSY_MSK);
 }
 
-static inline void image_buffer_write(const float *data_to_transmit)
+static inline float image_buffer_write(const float *data_to_transmit)
 {
-	*(DMA_CONTROL_REG_ADDRESS) = 0x00000284; //Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 1, WORD = 1)
-	*(DMA_READ_ADDR_REG_ADDRESS) = data_to_transmit;	//Address for the data to be transmitted
-	*(DMA_WRITE_ADDR_REG_ADDRESS) = NN_ACC_BASE + NN_ACC_IMAGE_BUFFER_OFFSET; //Address for the image buffer in the accelerator
-	*(DMA_LENGTH_REG_ADDRESS) = 384; //Sending 96 words = 384 Bytes
-	*(DMA_CONTROL_REG_ADDRESS) = 0x0000028C; //Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 1, WORD = 1)
-	//printf("\nControl Reg: 0x%08X\tRead Address Reg: 0x%08X\tWrite Address Reg: 0x%08X\tLength Reg: 0x%08X\tStatus Reg: 0x%08X\n",*(DMA_CONTROL_REG_ADDRESS), *(DMA_READ_ADDR_REG_ADDRESS), *(DMA_WRITE_ADDR_REG_ADDRESS), *(DMA_LENGTH_REG_ADDRESS), *(DMA_STATUS_REG_ADDRESS));
-	while(*(DMA_STATUS_REG_ADDRESS) & DMA_TRANSFER_BUSY);
-	//printf("\nImage transfer done!\n"); //Sanity check
-	//*(DMA_STATUS_REG_ADDRESS) = DMA_TRANSFER_DONE;
-}
-
-static inline void result_buffer_read(float *location_to_receive)
-{
-	*(DMA_CONTROL_REG_ADDRESS) = 0x00000184; //Setting the appropriate control bits for the DMA transfer (RCON = 1, LEEN = 1, GO = 1, WORD = 1)
-	*(DMA_READ_ADDR_REG_ADDRESS) = NN_ACC_BASE + NN_ACC_RESULT_BUFFER_OFFSET;	//Address for the result buffer in the accelerator
-	*(DMA_WRITE_ADDR_REG_ADDRESS) = location_to_receive; //Address for the data to be written to
-	*(DMA_LENGTH_REG_ADDRESS) = 96; //Sending 24 words = 96 Bytes
-	*(DMA_CONTROL_REG_ADDRESS) = 0x0000018C; //Setting the appropriate control bits for the DMA transfer (RCON = 1, LEEN = 1, GO = 1, WORD = 1)
-	while(*(DMA_STATUS_REG_ADDRESS) & DMA_TRANSFER_BUSY);
-	//printf("\nResult transfer done!\n"); //Sanity check
-	//*(DMA_STATUS_REG_ADDRESS) = DMA_TRANSFER_DONE;
-}
-
-/************************
- * kad_sdot DMA version *
- ************************/
-static inline void kad_sdot_dma(const float *y)
-{
-	//float s = 0.;
-	//static float *result_buffer_address = (0x80000000 + (NN_ACC_BASE + NN_ACC_RESULT_BUFFER_OFFSET));
-	//*(DMA_CONTROL_REG_ADDRESS) = 0x00000284; //Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 1, WORD = 1)
-	//*(DMA_READ_ADDR_REG_ADDRESS) = y;	//Address for the data to be transmitted
-	//*(DMA_WRITE_ADDR_REG_ADDRESS) = NN_ACC_BASE + NN_ACC_IMAGE_BUFFER_OFFSET; //Address for the image buffer in the accelerator
-	//*(DMA_LENGTH_REG_ADDRESS) = 384; //Sending 96 words = 384 Bytes
-	//*(DMA_CONTROL_REG_ADDRESS) = 0x0000028C; //Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 1, WORD = 1)
-	//while(*(DMA_STATUS_REG_ADDRESS) & DMA_TRANSFER_BUSY);
-	static float *image_buffer_address = (float *) (0x80000000 + (NN_ACC_BASE + NN_ACC_IMAGE_BUFFER_OFFSET));
-	for(int index = 0; index < 96; index++) *image_buffer_address = *(y + index);
-	//s = *result_buffer_address;
-	//return s;
+	float s = 0.;
+	static float *result_buffer_address = (0x80000000 + (NN_ACC_BASE + NN_ACC_RESULT_BUFFER_OFFSET));
+	IOWR_ALTERA_AVALON_DMA_CONTROL(DMA_BASE_ADDRESS, 0x00000284);
+	IOWR_ALTERA_AVALON_DMA_RADDRESS(DMA_BASE_ADDRESS, data_to_transmit);
+	IOWR_ALTERA_AVALON_DMA_WADDRESS(DMA_BASE_ADDRESS, (NN_ACC_BASE + NN_ACC_IMAGE_BUFFER_OFFSET));
+	IOWR_ALTERA_AVALON_DMA_LENGTH(DMA_BASE_ADDRESS, 0x00000180);
+	IOWR_ALTERA_AVALON_DMA_CONTROL(DMA_BASE_ADDRESS, 0x0000028C);
+	while(IORD_ALTERA_AVALON_DMA_STATUS(DMA_BASE_ADDRESS) & ALTERA_AVALON_DMA_STATUS_BUSY_MSK);
+	s = *result_buffer_address;
+	return s;
 }
 
 /*****************************
@@ -2001,24 +1968,12 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 	} while (0)
 
 #define conv2d_loop2(_x, _w, _y, _code) do { /* for the NHWC shape */ \
-		int n, c1, i, j, k, ii, j_skip = aux[1].stride * q->d[1], m = w->d[3] * w->d[1], index; \
-		static float *image_buffer_address = (float *) (0x80000000 + (NN_ACC_BASE + NN_ACC_IMAGE_BUFFER_OFFSET)); /* Added */ \
-		static float *weight_buffer_address = (float *) (0x80000000 + (NN_ACC_BASE + NN_ACC_WEIGHT_BUFFER_OFFSET)); /* Added */ \
-		static float *result_buffer_address = /* (float *)alt_uncached_malloc(p->d[3] * sizeof(float)); */ (0x80000000 + (NN_ACC_BASE + NN_ACC_RESULT_BUFFER_OFFSET)); /* Added */ \
+		int n, c1, i, j, k, ii, j_skip = aux[1].stride * q->d[1], m = w->d[3] * w->d[1]; \
 		for (n = 0; n < q->d[0]; ++n) /* mini-batch */ \
 			for (c1 = 0; c1 < w->d[0]; ++c1) /* output channel */ \
 				for (k = 0; k < w->d[2]; ++k) { /* kernel row */ \
 					float *_ww = &(_w)[(c1 * w->d[2] + k) * m]; \
-					\
-					/*(DMA_CONTROL_REG_ADDRESS) = 0x00000284; Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 0, WORD = 1) */ \
-					/*(DMA_READ_ADDR_REG_ADDRESS) = _ww; Address for the data to be transmitted */ \
-					/*(DMA_WRITE_ADDR_REG_ADDRESS) = NN_ACC_BASE + NN_ACC_WEIGHT_BUFFER_OFFSET; Address for the weight buffer in the accelerator */ \
-					/*(DMA_LENGTH_REG_ADDRESS) = 384; Sending 96 words = 384 Bytes */ \
-					/*(DMA_CONTROL_REG_ADDRESS) = 0x0000028C; Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 1, WORD = 1) */ \
-					/* while(*(DMA_STATUS_REG_ADDRESS) & DMA_TRANSFER_BUSY); */ \
-					/* weight_buffer_write(_ww); Added */ \
-					for(index = 0; index < m; index++) *weight_buffer_address = *(_ww + index); /* Added */ \
-					\
+					weight_buffer_write(_ww); /* Added */ \
 					for (i = 0, ii = k - aux[0].pad[0]; i < p->d[2] && ii >= 0 && ii < q->d[2]; ++i, ii += aux[0].stride) { /* output and input row */ \
 						float *_xx = &(_x)[(n * q->d[2] + ii) * q->d[3] * q->d[1]]; \
 						float *_yy = &(_y)[((n * p->d[1] + c1) * p->d[2] + i) * p->d[3]]; \
@@ -2026,22 +1981,7 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 							memcpy(x_padded + aux[1].pad[0] * q->d[1], _xx, q->d[3] * q->d[1] * sizeof(float)); \
 							_xx = x_padded; \
 						} \
-						for (j = 0; j < p->d[3]; ++j, _xx += j_skip/*, ++_yy*/) { /* output and input column */ \
-							for(index = 0; index < m; index++) *image_buffer_address = *(_xx + index); /* Added */ \
-							/*(DMA_CONTROL_REG_ADDRESS) = 0x00000284; Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 1, WORD = 1) */ \
-							/*(DMA_READ_ADDR_REG_ADDRESS) = _xx; Address for the data to be transmitted */ \
-							/*(DMA_WRITE_ADDR_REG_ADDRESS) = NN_ACC_BASE + NN_ACC_IMAGE_BUFFER_OFFSET; Address for the image buffer in the accelerator */ \
-							/*(DMA_LENGTH_REG_ADDRESS) = 384; Sending 96 words = 384 Bytes */ \
-							/*(DMA_CONTROL_REG_ADDRESS) = 0x0000028C; Setting the appropriate control bits for the DMA transfer (WCON = 1, LEEN = 1, GO = 1, WORD = 1) */ \
-							/*while(*(DMA_STATUS_REG_ADDRESS) & DMA_TRANSFER_BUSY); */ \
-						} \
-						/*(DMA_CONTROL_REG_ADDRESS) = 0x00000184; Setting the appropriate control bits for the DMA transfer (RCON = 1, LEEN = 1, GO = 1, WORD = 1) */ \
-						/*(DMA_READ_ADDR_REG_ADDRESS) = NN_ACC_BASE + NN_ACC_RESULT_BUFFER_OFFSET; Address for the result buffer in the accelerator */ \
-						/*(DMA_WRITE_ADDR_REG_ADDRESS) = result_buffer_address; Address for the data to be written to */ \
-						/*(DMA_LENGTH_REG_ADDRESS) = 96; Sending 24 words = 96 Bytes */ \
-						/*(DMA_CONTROL_REG_ADDRESS) = 0x0000018C; Setting the appropriate control bits for the DMA transfer (RCON = 1, LEEN = 1, GO = 1, WORD = 1) */ \
-						/* while(*(DMA_STATUS_REG_ADDRESS) & DMA_TRANSFER_BUSY); */ \
-						for(index = 0; index < p->d[3]; index++, ++_yy) _code; /* Added */ \
+						for (j = 0; j < p->d[3]; ++j, _xx += j_skip, ++_yy) _code; /* output and input column */ \
 					} /* ~i */ \
 				} /* ~k, c1, n */ \
 	} while (0)
@@ -2075,9 +2015,7 @@ int kad_op_conv2d(kad_node_t *p, int action) /* in the number-channel-height-wid
 		} else { /* this is the second algorithm */
 			conv2d_move_1to3(q->d, q->x, q1);
 			conv2d_move_1to3(w->d, w->x, w1);
-			alt_dcache_flush_all();
-			conv2d_loop2(q1, w1, p->x, *_yy += *result_buffer_address); /* (*_yy += kad_sdot(m, _ww, _xx)) */
-			/* image_buffer_write(_xx) */ /* Added */
+			conv2d_loop2(q1, w1, p->x, *_yy += image_buffer_write(_xx));
 		}
 		conv_rot180(w->d[0] * w->d[1], w->d[2] * w->d[3], w->x);
 	} else if (action == KAD_BACKWARD) {

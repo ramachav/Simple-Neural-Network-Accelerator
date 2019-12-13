@@ -217,7 +217,79 @@
          type = "String";
       }
    }
-   element nn_acc_single_buffer_version_1
+   element nios_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element nios_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element nios_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element nios_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element nios_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element nios_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element nios_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element nios_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element nios_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
+         type = "String";
+      }
+   }
+   element nn_acc_single_buffer_version_0
    {
       datum _sortIndex
       {
@@ -225,7 +297,7 @@
          type = "int";
       }
    }
-   element nn_acc_single_buffer_version_1.avalon_slave_0
+   element nn_acc_single_buffer_version_0.avalon_slave_0
    {
       datum baseAddress
       {
@@ -421,23 +493,23 @@
   <parameter name="resetSynchronousEdges" value="NONE" />
  </module>
  <module name="dma_0" kind="altera_avalon_dma" version="17.0" enabled="1">
-  <parameter name="allowByteTransactions" value="true" />
-  <parameter name="allowDoubleWordTransactions" value="true" />
-  <parameter name="allowHalfWordTransactions" value="true" />
-  <parameter name="allowQuadWordTransactions" value="true" />
+  <parameter name="allowByteTransactions" value="false" />
+  <parameter name="allowDoubleWordTransactions" value="false" />
+  <parameter name="allowHalfWordTransactions" value="false" />
+  <parameter name="allowQuadWordTransactions" value="false" />
   <parameter name="allowWordTransactions" value="true" />
   <parameter name="avalonSpec" value="2.0" />
   <parameter name="bigEndian" value="false" />
-  <parameter name="burstEnable" value="true" />
-  <parameter name="fifoDepth" value="256" />
-  <parameter name="maxBurstSize" value="128" />
-  <parameter name="minimumDmaTransactionRegisterWidth" value="13" />
-  <parameter name="readAddressMap"><![CDATA[<address-map><slave name='new_sdram_controller_0.s1' start='0x0' end='0x8000000' /><slave name='nn_acc_single_buffer_version_1.avalon_slave_0' start='0x8000000' end='0x8000400' /></address-map>]]></parameter>
+  <parameter name="burstEnable" value="false" />
+  <parameter name="fifoDepth" value="32" />
+  <parameter name="maxBurstSize" value="1024" />
+  <parameter name="minimumDmaTransactionRegisterWidth" value="12" />
+  <parameter name="readAddressMap"><![CDATA[<address-map><slave name='new_sdram_controller_0.s1' start='0x0' end='0x8000000' /><slave name='nn_acc_single_buffer_version_0.avalon_slave_0' start='0x8000000' end='0x8000400' /></address-map>]]></parameter>
   <parameter name="readSlaveAddressWidthMax" value="28" />
   <parameter name="readSlaveDataWidthMax" value="32" />
   <parameter name="softresetEnable" value="true" />
   <parameter name="useRegistersForFIFO" value="false" />
-  <parameter name="writeAddressMap"><![CDATA[<address-map><slave name='new_sdram_controller_0.s1' start='0x0' end='0x8000000' /><slave name='nn_acc_single_buffer_version_1.avalon_slave_0' start='0x8000000' end='0x8000400' /></address-map>]]></parameter>
+  <parameter name="writeAddressMap"><![CDATA[<address-map><slave name='new_sdram_controller_0.s1' start='0x0' end='0x8000000' /><slave name='nn_acc_single_buffer_version_0.avalon_slave_0' start='0x8000000' end='0x8000400' /></address-map>]]></parameter>
   <parameter name="writeSlaveAddressWidthMax" value="28" />
   <parameter name="writeSlaveDataWidthMax" value="32" />
  </module>
@@ -569,7 +641,7 @@
   <parameter name="cpuReset" value="false" />
   <parameter name="customInstSlavesSystemInfo"><![CDATA[<info><slave name="floating_point_adder_0" baseAddress="0" addressSpan="1" clockCycleType="COMBINATORIAL" /><slave name="floating_point_multiplier_0" baseAddress="1" addressSpan="1" clockCycleType="COMBINATORIAL" /></info>]]></parameter>
   <parameter name="dataAddrWidth" value="28" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='new_sdram_controller_0.s1' start='0x0' end='0x8000000' /><slave name='nn_acc_single_buffer_version_1.avalon_slave_0' start='0x8000000' end='0x8000400' /><slave name='performance_counter_0.control_slave' start='0x8000400' end='0x8000480' /><slave name='timer_0.s1' start='0x80004A0' end='0x80004C0' /><slave name='dma_0.control_port_slave' start='0x80004C0' end='0x80004E0' /><slave name='video_pixel_buffer_dma_0.avalon_control_slave' start='0x80004E0' end='0x80004F0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x80004F0' end='0x80004F8' /><slave name='video_character_buffer_with_dma_0.avalon_char_control_slave' start='0x80004F8' end='0x8000500' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x8001000' end='0x8001800' /><slave name='video_character_buffer_with_dma_0.avalon_char_buffer_slave' start='0x8002000' end='0x8004000' /><slave name='sram_0.avalon_sram_slave' start='0x8200000' end='0x8400000' /><slave name='generic_tristate_controller_0.uas' start='0x8800000' end='0x9000000' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='new_sdram_controller_0.s1' start='0x0' end='0x8000000' /><slave name='nn_acc_single_buffer_version_0.avalon_slave_0' start='0x8000000' end='0x8000400' /><slave name='performance_counter_0.control_slave' start='0x8000400' end='0x8000480' /><slave name='timer_0.s1' start='0x80004A0' end='0x80004C0' /><slave name='dma_0.control_port_slave' start='0x80004C0' end='0x80004E0' /><slave name='video_pixel_buffer_dma_0.avalon_control_slave' start='0x80004E0' end='0x80004F0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x80004F0' end='0x80004F8' /><slave name='video_character_buffer_with_dma_0.avalon_char_control_slave' start='0x80004F8' end='0x8000500' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x8001000' end='0x8001800' /><slave name='video_character_buffer_with_dma_0.avalon_char_buffer_slave' start='0x8002000' end='0x8004000' /><slave name='sram_0.avalon_sram_slave' start='0x8200000' end='0x8400000' /><slave name='generic_tristate_controller_0.uas' start='0x8800000' end='0x9000000' /></address-map>]]></parameter>
   <parameter name="dcache_bursts" value="false" />
   <parameter name="dcache_lineSize" value="32" />
   <parameter name="dcache_numTCDM" value="0" />
@@ -687,7 +759,7 @@
   <parameter name="userDefinedSettings" value="" />
  </module>
  <module
-   name="nn_acc_single_buffer_version_1"
+   name="nn_acc_single_buffer_version_0"
    kind="nn_acc_single_buffer_version"
    version="1.0"
    enabled="1">
@@ -773,11 +845,11 @@
   <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="addr_mode" value="Consecutive" />
-  <parameter name="back_start_address" value="277872640" />
+  <parameter name="back_start_address" value="137363456" />
   <parameter name="color_space" value="16-bit RGB" />
   <parameter name="image_height" value="480" />
   <parameter name="image_width" value="640" />
-  <parameter name="start_address" value="276824064" />
+  <parameter name="start_address" value="136314880" />
  </module>
  <module
    name="video_rgb_resampler_0"
@@ -851,7 +923,7 @@
    kind="avalon"
    version="17.0"
    start="nios2_qsys_0.data_master"
-   end="nn_acc_single_buffer_version_1.avalon_slave_0">
+   end="nn_acc_single_buffer_version_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x08000000" />
   <parameter name="defaultConnection" value="false" />
@@ -950,7 +1022,7 @@
    kind="avalon"
    version="17.0"
    start="dma_0.read_master"
-   end="nn_acc_single_buffer_version_1.avalon_slave_0">
+   end="nn_acc_single_buffer_version_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x08000000" />
   <parameter name="defaultConnection" value="false" />
@@ -968,7 +1040,7 @@
    kind="avalon"
    version="17.0"
    start="dma_0.write_master"
-   end="nn_acc_single_buffer_version_1.avalon_slave_0">
+   end="nn_acc_single_buffer_version_0.avalon_slave_0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x08000000" />
   <parameter name="defaultConnection" value="false" />
@@ -1061,7 +1133,7 @@
    kind="clock"
    version="17.0"
    start="clk_0.clk"
-   end="nn_acc_single_buffer_version_1.clock" />
+   end="nn_acc_single_buffer_version_0.clock" />
  <connection
    kind="clock"
    version="17.0"
@@ -1241,12 +1313,12 @@
    kind="reset"
    version="17.0"
    start="clk_0.clk_reset"
-   end="nn_acc_single_buffer_version_1.reset" />
+   end="nn_acc_single_buffer_version_0.reset" />
  <connection
    kind="reset"
    version="17.0"
    start="vga_clk.clk_reset"
-   end="nn_acc_single_buffer_version_1.reset" />
+   end="nn_acc_single_buffer_version_0.reset" />
  <connection
    kind="reset"
    version="17.0"
@@ -1346,7 +1418,7 @@
    kind="reset"
    version="17.0"
    start="nios2_qsys_0.jtag_debug_module_reset"
-   end="nn_acc_single_buffer_version_1.reset" />
+   end="nn_acc_single_buffer_version_0.reset" />
  <connection
    kind="reset"
    version="17.0"

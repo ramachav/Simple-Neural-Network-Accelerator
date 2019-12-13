@@ -20,7 +20,7 @@
 
 int main(int argc, char *argv[])
 {
-	/*float *weights_to_transmit = alt_uncached_malloc(96 * sizeof(float));
+	/* float *weights_to_transmit = alt_uncached_malloc(96 * sizeof(float));
 	for(int i = 0; i < 96; i++) *(weights_to_transmit + i) = 2.0;
 	float *inputs_to_transmit = alt_uncached_malloc(96 * sizeof(float));
 	for(int i = 0; i < 96; i++) *(inputs_to_transmit + i) = 4.0;
@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 	for(int i = 0; i < 24; i++)
 		printf("Result[%d]: %f\n", i, *(results_to_store + i));
 
-	return 0;*/
+	return 0; */
 
 	kann_t *ann;
 	kann_data_t *x, *y;

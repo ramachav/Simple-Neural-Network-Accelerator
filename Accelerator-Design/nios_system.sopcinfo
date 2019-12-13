@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="nios_system" kind="nios_system" version="1.0" fabric="QSYS">
  <!-- Format version 17.0 595 (Future versions may contain additional information.) -->
- <!-- 2019.12.03.18:51:52 -->
+ <!-- 2019.12.12.20:28:34 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1575417112</value>
+  <value>1576200514</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -440,9 +440,9 @@ parameters are a RESULT of the module parameters. -->
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
-    <moduleName>nn_acc_single_buffer_version_1</moduleName>
+    <moduleName>nn_acc_single_buffer_version_0</moduleName>
     <slaveName>clock</slaveName>
-    <name>nn_acc_single_buffer_version_1.clock</name>
+    <name>nn_acc_single_buffer_version_0.clock</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
@@ -518,19 +518,19 @@ parameters are a RESULT of the module parameters. -->
 the requested settings for a module instance. -->
   <assignment>
    <name>embeddedsw.CMacro.ALLOW_BYTE_TRANSACTIONS</name>
-   <value>1</value>
+   <value>0</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.ALLOW_DOUBLEWORD_TRANSACTIONS</name>
-   <value>1</value>
+   <value>0</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.ALLOW_HW_TRANSACTIONS</name>
-   <value>1</value>
+   <value>0</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.ALLOW_QUADWORD_TRANSACTIONS</name>
-   <value>1</value>
+   <value>0</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.ALLOW_WORD_TRANSACTIONS</name>
@@ -538,15 +538,15 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.LENGTHWIDTH</name>
-   <value>13</value>
+   <value>12</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.MAX_BURST_SIZE</name>
-   <value>128</value>
+   <value>1024</value>
   </assignment>
   <parameter name="allowByteTransactions">
    <type>boolean</type>
-   <value>true</value>
+   <value>false</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -554,7 +554,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="allowDoubleWordTransactions">
    <type>boolean</type>
-   <value>true</value>
+   <value>false</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -562,7 +562,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="allowHalfWordTransactions">
    <type>boolean</type>
-   <value>true</value>
+   <value>false</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -570,7 +570,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="allowQuadWordTransactions">
    <type>boolean</type>
-   <value>true</value>
+   <value>false</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -594,7 +594,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="burstEnable">
    <type>boolean</type>
-   <value>true</value>
+   <value>false</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -610,7 +610,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="fifoDepth">
    <type>int</type>
-   <value>256</value>
+   <value>32</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -618,15 +618,15 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="maxBurstSize">
    <type>int</type>
-   <value>128</value>
+   <value>1024</value>
    <derived>false</derived>
-   <enabled>true</enabled>
+   <enabled>false</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
   <parameter name="minimumDmaTransactionRegisterWidth">
    <type>int</type>
-   <value>13</value>
+   <value>12</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -651,7 +651,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="readAddressMap">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='new_sdram_controller_0.s1' start='0x0' end='0x8000000' /><slave name='nn_acc_single_buffer_version_1.avalon_slave_0' start='0x8000000' end='0x8000400' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='new_sdram_controller_0.s1' start='0x0' end='0x8000000' /><slave name='nn_acc_single_buffer_version_0.avalon_slave_0' start='0x8000000' end='0x8000400' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -681,7 +681,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="writeAddressMap">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='new_sdram_controller_0.s1' start='0x0' end='0x8000000' /><slave name='nn_acc_single_buffer_version_1.avalon_slave_0' start='0x8000000' end='0x8000400' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='new_sdram_controller_0.s1' start='0x0' end='0x8000000' /><slave name='nn_acc_single_buffer_version_0.avalon_slave_0' start='0x8000000' end='0x8000400' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -727,7 +727,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="minimumNumberOfByteTransfers">
    <type>long</type>
-   <value>8191</value>
+   <value>4095</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1599,17 +1599,11 @@ parameters are a RESULT of the module parameters. -->
     <width>1</width>
     <role>waitrequest</role>
    </port>
-   <port>
-    <name>read_burstcount</name>
-    <direction>Output</direction>
-    <width>8</width>
-    <role>burstcount</role>
-   </port>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>nn_acc_single_buffer_version_1</moduleName>
+    <moduleName>nn_acc_single_buffer_version_0</moduleName>
     <slaveName>avalon_slave_0</slaveName>
-    <name>nn_acc_single_buffer_version_1.avalon_slave_0</name>
+    <name>nn_acc_single_buffer_version_0.avalon_slave_0</name>
     <baseAddress>134217728</baseAddress>
     <span>1024</span>
    </memoryBlock>
@@ -1920,17 +1914,11 @@ parameters are a RESULT of the module parameters. -->
     <width>4</width>
     <role>byteenable</role>
    </port>
-   <port>
-    <name>write_burstcount</name>
-    <direction>Output</direction>
-    <width>8</width>
-    <role>burstcount</role>
-   </port>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>nn_acc_single_buffer_version_1</moduleName>
+    <moduleName>nn_acc_single_buffer_version_0</moduleName>
     <slaveName>avalon_slave_0</slaveName>
-    <name>nn_acc_single_buffer_version_1.avalon_slave_0</name>
+    <name>nn_acc_single_buffer_version_0.avalon_slave_0</name>
     <baseAddress>134217728</baseAddress>
     <span>1024</span>
    </memoryBlock>
@@ -6343,7 +6331,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='new_sdram_controller_0.s1' start='0x0' end='0x8000000' /><slave name='nn_acc_single_buffer_version_1.avalon_slave_0' start='0x8000000' end='0x8000400' /><slave name='performance_counter_0.control_slave' start='0x8000400' end='0x8000480' /><slave name='timer_0.s1' start='0x80004A0' end='0x80004C0' /><slave name='dma_0.control_port_slave' start='0x80004C0' end='0x80004E0' /><slave name='video_pixel_buffer_dma_0.avalon_control_slave' start='0x80004E0' end='0x80004F0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x80004F0' end='0x80004F8' /><slave name='video_character_buffer_with_dma_0.avalon_char_control_slave' start='0x80004F8' end='0x8000500' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x8001000' end='0x8001800' /><slave name='video_character_buffer_with_dma_0.avalon_char_buffer_slave' start='0x8002000' end='0x8004000' /><slave name='sram_0.avalon_sram_slave' start='0x8200000' end='0x8400000' /><slave name='generic_tristate_controller_0.uas' start='0x8800000' end='0x9000000' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='new_sdram_controller_0.s1' start='0x0' end='0x8000000' /><slave name='nn_acc_single_buffer_version_0.avalon_slave_0' start='0x8000000' end='0x8000400' /><slave name='performance_counter_0.control_slave' start='0x8000400' end='0x8000480' /><slave name='timer_0.s1' start='0x80004A0' end='0x80004C0' /><slave name='dma_0.control_port_slave' start='0x80004C0' end='0x80004E0' /><slave name='video_pixel_buffer_dma_0.avalon_control_slave' start='0x80004E0' end='0x80004F0' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x80004F0' end='0x80004F8' /><slave name='video_character_buffer_with_dma_0.avalon_char_control_slave' start='0x80004F8' end='0x8000500' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x8001000' end='0x8001800' /><slave name='video_character_buffer_with_dma_0.avalon_char_buffer_slave' start='0x8002000' end='0x8004000' /><slave name='sram_0.avalon_sram_slave' start='0x8200000' end='0x8400000' /><slave name='generic_tristate_controller_0.uas' start='0x8800000' end='0x9000000' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -6961,9 +6949,9 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>nn_acc_single_buffer_version_1</moduleName>
+    <moduleName>nn_acc_single_buffer_version_0</moduleName>
     <slaveName>avalon_slave_0</slaveName>
-    <name>nn_acc_single_buffer_version_1.avalon_slave_0</name>
+    <name>nn_acc_single_buffer_version_0.avalon_slave_0</name>
     <baseAddress>134217728</baseAddress>
     <span>1024</span>
    </memoryBlock>
@@ -8043,10 +8031,10 @@ parameters are a RESULT of the module parameters. -->
   </interface>
  </module>
  <module
-   name="nn_acc_single_buffer_version_1"
+   name="nn_acc_single_buffer_version_0"
    kind="nn_acc_single_buffer_version"
    version="1.0"
-   path="nn_acc_single_buffer_version_1">
+   path="nn_acc_single_buffer_version_0">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
   <parameter name="WEIGHT_BUFFER_SIZE">
@@ -8315,7 +8303,7 @@ parameters are a RESULT of the module parameters. -->
     <type>int</type>
     <value>0</value>
     <derived>false</derived>
-    <enabled>false</enabled>
+    <enabled>true</enabled>
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
@@ -8369,9 +8357,9 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="maximumPendingReadTransactions">
     <type>int</type>
-    <value>1</value>
+    <value>0</value>
     <derived>false</derived>
-    <enabled>true</enabled>
+    <enabled>false</enabled>
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
@@ -8403,7 +8391,7 @@ parameters are a RESULT of the module parameters. -->
     <type>int</type>
     <value>0</value>
     <derived>false</derived>
-    <enabled>false</enabled>
+    <enabled>true</enabled>
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
@@ -8419,7 +8407,7 @@ parameters are a RESULT of the module parameters. -->
     <type>int</type>
     <value>1</value>
     <derived>false</derived>
-    <enabled>false</enabled>
+    <enabled>true</enabled>
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
@@ -8443,7 +8431,7 @@ parameters are a RESULT of the module parameters. -->
     <type>int</type>
     <value>0</value>
     <derived>false</derived>
-    <enabled>false</enabled>
+    <enabled>true</enabled>
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
@@ -8451,7 +8439,7 @@ parameters are a RESULT of the module parameters. -->
     <type>com.altera.sopcmodel.avalon.TimingUnits</type>
     <value>Cycles</value>
     <derived>false</derived>
-    <enabled>false</enabled>
+    <enabled>true</enabled>
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
@@ -8491,7 +8479,7 @@ parameters are a RESULT of the module parameters. -->
     <type>int</type>
     <value>0</value>
     <derived>false</derived>
-    <enabled>false</enabled>
+    <enabled>true</enabled>
     <visible>true</visible>
     <valid>true</valid>
    </parameter>
@@ -8532,34 +8520,10 @@ parameters are a RESULT of the module parameters. -->
     <role>write</role>
    </port>
    <port>
-    <name>beginbursttransfer</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>beginbursttransfer</role>
-   </port>
-   <port>
-    <name>burstcount</name>
-    <direction>Input</direction>
-    <width>11</width>
-    <role>burstcount</role>
-   </port>
-   <port>
     <name>writedata</name>
     <direction>Input</direction>
     <width>32</width>
     <role>writedata</role>
-   </port>
-   <port>
-    <name>waitrequest</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>waitrequest</role>
-   </port>
-   <port>
-    <name>readdatavalid</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>readdatavalid</role>
    </port>
    <port>
     <name>readdata</name>
@@ -13381,7 +13345,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="start_address">
    <type>int</type>
-   <value>276824064</value>
+   <value>136314880</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -13389,7 +13353,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="back_start_address">
    <type>int</type>
-   <value>277872640</value>
+   <value>137363456</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -15573,11 +15537,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>avalon_jtag_slave</endConnectionPoint>
  </connection>
  <connection
-   name="nios2_qsys_0.data_master/nn_acc_single_buffer_version_1.avalon_slave_0"
+   name="nios2_qsys_0.data_master/nn_acc_single_buffer_version_0.avalon_slave_0"
    kind="avalon"
    version="17.0"
    start="nios2_qsys_0.data_master"
-   end="nn_acc_single_buffer_version_1.avalon_slave_0">
+   end="nn_acc_single_buffer_version_0.avalon_slave_0">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -15620,7 +15584,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>nios2_qsys_0</startModule>
   <startConnectionPoint>data_master</startConnectionPoint>
-  <endModule>nn_acc_single_buffer_version_1</endModule>
+  <endModule>nn_acc_single_buffer_version_0</endModule>
   <endConnectionPoint>avalon_slave_0</endConnectionPoint>
  </connection>
  <connection
@@ -16134,11 +16098,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection
-   name="dma_0.read_master/nn_acc_single_buffer_version_1.avalon_slave_0"
+   name="dma_0.read_master/nn_acc_single_buffer_version_0.avalon_slave_0"
    kind="avalon"
    version="17.0"
    start="dma_0.read_master"
-   end="nn_acc_single_buffer_version_1.avalon_slave_0">
+   end="nn_acc_single_buffer_version_0.avalon_slave_0">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -16181,7 +16145,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>dma_0</startModule>
   <startConnectionPoint>read_master</startConnectionPoint>
-  <endModule>nn_acc_single_buffer_version_1</endModule>
+  <endModule>nn_acc_single_buffer_version_0</endModule>
   <endConnectionPoint>avalon_slave_0</endConnectionPoint>
  </connection>
  <connection
@@ -16236,11 +16200,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection
-   name="dma_0.write_master/nn_acc_single_buffer_version_1.avalon_slave_0"
+   name="dma_0.write_master/nn_acc_single_buffer_version_0.avalon_slave_0"
    kind="avalon"
    version="17.0"
    start="dma_0.write_master"
-   end="nn_acc_single_buffer_version_1.avalon_slave_0">
+   end="nn_acc_single_buffer_version_0.avalon_slave_0">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -16283,7 +16247,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>dma_0</startModule>
   <startConnectionPoint>write_master</startConnectionPoint>
-  <endModule>nn_acc_single_buffer_version_1</endModule>
+  <endModule>nn_acc_single_buffer_version_0</endModule>
   <endConnectionPoint>avalon_slave_0</endConnectionPoint>
  </connection>
  <connection
@@ -16851,11 +16815,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clk</endConnectionPoint>
  </connection>
  <connection
-   name="clk_0.clk/nn_acc_single_buffer_version_1.clock"
+   name="clk_0.clk/nn_acc_single_buffer_version_0.clock"
    kind="clock"
    version="17.0"
    start="clk_0.clk"
-   end="nn_acc_single_buffer_version_1.clock">
+   end="nn_acc_single_buffer_version_0.clock">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -16874,7 +16838,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>clk_0</startModule>
   <startConnectionPoint>clk</startConnectionPoint>
-  <endModule>nn_acc_single_buffer_version_1</endModule>
+  <endModule>nn_acc_single_buffer_version_0</endModule>
   <endConnectionPoint>clock</endConnectionPoint>
  </connection>
  <connection
@@ -17873,11 +17837,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
-   name="clk_0.clk_reset/nn_acc_single_buffer_version_1.reset"
+   name="clk_0.clk_reset/nn_acc_single_buffer_version_0.reset"
    kind="reset"
    version="17.0"
    start="clk_0.clk_reset"
-   end="nn_acc_single_buffer_version_1.reset">
+   end="nn_acc_single_buffer_version_0.reset">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -17896,15 +17860,15 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>clk_0</startModule>
   <startConnectionPoint>clk_reset</startConnectionPoint>
-  <endModule>nn_acc_single_buffer_version_1</endModule>
+  <endModule>nn_acc_single_buffer_version_0</endModule>
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
-   name="vga_clk.clk_reset/nn_acc_single_buffer_version_1.reset"
+   name="vga_clk.clk_reset/nn_acc_single_buffer_version_0.reset"
    kind="reset"
    version="17.0"
    start="vga_clk.clk_reset"
-   end="nn_acc_single_buffer_version_1.reset">
+   end="nn_acc_single_buffer_version_0.reset">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -17923,7 +17887,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>vga_clk</startModule>
   <startConnectionPoint>clk_reset</startConnectionPoint>
-  <endModule>nn_acc_single_buffer_version_1</endModule>
+  <endModule>nn_acc_single_buffer_version_0</endModule>
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
@@ -18440,11 +18404,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
-   name="nios2_qsys_0.jtag_debug_module_reset/nn_acc_single_buffer_version_1.reset"
+   name="nios2_qsys_0.jtag_debug_module_reset/nn_acc_single_buffer_version_0.reset"
    kind="reset"
    version="17.0"
    start="nios2_qsys_0.jtag_debug_module_reset"
-   end="nn_acc_single_buffer_version_1.reset">
+   end="nn_acc_single_buffer_version_0.reset">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -18463,7 +18427,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>nios2_qsys_0</startModule>
   <startConnectionPoint>jtag_debug_module_reset</startConnectionPoint>
-  <endModule>nn_acc_single_buffer_version_1</endModule>
+  <endModule>nn_acc_single_buffer_version_0</endModule>
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
